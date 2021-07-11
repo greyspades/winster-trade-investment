@@ -8,8 +8,33 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.7",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "cookie": "^0.4.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^4.1.17",
+    "js-cookie": "^2.2.1",
+    "mongoose": "^5.13.2",
+    "mongoose-type-email": "^1.1.2",
+    "next": "^10.0.7",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.1",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-countup": "^4.4.0",
+    "react-dom": "17.0.1",
+    "react-material-ui-carousel": "^2.2.7",
+    "react-ts-tradingview-widgets": "^1.0.3",
+    "react-waypoint": "^10.1.0",
+    "reactstrap": "^8.9.0",
+    "webpack": "^5.42.0"
   }
 }
