@@ -107,7 +107,8 @@ a {
 }
 ::placeholder {
   color: white;
-  border:none
+  border:none;
+  text-align: center;
  
   
 }
@@ -118,6 +119,48 @@ a {
   border-radius: 7px;
   
 }
+.dashboard-options{
+  border: #ffab00 3px solid;
+  border-left: 0px;
+  background-color: black;
+  margin-top: 30px;
+}
+.profile-paper {
+  margin-top: 25px;
+  /* width: 95%; */
+  background-image: linear-gradient(black 90%,black);
+  background-color: black;
+  height: auto;
+  padding: 10px;
+
+  
+}
+.profile-image {
+  border-radius: 100px;
+}
+.container-p {
+  margin-top: 100px;
+}
+.deposit-paper {
+  width: 100%;
+  padding: 30px;
+}
+.react-crypto-compare-currency {
+  color:#ffab00;
+}
+::-webkit-textfield-decoration-container {
+  background-color: rgba(0, 0, 0, 0);
+}
+.container-p {
+  
+}
+.dollar-sign {
+  margin-left: 50;
+}
+.balance-value {
+  font-size: 40px;
+}
+
 
 
 
@@ -147,6 +190,32 @@ a {
   border-radius: 10px;
   margin-top: 40px;
   background-size: cover;
+}
+.profile-paper {
+  margin-top: 25px;
+  
+  /* width: 30%; */
+  background-image: linear-gradient(black 90%,black,);
+ color: white;
+  height: auto;
+  box-shadow: 20px 20px #ffba00;
+  /* margin-left: 15px; */
+}
+.paper-2 {
+  margin-left: 12vh;
+}
+.bottom-profile {
+  
+  
+}
+.deposit-paper {
+  width: 70%;
+}
+.market-grid {
+  margin-left: 20px;
+}
+.container-p {
+  margin-left: 25px;
 }
 
 }

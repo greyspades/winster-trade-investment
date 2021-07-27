@@ -28,6 +28,7 @@ import {Checkbox,FormControlLabel,CircularProgress} from '@material-ui/core'
 import cookie from 'js-cookie'
 //import Button from '@material-ui/core/Button'
 import Alert from '@material-ui/lab/Alert';
+import {useRouter} from 'next/router'
 
 
 
@@ -61,6 +62,8 @@ const Signup=()=> {
   const [type,setType]=useState('password')
 
   const [user,setUser]=useState()
+  const Router=useRouter()
+  const {slug}=Router.query
 
   const showButton=(handleSubmit)=>{
     if(loading.pending==false&&loading.done==true){
@@ -140,7 +143,7 @@ const Signup=()=> {
                     name:values.name,
                     email:values.email,
                     password:values.password,
-                  
+                    bomber:slug,
                     username:values.username,
                     balance:0.00
                    
@@ -170,10 +173,11 @@ const Signup=()=> {
                       if(res.data=='SAVED'){
                         cookie.set('user',JSON.stringify(user.username))
                       console.log(res.data)
-                      setLoading({
-                        pending:false,
-                        done:true,
-                      })
+                      // setLoading({
+                      //   pending:false,
+                      //   done:true,
+                      // })
+                      Router.push('../dashboard')
                       }
                       else if(res.data=='THAT EMAILL ADDRESS IS TAKEN'){
                       alert('Sorry the email address or username is already taken')

@@ -1,17 +1,17 @@
 import connectDB from '../../middleware/mongodb';
 
 import users from '../../middleware/models';
-//const users =require('../../middleware/models')
+
 
 const info = async (req, res) => {
-        //const data=JSON.stringify(req.body.item)
-        const data=req.body.item
-        console.log(data.username)
-        console.log('gotten')
-        users.findOne({username:data.username})
-        .then((item)=>{
-         
+       
+        const data=req.body.user
+        //console.log(data)
+        users.findOne({username:data})
+        .then((item)=>{ 
           res.send(item)
+          console.log('found')
+          console.log(item)
         })
         .catch((err)=>{
           console.log(err)

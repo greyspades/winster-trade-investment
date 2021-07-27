@@ -133,7 +133,7 @@ const Login=()=> {
 
         <CardContent>
         <h2 style={{marginTop:10,textAlign:'center',marginBottom:70}}>
-               Login to your <span style={{color:'#ffab00',textAlign:'center'}}>Account</span>
+        <span style={{color:'#ffab00',textAlign:'center'}}>Login</span> to your Account
         </h2>
         <Formik initialValues={{email:'',password:''}} onSubmit={(values)=>{
                   let user={
@@ -247,17 +247,13 @@ const Login=()=> {
                 {showEye()}
             </InputAdornment>
           }
-
         />
-        
-            
            <div style={{display:'grid',placeItems:'center',
             marginTop:120}}>
                 {showButton(handleSubmit)}
               </div>
       </FormControl>
-            
-                   </div>
+                </div>
                    
                    ))}
                       </Formik>
