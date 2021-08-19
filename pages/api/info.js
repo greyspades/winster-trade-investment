@@ -5,9 +5,10 @@ import users from '../../middleware/models';
 
 const info = async (req, res) => {
        
-        const data=req.body.user
-        //console.log(data)
-        users.findOne({username:data})
+        const data=req.body.user.email
+        //const data=JSON.parse(raw)
+        console.log(data)
+        users.findOne({email:data})
         .then((item)=>{ 
           res.send(item)
           console.log('found')

@@ -6,6 +6,7 @@ const Confirm=async(req,res)=>{
     const person=req.body.user.username
     const amount=req.body.user.amount
     const key=req.body.user.key
+    const mail=req.boody.user.mail
 
     console.log(req.body)
     users.findOne({username:person})

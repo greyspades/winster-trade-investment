@@ -8,16 +8,16 @@ import Divider from '@material-ui/core/divider'
 
 const Cryptos = () => {
     return (
-        <div style={{padding:30}} >
-            <h3 style={{textAlign:'center',color:'#ffba00'}}>
+        <div style={{padding:30,marginTop:60}} >
+            <h3 style={{textAlign:'center',color:'#ffba00'}} className='crypto-heading'>
                     Live Cryptocurrency Market Data
                 </h3>
-            <div  style={{display:'grid',placeItems:'normal'}}>
+            <div  style={{display:'grid',placeItems:'center'}}>
                 
-                <p>
+                {/* <p>
                     Running through the market data  for the most popular and trending crypto currencies includind spreads, bid and ask prices and market values
-                </p>
-            <Grid container>
+                </p> */}
+            <Grid className='crypto-market' justify='center' style={{}} container>
            <Grid
            item
             direction
@@ -28,7 +28,7 @@ const Cryptos = () => {
             
            >
            <div >
-           <CryptoCurrencyMarket className='crypto-market' isTransparent={true}  width='100%'   colorTheme="dark" height={600}></CryptoCurrencyMarket>
+           <CryptoCurrencyMarket  isTransparent={true}  width='100%'   colorTheme="dark" height={600}></CryptoCurrencyMarket>
            </div>
            </Grid>
             <Grid
@@ -38,6 +38,7 @@ const Cryptos = () => {
             alignItems='center'
             md={5}
             xs={12}
+            className='charts-image-container'
             >
             
                 {/* <image className='charts-image' width='100%' height={100} layout='responsive' src={charts}>
@@ -55,7 +56,7 @@ const Cryptos = () => {
             </Grid>
             </Grid>
             </div>
-            <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30}} variant="middle" />
+           
         </div>
     )
 }

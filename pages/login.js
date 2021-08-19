@@ -23,11 +23,19 @@ import {Grid,} from '@material-ui/core'
 import HttpsOutlined from '@material-ui/icons/HttpsOutlined'
 import LensOutlined from '@material-ui/icons/LensOutlined'
 import Check from '@material-ui/icons/Check'
-
+import Router from 'next/router'
 import {Checkbox,FormControlLabel,CircularProgress} from '@material-ui/core'
 import cookie from 'js-cookie'
 //import Button from '@material-ui/core/Button'
 import Alert from '@material-ui/lab/Alert';
+import {HashLoader} from 'react-spinners'
+import Paper from '@material-ui/core/Paper'
+import Footer from 'rc-footer';
+import './home/node_modules/rc-footer/assets/index.css';
+import PhoneIcon from '@material-ui/icons/Phone'
+//import EmailIcon from '@material-ui/icons/Email'
+import AddressIcon from '@material-ui/icons/LocationCity'
+
 
 
 
@@ -73,14 +81,15 @@ const Login=()=> {
     else if(loading.pending==true&&loading.done==false){
       return (
         <div style={{display:'grid',placeItems:"center"}} >
-          <CircularProgress style={{color:'#ffab00'}} />
+          {/* <CircularProgress style={{color:'#ffab00'}} /> */}
+          <HashLoader size={52} color='#ffab00' />
         </div>
       )
     }
     else {
       return (
-        <div>
-          <Button style={{color:'#ffab00',border:"solid #ffba00",width:90,height:60,}} onClick={handleSubmit} >
+        <div  >
+          <Button style={{color:'#ffab00',border:"solid #ffba00",width:90,height:60,borderRadius:30}} onClick={handleSubmit} >
            Login
           </Button>
         </div>
@@ -119,7 +128,7 @@ const Login=()=> {
   
   return (
    <div style={{display:"grid",placeItems:"center"}}>
-       <div style={{display:'grid',placeItems:'center'}} className='signup'>
+       <Paper elevation={20} style={{display:'grid',placeItems:'center'}} className='signup'>
          
     <Card style={{
         // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',
@@ -167,12 +176,13 @@ const Login=()=> {
                     Axios.post('/api/login',{user})
                     .then((res)=>{
                       if(res.data.status=='LOG IN'){
-                        cookie.set('user',JSON.stringify(user.username))
+                        cookie.set('user',user)
                       console.log(res.data)
                       setLoading({
                         pending:false,
-                        done:true,r
+                        done:true,
                       })
+                      Router.push('./dashboard')
                       }
                       else if(res.data.status=='WRONG DETAILS'){
                         alert('The password you have provided is incorect')
@@ -184,7 +194,7 @@ const Login=()=> {
                     })
         
                     .catch((err)=>{
-                      console.log(err.response.data)
+                      console.log(err.response)
                       //console.log('wahala')
                      if(err.response.data=='mongo wahala'){
                       alert('Unnable to connect to the server please try again later')
@@ -248,18 +258,150 @@ const Login=()=> {
             </InputAdornment>
           }
         />
-           <div style={{display:'grid',placeItems:'center',
-            marginTop:120}}>
-                {showButton(handleSubmit)}
+        <div style={{marginTop:20}}>
+         <p style={{fontSize:20}} className='heading-text'>
+         Cant remember password ? click <a href='/password_reset' style={{textDecoration:'none',color:'#ffab00'}}>here</a>
+         </p>
+        </div>
+         <div style={{display:'grid',placeItems:'center',
+            marginTop:30,backgroundColor:'rgba(0,0,0,0.5)',width:'100%',height:150,marginBottom:-30}}>
+             <div >
+             {showButton(handleSubmit)}
+             </div>
               </div>
+        
       </FormControl>
                 </div>
                    
                    ))}
                       </Formik>
+
         </CardContent>
     </Card>
-   </div>
+   </Paper>
+   <Footer
+  className='main-footer'
+    columns={[
+      {
+       items:[
+         {
+          icon: (
+            <PhoneIcon style={{color:'#9a7801',width:25,height:25,}} />
+          ),
+         title:' Phone: +48732121453',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal:false,
+          className:'main-footer',
+         },
+         {
+          icon: (
+            <EmailIcon style={{color:'#9a7801',width:25,height:25}} />
+          ),
+         title:' E-mail: winsterinvest@gmail.com',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal: false,
+          className:'main-footer',
+        },
+        {
+          icon: (
+            <AddressIcon style={{color:'#9a7801',width:25,height:25}} />
+          ),
+         title:'Address: 63 kenton Road, Yorkshire, England',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal: false,
+          className:'main-footer',
+        },
+       ]
+      },
+
+      {
+       items:[
+         {
+          title:(
+            <div>
+              Sign up
+            </div>
+          ),
+          url: '/signup',
+          //description:'register for an account',
+          openExternal: true,
+          className:'main-footer',
+         },
+         {
+          title:(
+            <div>
+              Login 
+            </div>
+          ),
+          url: '/login',
+          //description:'Login to your account',
+          openExternal: true,
+          className:'main-footer',
+         },
+         {
+          title:(
+            <div onClick={contactScroll}>
+              Contact us
+            </div>
+          ),
+          //url: '',
+          //description:' +48732121453',
+          openExternal: true,
+          className:'main-footer',
+          LinkComponent:'a'
+         },
+        
+       ]
+      },
+
+
+
+      {
+        items:[
+          {
+           title:(
+             <div>
+               Services
+             </div>
+           ),
+           url: '/signup',
+           //description:'register for an account',
+           openExternal: true,
+           className:'main-footer',
+          },
+          {
+           title:(
+             <div>
+               About us
+             </div>
+           ),
+           url: '/login',
+           //description:'Login to your account',
+           openExternal: true,
+           className:'main-footer',
+          },
+          {
+           title:(
+             <div onClick={contactScroll}>
+               Privacy policy
+             </div>
+           ),
+           //url: '',
+           //description:' +48732121453',
+           openExternal: true,
+           className:'main-footer',
+           LinkComponent:'a'
+          },
+         
+        ]
+       }
+    ]}
+    bottom="Winster trade investment"
+    backgroundColor='#ffab0000'
+  />
    </div>
   );
 }

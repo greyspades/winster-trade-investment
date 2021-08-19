@@ -41,6 +41,10 @@ var user = new Schema({
     type:String,
     required:false,
   },
+  country:{
+    trype:String,
+    required:false
+  }
  
 });
 

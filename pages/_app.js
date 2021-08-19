@@ -4,6 +4,10 @@ import '../styles/plugins.min.css'
 import '../styles/theme-styles.min.css'
 import '../styles/widgets.min.css'
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+//import { appWithTranslation } from 'next-i18next';
+
+
 
 const theme = createMuiTheme({
   palette: {
@@ -11,7 +15,7 @@ const theme = createMuiTheme({
         main: "#ffab00" // This is an orange looking color
                },
      secondary: {
-        main: "#ffff" //Another orange-ish color
+        main: "#ffffff"
                 }
            },
 
@@ -20,9 +24,11 @@ const theme = createMuiTheme({
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <ThemeProvider theme={theme}>
+    
+     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
       </ThemeProvider>
+  
     </div>
   )
 }

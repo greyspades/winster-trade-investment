@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect, Profiler} from 'react';
+import React,{useState,useRef,useEffect,} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -81,19 +81,31 @@ import Table from 'rc-table'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { Line, Bar } from "react-chartjs-2";
-import {
-    chartExample1,
-    chartExample2,
-    chartExample3,
-    chartExample4,
-} from '../variables/charts'
+import tetherIcon from '../img/tether.svg'
+// import {
+//     chartExample1,
+//     chartExample2,
+//     chartExample3,
+//     chartExample4,
+// } from '../variables/charts'
+import safemoon from '../img/safemoon.svg'
+import btcIcon from '../img/btc.png'
+import ethIcon from '../img/eth.png'
+import Close from '@material-ui/icons/CloseOutlined'
+import CheckCircle from '@material-ui/icons/CheckCircleOutline'
+import Footer from 'rc-footer';
+import 'rc-footer/assets/index.css';
+import PhoneIcon from '@material-ui/icons/Phone'
+import EmailIcon from '@material-ui/icons/Email'
+import AddressIcon from '@material-ui/icons/LocationCity'
+import black from '../img/black.png'
+import AlertIcon from '@material-ui/icons/NotificationImportantOutlined'
+import NotificationsNone from '@material-ui/icons/NotificationsNone'
+import white from '../img/white.png'
+import logo1 from '../img/logo1.png'
 
 
-
-
-
-
-const Dashboard=()=>{
+const Dashboard=(props)=>{
     const [mobile,setMobile]=useState()
     const [content,setContent]=useState('Balance')
     const [balanceElev,setBalanceElev]=useState(7)
@@ -115,32 +127,407 @@ const Dashboard=()=>{
     const [withdraw,setWithdraw]=useState(false)
     const [withdrawal,setWithdrawal]=useState(0)
     const [pending,setPending]=useState(false)
+    const [coinData,setCoinData]=useState()
+    const [btc,setBtc]=useState()
+    const [eth,setEth]=useState()
+    const [coinChart,setCoinChart]=useState(false)
+    const [btcData,setBtcData]=useState(false)
+    const [ethData,setEthData]=useState(false)
+    const [phone,setPhone]=useState()
+    const [prevCon,setPrevCon]=useState()
+    const [moon,setMoon]=useState()
+    const [tether,setTether]=useState()
+    const [moonData,setMoonData]=useState(false)
+    const [tetherData,setTetherData]=useState(false)
+    const [action,setAction]=useState('confirm')
 
-    
+
     useEffect(()=>{
     let width=window.innerWidth
     let user=Cookie.getJSON('user')
-    setContent('Deposit')
+    setContent('Balance')
     console.log(name)
     if(width<500){
       setMobile(false)
       console.log('mobile view')
+      setPhone(true)
     }
     else if(width>500){
         setMobile(true)
         console.log('desktop view')
-    
+        setPhone(false)
     }
     getInfo()
    
 
     },[])
 
+    useEffect(()=>{
+       
+        
+        //getInfo()
+       getBtc()
+    
+    },[])
+
+    useEffect(()=>{
+        
+        //getInfo()
+       getEth()
+    
+    },[])
+    useEffect(()=>{
+        
+        //getInfo()
+       getTether()
+    
+    },[])
+
+    useEffect(()=>{
+        
+        //getInfo()
+       getMoon()
+    
+    },[])
+
+    //const container = window !== undefined ? () => window().document.body : undefined;
+
+    let chartOptions = {
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+              display: false
+          },
+          title:{
+              display:false
+          },
+          tooltips:{
+              display:false,
+              callbacks: {
+                label: () => null,
+                title: () => null,
+                enabled:false
+            },
+          },
+          labels:{
+              display:false
+          }
+      },
+       
+        tooltips: {
+            display:false,
+          callbacks: {
+              label: () => null,
+              title: () => null,
+          },
+          enabled:false
+      },
+
+      title:{
+        display:false
+    },
+
+      labels:{
+          display:false
+      },
+
+      legend:{
+          display:false
+      },
+
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              barPercentage: 1.6,
+              gridLines: {
+                drawBorder: false,
+                color: "rgba(29,140,248,0.0)",
+                zeroLineColor: "transparent",
+              },
+              ticks: {
+                suggestedMin: 60,
+                suggestedMax: 125,
+                padding: 10,
+                fontColor: "#9a9a9a",
+            
+                
+              },
+              stacked:false,
+
+            },
+          ],
+          xAxes: [
+            {
+            //   barPercentage: 1.6,
+            //   gridLines: {
+            //     drawBorder: false,
+            //     color: "rgba(29,140,248,0.1)",
+            //     zeroLineColor: "transparent",
+            //   },
+            display:false,
+            labels:{
+                display:false
+            },
+              ticks: {
+                //padding: 10,
+                fontColor: "blue",
+                display:false
+              },
+            },
+            
+          ],
+        },
+      };
+
+      let chartExample1 = {
+        data1: (canvas) => {
+          let ctx = canvas.getContext("2d");
+      
+          let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+      
+          gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
+          gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
+          gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
+      
+          return {
+            labels: btc.x,
+            datasets: [
+              {
+                
+                fill: true,
+                backgroundColor: gradientStroke,
+                borderColor: "#9a7801",
+                borderWidth: 1,
+                borderDash: [],
+                borderDashOffset: 0.0,
+                pointBackgroundColor: "#9a7801",
+                pointBorderColor: "rgba(255,255,255,0)",
+                pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
+                pointBorderWidth: 0,
+                pointHoverRadius: 4,
+                pointHoverBorderWidth: 15,
+                pointRadius: 0,
+                
+                data:btc.y,
+              },
+            ],
+          };
+        },
+        data2: (canvas) => {
+            let ctx = canvas.getContext("2d");
+        
+            let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+        
+            gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
+            gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
+            gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
+        
+            return {
+              labels: tether.x,
+              
+              datasets: [
+                {
+                  
+                  fill: true,
+                  backgroundColor: gradientStroke,
+                  borderColor: "#9a7801",
+                  borderWidth: 1,
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  pointBackgroundColor: "#9a7801",
+                  pointBorderColor: "rgba(255,255,255,0)",
+                  pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
+                  pointBorderWidth: 5,
+                  pointHoverRadius: 4,
+                  pointHoverBorderWidth: 15,
+                  pointRadius: 0,
+                  
+                  data:tether.y,
+                },
+              ],
+            };
+          },
+          data3: (canvas) => {
+            let ctx = canvas.getContext("2d");
+        
+            let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+        
+            gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
+            gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
+            gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
+        
+            return {
+              labels: moon.x,
+              datasets: [
+                {
+                  
+                  fill: true,
+                  backgroundColor: gradientStroke,
+                  borderColor: "#9a7801",
+                  borderWidth: 1,
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  pointBackgroundColor: "#9a7801",
+                  pointBorderColor: "rgba(255,255,255,0)",
+                  pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
+                  pointBorderWidth: 5,
+                  pointHoverRadius: 4,
+                  pointHoverBorderWidth: 15,
+                  pointRadius: 0,
+                  
+                  data:moon.y,
+                },
+              ],
+            };
+          }
+    }
+
+        let chartExample2 = {
+            data2: (canvas) => {
+              let ctx = canvas.getContext("2d");
+          
+              let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+          
+              gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
+              gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
+              gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
+          
+              return {
+                labels: eth.x,
+                datasets: [
+                  {
+                    
+                    fill: true,
+                    backgroundColor: gradientStroke,
+                    borderColor: "#9a7801",
+                    borderWidth: 1,
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    pointBackgroundColor: "#9a7801",
+                    pointBorderColor: "rgba(255,255,255,0)",
+                    pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
+                    pointBorderWidth: 5,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 15,
+                    pointRadius: 0,
+                    
+                    data:eth.y
+                  },
+                ],
+              };
+            },}
+
+            const getEth=()=>{
+                axios.get('https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=7&interval=minutes')
+                .then((res)=>{
+                   
+                    let x=[]
+                    let y=[]
+                    res.data.prices.forEach((item)=>{
+                        x.push(parseInt(item[0].toString().slice(0,2))),
+                        y.push(parseInt(item[1].toString().slice(0,3)))
+                    })
+                    setEth({
+                        x:x.slice(0,25),
+                        y:y.slice(0,25)
+                    })
+                    //setBtcData(res.data.prices)
+                    setEthData(true)
+                    console.log(eth)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+               
+            }
+
+            const getTether=()=>{
+                axios.get('https://api.coingecko.com/api/v3/coins/tether/market_chart?vs_currency=usd&days=7&interval=minutes')
+                .then((res)=>{
+                   
+                    let x=[]
+                    let y=[]
+                    res.data.prices.forEach((item)=>{
+                        x.push(parseInt(item[0].toString().slice(0,2))),
+                        y.push(parseInt(item[1].toString().slice(0,3)))
+                    })
+                    setTether({
+                        x:x.slice(0,25),
+                        y:y.slice(0,25)
+                    })
+                    //setBtcData(res.data.prices)
+                    setTetherData(true)
+                    console.log(eth)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+               
+            }
+
+
+            const getMoon=()=>{
+                axios.get('https://api.coingecko.com/api/v3/coins/safemoon/market_chart?vs_currency=usd&days=7&interval=minutes')
+                .then((res)=>{
+                   
+                    let x=[]
+                    let y=[]
+                    res.data.prices.forEach((item)=>{
+                        x.push(parseInt(item[0].toString().slice(0,2))),
+                        y.push(parseInt(item[1].toString().slice(0,3)))
+                    })
+                    setMoon({
+                        x:x.slice(0,25),
+                        y:y.slice(0,25)
+                    })
+                    //setBtcData(res.data.prices)
+                    setMoonData(true)
+                    console.log(eth)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+               
+            }
+
+
+    const getBtc=()=>{
+        axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=minutes')
+        .then((res)=>{
+            //console.log(res.data.prices)
+            // setBtcData(res.data.prices)
+            // console.log(btcData)
+            //setCoinData(res.data.prices)
+            let x=[]
+            let y=[]
+            res.data.prices.forEach((item)=>{
+                x.push(parseInt(item[0].toString().slice(0,2))),
+                y.push(parseInt(item[1].toString().slice(0,3)))
+            })
+            setBtc({
+                x:x.slice(0,25),
+                y:y.slice(0,25)
+            })
+            setBtcData(true)
+            // setCoinChart(true)
+            // console.log(btc)
+            
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+       
+    }
+
     const getInfo=()=>{
         let user=Cookie.getJSON('user')
+        //let user=JSON.parse(raw)
+        
         axios.post('/api/info',{user})
         .then((res)=>{
-            console.log(res.data)
+            //console.log(user)
+            //let item=JSON.parse(res.data)
             setInfo(res.data)
             setGotten(true)
             setLoading(false)
@@ -154,311 +541,11 @@ const Dashboard=()=>{
         })
     }
 
-    const chartOptions={
-        legend: {
-            display: false,
-          },
-    }
-
-    const bardata=[
-        {
-          "country": "AD",
-          "hot dog": 127,
-          "hot dogColor": "hsl(40, 100%, 50%)",
-          "burger": 43,
-          "burgerColor": "hsl(62, 70%, 50%)",
-        //   "sandwich": 150,
-        //   "sandwichColor": "hsl(51, 70%, 50%)",
-        //   "kebab": 6,
-        //   "kebabColor": "hsl(181, 70%, 50%)",
-        //   "fries": 85,
-        //   "friesColor": "hsl(89, 70%, 50%)",
-        //   "donut": 85,
-        //   "donutColor": "hsl(246, 70%, 50%)"
-        },
-        {
-          "country": "AE",
-          "hot dog": 130,
-          "hot dogColor": "hsl(59, 70%, 50%)",
-          "fries": 98,
-          "friesColor": "hsl(299, 70%, 50%)",
-          "burger": 148,
-          "burgerColor": "hsl(234, 70%, 50%)",
-        //   "sandwich": 115,
-        //   "sandwichColor": "hsl(152, 70%, 50%)",
-        //   "kebab": 19,
-        //   "kebabColor": "hsl(217, 70%, 50%)",
-        
-        //   "donut": 31,
-        //   "donutColor": "hsl(171, 70%, 50%)"
-        },
-        {
-          "country": "AF",
-          "hot dog": 116,
-          "hot dogColor": "hsl(155, 70%, 50%)",
-          "burger": 73,
-          "burgerColor": "hsl(313, 70%, 50%)",
-        //   "sandwich": 33,
-        //   "sandwichColor": "hsl(133, 70%, 50%)",
-        //   "kebab": 80,
-        //   "kebabColor": "hsl(308, 70%, 50%)",
-        //   "fries": 14,
-          "friesColor": "hsl(341, 70%, 50%)",
-          "donut": 144,
-        //   "donutColor": "hsl(350, 70%, 50%)"
-        },
-        {
-          "country": "AG",
-          "hot dog": 35,
-          "hot dogColor": "hsl(174, 70%, 50%)",
-          "burger": 174,
-          "burgerColor": "hsl(263, 70%, 50%)",
-        //   "sandwich": 109,
-        //   "sandwichColor": "hsl(166, 70%, 50%)",
-        //   "kebab": 153,
-        //   "kebabColor": "hsl(16, 70%, 50%)",
-        //   "fries": 39,
-        //   "friesColor": "hsl(268, 70%, 50%)",
-        //   "donut": 137,
-        //   "donutColor": "hsl(316, 70%, 50%)"
-        },
-        {
-          "country": "AI",
-          "hot dog": 183,
-          "hot dogColor": "hsl(65, 70%, 50%)",
-          "burger": 120,
-          "burgerColor": "hsl(248, 70%, 50%)",
-        //   "sandwich": 191,
-        //   "sandwichColor": "hsl(307, 70%, 50%)",
-        //   "kebab": 45,
-        //   "kebabColor": "hsl(141, 70%, 50%)",
-        //   "fries": 8,
-        //   "friesColor": "hsl(222, 70%, 50%)",
-        //   "donut": 100,
-        //   "donutColor": "hsl(221, 70%, 50%)"
-        },
-        {
-          "country": "AL",
-          "hot dog": 119,
-          "hot dogColor": "hsl(154, 70%, 50%)",
-          "burger": 184,
-          "burgerColor": "hsl(96, 70%, 50%)",
-        //   "sandwich": 69,
-        //   "sandwichColor": "hsl(33, 70%, 50%)",
-        //   "kebab": 90,
-        //   "kebabColor": "hsl(346, 70%, 50%)",
-          "fries": 144,
-          "friesColor": "hsl(233, 70%, 50%)",
-        //   "donut": 173,
-        //   "donutColor": "hsl(124, 70%, 50%)"
-        },
-        {
-          "country": "AM",
-          "hot dog": 27,
-          "hot dogColor": "hsl(123, 70%, 50%)",
-          "burger": 82,
-          "burgerColor": "hsl(23, 70%, 50%)",
-        //   "sandwich": 56,
-        //   "sandwichColor": "hsl(3, 70%, 50%)",
-        //   "kebab": 104,
-        //   "kebabColor": "hsl(51, 70%, 50%)",
-          "fries": 63,
-          "friesColor": "hsl(4, 70%, 50%)",
-        //   "donut": 148,
-        //   "donutColor": "hsl(71, 70%, 50%)"
-        }
-      ]
     
-    const bulletdata=[
-        {
-          "id": "temp.",
-          "ranges": [
-            87,
-            11,
-            75,
-            // 0,
-            // 100
-          ],
-          "measures": [
-            44
-          ],
-          "markers": [
-            74
-          ]
-        },
-        {
-          "id": "power",
-          "ranges": [
-            0.04552477262763157,
-            1.8066390027943298,
-            0.12374351897164315,
-            0,
-            2
-          ],
-          "measures": [
-            0.2217107020154502,
-            0.5031682351922404
-          ],
-          "markers": [
-            1.7543603427008534
-          ]
-        },
-        {
-          "id": "volume",
-          "ranges": [
-            4,
-            6,
-            10,
-            21,
-            10,
-            22,
-            0,
-            40
-          ],
-          "measures": [
-            11
-          ],
-          "markers": [
-            39
-          ]
-        },
-        {
-          "id": "cost",
-          "ranges": [
-            284315,
-            202259,
-            84685,
-            0,
-            500000
-          ],
-          "measures": [
-            158281,
-            296496
-          ],
-          "markers": [
-            498152
-          ]
-        },
-        {
-          "id": "revenue",
-          "ranges": [
-            13,
-            0,
-            11,
-            0,
-            13
-          ],
-          "measures": [
-            4
-          ],
-          "markers": [
-            11.548534063035833,
-            8.9267783326714
-          ]
-        }
-      ]
 
-    const bullet= <ResponsiveBullet
-    data={bulletdata}
-    margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-    spacing={46}
-    titleAlign="start"
-    // titleOffsetX={-70}
-    measureSize={0.2}
-/>
-
-    const sunburst=<ResponsiveBar
-    data={bardata}
-    keys={[ 'hot dog', 'burger',  'fries',  ]}
-    indexBy="country"
-    margin={{ top: 10, right: 10, bottom: 60, left: 10 }}
-    padding={0.3}
-    groupMode="grouped"
-    valueScale={{ type: 'linear' }}
-    indexScale={{ type: 'band', round: true }}
-    valueFormat={{ format: '', enabled: false }}
-    colors={{ scheme: 'category10' }}
-    defs={[
-        {
-            id: 'dots',
-            type: 'patternDots',
-            background: 'inherit',
-            color: '#38bcb2',
-            size: 4,
-            padding: 1,
-            stagger: true
-        },
-        {
-            id: 'lines',
-            type: 'patternLines',
-            background: 'inherit',
-            color: '#eed312',
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10
-        }
-    ]}
-    fill={[
-        {
-            match: {
-                id: 'fries'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'sandwich'
-            },
-            id: 'lines'
-        }
-    ]}
-    borderColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
-    axisTop={null}
-    axisRight={null}
-    axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: 'country',
-        legendPosition: 'middle',
-        legendOffset: 32
-    }}
-    axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: 'food',
-        legendPosition: 'middle',
-        legendOffset: -40
-    }}
-    labelSkipWidth={12}
-    labelSkipHeight={12}
-    labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
-    legends={[
-        {
-            dataFrom: 'keys',
-            anchor: 'bottom-right',
-            direction: 'column',
-            justify: false,
-            translateX: 120,
-            translateY: 0,
-            itemsSpacing: 2,
-            itemWidth: 100,
-            itemHeight: 20,
-            itemDirection: 'left-to-right',
-            itemOpacity: 0.85,
-            symbolSize: 20,
-            effects: [
-                {
-                    on: 'hover',
-                    style: {
-                        itemOpacity: 1
-                    }
-                }
-            ]
-        }
-    ]}
-/>
+    
+    
+   
     const pieData=[
         {
           "id": "futures",
@@ -492,109 +579,7 @@ const Dashboard=()=>{
         }
       ]
     
-    const pie2=<ResponsivePieCanvas
-    data={pieData}
-    margin={{ top: 40, right: 200, bottom: 40, left: 80 }}
-    innerRadius={0.5}
-    padAngle={0.7}
-    cornerRadius={3}
-    activeOuterRadiusOffset={8}
-    colors={{ scheme: 'paired' }}
-    borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.6 ] ] }}
-    arcLinkLabelsSkipAngle={10}
-    arcLinkLabelsTextColor="#333333"
-    arcLinkLabelsThickness={2}
-    arcLinkLabelsColor={{ from: 'color' }}
-    arcLabelsSkipAngle={10}
-    arcLabelsTextColor="#333333"
-    defs={[
-        {
-            id: 'dots',
-            type: 'patternDots',
-            background: 'inherit',
-            color: 'rgba(255, 255, 255, 0.3)',
-            size: 4,
-            padding: 1,
-            stagger: true
-        },
-        {
-            id: 'lines',
-            type: 'patternLines',
-            background: 'inherit',
-            color: 'rgba(255, 255, 255, 0.3)',
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10
-        }
-    ]}
-    fill={[
-        {
-            match: {
-                id: 'ruby'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'c'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'go'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'python'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'scala'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'lisp'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'elixir'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'javascript'
-            },
-            id: 'lines'
-        }
-    ]}
-    legends={[
-        {
-            anchor: 'right',
-            direction: 'column',
-            justify: false,
-            translateX: 140,
-            translateY: 0,
-            itemsSpacing: 2,
-            itemWidth: 60,
-            itemHeight: 14,
-            itemTextColor: '#999',
-            itemDirection: 'left-to-right',
-            itemOpacity: 1,
-            symbolSize: 14,
-            symbolShape: 'circle'
-        }
-    ]}
-/>
+    
 
 
 
@@ -726,6 +711,8 @@ const Dashboard=()=>{
 
     const toggleDrawer=()=>{
         mobile ? setMobile(false) : setMobile(true)
+        //phone && !open ? setContent('') : setOpen(true)
+
     }
 
     const ballanceContent=()=>{
@@ -768,6 +755,60 @@ const Dashboard=()=>{
         
     // };
 
+    const columns=[
+    
+        {
+          title:'Amount($)',
+          dataIndex:'amount',
+          key:'amount',
+          width:50,
+          fixed:false
+        },
+        {
+          title:'Pair',
+          dataIndex:'pair',
+          key:'pair',
+          width:50,
+          fixed:false
+        },
+       
+        {
+          title:'Date',
+          dataIndex:'date',
+          key:'date',
+          width:50,
+          fixed:false
+        },
+        {
+            title:'Id',
+            dataIndex:'key',
+            key:'key',
+            width:50,
+            fixed:false,
+            style:{
+                color:'#ffab00'
+            }
+          },
+          {
+            title:'Confirm',
+            dataIndex:'',
+            key:'key',
+            width:50,
+            render:()=> action=='confirm' ?
+             <Grid container alignItems='center'>
+                 <Button style={{color:'#ffab00',fontSize:20}}>Confirm</Button>
+             </Grid>
+            //  : action=='load' ?
+            //  <Grid container alignItems='center' justify='center'>
+            //      <HashLoader size={30} color='#ffab00' />
+            // </Grid>
+            :
+            null
+
+          },
+        
+      ]
+
     const drawer=()=>{
         let names=['tim','ed','sean']
         let options=[
@@ -784,7 +825,7 @@ const Dashboard=()=>{
                 icon:<LocalAtmIcon style={{width:40,height:40,color:'#ffab00'}} />,
             },
             {
-                name:'Analysis',
+                name:'Confirm',
                 icon:<Poll style={{width:40,height:40,color:'#ffab00'}} />,
             },
         ]
@@ -824,239 +865,329 @@ const Dashboard=()=>{
     const appContent=()=>{
        if(content=='Balance'){
            return (
-               <Grid justify='center' spacing={3} container className='container-p'  style={{padding:10,marginTop:50}} >
-                    <Grid justify='center'  style={{}} md={8} xs={12} container direction='row' spacing={3}>
-        <Grid style={{}} item xs={12} md={6}>
-          <Paper className='profile-paper'>
-            <Grid direction='row' style={{padding:10,}} container>
-                <Grid md={3} xs={3} style={{}} item>
-                    <div>
-                        <AccountBallanceIcon style={{width:60,height:60,color:'#ffab00'}} />
-                    </div>
-                </Grid>
-                <Grid md={6} xs={6} style={{}} item>
-                    <div style={{marginLeft:-10,marginBottom:-20}}>
-                    <h5>
-                            Balance
-                        </h5>
-                    </div>
-                </Grid>
-                <Grid justify='flex-end' alignItems='flex-end' md={2} xs={2} style={{}}  item>
-                    <ToolTip arrow title='Total accessible balance in dollars' style={{display:'grid',placeItems:'flex-end'}}>
-                       <IconButton>
-                       <HelpOutlineIcon style={{width:30,height:30,color:'#ffab00',marginLeft:50,marginTop:-22}} />
-                       </IconButton>
-                    </ToolTip>
-                </Grid>
-            </Grid>
-            <Grid style={{marginTop:-20}} direction='row' justify='center' alignItems='center' container>
-                <Grid md={3} xs={3}  item>
-                    <AttachMoney className='dollar-sign' style={{height:55,width:55,color:'#ffab00',marginLeft:45}} />
-                </Grid>
-                <Grid md={9} xs={9} item>
-           {gotten ? <h3 className='balance-value'  >{info.balance}.00</h3> : <h5>0.00</h5> }
+               <Grid justify='center' container spacing={3} className='container-p'  style={{padding:5,marginTop:60,width:'100%'}} >
+                   <Grid className='top-row' justify='center' style={{height:'auto',padding:10}} container direction='row' spacing={3}>
+                   <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
+<Paper style={{width:'95%'}}  className='profile-paper balance-paper'>
+  <Grid direction='row' style={{padding:5,}} container>
+      <Grid md={3} xs={3} style={{}} item>
+          <div>
+              <AccountBallanceIcon style={{width:60,height:60,color:'#ffab00'}} />
+          </div>
+      </Grid>
+      <Grid md={6} xs={6} style={{}} item>
+          <div style={{marginLeft:-10,marginBottom:-20}}>
+          <h5>
+                  Balance
+              </h5>
+              {/* <Button style={{color:'white'}} onClick={()=>console.log(eth)}>
+                  click
+              </Button> */}
+          </div>
+      </Grid>
+      <Grid justify='flex-end' alignItems='flex-end' md={2} xs={2} style={{}}  item>
+          <ToolTip arrow title='Total accessible balance in dollars' style={{display:'grid',placeItems:'flex-end'}}>
+             <IconButton>
+             <HelpOutlineIcon style={{width:30,height:30,color:'#ffab00',marginLeft:50,marginTop:-22}} />
+             </IconButton>
+          </ToolTip>
+      </Grid>
+  </Grid>
+  <Grid style={{marginTop:-10}} direction='row' justify='center' alignItems='center' container>
+      <Grid md={3} xs={3}  item>
+          <AttachMoney className='dollar-sign' style={{height:50,width:50,color:'#ffab00',marginLeft:40}} />
+      </Grid>
+      <Grid md={9} xs={9} item>
+ {gotten ? <h3 className='balance-value'  >{info.balance}.00</h3> : <h5>0.00</h5> }
+ 
+      </Grid>
+
+  </Grid>
+
+
+  <Grid justify='center' alignItems='center' id='level' style={{marginLeft:1,marginTop:10}} direction='row' container>
+  <Grid 
+ // justify='flex-end' alignItems='flex-end' 
+  item md={2} xs={2} style={{color:'white',marginLeft:5,marginBottom:-5}}>
+           Level
+          </Grid>
+
+          <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white'}}>
+              
+          <StarBorderIcon style={{height:35,width:35,marginTop:9,color:'#ffff'}}  />
+          </Grid>
+
+
+          <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white',}}>
+              <ToolTip title='last deposit'>
+                  <IconButton>
+                  <HourglassEmptyIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}}  />
+                  </IconButton>
+              </ToolTip>
+          
+          </Grid>
+
+          <Grid justify='center' alignItems='center' item md={4} xs={4} style={{color:'white',marginBottom:-9}}>
+              22/9/2021
+         
+          </Grid>
+  </Grid>
+
+
+  <Grid id='progress' style={{marginLeft:15}} direction='row' container>
+  <Grid item md={3} xs={3} style={{color:'white',}}>
+              Progress
+          
+          </Grid>
+
+          <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white'}}>
+              
+          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={7} />
+          </Grid>
+  </Grid>
+  <Grid id='progress' style={{marginLeft:15,marginTop:25}} direction='row' container>
+  <Grid item md={3} xs={3} style={{color:'white',}}>
+              Affiliate
+          
+          </Grid>
+
+          <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white',}}>
+              
+          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={67} />
+          </Grid>
+  </Grid>
+  <Grid id='progress' style={{marginLeft:15,marginTop:10}} container>
+  <Grid item md={2} xs={2} style={{color:'white',}}>
+  <PeopleOutline style={{width:40,height:40,color:'#ffab00'}} />
+          
+          </Grid>
+          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
+             {gotten && !mobile
+             ?
            
-                </Grid>
+              <a style={{color:'#ffab00',width:100}}>
+                 www.winstertrade<br/>investment.com/{info.username}
+              </a>
+          
+             :
+              gotten && mobile
+             ?
+             <a style={{color:'#ffab00',}}>
+             www.winstertradeinvestment.com/<br/>{info.username}
+         </a>
+             :
+             <span>
 
-            </Grid>
-
-
-            <Grid justify='center' alignItems='center' id='level' style={{marginLeft:1}} direction='row' container>
-            <Grid 
-           // justify='flex-end' alignItems='flex-end' 
-            item md={2} xs={2} style={{color:'white',marginLeft:5,marginBottom:-5}}>
-                     Level
-                    </Grid>
-
-                    <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white'}}>
-                        
-                    <StarBorderIcon style={{height:35,width:35,marginTop:9,color:'#ffff'}}  />
-                    </Grid>
-
-
-                    <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white',}}>
-                        <ToolTip title='last deposit'>
-                            <IconButton>
-                            <HourglassEmptyIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}}  />
-                            </IconButton>
-                        </ToolTip>
-                    
-                    </Grid>
-
-                    <Grid justify='center' alignItems='center' item md={4} xs={4} style={{color:'white',marginBottom:-9}}>
-                        22/9/2021
-                   
-                    </Grid>
-            </Grid>
-
-
-            <Grid id='progress' style={{marginLeft:15}} direction='row' container>
-            <Grid item md={3} xs={3} style={{color:'white',}}>
-                        Progress
-                    
-                    </Grid>
-
-                    <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white'}}>
-                        
-                    <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={7} />
-                    </Grid>
-            </Grid>
-            <Grid id='progress' style={{marginLeft:15}} direction='row' container>
-            <Grid item md={3} xs={3} style={{color:'white',}}>
-                        Affiliate
-                    
-                    </Grid>
-
-                    <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white',marginTop:5}}>
-                        
-                    <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={67} />
-                    </Grid>
-            </Grid>
-            <Grid id='progress' style={{marginLeft:15,marginTop:10}} container>
-            <Grid item md={2} xs={2} style={{color:'white',}}>
-            <PeopleOutline style={{width:40,height:40,color:'#ffab00'}} />
-                    
-                    </Grid>
-                    {/* <div  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
-                       {gotten && !mobile
-                       ?
-                     
-                        <a style={{color:'#ffab00',width:100}}>
-                           www.winstertrade<br/>investment.com/{info.username}
-                        </a>
-                    
-                       :
-                        gotten && mobile
-                       ?
-                       <a style={{color:'#ffab00',}}>
-                       www.winstertradeinvestment.com/<br/>{info.username}
-                   </a>
-                       :
-                       <span>
-
-                       </span>
-                       
-
-                    }
-                   
-                    </div> */}
-            </Grid>
-
-
-
-          </Paper>
-        </Grid>
-        
-            <Grid item style={{}}  direction='column'  xs={12} md={6}>
-            <Grid  style={{}} item>
-            <Paper xs={12} md={3} style={{height:160}} className='profile-paper'>
-              <Grid container  alignItems='center' direction='row'>
-               
-              <Grid xs={2} md={2} item>
-                  <FontAwesomeIcon icon={faBtc} style={{color:'#ffab00',width:40,height:40}} />
-              </Grid>
-
-              <Grid style={{}} xs={8} md={8} item >
-                 <h5>
-           {gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'BTC'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-                 </h5>
-              </Grid>
-
-              <Grid xs={2} md={2} item >
-                 <ToolTip style={{marginTop:-35,marginLeft:15}} title='Bitcoin wallet ballance'>
-                     <IconButton>
-                         <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-                     </IconButton>
-                 </ToolTip>
-              </Grid>
-              <Grid style={{}} container>
-              <Line
-                    style={{marginTop:-15,height:110,}}
-                    data={chartExample1[bigChartData]}
-                    options={chartExample1.options}
-                  />
-              </Grid>
-              </Grid>
+             </span>
              
-          </Paper>
+
+          }
+          <Grid>
+
+          </Grid>
+            <ToolTip>
+                <HelpOutlineIcon style={{width:30,height:30,color:'#ffab00'}} />
+            </ToolTip>
+          </Grid>
+  </Grid>
+
+
+
+</Paper>
+</Grid>
+
+<Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
+<Grid justify='center'  style={{}} item>
+<Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
+  <Grid container  alignItems='center' direction='row'>
+   
+  <Grid style={{}} xs={2} md={2} item>
+  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={btcIcon}/>
+  </Grid>
+
+  <Grid style={{marginTop:-8}}  xs={8} md={8} item >
+     <h5>
+{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'BTC'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
+     </h5>
+  </Grid>
+
+  <Grid xs={2} md={2} item >
+     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Bitcoin wallet ballance'>
+         <IconButton>
+             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
+         </IconButton>
+     </ToolTip>
+  </Grid>
+  <Grid  style={{width:'100%'}} container>
+ {btcData ? <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
+    <Line
+        style={{marginBottom:-30,height:170}}
+        data={chartExample1.data1}
+        options={chartOptions}
+      />
+ </div>
+        :
+        null
+    }
+  </Grid>
+  </Grid>
+ 
+</Paper>
+</Grid>
+<Grid  item>
+<Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
+  <Grid container  alignItems='center' direction='row'>
+  <Grid style={{}} xs={2} md={2} item>
+  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={ethIcon}/>
+  </Grid>
+
+  <Grid style={{marginTop:-8}} xs={8} md={8} item>
+     <h5>
+{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'ETH'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
+     </h5>
+  </Grid>
+
+  <Grid xs={2} md={2} item>
+     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Ethereum wallet ballance'>
+         <IconButton>
+             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
+         </IconButton>
+     </ToolTip>
+  </Grid>
+  <Grid style={{width:'100%'}} container>
+     {ethData ?    <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
+    <Line
+        style={{marginBottom:-30,height:170}}
+        data={chartExample2.data2}
+        options={chartOptions}
+      />
+ </div>
+        :
+        null
+        }
         </Grid>
-        <Grid  item>
-          <Paper xs={12} md={3} style={{height:160}} className='profile-paper'>
-              <Grid container  alignItems='center' direction='row'>
-              <Grid xs={2} md={2} item>
-                  <FontAwesomeIcon icon={faEthereum} style={{color:'#ffab00',width:40,height:40}} />
+  </Grid>
+
+</Paper>
+</Grid>
+</Grid>
+<Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
+<Grid justify='center'  style={{}} item>
+<Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
+  <Grid container  alignItems='center' direction='row'>
+   
+  <Grid style={{}} xs={2} md={2} item>
+  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={tetherIcon}/>
+  </Grid>
+
+  <Grid style={{marginTop:-8}}  xs={8} md={8} item >
+     <h5>
+{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'USDT'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
+     </h5>
+  </Grid>
+
+  <Grid xs={2} md={2} item >
+     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Bitcoin wallet ballance'>
+         <IconButton>
+             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
+         </IconButton>
+     </ToolTip>
+  </Grid>
+  <Grid  style={{width:'100%'}} container>
+ {tetherData ? <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
+    <Line
+        style={{marginBottom:-30,height:170}}
+        data={chartExample1.data2}
+        options={chartOptions}
+      />
+ </div>
+        :
+        null
+    }
+  </Grid>
+  </Grid>
+ 
+</Paper>
+</Grid>
+<Grid  item>
+<Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
+  <Grid container  alignItems='center' direction='row'>
+  <Grid style={{}} xs={2} md={2} item>
+  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={safemoon}/>
+  </Grid>
+
+  <Grid style={{marginTop:-8}} xs={8} md={8} item>
+     <h5>
+{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'SAFEMOON'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
+     </h5>
+  </Grid>
+
+  <Grid xs={2} md={2} item>
+     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Ethereum wallet ballance'>
+         <IconButton>
+             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
+         </IconButton>
+     </ToolTip>
+  </Grid>
+  <Grid style={{width:'100%'}} container>
+     {moonData ?    <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
+    <Line
+        style={{marginBottom:-30,height:170}}
+        data={chartExample1.data3}
+        options={chartOptions}
+      />
+ </div>
+        :
+        null
+        }
+        </Grid>
+  </Grid>
+
+</Paper>
+</Grid>
+</Grid>
+
+
+                   </Grid>
+                   <Grid style={{marginTop:10}} container direction='row' spacing={3}>
+
+                   <Grid  className='crypto-dashboa' md={8} xs={12} justify='center'  style={{width:500}} container>
+              
+                <Grid style={{width:'100%',marginLeft:44}} item>
+                <Paper style={{width:'97%',height:'100%'}} className='profile-paper bottom-profile'>
+               <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+               </Paper>
+                </Grid>
+              
               </Grid>
 
-              <Grid xs={8} md={8} item>
-                 <h5>
-           {gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'ETH'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-                 </h5>
-              </Grid>
 
-              <Grid xs={2} md={2} item>
-                 <ToolTip style={{marginTop:-35,marginLeft:15}} title='Ethereum wallet ballance'>
-                     <IconButton>
-                         <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-                     </IconButton>
-                 </ToolTip>
-              </Grid>
-              <Grid container>
-                    <Line
-                    style={{marginTop:-15,height:110}}
-                    data={chartExample1.data2}
-                    options={chartExample1.options}
-                  />
-                    </Grid>
-              </Grid>
-            
-          </Paper>
-        </Grid>
-            </Grid>
+              <Grid style={{}} justify='center'  item xs={12} md={4}>
+<Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
+ 
+<TechnicalAnalysis width='100%' symbol={analPair} style={{backgroundColor:'white'}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+  
+</Paper>
+</Grid>
+                   </Grid>
 
-
-
-            <Grid md={12} xs={12} justify='flex-start' alignItems='flex-start' id='crypto-market' style={{marginTop:20}} item>
-                <Paper style={{width:'100%',marginTop:-20}} className='profile-paper bottom-profile'>
-                <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={400}></CryptoCurrencyMarket>
-                </Paper>
-            </Grid>
-        
-
-      </Grid>
-      <Grid  justify='center' alignItems='center' md={4} xs={12} spacing={3} style={{}} item >
-      <Grid style={{}} item xs={12} md={12}>
-          <Paper style={{height:345,marginTop:12}} className='profile-paper'>
-              <h6 style={{marginBottom:1}}>
-                  Market share per asset
-              </h6>
-            {pieComponent}
-          </Paper>
-        </Grid>
-        <Grid style={{height:500}} item xs={12} md={12}>
-          <Paper style={{height:420,padding:0,marginTop:30}} className='profile-paper'>
-           
-          <TechnicalAnalysis width='100%' symbol={analPair} style={{backgroundColor:'white'}} isTransparent colorTheme="dark"></TechnicalAnalysis>
-            
-          </Paper>
-        </Grid>
-      </Grid>
-      
      
           
                </Grid>
            )
        }
+
        else if(content=='Deposit'){
            return (
                 
-                    <Grid style={{marginTop:50}} container justify='center' alignItems='center'>
+                    <Grid style={{marginTop:20,display:'grid',placeItems:'center'}} container justify='center' alignItems='center'>
                         <Paper style={{}} className='profile-paper deposit-paper'>
                            <Grid item style={{marginBottom:30}} >
                                <h3 style={{textAlign:'center'}}>
                                    Make a <span style={{color:'#ffab00'}}>Deposit</span>
                                </h3>
                            </Grid>
-                           <Grid style={{}} item>
+                           <Grid style={{}} container>
                                <form>
                                    <Formik initialValues={{amount:''}} onSubmit={(value)=>{
                                         
@@ -1099,54 +1230,129 @@ const Dashboard=()=>{
                                           alert('All fields are required')
                                       }
                                        
-                                   }} >{({handleChange,handleSubmit,values})=>(
-                                       <Grid container style={{display:'grid',placeItems:'center'}} >
+                                   }} >{({handleChange,handleSubmit,values,handleReset,handleBlur})=>(
+                                       <Grid item style={{display:'grid',placeItems:'center'}} >
 
                                            <Grid item justify='center' alignItems='center'>
-                                                <Typography style={{textAlign:'center',color:'white',display:'grid',placeItems:'center'}}>
+                                                <a style={{textAlign:'center',color:'white',fontSize:18}}>
                                                     You can easily make a deposit to your account it is simple and straightforward
-                                                </Typography>
+                                                </a>
                                            </Grid>
-                                           <Grid style={{marginTop:50}} id='pair' container direction='row'>
-                                                <Grid style={{}} xs={6} md={6} container justify='flex-end' alignItems='center'>
-                                                   {depoPair=='BTC' ?  <IconButton style={{border:'5px solid #ffab00',width:120,height:120,marginRight:40}}>
-                                                        <motion.div style={{}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                        <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00',}} icon={faBtc} />
+                                           <Grid className='coin-row' style={{marginTop:50}} id='pair' container direction='row'>
+                                               
+                                               <Grid className='coin-sel' xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='BTC' ?  
+                                                        <Grid  style={{display:'grid',placeItems:'center'}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                            <Image priority={true} width={70} height={70}  src={btcIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton  onClick={()=>{setDepoPair('BTC');setShowDepo(false)}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                        <Image priority={true} width={70} height={70} responsive src={btcIcon}/>
                                                         </motion.div>
-                                                    </IconButton>
-                                                                                                    :
-                                                    <IconButton onClick={()=>{setDepoPair('BTC')}}>
-                                                    <motion.div style={{marginRight:40}} whileHover={{scale:1.2}}>
-                                                    <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} />
-                                                    </motion.div>
-                                                    </IconButton>
-                                                 
-                                                }
-                                                </Grid>
-                                              
-                                                <Grid style={{}} xs={6} md={6} container justify='flux-start' alignItems='center'>
-                                                   {depoPair=='ETH' ?  <IconButton style={{border:'5px solid #ffab00',width:120,height:120,marginLeft:40}}>
-                                                        <motion.div style={{}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                        <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00',}} icon={faEthereum} />
-                                                        </motion.div>
-                                                    </IconButton>
-                                                    :
-                                                    <IconButton onClick={()=>{setDepoPair('ETH')}}>
-                                                    <motion.div style={{marginLeft:40}} whileHover={{scale:1.2}}>
+                                                        </IconButton>
                                                      
-                                                    <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faEthereum} />
-                                                    </motion.div>
-                                                    </IconButton>
-                                                  
-                                                }
-                                                </Grid>
-                                                
-                                           </Grid>
+                                                    }
+                                                    </Grid>
+    
+                                   
+                                                    
+                                               <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='ETH' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                            <Image priority={true} width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setDepoPair('ETH');setShowDepo(false)}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                        <Image priority={true} responsive width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    
+                                               <Grid className='coin-sel' style={{display:'grid',placeItems:'center'}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='USDT' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
+                                                            </motion.div> 
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                       
+                                                            <IconButton style={{}} onClick={()=>{setDepoPair('USDT');setShowDepo(false)}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+
+                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                        
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                    
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='SAFEMOON' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setDepoPair('SAFEMOON');setShowDepo(false)}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+                                                        <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                            
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                                    </Grid>
+                                         
                                                                 <Input
         className='app-input first-input '
         style={{color:'white',textAlign:'center',marginTop:40,marginBottom:30}}
         placeholder='Amount in USD'
-        
+          onBlur={()=>setShowDepo(false)}
           id="amount"
           color='primary'
           autoComplete={false}
@@ -1164,7 +1370,7 @@ const Dashboard=()=>{
 
                                 <Grid container justify='center' alignItems='center'>
                                 
-                                        <h3>
+                                        <h3 style={{textAlign:'center'}}>
                                         <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
                                         </h3>
                                 </Grid>
@@ -1180,16 +1386,24 @@ const Dashboard=()=>{
                                         </Button>
                                     }
                                 </Grid>
-                                <Grid style={{marginTop:30}} justify='center' alignItems='center' item>
-                                    {showDepo
+                                <Grid style={{marginTop:-20}} justify='center' alignItems='center' item>
+                              
+                                  <Grid container>
+                                 
+                                  {showDepo
                                     ?
-                                    <p align='center' style={{color:'white'}}>
-                                    You are about to make an investment of <span style={{color:'#ffab00'}}>${values.amount}</span> You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
+                                 <Grid container>
+                                       
+                                        <p onBlur={()=>setShowDepo(false)} style={{color:'white',textAlign:'center',fontSize:20}}>
+                                    You are about to make an deposit of <span style={{color:'#ffab00'}}>${values.amount}</span> You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
                                     to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaayuw4lak3ez2cl05qdzg6d</a> : depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5fc7754aE63484F48AC79</a> : <span></span>} and upload proof of Payment
                                 </p>
+                                 </Grid>
                                     :
                                     <span></span>
                                     }
+                                  </Grid>
+                                 
                                 </Grid>
                                        </Grid>
                                    )}
@@ -1211,7 +1425,7 @@ const Dashboard=()=>{
        else if(content=='Withdraw'){
            return (
             <Grid style={{marginTop:50}} container justify='center' alignItems='center'>
-            <Paper style={{}} className='profile-paper deposit-paper'>
+            <Paper style={{}} className='profile-paper withdraw-paper'>
                <Grid item style={{marginBottom:30}} >
                    <h3 style={{textAlign:'center'}}>
                        Make a <span style={{color:'#ffab00'}}>Withdrawal</span>
@@ -1263,48 +1477,124 @@ const Dashboard=()=>{
                           }
                            
                        }} >{({handleChange,handleSubmit,values})=>(
-                           <Grid container style={{display:'grid',placeItems:'center'}} >
+                           <Grid item style={{display:'grid',placeItems:'center'}} >
 
-                               <Grid item justify='center' alignItems='center'>
-                                    <Typography style={{textAlign:'center',color:'white',display:'grid',placeItems:'center'}}>
-                                        You can easily make a Withdrawal to your designated crypto address within 3 bussiness days, which can be tracked through your reference number
-                                    </Typography>
+                               <Grid style={{padding:20,textAlign:'center'}} item justify='center' alignItems='center'>
+                                    <a className=''  style={{textAlign:'center',color:'white',fontSize:20}}>
+                                        You can easily make a Withdrawal to your designated crypto address within 3
+                                         bussiness days, which can be tracked through your reference number
+                                    </a>
                                </Grid>
-                               <Grid style={{marginTop:50}} id='pair' container direction='row'>
-                                    <Grid style={{}} xs={6} md={6} container justify='flex-end' alignItems='center'>
-                                    {depoPair=='BTC' ?  <IconButton style={{border:'5px solid #ffab00',width:120,height:120,marginRight:40}}>
-                                                        <motion.div style={{}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                        <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00',}} icon={faBtc} />
+                               <Grid className='coin-row' style={{marginTop:50}} id='pair' container direction='row'>
+                                               
+                                               <Grid className='coin-sel' xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='BTC' ?  
+                                                        <Grid  style={{display:'grid',placeItems:'center'}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                            <Image priority={true} width={70} height={70}  src={btcIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton  onClick={()=>{setDepoPair('BTC')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                        <Image priority={true} width={70} height={70} responsive src={btcIcon}/>
                                                         </motion.div>
-                                                    </IconButton>
-                                                                                                    :
-                                                    <IconButton onClick={()=>{setDepoPair('BTC')}}>
-                                                    <motion.div style={{marginRight:40}} whileHover={{scale:1.2}}>
-                                                    <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} />
-                                                    </motion.div>
-                                                    </IconButton>
-                                                 
-                                                }
-                                    </Grid>
-                                  
-                                    <Grid style={{}} xs={6} md={6} container justify='flex-start' alignItems='center'>
-                                    {depoPair=='ETH' ?  <IconButton style={{border:'5px solid #ffab00',width:120,height:120,marginLeft:40}}>
-                                                        <motion.div style={{}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                        <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00',}} icon={faEthereum} />
-                                                        </motion.div>
-                                                    </IconButton>
-                                                    :
-                                                    <IconButton onClick={()=>{setDepoPair('ETH')}}>
-                                                    <motion.div style={{marginLeft:40}} whileHover={{scale:1.2}}>
+                                                        </IconButton>
                                                      
-                                                    <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faEthereum} />
-                                                    </motion.div>
-                                                    </IconButton>
-                                                  
-                                                }
-                                    </Grid>
-                                    
-                               </Grid>
+                                                    }
+                                                    </Grid>
+    
+                                   
+                                                    
+                                               <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='ETH' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                            <Image priority={true} width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setDepoPair('ETH')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                        <Image priority={true} responsive width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    
+                                               <Grid className='coin-sel' style={{display:'grid',placeItems:'center'}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='USDT' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
+                                                            </motion.div> 
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                       
+                                                            <IconButton style={{}} onClick={()=>{setDepoPair('USDT')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+
+                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                        
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                    
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {depoPair=='SAFEMOON' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setDepoPair('SAFEMOON')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+                                                        <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                            
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                                    </Grid>
+                                         
                                                     <Input
 className='app-input first-input '
 style={{color:'white',textAlign:'center',marginTop:40,marginBottom:30}}
@@ -1388,11 +1678,14 @@ onChange={handleChange('address')}
 
            )
        }
-       else {
+       else if(content=='Confirm') {
         return (
-            <Grid direction container style={{padding:30}}>
-               <Paper style={{backgroundColor:'#131530',width:'80%',marginTop:100}}>
-
+            <Grid direction container style={{padding:30,marginTop:20}}>
+               <Paper style={{backgroundColor:'rgba(0,0,0,0)',width:'100%',marginTop:20}}>
+               <Table emptyText={()=><p style={{fontSize:20,color:'white',padding:20}}>No pending deposits</p>} 
+               title={()=><h3 style={{}}>Pending deposits</h3>} rowClassName='table-row' 
+               style={{color:'white'}} transformColumns className='depo-table' 
+               tableLayout='auto' useFixedHeader={false} scroll={{y:false,x:false}} columns={columns}  data={gotten ? info.investment : null} />
                </Paper>
             </Grid>
         )
@@ -1406,22 +1699,45 @@ onChange={handleChange('address')}
                 title='Inbox'
                 color='primary'
                 style={{backgroundCololor:"black",height:60,}}
-
+                className='app-bar'
             >
                      <Toolbar>
-                  <IconButton onClick={toggleDrawer}>
-                  <MenuIcon style={{height:50,width:50,color:"black"}} />
+                       { phone ?
+                          <IconButton onClick={toggleDrawer}>
+                          <MenuIcon style={{height:50,width:50,color:"black"}} />
+                          </IconButton>
+                          : !phone ?
+                          <IconButton>
+                          <Image layout='intrinsic' width={50} height={50} color='ffab00' src={black} />
+                          </IconButton>
+                          :
+                          null
+                       }
+                 
+                  <h5 style={{color:'black'}} >
+                    Dashboard
+                  </h5>
+
+
+                 <Grid style={{}} justify='flex-end' spacing={2} container direction='row'>
+              
+                   <Grid justify='flex-end' style={{}} container xs={3} md={2}>
+                   <IconButton onClick={()=>{Router.push('/home')}}>
+                    <ToolTip  >
+                    <NotificationsNone style={{width:40,height:40,color:'black'}} />
+                    </ToolTip>
                   </IconButton>
-                  <Typography variant='h5'>
-                      Dashboard
-                  </Typography>
-                 <div style={{display:'grid',placeItems:'flex-end',width:'100%'}}>
-                 <IconButton onClick={()=>{Router.push('/home')}}>
+                   </Grid>
+                   <Grid justify='flex-end' container xs={3} md={2}>
+                   <IconButton onClick={()=>{Router.push('/home')}}>
                     <ToolTip  >
                     <ExitToAppIcon style={{width:40,height:40,color:'black'}} />
                     </ToolTip>
                   </IconButton>
-                 </div>
+                   </Grid>
+              
+
+                 </Grid>
               </Toolbar>
 
             </AppBar>
@@ -1429,11 +1745,12 @@ onChange={handleChange('address')}
             
 
         <Drawer
+          className='drawer-container'
           dismissible
           open={mobile}
-          style={{backgroundColor:'black'}}
-          //onOpen={()=>{!mobile ? setContent('') : setOpen(true)}}
-          
+          style={{backgroundColor:'black',}}
+          //onOpen={()=>{phone ? setContent('') : setOpen(true)}}
+          //className='drawer'
         >
       
             <DrawerContent>
@@ -1441,6 +1758,7 @@ onChange={handleChange('address')}
                 <List>
                 <div>
         <DrawerHeader style={{marginTop:100}}>
+
               <div style={{textAlign:'center',color:'#ffab00'}}>
               {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
     
@@ -1455,11 +1773,143 @@ onChange={handleChange('address')}
 
             </DrawerContent>
         </Drawer>
-        <DrawerAppContent>
-            <div>
+        <DrawerAppContent className='drawer-app-content'>
+            <div >
             {appContent()}
+         
             </div>
         </DrawerAppContent>
+
+
+
+        <Footer
+  className='main-footer'
+    columns={[
+      {
+       items:[
+         {
+          icon: (
+            <PhoneIcon style={{color:'#9a7801',width:25,height:25,}} />
+          ),
+         title:' Phone: +48732121453',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal:false,
+          className:'main-footer',
+         },
+         {
+          icon: (
+            <EmailIcon style={{color:'#9a7801',width:25,height:25}} />
+          ),
+         title:' E-mail: winsterinvest@gmail.com',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal: false,
+          className:'main-footer',
+        },
+        {
+          icon: (
+            <AddressIcon style={{color:'#9a7801',width:25,height:25}} />
+          ),
+         title:'Address: 63 kenton Road, Yorkshire, England',
+          //url: 'https://yuque.com',
+          //description:' +48732121453',
+          openExternal: false,
+          className:'main-footer',
+        },
+       ]
+      },
+
+      {
+       items:[
+         {
+          title:(
+            <div>
+              Sign up
+            </div>
+          ),
+          url: '/signup',
+          //description:'register for an account',
+          openExternal: true,
+          className:'main-footer',
+         },
+         {
+          title:(
+            <div>
+              Login 
+            </div>
+          ),
+          url: '/login',
+          //description:'Login to your account',
+          openExternal: true,
+          className:'main-footer',
+         },
+         {
+          title:(
+            <a href='/home'>
+              Contact us
+            </a>
+          ),
+          //url: '',
+          //description:' +48732121453',
+          openExternal: true,
+          className:'main-footer',
+          LinkComponent:'a'
+         },
+        
+       ]
+      },
+
+
+
+      {
+        items:[
+          {
+           title:(
+             <div>
+               Services
+             </div>
+           ),
+           url: '/signup',
+           //description:'register for an account',
+           openExternal: true,
+           className:'main-footer',
+          },
+          {
+           title:(
+             <div>
+               About us
+             </div>
+           ),
+           url: '/login',
+           //description:'Login to your account',
+           openExternal: true,
+           className:'main-footer',
+          },
+          {
+           title:(
+             <div>
+               Privacy policy
+             </div>
+           ),
+           //url: '',
+           //description:' +48732121453',
+           openExternal: true,
+           className:'main-footer',
+           LinkComponent:'a'
+          },
+          
+         
+        ]
+       }
+    ]}
+    bottom={()=>(
+      <div>
+        <Image layout='intrinsic' width={50} height={50} color='ffab00' src={logo1} />
+      </div>
+    )}
+    backgroundColor='#ffab0000'
+  />
              
         </div>
     )

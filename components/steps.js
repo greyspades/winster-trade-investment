@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -13,6 +13,18 @@ import StepConnector from '@material-ui/core/StepConnector';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import HowToReg from '@material-ui/icons/HowToRegOutlined'
+import StepIcon from '@material-ui/core/StepIcon'
+import StepContent from '@material-ui/core/StepContent'
+import Grid from '@material-ui/core/Grid'
+import signup from '../img/document.svg'
+import confirm from '../img/confirmation.svg'
+import deposit from '../img/deposit.svg'
+import Image from 'next/image'
+import Forward from '@material-ui/icons/ArrowForward'
+import Down from '@material-ui/icons/ArrowDownward'
+
+
+
 
 // const QontoConnector = withStyles({
 //   alternativeLabel: {
@@ -194,10 +206,28 @@ function getStepContent(step) {
   }
 }
 
-const Steps=()=>{
+const Steps=(props)=>{
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
+  const [mobile,setMobile]=useState(false)
+
+  useEffect(()=>{
+    let width=window.innerWidth
+    //let user=Cookie.getJSON('user')
+    
+    console.log(name)
+    if(width<500){
+      setMobile(true)
+      console.log('mobile view')
+     
+    }
+    else if(width>500){
+        setMobile(false)
+        console.log('desktop view')
+
+    }
+  },[])
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -212,53 +242,45 @@ const Steps=()=>{
   };
 
   return (
-    <div  className={classes.root}>
-      <h3 style={{color:'#ffba00',textAlign:'center'}}>
+    <div  style={{marginTop:50}} className={classes.root}>
+      <h3 className='getting-started-header' style={{textAlign:'center'}}>
       How to get started
     </h3>
+  
      
-      <Stepper className='steps' alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
+      <Grid direction='row' container justify='center' alignItems='center' >
+        <Grid style={{display:'grid',placeItems:'center'}} item xs={12} md={2}>
+          <Image width={100} height={100} layout='intrinsic' src={signup} />
+          <h4 style={{textAlign:'center'}}>Register</h4>
+        </Grid>
+        <Grid style={{}} style={{display:'grid',placeItems:'center'}} item xs={12} md={2}>
+        {mobile ? 
+          <Down style={{width:50,height:50,}} />
+          :
+          <Forward style={{width:50,height:50,}} />
+        }
+        </Grid>
         
-          <Step>
-            <StepLabel><p style={{color:'white'}}>Register for a free account by clicking <a>Here</a></p></StepLabel>
-          </Step>
-          <Step>
-            <StepLabel><p style={{color:'white'}}>Confirm your account details through your Email</p>,</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel> <p style={{color:'white'}}>Make a deposit to your account and start reaping your benefits </p></StepLabel>
-          </Step>
-    
-      </Stepper>
-      <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
+        <Grid style={{display:'grid',placeItems:'center'}} item xs={12} md={2}>
+          <Image width={100} height={100} layout='intrinsic' src={confirm} />
+          <h4 style={{textAlign:'center'}}>Confirm your Email</h4>
+        </Grid>
+        <Grid style={{display:'grid',placeItems:'center'}} item xs={12} md={2}>
+        {mobile ? 
+          <Down style={{width:50,height:50,}} />
+          :
+          <Forward style={{width:50,height:50,}} />
+        }
+        </Grid>
+        <Grid style={{display:'grid',placeItems:'center'}} item xs={12} md={2}>
+          <Image width={120} height={120} layout='intrinsic' src={deposit} />
+          <h4 style={{textAlign:'center'}}>Make a deposit</h4>
+        </Grid>
+      </Grid>
+      <p className='access-para' style={{textAlign:'center',fontSize:20}}>
+    To access the features and benefits being provided by winster trade investment kindly <Button style={{color:'#ffab00'}} onClick={()=>{Router.push(`../Register/${props.bomber}`)}} ><span style={{}}> Sign up </span></Button> with credentials and get started. It's quite easy and doesn't take 
+much time, of which you get an offer to become an investor and earn profit. For that reason you mandated to complete the registration process. In order to register yourself as a member of winstertradeinvestment.com, click on the Create Account button, fill in the registration form and press Register. Your account is ready to use! You are obliged to provide only complete and accurate information about yourself (the Registration Data) when registering as a Member.
+    </p>
     </div>
   );
 }

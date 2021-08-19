@@ -8,10 +8,10 @@ const Overview = (props) => {
                 <h3 style={{color:'#ffba00',marginBottom:50}}>
                     Market Overview
                 </h3>
-                <p >
+                <p style={{fontSize:20,padding:10,textAlign:'center'}} >
                     Gain insight through analytical data gathered accross numerous markets and pairs
                 </p>
-            <Grid direction style={{width:'80%'}}>
+            <Grid direction className='market-overview'>
             <MarketOverview symbolActiveColor='#ffba00' plotLineColorGrowing='#ffba00' plotLineColorFalling='#ffba00' isTransparent={true} height={600} width='100%'  colorTheme='dark' ></MarketOverview>
             </Grid >
             </div>

@@ -4,6 +4,8 @@ const withSass = require("@zeit/next-sass");
 const webpack = require("webpack");
 const path = require("path");
 const withCss=require('@zeit/next-css')
+//const { i18n } = require('./next-i18next.config');
+
 
 module.exports = withPlugins([[withImages]], {
   webpack(config, options) {
@@ -12,7 +14,8 @@ module.exports = withPlugins([[withImages]], {
   },
   env: {
     mongodburl:"mongodb+srv://grey:Vermilion9%23@cluster0.j4dir.mongodb.net/users?retryWrites=true&w=majority"
-  }
+  },
+  
 });
 /*module.exports = {
   env: {

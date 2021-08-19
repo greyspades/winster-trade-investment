@@ -18,19 +18,19 @@ import {faCoins} from  '@fortawesome/free-solid-svg-icons'
 // } from 'reactstrap'
 
 
-import { Grid,Card,CardHeader,CardContent } from '@material-ui/core'
+import { Grid,Card,CardHeader,CardContent,Paper } from '@material-ui/core'
 
 const Products = () => {
     return (
-        <div>
-            <h2 style={{textAlign:'center', color:'#9a7801'}}>
+        <div style={{paddingBottom:60,paddingTop:60,paddingLeft:30,paddingRight:30}}>
+            <h3 style={{textAlign:'center', color:'#ffab00'}}>
                 Our Services
-            </h2>
+            </h3>
             <Grid container
             direction
             justify='center'
             alignItems='center'
-            //className='product-grid'
+            
             
             >
 
@@ -43,13 +43,13 @@ const Products = () => {
             
             >
                                 <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid'>
+                                <Card elevation={20} className='product-grid countdown-bg1'>
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
                                         <FontAwesomeIcon className='product-logo' icon={faHandHoldingUsd} style={{width:100,height:100,color:"white"}}  />
                                         </div>
-                                        <h5 style={{textAlign:'center' ,color:'#9a7801',marginTop:40}}>
+                                        <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Loans
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
@@ -70,13 +70,13 @@ const Products = () => {
             xs={12}
             >
                                    <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid'>
+                                <Card className='product-grid countdown-bg1'>
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
                                         <FontAwesomeIcon className='product-logo' icon={faPiggyBank} style={{width:100,height:100,color:"white"}}  />
                                         </div>
-                                        <h5 style={{textAlign:'center' ,color:'#9a7801',marginTop:40}}>
+                                        <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Investments
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
@@ -98,13 +98,13 @@ const Products = () => {
             xs={12}
             >       
              <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid'>
+                                <Card className='product-grid countdown-bg1'>
 
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
                                         <FontAwesomeIcon className='product-logo' icon={faMoneyCheckAlt} style={{width:100,height:100,color:"white"}}  />
                                         </div>
-                                        <h5 style={{textAlign:'center' ,color:'#9a7801',marginTop:40 }}>
+                                        <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40 }}>
                                             Crypto Transactions
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
@@ -125,13 +125,13 @@ const Products = () => {
             xs={12}
             >
                  <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid'>
+                                <Card className='product-grid countdown-bg1'>
                                    
                                     <CardContent style={{}}>
                                         <div style={{display:'grid',placeItems:'center'}}>
                                         <FontAwesomeIcon className='product-logo' icon={faCoins} style={{width:100,height:100,color:"white"}}  />
                                         </div>
-                                        <h5 style={{textAlign:'center',color:'#9a7801',marginTop:40}}>
+                                        <h5 style={{textAlign:'center',color:'#ffab00',marginTop:40}}>
                                             Crypto Mining
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>

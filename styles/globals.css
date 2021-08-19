@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 .heading-talk {
-  color: blue;
+  color: #8c96a5;
   margin-left: 200px;
 }
 .heading-card {
@@ -24,7 +24,7 @@ a {
 
 }
 .product-card {
-  border:  #ffba00 solid 5px;
+  border:  #ffba00 solid 3px;
   border-bottom:  #ffba00 solid 0px;
   margin:10px;
   color: #131519;
@@ -32,7 +32,7 @@ a {
   
 }
 .product-grid{
-  background: linear-gradient(#131519 40%,#131519 , #ffba00 );
+  background: linear-gradient(#131519 70%,#131519, #ffba00 );
   width: 80%;
   height: auto;
   margin-top: 50px;
@@ -43,22 +43,24 @@ a {
 }
 .crypto-market {
   /* border: 1px solid #ffba00; */
-  background-image: url(../img/event4.jpg);
+  
   
 }
 .faqs-accordion {
   background-color: rgba(0, 0, 0, 0);
   
-  border-left: 5px solid #ffba00;
-  border-top: 5px solid #ffba00;
-  border-bottom: 5px solid #ffba00;
+  border-left: 2px solid #ffba00;
+  border-top: 2px solid #ffba00;
+  border-bottom: 2px solid #ffba00;
   margin-bottom: 30px;
-  width: 70%;
+  width: 90%;
  
   
 }
 .steps {
   background-color:rgba(0, 0, 0, 0) ;
+  width: 95%;
+
   
 }
 .plans-icon {
@@ -82,7 +84,7 @@ a {
 }
 .signup {
   background-image: url(../img/event4.jpg);
-  height:100%;
+  height:auto;
   background-repeat: no-repeat;
   width: 100%;
   border-radius: 10px;
@@ -102,8 +104,8 @@ a {
   margin-bottom: 40px;
 }
 .first-input {
-  margin-bottom: 40px;
-  margin-top: 10px;
+  /* margin-bottom: 40px;
+  margin-top: 10px; */
 }
 ::placeholder {
   color: white;
@@ -129,7 +131,7 @@ a {
   margin-top: 25px;
   /* width: 95%; */
   background-image: linear-gradient(black 90%,black);
-  background-color: black;
+  
   height: auto;
   padding: 10px;
 
@@ -142,7 +144,7 @@ a {
   margin-top: 100px;
 }
 .deposit-paper {
-  width: 100%;
+ 
   padding: 30px;
 }
 .react-crypto-compare-currency {
@@ -151,15 +153,250 @@ a {
 ::-webkit-textfield-decoration-container {
   background-color: rgba(0, 0, 0, 0);
 }
-.container-p {
-  
-}
+
 .dollar-sign {
-  margin-left: 50;
+  margin-left: 30;
+  margin-right: 10px;
 }
 .balance-value {
-  font-size: 40px;
+  font-size: 35px;
+  margin-left: 10px;
 }
+.success-paper {
+  margin-top: 40px;
+  width: 90%;
+  background-image: linear-gradient(black 90%,black);
+  background-color: black;
+  height: auto;
+  padding: 10px;
+
+  
+}
+input {
+  outline:none;
+background-color: rgba(0, 0, 0, 0);
+ }
+ /* input:-webkit-autofill,
+ input:-webkit-autofill:hover,
+ input:-webkit-autofill:focus,
+ input:-webkit-autofill:active  {
+   -webkit-box-shadow: 0 0 0 30px rgba(0,0,0,0) inset;
+ } */
+
+ input:-webkit-autofill
+{
+ -webkit-text-fill-color: white !important;
+ -webkit-background-clip: text;
+}
+.second-sign {
+  
+}
+.username-input {
+  margin-top: 40px;
+}
+.country-input {
+  margin-bottom: 30px;
+  margin-left: 32px;
+  margin-top: 10px;
+}
+/* .country-grid {
+  display: grid;
+  place-items: flex-start;
+} */
+.dashboard-chart {
+  width: 100%;
+  height: 110px
+}
+.crypto-dashboard {
+  margin-top:30px;
+  margin-bottom: 70px;
+}
+/* .bottom-profile {
+  margin-bottom: -40px;
+} */
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  color:#ffab00;
+}
+.market-overview {
+  width: 95%;
+}
+.index-head {
+  padding: 30px;
+  text-align: center;
+  
+}
+.drawer {
+  height: 400px;
+}
+.deposit-selector {
+  border: 3px solid #ffab00;
+  display: grid;
+  place-items: center;
+  border-radius: 40px;
+  width: 70px;
+  height: 70px;
+}
+.coin-row {
+  
+
+}
+.coin-sel {
+  
+  
+}
+.drawer-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+ 
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+.coin-icon {
+  width: 50px;
+  height: 50px;
+}
+.top-row {
+  display: grid;
+  place-items: center;
+  background-color: black;
+}
+.top-balance {
+  margin-left: 30px;
+}
+.alpha-heading {
+  margin-top: 70px;
+  background-image: url(../img/bg-help.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.choose-icon {
+  width: 100px;
+  height: 100px;
+  color: #ffab00;
+}
+.choose-heading {
+  margin-bottom: 20px;
+}
+.security {
+  margin-top: 60px;
+}
+.getting-started-header {
+  margin-bottom: 40px;
+}
+.access-para {
+  padding: 40px;
+}
+.crypto-heading {
+  margin-bottom: 20px;
+}
+.charts-image-container {
+  margin-top: 20px;
+  height: 400px;
+}
+.affili {
+  padding:20px;
+  background-color: #131519;
+  padding-bottom: 40px;
+  height: 600px;
+}
+.reset-paper {
+  width: 90%;
+  height: 450px;
+  background-image: url(../img/event4.jpg);
+  
+  background-repeat: no-repeat;
+  
+  border-radius: 10px;
+  margin-top: 40px;
+  background-size: cover;
+}
+.reset-header {
+  
+}
+.reset-input {
+  margin-bottom: 50px;
+}
+.security-paper {
+  margin: 30px;
+}
+.price-valu {
+  color: #ffab00;
+  font-size: x-large;
+  font-weight: 400;
+}
+.app-bar {
+  /* background-image: url(../img/event4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+.table-row {
+  background-color: black;
+}
+
+.main-paper {
+  /* width: 30%; */
+  background-color: #131519;
+ color: white;
+  height: auto;
+  box-shadow: 5px 5px #ffba00;
+  /* margin-left: 15px; */
+}
+.top-container {
+  /* background-image: url(../img/city.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+
+.world {
+  background-image: url(../img/world.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 550px;
+  width: 100%
+}
+.main-footer {
+  font-size: 20px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  padding: 20px;
+}
+.main-logo {
+  height: 100px;
+  width: 100px;
+}
+.main-logo-container {
+
+}
+.contact {
+  width: 90%;
+  height: 300px;
+  background-image: url(../img/event4.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  display: grid;
+  border-radius: 10px;
+  margin-top: 40px;
+  background-size: cover;
+}
+.contact-input {
+  
+}
+.talk {
+
+}
+
+
+
+
 
 
 
@@ -169,8 +406,8 @@ a {
   .product-grid{
     background: linear-gradient(#131519 70%,#131519,  #ffba00 );
     width: 80%;
-    height: 400px;
-    border: 5px solid  #ffba00
+    height: 350px;
+    border: 3px solid  #ffba00
     
   
 }
@@ -184,18 +421,19 @@ a {
 }
 .signup {
   background-image: url(../img/event4.jpg);
-  height:700px;
+  height:auto;
   background-repeat: no-repeat;
-  width: 70%;
+  width: 60%;
   border-radius: 10px;
-  margin-top: 40px;
+  margin-top: 60px;
   background-size: cover;
+  
 }
 .profile-paper {
   margin-top: 25px;
   
   /* width: 30%; */
-  background-image: linear-gradient(black 90%,black,);
+  background-image: linear-gradient(#131519 90%,#131519,);
  color: white;
   height: auto;
   box-shadow: 20px 20px #ffba00;
@@ -204,18 +442,194 @@ a {
 .paper-2 {
   margin-left: 12vh;
 }
-.bottom-profile {
-  
-  
-}
+
 .deposit-paper {
-  width: 70%;
+  
 }
 .market-grid {
   margin-left: 20px;
 }
 .container-p {
-  margin-left: 25px;
+  margin-left: 150px;
 }
+.success-paper {
+  margin-top: 120px;
+  width: 60%;
+  background-image: linear-gradient(black 90%,black);
+  background-color: black;
+  height: auto;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+
+  
+}
+.second-sign {
+  margin-top: 50px;
+}
+.username-input {
+  margin-top: 0px;
+}
+.country-input {
+  margin-bottom: -10px;
+  margin-left: 58px;
+}
+.crypto-dashboard {
+  margin-top: -98px;
+  margin-bottom: 0px;
+}
+.bottom-profile {
+
+  
+}
+.balance-paper {
+ margin-left: 23px;
+}
+.faqs-accordion {
+  background-color: rgba(0, 0, 0, 0);
+  
+  border-left: 2px solid #ffba00;
+  border-top: 2px solid #ffba00;
+  border-bottom: 2px solid #ffba00;
+  margin-bottom: 30px;
+  width: 50%;
+ 
+  
+}
+.market-overview {
+  width: 80%;
+}
+.step-icon {
+  width: 60px;
+  height: 60px;
+  color:#ffab00;
+}
+.index-head {
+  padding: 50px;
+  margin-top: -60px;
+}
+.drawer {
+  margin-top: 0px
+}
+.coin-icon {
+  width: 70px;
+  height: 70px;
+}
+.deposit-selector {
+  border: 3px solid #ffab00;
+  display: grid;
+  place-items: center;
+  border-radius: 60px;
+  width: 100px;
+  height: 100px;
+}
+.withdraw-paper {
+  width: 65%;
+}
+.top-row {
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.balance-value {
+  
+}
+.alpha-heading {
+  margin-top: 150px;
+  background-image: url(../img/bg-2.png);
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.choose-icon {
+  width: 150px;
+  height: 150px;
+  color: #ffab00;
+
+}
+.choose-heading {
+  margin-bottom: 50px;
+}
+.security {
+  margin-top: 150px;
+}
+.getting-started-header {
+  margin-bottom: 80px;
+  margin-top: 30px;
+}
+.access-para {
+  padding: 60px;
+  margin-top: 10px;
+}
+.crypto-heading {
+  margin-bottom: 60px;
+}
+.crypto-market {
+  /* border: 1px solid #ffba00; */
+  width: 80%;
+  
+  
+  
+}
+
+.charts-image-container {
+  height: 600px;
+  margin-top: 0px;
+  
+}
+.charts-image {
+  background-image: url(../img/charts.jpg);
+  height: 100%;
+  
+}
+.affiliate-icon {
+  margin-right: -80px;
+  
+  
+}
+.affili {
+  padding:20px;
+  background-color: #131519;
+  padding-bottom: 40px;
+
+}
+.reset-paper {
+  width: 40%;
+  height: 450px;
+  background-image: url(../img/event4.jpg);
+  
+  background-repeat: no-repeat;
+  
+  border-radius: 10px;
+  margin-top: 40px;
+  background-size: cover;
+}
+.reset-header {
+  margin:20px
+}
+.contact {
+  width: 60%;
+  height: 450px;
+  background-image: url(../img/event4.jpg);
+  
+  background-repeat: no-repeat;
+  display: grid;
+  border-radius: 10px;
+  margin-top: 40px;
+  background-size: cover;
+}
+.talk {
+  width: 80%;
+}
+.world {
+  background-image: url(../img/world.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 550px;
+  width: 500px
+}
+
+
 
 }

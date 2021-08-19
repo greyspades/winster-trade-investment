@@ -31,8 +31,12 @@ const Plans = () => {
 <script src="js/main.js"></script>
             </Head>
            <section className="pt-mobile-80">
-  <div className="container">
+
+  <div style={{marginTop:60}} className="container">
     <div className="row medium-padding100">
+    <h3 style={{textAlign:'center',marginBottom:60}}>
+               Plans suited for everyone
+             </h3>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
         <div className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
@@ -41,7 +45,7 @@ const Plans = () => {
           <h5 className="pricing-title">Starter <span></span></h5>
           <div className="price">
             <div className="price-sup-title">Amount spent:</div>
-            <div className="price-value">$100-$999</div>
+            <div className="price-valu">$100-$999</div>
           </div>
           <ul className="pricing-tables-position">
             <li className="position-item">
@@ -63,7 +67,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="005_coin_market.html" className="btn btn--large btn--green-light btn--transparent">Join now</a>
+          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -74,7 +78,7 @@ const Plans = () => {
           <h5 className="pricing-title"> Standard < span></span></h5>
           <div className="price">
             <div className="price-sup-title">Amount spent:</div>
-            <div className="price-value">$1K-$5K</div>
+            <div className="price-valu">$1000-$4999</div>
           </div>
           <ul className="pricing-tables-position">
             <li className="position-item">
@@ -96,7 +100,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="005_coin_market.html" className="btn btn--large btn--green-light btn--transparent">Join now</a>
+          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -107,7 +111,7 @@ const Plans = () => {
           <h5 className="pricing-title">Share Holder<span></span></h5>
           <div className="price">
             <div className="price-sup-title">Amount Spent:</div>
-            <div className="price-value">$5K-$20K</div>
+            <div className="price-valu">$5000-$19999</div>
           </div>
           <ul className="pricing-tables-position">
             <li className="position-item">
@@ -129,7 +133,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="005_coin_market.html" className="btn btn--large btn--green-light btn--transparent">Join now</a>
+          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -140,7 +144,7 @@ const Plans = () => {
           <h5 className="pricing-title">VIP<span></span></h5>
           <div className="price">
             <div className="price-sup-title">Amount Spent:</div>
-            <div className="price-value">$20K-$500K</div>
+            <div className="price-valu">$20000-$50000</div>
           </div>
           <ul className="pricing-tables-position">
             <li className="position-item">
@@ -162,11 +166,11 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="005_coin_market.html" className="btn btn--large btn--green-light btn--transparent">Join now</a>
+          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
     </div>
-    <hr className="divider" />
+   
   </div>
 </section>
 
