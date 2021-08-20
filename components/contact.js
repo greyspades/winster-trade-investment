@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Container, Grid,Input,InputAdornment,Button } from '@material-ui/core'
 import Image from 'next/image'
-import {axios} from 'axios'
+import Axios from 'axios'
 import Paper from '@material-ui/core/paper'
 import {Formik} from 'formik'
 import {HashLoader} from 'react-spinners'
@@ -25,7 +25,7 @@ const Contact=()=>{
                     Get in touch with us
                 </p>
                 <form>
-                    <Formik initialValues={{message:''}} onSubmit={({value})=>{
+                    <Formik initialValues={{message:''}} onSubmit={(value)=>{
                         let item={
                             message:value.message,
                             
@@ -34,7 +34,7 @@ const Contact=()=>{
                             pending:true,
                             done:false
                         })
-                        axios.post('/message',{item})
+                        Axios.post('/api/message',{item})
                         .then((res)=>{
                            if(res.data=='SUCCESS'){
                             console.log(res.data)
@@ -44,6 +44,18 @@ const Contact=()=>{
                             })
                            }
                         })
+                        .catch((err)=>{
+                            console.log(err.response)
+                            //console.log('wahala')
+                           if(err.response.data=='mongo wahala'){
+                            alert('Unnable to connect to the server please try again later')
+                            setLoading({
+                              pending:false,
+                              done:false,
+                            })
+                           }
+                           
+                          })
 
                     }} >{({handleChange,handleSubmit,values})=>((
                         <Grid container justify='center'>
@@ -69,7 +81,7 @@ const Contact=()=>{
                  {
                      !loading.pending && !loading.done ?
                      <Grid>
-                         <Button onClick={handleChange}>
+                         <Button onClick={handleSubmit}>
                            <span style={{color:'white',border:'3px solid #ffab00',width:100,borderRadius:20,height:60,display:'grid',placeItems:'center',marginTop:60}}>
                                Send
                            </span>
@@ -77,12 +89,12 @@ const Contact=()=>{
                      </Grid>
                      :
                      loading.pending && !loading.done ?
-                     <Grid container justify='center'>
+                     <Grid style={{marginTop:60}} container justify='center'>
                          <HashLoader loading={true}  size={40} color='#ffab00' />
                      </Grid>
                      :
                      loading.done && !loading.pending ?
-                     <Grid container justify='center'>
+                     <Grid style={{marginTop:60}} container justify='center'>
                          <Check />
                      </Grid>
                      :

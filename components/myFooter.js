@@ -7,9 +7,9 @@ import classNames from "classnames";
 // material-ui core components
 import { List, ListItem,Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import PhoneIcon from '@material-ui/icons/Phone'
-import EmailIcon from '@material-ui/icons/Email'
-import AddressIcon from '@material-ui/icons/LocationCity'
+import PhoneIcon from '@material-ui/icons/PhoneOutlined'
+import EmailIcon from '@material-ui/icons/EmailOutlined'
+import AddressIcon from '@material-ui/icons/LocationOnOutlined'
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -17,7 +17,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 
 import Footer from 'rc-footer';
-import 'rc-footer/assets/index.css';
+import '../pages/index/node_modules/rc-footer/assets/index.css';
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
@@ -153,7 +153,7 @@ function MyFooter(props) {
                Privacy policy
              </div>
            ),
-           //url: '',
+           url: '/policy',
            //description:' +48732121453',
            openExternal: true,
            className:'main-footer',

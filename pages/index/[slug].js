@@ -32,7 +32,7 @@ import logo2 from'../../img/logo2.png'
 import white from '../../img/white.png'
 import logo3 from '../../img/logo3.png'
 import MyFooter from '../../components/myFooter'
-
+import Clock from 'react-digital-clock';
 
 
 
@@ -70,7 +70,7 @@ const Home = () => {
   //const { t } = useTranslation('footer');
 
   const Router=useRouter()
-  const {slug}=Router.query
+  const {slug}=Router.query || ''
   
   const [mobile,setMobile]=useState(false)
 
@@ -194,7 +194,7 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           // )}
           
-        //rightLinks={<HeaderLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
+        rightLinks={<HeaderLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
   
@@ -208,7 +208,7 @@ s0.parentNode.insertBefore(s1,s0);
       <div style={{}} className="container top-container">
         <div className="row">
           <div style={{marginTop:30}} className="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-            <img className="responsive-width-50" src={logo2} alt="image" />
+            <img className="responsive-width-50" src={logo1} alt="image" />
           </div>
           <div style={{}} className="col-lg-7 col-md-12 col-sm-12 col-xs-12">
             <header style={{}} className="heading-talk crumina-module crumina-heading heading--h1  heading--with-decoration">
@@ -226,9 +226,9 @@ s0.parentNode.insertBefore(s1,s0);
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
             <p className={'talk'}  style={{fontSize:20,padding:10}}>
-            Welcome to hoardtradeinvestment.com We are a leading company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. If you would like to enter the world of online Forex trading and Cryptocurrency trading with modern Cloud Mining platform then you are on your right way. Investments with hoardtradeinvestment.com are affordable and safe. Our team works tirelessly to ensure that each and every one of our clients receives the attention they deserve and reaches great success and growth throughout their investment career.
+            Welcome to winstertradeinvestment.com We are a leading company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. If you would like to enter the world of online Forex trading and Cryptocurrency trading with modern Cloud Mining platform then you are on your right way. Investments with hoardtradeinvestment.com are affordable and safe. Our team works tirelessly to ensure that each and every one of our clients receives the attention they deserve and reaches great success and growth throughout their investment career.
 
-hoardtradeinvestment.com is an investment fund which has been in business since 2016 and
+winstertradeinvestment.com is an investment fund which has been in business since 2016 and
  achieved excellent results. The experience and skills of our traders and financial experts is the key to the success of the investment fund. Throughout our careers, each of us has practiced investment management at the highest levels and built a solid reputation for fantastic skills and substantial experience. Our highly motivated employees and experienced experts from the area of finance and related fields including trading, analytics, marketing, computer technology, law and management are ready to provide professional services. Profits gained through the work of
  our specialists are fairly shared between the fund and private investors, our clients.
               
@@ -279,7 +279,7 @@ hoardtradeinvestment.com is an investment fund which has been in business since 
               mobile ? 
               <Steps bomber={slug} />
               :
-              <div style={{padding:10}} className=' countdown-bg1'>
+              <div style={{padding:10}} className=''>
               <Steps bomber={slug} />
             </div>
             }
@@ -325,39 +325,37 @@ hoardtradeinvestment.com is an investment fund which has been in business since 
               <div className="heading-text">Our very own decentralized currency which scales on every transaction and referal you make
               You can accumulate winster tokens by making deposits and making referals, and as your balance increases so do your tokens
               </div>
-              <Grid container justify='center' direction='row'>
+              <Grid style={{marginTop:30,}} container justify='center' direction='row'>
                 <Grid container justify='center' xs={6} md={6}>
-                    <p>100 tokens</p>
+                    <p style={{fontSize:22}}>level 1</p>
                 </Grid>
 
                 <Grid container justify='center' xs={6} md={6}>
-                    <p>$1000</p>
-                </Grid>
-              </Grid>
-
-              <Grid container justify='center' direction='row'>
-                <Grid container justify='center' xs={6} md={6}>
-                    <p>100 tokens</p>
-                </Grid>
-
-                <Grid container justify='center' xs={6} md={6}>
-                    <p>$1000</p>
+                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>100</span> tokens</p>
                 </Grid>
               </Grid>
 
               <Grid container justify='center' direction='row'>
-                <Grid container justify='center' xs={6} md={6}>
-                    <p>100 tokens</p>
+              <Grid container justify='center' xs={6} md={6}>
+                    <p style={{fontSize:22}}>level 1</p>
                 </Grid>
 
                 <Grid container justify='center' xs={6} md={6}>
-                    <p>$1000</p>
+                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>150</span> tokens</p>
+                </Grid>
+              </Grid>
+
+              <Grid container justify='center' direction='row'>
+              <Grid container justify='center' xs={6} md={6}>
+                    <p style={{fontSize:22}}>level 3</p>
+                </Grid>
+
+                <Grid container justify='center' xs={6} md={6}>
+                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>300</span> tokens</p>
                 </Grid>
               </Grid>
             </header>
-            <p>
-              Bla bla bla .........
-            </p>
+
             <div className="crumina-module crumina-counter-item counter--icon-left mt60">
               <svg className="woox-icon">
                 <use xlinkHref="svg-icons/sprites/icons.svg#icon-group" />
@@ -376,7 +374,7 @@ hoardtradeinvestment.com is an investment fund which has been in business since 
               <h5 className="title">Distribution
                 <br />Ends In:</h5>
               <div className="crumina-countdown-item">
-                <div className="crumina-countdown" data-date="2019-01-01 00:00:00" />
+              <Clock format={'hh-mm'} />
               </div>
 
 

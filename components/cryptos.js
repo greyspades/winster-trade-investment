@@ -9,7 +9,7 @@ import Divider from '@material-ui/core/divider'
 const Cryptos = () => {
     return (
         <div style={{padding:30,marginTop:60}} >
-            <h3 style={{textAlign:'center',color:'#ffba00'}} className='crypto-heading'>
+            <h3 style={{textAlign:'center'}} className='crypto-heading'>
                     Live Cryptocurrency Market Data
                 </h3>
             <div  style={{display:'grid',placeItems:'center'}}>

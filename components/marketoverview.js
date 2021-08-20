@@ -5,7 +5,7 @@ import {Grid} from '@material-ui/core'
 const Overview = (props) => {
     return (
             <div style={{display:'grid',placeItems:"center",marginTop:50}}>
-                <h3 style={{color:'#ffba00',marginBottom:50}}>
+                <h3 style={{marginBottom:50}}>
                     Market Overview
                 </h3>
                 <p style={{fontSize:20,padding:10,textAlign:'center'}} >

@@ -23,7 +23,7 @@ import { Grid,Card,CardHeader,CardContent,Paper } from '@material-ui/core'
 const Products = () => {
     return (
         <div style={{paddingBottom:60,paddingTop:60,paddingLeft:30,paddingRight:30}}>
-            <h3 style={{textAlign:'center', color:'#ffab00'}}>
+            <h3 style={{textAlign:'center'}}>
                 Our Services
             </h3>
             <Grid container
@@ -47,7 +47,7 @@ const Products = () => {
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faHandHoldingUsd} style={{width:100,height:100,color:"white"}}  />
+                                        <FontAwesomeIcon className='product-logo' icon={faHandHoldingUsd} style={{width:100,height:100,color:"#ffab00"}}  />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Loans
@@ -74,7 +74,7 @@ const Products = () => {
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faPiggyBank} style={{width:100,height:100,color:"white"}}  />
+                                        <FontAwesomeIcon className='product-logo' icon={faPiggyBank} style={{width:100,height:100,color:"#ffab00"}}  />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Investments
@@ -102,7 +102,7 @@ const Products = () => {
 
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faMoneyCheckAlt} style={{width:100,height:100,color:"white"}}  />
+                                        <FontAwesomeIcon className='product-logo' icon={faMoneyCheckAlt} style={{width:100,height:100,color:"#ffab00"}}  />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40 }}>
                                             Crypto Transactions
@@ -129,7 +129,7 @@ const Products = () => {
                                    
                                     <CardContent style={{}}>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faCoins} style={{width:100,height:100,color:"white"}}  />
+                                        <FontAwesomeIcon className='product-logo' icon={faCoins} style={{width:100,height:100,color:"#ffab00"}}  />
                                         </div>
                                         <h5 style={{textAlign:'center',color:'#ffab00',marginTop:40}}>
                                             Crypto Mining

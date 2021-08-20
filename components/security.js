@@ -51,7 +51,7 @@ const Security = () => {
                         Transparency
                    </h5>
                     <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
-                        Your finances are in your complete control, an
+                        Your finances are always under your complete control and you decide how you trade and invest with no hidden charges or transactions
                     </p>
                     </Paper>
                 </Grid>

@@ -7,7 +7,7 @@ import world from '../img/world.jpg'
 
 const Affiliate = () => {
     return (
-        <div style={{width:'80%',display:'grid',placeItems:'center',alignItems:'center',marginTop:30,marginBottom:80}} >
+        <div style={{width:'80%',display:'grid',placeItems:'center',alignItems:'center',marginTop:120,marginBottom:80}} >
            <Paper elevation={10} className='affili countdown-bg' >
            <Grid spacing={5} container  justify='center' direction='row'>
             <Grid style={{display:'grid',placeItems:'center',}} item md={6} className="">
@@ -26,7 +26,9 @@ const Affiliate = () => {
           
             {/* <Image width={500} height={550} layout='intrinsic' src={world} /> */}
             <div className='world'>
-
+              <p style={{fontSize:25,color:'white',padding:20}}>
+                A vast digital ocean awaits
+              </p>
             </div>
            
           </Grid>
