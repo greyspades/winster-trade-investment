@@ -17,7 +17,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 
 import Footer from 'rc-footer';
-import '../pages/index/node_modules/rc-footer/assets/index.css';
+import 'rc-footer/assets/index.css';
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
