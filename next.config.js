@@ -10,11 +10,19 @@ const withCss=require('@zeit/next-css')
 module.exports = withPlugins([[withImages]], {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
+    
     return config;
   },
   env: {
     mongodburl:"mongodb+srv://grey:Vermilion9%23@cluster0.j4dir.mongodb.net/users?retryWrites=true&w=majority"
   },
+  typescript: {
+    
+    ignoreBuildErrors: true,
+  },
+  
+});
+module.exports = {
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -22,8 +30,7 @@ module.exports = withPlugins([[withImages]], {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  
-});
+}
 /*module.exports = {
   env: {
       mongodburl: "mongodb+srv://grey:Vermilion9#@cluster0.j4dir.mongodb.net/user?retryWrites=true&w=majority",
