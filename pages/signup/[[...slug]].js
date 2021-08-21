@@ -42,7 +42,7 @@ import MyFooter from '../../components/myFooter'
 import PhoneIcon from '@material-ui/icons/Phone'
 //import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationCity'
-import Header from '../../components/header'
+import Header from '../../components/Header'
 import HeaderLinks from '../../components/HeaderLinks'
 import Particles from 'react-particles-js'
 

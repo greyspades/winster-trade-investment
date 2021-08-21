@@ -949,7 +949,7 @@ const Dashboard=(props)=>{
           <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={7} />
           </Grid>
   </Grid>
-  <Grid id='progress' style={{marginLeft:15,marginTop:25}} direction='row' container>
+  <Grid id='progress' style={{marginLeft:15,marginTop:10}} direction='row' container>
   <Grid item md={3} xs={3} style={{color:'white',}}>
               Affiliate
           
@@ -960,16 +960,19 @@ const Dashboard=(props)=>{
           <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={67} />
           </Grid>
   </Grid>
-  <Grid id='progress' style={{marginLeft:15,marginTop:10}} container>
-  <Grid item md={2} xs={2} style={{color:'white',}}>
+  <p style={{color:'white',fontSize:18,textAlign:'center',margin:5}}>
+    Your referal link
+  </p>
+  <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
+  <Grid item md={2} xs={2} style={{}}>
   <PeopleOutline style={{color:'#ffab00'}} />
           
           </Grid>
-          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',color:'white'}}>
+          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
              {gotten && !mobile
              ?
            
-              <a style={{color:'#ffab00',width:100}}>
+              <a style={{color:'#ffab00',}}>
                  www.winstertrade<br/>investment.com/{info.username}
               </a>
           
@@ -977,7 +980,7 @@ const Dashboard=(props)=>{
               gotten && mobile
              ?
              <a style={{color:'#ffab00',}}>
-             www.winstertradeinvestment.com/<br/>{info.username}
+             www.winstertradeinvestment.com/{info.username}
          </a>
              :
              <span>
@@ -986,11 +989,7 @@ const Dashboard=(props)=>{
              
 
           }
-          <Grid>
-          <ToolTip title='Your referal link' >
-                <HelpOutlineIcon style={{color:'#ffab00'}} />
-            </ToolTip>
-          </Grid>
+
 
           </Grid>
   </Grid>
