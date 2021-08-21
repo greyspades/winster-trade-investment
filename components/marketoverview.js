@@ -1,5 +1,8 @@
 import React from 'react'
 import { MarketOverview } from "react-ts-tradingview-widgets";
+import { MiniChart } from "react-ts-tradingview-widgets";
+
+
 import {Grid} from '@material-ui/core'
 
 const Overview = (props) => {
@@ -11,8 +14,19 @@ const Overview = (props) => {
                 <p style={{fontSize:20,padding:10,textAlign:'center'}} >
                     Gain insight through analytical data gathered accross numerous markets and pairs
                 </p>
-            <Grid direction className='market-overview'>
-            <MarketOverview symbolActiveColor='#ffba00' plotLineColorGrowing='#ffba00' plotLineColorFalling='#ffba00' isTransparent={true} height={600} width='100%'  colorTheme='dark' ></MarketOverview>
+            <Grid container justify='center' direction='row' className='market-overview'>
+           
+                <Grid justify='center' container xs={12} md={4}>
+                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='BTCUSD' colorTheme="dark"></MiniChart>
+                </Grid>
+
+                <Grid justify='center' container xs={12} md={4}>
+                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='ETHUSD' colorTheme="dark"></MiniChart>
+                </Grid>
+
+                <Grid justify='center' container xs={12} md={4}>
+                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='USDTUSD' colorTheme="dark"></MiniChart>
+                </Grid>
             </Grid >
             </div>
     )

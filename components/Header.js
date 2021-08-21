@@ -123,7 +123,7 @@ export default function Header(props) {
 }
 
 Header.defaultProp = {
-  color: "white"
+  color: "transparent"
 };
 
 Header.propTypes = {

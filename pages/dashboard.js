@@ -103,6 +103,7 @@ import AlertIcon from '@material-ui/icons/NotificationImportantOutlined'
 import NotificationsNone from '@material-ui/icons/NotificationsNone'
 import white from '../img/white.png'
 import logo1 from '../img/logo1.png'
+import Head from 'next/head'
 
 
 const Dashboard=(props)=>{
@@ -1694,6 +1695,11 @@ onChange={handleChange('address')}
 
     return (
         <div>
+          <Head>
+            <title>
+              Dashboard
+            </title>
+          </Head>
 
             <AppBar
                 title='Inbox'

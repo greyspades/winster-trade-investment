@@ -72,13 +72,13 @@ const Security = () => {
 
 
 
-            <h3 style={{textAlign:'center',marginTop:40}}>
+            <h3 style={{textAlign:'center',marginTop:100}}>
                 Secure and how you want it
             </h3>
             <p style={{textAlign:'center',fontSize:20}}>
                 They help make your interests more secure in the palm of your hands and elsewhere
             </p>
-            <Grid container direction justify='center' alignItems='center'>
+            <Grid style={{marginTop:100}} container direction justify='center' alignItems='center'>
                 <Grid style={{padding:20}} xs={6} md={2} justify='center' alignContent='center'>
                     <div style={{display:'grid',placeItems:'center'}}>
                     <Image layout='intrinsic' width={200} height={100} style={{}} src={thawte} />
