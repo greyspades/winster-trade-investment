@@ -1,9 +1,6 @@
 import React from 'react'
 import {Grid,Button,Paper} from '@material-ui/core'
-import affili from '../img/affili.jpg'
-import affiliIcon from '../img/affiliate.svg'
-import Image from 'next/image'
-import world from '../img/world.jpg'
+
 
 const Affiliate = () => {
     return (

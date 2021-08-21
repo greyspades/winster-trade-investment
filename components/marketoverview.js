@@ -1,5 +1,5 @@
 import React from 'react'
-import { MarketOverview } from "react-ts-tradingview-widgets";
+
 import { MiniChart } from "react-ts-tradingview-widgets";
 
 

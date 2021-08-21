@@ -14,7 +14,7 @@ import Assignment from '@material-ui/icons/AssignmentTurnedInOutlined'
 import cert from '../img/cert.jpg'
 import bsi from '../img/bsicert.jpg'
 import MyContainer from '../components/myContainer'
-import Paper from '@material-ui/core/paper'
+import Paper from '@material-ui/core/Paper'
 
 
 const Security = () => {

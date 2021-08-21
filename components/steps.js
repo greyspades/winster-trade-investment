@@ -22,7 +22,7 @@ import deposit from '../img/deposit.svg'
 import Image from 'next/image'
 import Forward from '@material-ui/icons/ArrowForward'
 import Down from '@material-ui/icons/ArrowDownward'
-import Paper from '@material-ui/core/paper'
+import Paper from '@material-ui/core/Paper'
 
 
 

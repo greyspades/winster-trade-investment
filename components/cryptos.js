@@ -1,10 +1,7 @@
 import React from 'react'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import {Grid} from '@material-ui/core'
-import event from '../img/event4.jpg'
-import charts from '../img/charts.jpg'
-import Image from 'next/image'
-import Divider from '@material-ui/core/divider'
+
 
 const Cryptos = () => {
     return (

@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper'
 import Image from 'next/image'
 import aiden from '../img/aiden.jpg'
 import Divider from '@material-ui/core/Divider'
-import Rating from '@material-ui/lab/rating';
+import Rating from '@material-ui/lab/Rating';
 import StarBorderIcon from '@material-ui/icons/StarBorderOutlined'
 import per1 from '../img/per1.jpg'
 import per2 from '../img/per2.jpg'

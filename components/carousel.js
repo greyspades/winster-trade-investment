@@ -6,8 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid,Card,CardHeader,CardContent,Container,Paper,CircularProgress } from '@material-ui/core'
 import { CircularProgressbarWithChildren,buildStyles } from 'react-circular-progressbar';
-import AccountBalance from '@material-ui/icons/AccountBalanceOutlined'
-import LooksOne from '@material-ui/icons/LooksOneRounded'
+
 import one from '../img/1.png'
 import two from '../img/2.png'
 import three from '../img/3.png'

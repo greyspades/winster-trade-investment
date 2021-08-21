@@ -20,12 +20,7 @@ import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
 
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-import {
-  Container,
-  Col,
-  Row,
-} from 'reactstrap'
+
 //import styles from "assets/jss/nextjs-material-kit/components/footerStyle.js";
 
 //const useStyles = makeStyles(styles);

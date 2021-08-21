@@ -4,7 +4,7 @@ import Filter1Icon from '@material-ui/icons/Filter1'
 import Filter2Icon from '@material-ui/icons/Filter2'
 import Filter3Icon from '@material-ui/icons/Filter3'
 import Filter4Icon from '@material-ui/icons/Filter4'
-import FilterIcon from '@material-ui/icons/Filter'
+
 
 const Plans = () => {
     return (
