@@ -15,6 +15,13 @@ module.exports = withPlugins([[withImages]], {
   env: {
     mongodburl:"mongodb+srv://grey:Vermilion9%23@cluster0.j4dir.mongodb.net/users?retryWrites=true&w=majority"
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   
 });
 /*module.exports = {
