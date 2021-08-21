@@ -14,10 +14,11 @@ const theme = createMuiTheme({
      primary: {
         main: "#ffab00" // This is an orange looking color
                },
-     secondary: {
-        main: "#ffffff"
-                }
+    //  secondary: {
+    //     main: "#ffffff"
+    //             }
            },
+        
 
 });
 

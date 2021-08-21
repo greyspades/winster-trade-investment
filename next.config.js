@@ -22,15 +22,15 @@ module.exports = withPlugins([[withImages]], {
   },
   
 });
-module.exports = {
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true,
-  },
-}
+// module.exports = {
+//   typescript: {
+//     // !! WARN !!
+//     // Dangerously allow production builds to successfully complete even if
+//     // your project has type errors.
+//     // !! WARN !!
+//     ignoreBuildErrors: true,
+//   },
+// }
 /*module.exports = {
   env: {
       mongodburl: "mongodb+srv://grey:Vermilion9#@cluster0.j4dir.mongodb.net/user?retryWrites=true&w=majority",

@@ -60,7 +60,7 @@ export default function HeaderLinks(props) {
       
       <ListItem className={classes.listItem}>
       <Button
-        href="/landing"
+        href="/"
         color="transparent"
         target="_blank"
         className={classes.navLink}
@@ -82,7 +82,7 @@ export default function HeaderLinks(props) {
     </ListItem>
     <ListItem className={classes.listItem}>
       <Button
-        href="../Register"
+        href="../signup"
         color="transparent"
         target="_blank"
         className={classes.navLink}
@@ -199,7 +199,7 @@ export default function HeaderLinks(props) {
     <ListItem className={classes.listItem}>
       <Tooltip
         id="Youtube-tooltip"
-        title="Follow us on Youtube"
+        title="products and services"
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
@@ -218,7 +218,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Tooltip
         id="Youtube-tooltip"
-        title="Follow us on Youtube"
+        title="about winster trade investment"
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
@@ -236,7 +236,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Tooltip
         id="Youtube-tooltip"
-        title="Follow us on Youtube"
+        title="plans and packages "
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
@@ -247,14 +247,14 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
           onClick={props.package}
         >
-            Packages
+            Plans
         </Button>
       </Tooltip>
       </ListItem>
       <ListItem className={classes.listItem}>
       <Tooltip
         id="Youtube-tooltip"
-        title="Follow us on Youtube"
+        title="Testimonials from investors"
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
@@ -273,7 +273,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       <Tooltip
         id="Youtube-tooltip"
-        title="Follow us on Youtube"
+        title="contact us"
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >

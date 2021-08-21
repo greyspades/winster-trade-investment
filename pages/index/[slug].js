@@ -25,7 +25,7 @@ import Filter3Icon from '@material-ui/icons/Filter3'
 import FilterIcon from '@material-ui/icons/Filter'
 import Divider from '@material-ui/core/Divider'
 import MyContainer from '../../components/myContainer'
-import affili from '../../img/affili.jpg'
+//import affili from '../../img/affili.jpg'
 import Contact from '../../components/contact'
 import logo1 from'../../img/logo1.png'
 import logo2 from'../../img/logo2.png'
@@ -900,7 +900,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
               </div>
 
 
-              <a href="006_events.html" className="btn btn--large btn--pink-light">
+              <a href="/signup" className="btn btn--large btn--pink-light">
                 Get started
               </a>
 
@@ -933,7 +933,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
       </div>
     </section>
 
-    <Grid container justify='center' ref={contactRef}>
+    <Grid style={{}} container justify='center' ref={contactRef}>
       <Contact />
     </Grid>
   </div>

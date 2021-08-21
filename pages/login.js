@@ -30,11 +30,15 @@ import cookie from 'js-cookie'
 import Alert from '@material-ui/lab/Alert';
 import {HashLoader} from 'react-spinners'
 import Paper from '@material-ui/core/Paper'
-import Footer from 'rc-footer';
-import 'rc-footer/assets/index.css';
+import MyFooter from '../components/myFooter'
 import PhoneIcon from '@material-ui/icons/Phone'
 //import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationCity'
+import Particles from 'react-particles-js'
+import Header from '../components/Header'
+
+import HeaderLinks from '../components/HeaderLinks'
+
 
 
 
@@ -120,7 +124,7 @@ const Login=()=> {
     else {
       return (
         <Button style={{}} onClick={toggleVissible} style={{display:'grid',placeItems:'center'}}>
-        <VisibilityOffIcon style={{color:'#ffab00',width:40,height:40,marginBottom:20}}  />
+        <VisibilityOffIcon style={{color:'#ffab00'}}  />
       </Button>
       )
     }
@@ -128,7 +132,544 @@ const Login=()=> {
   
   return (
    <div style={{display:"grid",placeItems:"center"}}>
-       <Paper elevation={20} style={{display:'grid',placeItems:'center'}} className='signup'>
+
+<Header
+          
+          fixed
+          color="transparent"
+          //routes={dashboardRoutes}
+          // changeColorOnScroll={{
+          //   color:'transparent',
+          //   height:50,
+          // }}
+          
+          // rightLinks={(
+          //       <div>
+          //         <div>
+          //         name
+          //       </div>
+          //         <div>
+          //         name
+          //       </div>
+          //       </div>
+          // )}
+          
+        rightLinks={<HeaderLinks />}   
+/>
+
+     <Particles
+className='particles'
+canvasClassName='particle-canvas'
+    params={
+      {
+        "autoPlay": true,
+        "background": {
+          // "color": {
+          //   "value": "#232741"
+          // },
+          // "image": "url('http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1237px-NASA_logo.svg.png')",
+          // "position": "50% 50%",
+          // "repeat": "no-repeat",
+          // "size": "20%",
+          //"opacity": 1
+        },
+        // "backgroundMask": {
+        //   "composite": "destination-out",
+        //   "cover": {
+        //     "color": {
+        //       "value": "#fff"
+        //     },
+        //     "opacity": 1
+        //   },
+        //   "enable": false
+        // },
+        "fullScreen": {
+          "enable": true,
+          "zIndex": 1
+        },
+        "detectRetina": true,
+        "duration": 0,
+        "fpsLimit": 60,
+        "interactivity": {
+          "detectsOn": "canvas",
+          "events": {
+            "onClick": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "onDiv": {
+              "selectors": [],
+              "enable": false,
+              "mode": [],
+              "type": "circle"
+            },
+            "onHover": {
+              "enable": true,
+              "mode": "bubble",
+              "parallax": {
+                "enable": false,
+                "force": 2,
+                "smooth": 10
+              }
+            },
+            "resize": true
+          },
+          "modes": {
+            "attract": {
+              "distance": 200,
+              "duration": 0.4,
+              "easing": "ease-out-quad",
+              "factor": 1,
+              "maxSpeed": 50,
+              "speed": 1
+            },
+            "bounce": {
+              "distance": 200
+            },
+            "bubble": {
+              "distance": 250,
+              "duration": 2,
+              "mix": false,
+              "opacity": 0,
+              "size": 0
+            },
+            "connect": {
+              "distance": 80,
+              "links": {
+                "opacity": 0.5
+              },
+              "radius": 60
+            },
+            "grab": {
+              "distance": 400,
+              "links": {
+                "blink": false,
+                "consent": false,
+                "opacity": 1
+              }
+            },
+            "light": {
+              "area": {
+                "gradient": {
+                  "start": {
+                    "value": "#ffffff"
+                  },
+                  "stop": {
+                    "value": "#000000"
+                  }
+                },
+                "radius": 1000
+              },
+              "shadow": {
+                "color": {
+                  "value": "#000000"
+                },
+                "length": 2000
+              }
+            },
+            "push": {
+              "default": true,
+              "groups": [],
+              "quantity": 4
+            },
+            "remove": {
+              "quantity": 2
+            },
+            "repulse": {
+              "distance": 400,
+              "duration": 0.4,
+              "factor": 100,
+              "speed": 1,
+              "maxSpeed": 50,
+              "easing": "ease-out-quad"
+            },
+            "slow": {
+              "factor": 3,
+              "radius": 200
+            },
+            "trail": {
+              "delay": 1,
+              "pauseOnStop": false,
+              "quantity": 1
+            }
+          }
+        },
+        "manualParticles": [],
+        "motion": {
+          "disable": false,
+          "reduce": {
+            "factor": 4,
+            "value": true
+          }
+        },
+        "particles": {
+          "bounce": {
+            "horizontal": {
+              "random": {
+                "enable": false,
+                "minimumValue": 0.1
+              },
+              "value": 1
+            },
+            "vertical": {
+              "random": {
+                "enable": false,
+                "minimumValue": 0.1
+              },
+              "value": 1
+            }
+          },
+          "collisions": {
+            "bounce": {
+              "horizontal": {
+                "random": {
+                  "enable": false,
+                  "minimumValue": 0.1
+                },
+                "value": 1
+              },
+              "vertical": {
+                "random": {
+                  "enable": false,
+                  "minimumValue": 0.1
+                },
+                "value": 1
+              }
+            },
+            "enable": false,
+            "mode": "bounce",
+            "overlap": {
+              "enable": true,
+              "retries": 0
+            }
+          },
+          "color": {
+            "value": "#ffab00",
+            "animation": {
+              "h": {
+                "count": 0,
+                "enable": false,
+                "offset": 0,
+                "speed": 1,
+                "sync": true
+              },
+              "s": {
+                "count": 0,
+                "enable": false,
+                "offset": 0,
+                "speed": 1,
+                "sync": true
+              },
+              "l": {
+                "count": 0,
+                "enable": false,
+                "offset": 0,
+                "speed": 1,
+                "sync": true
+              }
+            }
+          },
+          "destroy": {
+            "mode": "none",
+            "split": {
+              "count": 1,
+              "factor": {
+                "random": {
+                  "enable": false,
+                  "minimumValue": 0
+                },
+                "value": 3
+              },
+              "rate": {
+                "random": {
+                  "enable": false,
+                  "minimumValue": 0
+                },
+                "value": {
+                  "min": 4,
+                  "max": 9
+                }
+              },
+              "sizeOffset": true
+            }
+          },
+          "groups": {},
+          "life": {
+            "count": 0,
+            "delay": {
+              "random": {
+                "enable": false,
+                "minimumValue": 0
+              },
+              "value": 0,
+              "sync": false
+            },
+            "duration": {
+              "random": {
+                "enable": false,
+                "minimumValue": 0.0001
+              },
+              "value": 0,
+              "sync": false
+            }
+          },
+          "links": {
+            "blink": false,
+            "color": {
+              "value": "#ffffff"
+            },
+            "consent": false,
+            "distance": 150,
+            "enable": false,
+            "frequency": 1,
+            "opacity": 0.4,
+            "shadow": {
+              "blur": 5,
+              "color": {
+                "value": "#00ff00"
+              },
+              "enable": false
+            },
+            "triangles": {
+              "enable": false,
+              "frequency": 1
+            },
+            "width": 1,
+            "warp": false
+          },
+          "move": {
+            "angle": {
+              "offset": 0,
+              "value": 90
+            },
+            "attract": {
+              "distance": 200,
+              "enable": false,
+              "rotate": {
+                "x": 600,
+                "y": 600
+              }
+            },
+            "decay": 0,
+            "distance": {},
+            "direction": "none",
+            "drift": 0,
+            "enable": true,
+            "gravity": {
+              "acceleration": 9.81,
+              "enable": false,
+              "inverse": false,
+              "maxSpeed": 50
+            },
+            "path": {
+              "clamp": true,
+              "delay": {
+                "random": {
+                  "enable": false,
+                  "minimumValue": 0
+                },
+                "value": 0
+              },
+              "enable": false
+            },
+            "outModes": {
+              "default": "out",
+              "bottom": "out",
+              "left": "out",
+              "right": "out",
+              "top": "out"
+            },
+            "random": true,
+            "size": false,
+            "speed": 1,
+            "spin": {
+              "acceleration": 0,
+              "enable": false
+            },
+            "straight": false,
+            "trail": {
+              "enable": false,
+              "length": 10,
+              "fillColor": {
+                "value": "#000000"
+              }
+            },
+            "vibrate": false,
+            "warp": false
+          },
+          "number": {
+            "density": {
+              "enable": true,
+              "area": 800,
+              "factor": 1000
+            },
+            "limit": 0,
+            "value": 160
+          },
+          "opacity": {
+            "random": {
+              "enable": true,
+              "minimumValue": 0.1
+            },
+            "value": {
+              "min": 0,
+              "max": 1
+            },
+            "animation": {
+              "count": 0,
+              "enable": true,
+              "speed": 1,
+              "sync": false,
+              "destroy": "none",
+              "minimumValue": 0,
+              "startValue": "random"
+            }
+          },
+          "orbit": {
+            "animation": {
+              "count": 0,
+              "enable": false,
+              "speed": 1,
+              "sync": false
+            },
+            "enable": false,
+            "opacity": 1,
+            "rotation": {
+              "random": {
+                "enable": false,
+                "minimumValue": 0
+              },
+              "value": 45
+            },
+            "width": 1
+          },
+          "reduceDuplicates": false,
+          "repulse": {
+            "random": {
+              "enable": false,
+              "minimumValue": 0
+            },
+            "value": 0,
+            "enabled": false,
+            "distance": 1,
+            "duration": 1,
+            "factor": 1,
+            "speed": 1
+          },
+          "roll": {
+            "darken": {
+              "enable": false,
+              "value": 0
+            },
+            "enable": false,
+            "enlighten": {
+              "enable": false,
+              "value": 0
+            },
+            "speed": 25
+          },
+          "rotate": {
+            "random": {
+              "enable": false,
+              "minimumValue": 0
+            },
+            "value": 0,
+            "animation": {
+              "enable": false,
+              "speed": 0,
+              "sync": false
+            },
+            "direction": "clockwise",
+            "path": false
+          },
+          "shadow": {
+            "blur": 0,
+            "color": {
+              "value": "#000000"
+            },
+            "enable": false,
+            "offset": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "shape": {
+            "options": {},
+            "type": "circle"
+          },
+          "size": {
+            "random": {
+              "enable": true,
+              "minimumValue": 1
+            },
+            "value": {
+              "min": 1,
+              "max": 3
+            },
+            "animation": {
+              "count": 0,
+              "enable": false,
+              "speed": 4,
+              "sync": false,
+              "destroy": "none",
+              "minimumValue": 0.3,
+              "startValue": "random"
+            }
+          },
+          "stroke": {
+            "width": 0
+          },
+          "tilt": {
+            "random": {
+              "enable": false,
+              "minimumValue": 0
+            },
+            "value": 0,
+            "animation": {
+              "enable": false,
+              "speed": 0,
+              "sync": false
+            },
+            "direction": "clockwise",
+            "enable": false
+          },
+          "twinkle": {
+            "lines": {
+              "enable": false,
+              "frequency": 0.05,
+              "opacity": 1
+            },
+            "particles": {
+              "enable": false,
+              "frequency": 0.05,
+              "opacity": 1
+            }
+          },
+          "wobble": {
+            "distance": 5,
+            "enable": false,
+            "speed": 50
+          },
+          "zIndex": {
+            "random": {
+              "enable": false,
+              "minimumValue": 0
+            },
+            "value": 0,
+            "opacityRate": 1,
+            "sizeRate": 1,
+            "velocityRate": 1
+          }
+        },
+        "pauseOnBlur": true,
+        "pauseOnOutsideViewport": true,
+        "responsive": [],
+        "themes": []
+      }
+	    }
+	/>
+
+       <Paper elevation={20} style={{display:'grid',placeItems:'center',zIndex:1000,backgroundColor:'#171028',marginTop:100}} className='signup'>
          
     <Card style={{
         // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',
@@ -140,7 +681,7 @@ const Login=()=> {
         
     }}  >
 
-        <CardContent>
+        <CardContent >
         <h2 style={{marginTop:10,textAlign:'center',marginBottom:70}}>
         <span style={{color:'#ffab00',textAlign:'center'}}>Login</span> to your Account
         </h2>
@@ -215,7 +756,7 @@ const Login=()=> {
                 }}>
                   {({handleChange,handleSubmit,values,user})=>((
                    <div>
-                     <FormControl style={{display:'grid',placeItems:'center'}} className={classes.margin}>
+                     <FormControl style={{display:'grid',placeItems:'center',padding:10}} className={classes.margin}>
                    
 <Input
         className='app-input second-input'
@@ -259,12 +800,12 @@ const Login=()=> {
           }
         />
         <div style={{marginTop:20}}>
-         <p style={{fontSize:20}} className='heading-text'>
+         <p style={{fontSize:20,textAlign:'center'}} className='heading-text'>
          Cant remember password ? click <a href='/password_reset' style={{textDecoration:'none',color:'#ffab00'}}>here</a>
          </p>
         </div>
          <div style={{display:'grid',placeItems:'center',
-            marginTop:30,backgroundColor:'rgba(0,0,0,0.5)',width:'100%',height:150,marginBottom:-30}}>
+            marginTop:10,backgroundColor:'rgba(0,0,0,0)',width:'100%',height:150}}>
              <div >
              {showButton(handleSubmit)}
              </div>
@@ -279,129 +820,9 @@ const Login=()=> {
         </CardContent>
     </Card>
    </Paper>
-   <Footer
-  className='main-footer'
-    columns={[
-      {
-       items:[
-         {
-          icon: (
-            <PhoneIcon style={{color:'#9a7801',width:25,height:25,}} />
-          ),
-         title:' Phone: +48732121453',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal:false,
-          className:'main-footer',
-         },
-         {
-          icon: (
-            <EmailIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:' E-mail: winsterinvest@gmail.com',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-        {
-          icon: (
-            <AddressIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:'Address: 63 kenton Road, Yorkshire, England',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-       ]
-      },
-
-      {
-       items:[
-         {
-          title:(
-            <div>
-              Sign up
-            </div>
-          ),
-          url: '/signup',
-          //description:'register for an account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <div>
-              Login 
-            </div>
-          ),
-          url: '/login',
-          //description:'Login to your account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <div onClick={contactScroll}>
-              Contact us
-            </div>
-          ),
-          //url: '',
-          //description:' +48732121453',
-          openExternal: true,
-          className:'main-footer',
-          LinkComponent:'a'
-         },
-        
-       ]
-      },
-
-
-
-      {
-        items:[
-          {
-           title:(
-             <div>
-               Services
-             </div>
-           ),
-           url: '/signup',
-           //description:'register for an account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div>
-               About us
-             </div>
-           ),
-           url: '/login',
-           //description:'Login to your account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div onClick={contactScroll}>
-               Privacy policy
-             </div>
-           ),
-           //url: '',
-           //description:' +48732121453',
-           openExternal: true,
-           className:'main-footer',
-           LinkComponent:'a'
-          },
-         
-        ]
-       }
-    ]}
-    bottom="Winster trade investment"
-    backgroundColor='#ffab0000'
-  />
+<Grid>
+<MyFooter />
+</Grid>
    </div>
   );
 }

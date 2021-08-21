@@ -100,10 +100,13 @@ import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationCity'
 import black from '../img/black.png'
 import AlertIcon from '@material-ui/icons/NotificationImportantOutlined'
-import NotificationsNone from '@material-ui/icons/NotificationsNone'
+import NotificationsNone from '@material-ui/icons/NotificationsActiveRounded'
 import white from '../img/white.png'
 import logo1 from '../img/logo1.png'
 import Head from 'next/head'
+import MyFooter from '../components/myFooter'
+
+
 
 
 const Dashboard=(props)=>{
@@ -535,7 +538,7 @@ const Dashboard=(props)=>{
         })
         .catch((err)=>{
             if(err.response.data=='mongo wahala'){
-                alert('Unnable to connect to the server please try again later')
+                alert('Unnable to connect to the server please check your network connection and refresh this page')
                 setLoading(false)
                
                }
@@ -959,10 +962,10 @@ const Dashboard=(props)=>{
   </Grid>
   <Grid id='progress' style={{marginLeft:15,marginTop:10}} container>
   <Grid item md={2} xs={2} style={{color:'white',}}>
-  <PeopleOutline style={{width:40,height:40,color:'#ffab00'}} />
+  <PeopleOutline style={{color:'#ffab00'}} />
           
           </Grid>
-          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
+          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',color:'white'}}>
              {gotten && !mobile
              ?
            
@@ -984,11 +987,11 @@ const Dashboard=(props)=>{
 
           }
           <Grid>
-
-          </Grid>
-            <ToolTip>
-                <HelpOutlineIcon style={{width:30,height:30,color:'#ffab00'}} />
+          <ToolTip title='Your referal link' >
+                <HelpOutlineIcon style={{color:'#ffab00'}} />
             </ToolTip>
+          </Grid>
+
           </Grid>
   </Grid>
 
@@ -1785,138 +1788,10 @@ onChange={handleChange('address')}
          
             </div>
         </DrawerAppContent>
-
-
-
-        <Footer
-  className='main-footer'
-    columns={[
-      {
-       items:[
-         {
-          icon: (
-            <PhoneIcon style={{color:'#9a7801',width:25,height:25,}} />
-          ),
-         title:' Phone: +48732121453',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal:false,
-          className:'main-footer',
-         },
-         {
-          icon: (
-            <EmailIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:' E-mail: winsterinvest@gmail.com',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-        {
-          icon: (
-            <AddressIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:'Address: 63 kenton Road, Yorkshire, England',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-       ]
-      },
-
-      {
-       items:[
-         {
-          title:(
-            <div>
-              Sign up
-            </div>
-          ),
-          url: '/signup',
-          //description:'register for an account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <div>
-              Login 
-            </div>
-          ),
-          url: '/login',
-          //description:'Login to your account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <a href='/home'>
-              Contact us
-            </a>
-          ),
-          //url: '',
-          //description:' +48732121453',
-          openExternal: true,
-          className:'main-footer',
-          LinkComponent:'a'
-         },
-        
-       ]
-      },
-
-
-
-      {
-        items:[
-          {
-           title:(
-             <div>
-               Services
-             </div>
-           ),
-           url: '/signup',
-           //description:'register for an account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div>
-               About us
-             </div>
-           ),
-           url: '/login',
-           //description:'Login to your account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div>
-               Privacy policy
-             </div>
-           ),
-           //url: '',
-           //description:' +48732121453',
-           openExternal: true,
-           className:'main-footer',
-           LinkComponent:'a'
-          },
           
-         
-        ]
-       }
-    ]}
-    bottom={()=>(
-      <div>
-        <Image layout='intrinsic' width={50} height={50} color='ffab00' src={logo1} />
-      </div>
-    )}
-    backgroundColor='#ffab0000'
-  />
-             
+          <MyFooter />
+
+        
         </div>
     )
 }

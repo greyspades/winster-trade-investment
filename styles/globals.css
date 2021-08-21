@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,7 +13,7 @@ a {
 
 * {
   box-sizing: border-box;
-}
+} */
 .heading-talk {
   color: #8c96a5;
   margin-left: 200px;
@@ -86,16 +86,16 @@ a {
   background-image: url(../img/event4.jpg);
   height:auto;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 80%;
   border-radius: 10px;
   margin-top: 40px;
-  background-size: cover;
+  background-size: contain;
 }
 .app-input {
   background-color: rgba(0, 0, 0, 0);
   color: white;
   border-bottom: 1px #ffab00 solid;
-  width: 280px;
+  width: 100%;
   
  
 }
@@ -163,7 +163,7 @@ a {
   margin-left: 10px;
 }
 .success-paper {
-  margin-top: 40px;
+  margin-top: 100px;
   width: 90%;
   background-image: linear-gradient(black 90%,black);
   background-color: black;
@@ -172,10 +172,10 @@ a {
 
   
 }
-input {
+/* input {
   outline:none;
 background-color: rgba(0, 0, 0, 0);
- }
+ } */
  /* input:-webkit-autofill,
  input:-webkit-autofill:hover,
  input:-webkit-autofill:focus,
@@ -185,8 +185,10 @@ background-color: rgba(0, 0, 0, 0);
 
  input:-webkit-autofill
 {
- -webkit-text-fill-color: white !important;
- -webkit-background-clip: text;
+ -webkit-text-fill-color: white;
+ background-clip: text;
+
+ /* background-color: rgba(0, 0, 0, 0); */
 }
 .second-sign {
   

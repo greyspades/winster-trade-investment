@@ -5,10 +5,12 @@ import Cookie from 'js-cookie'
 import {HashLoader,RingLoader,PulseLoader,PropagateLoader,MoonLoader,PuffLoader} from  "react-spinners";
 import Router from 'next/router'
 import Check from '@material-ui/icons/Check'
-import Footer from 'rc-footer';
-import 'rc-footer/assets/index.css';
+import MyFooter from '../components/myFooter'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
+import Header from '../components/Header'
+import HeaderLinks from '../components/HeaderLinks'
+
 import AddressIcon from '@material-ui/icons/LocationCity'
 
 
@@ -42,7 +44,31 @@ const Success = () => {
 
 
     return (
-        <Grid container justify='center' alignItems='center' style={{}}>
+<div>
+<Grid container justify='center' alignItems='center' style={{}}>
+          <Header
+          
+          fixed
+          color="transparent"
+          //routes={dashboardRoutes}
+          // changeColorOnScroll={{
+          //   color:'transparent',
+          //   height:50,
+          // }}
+          
+          // rightLinks={(
+          //       <div>
+          //         <div>
+          //         name
+          //       </div>
+          //         <div>
+          //         name
+          //       </div>
+          //       </div>
+          // )}
+          
+        rightLinks={<HeaderLinks />}   
+/>
             <Card style={{}} className='success-paper'>
                 <Typography variant='h3' style={{color:'#ffab00',textAlign:'center'}}>
                     Success
@@ -64,130 +90,10 @@ const Success = () => {
                    </Typography>
                 </CardContent>
             </Card>
-            <Footer
-  className='main-footer'
-    columns={[
-      {
-       items:[
-         {
-          icon: (
-            <PhoneIcon style={{color:'#9a7801',width:25,height:25,}} />
-          ),
-         title:' Phone: +48732121453',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal:false,
-          className:'main-footer',
-         },
-         {
-          icon: (
-            <EmailIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:' E-mail: winsterinvest@gmail.com',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-        {
-          icon: (
-            <AddressIcon style={{color:'#9a7801',width:25,height:25}} />
-          ),
-         title:'Address: 63 kenton Road, Yorkshire, England',
-          //url: 'https://yuque.com',
-          //description:' +48732121453',
-          openExternal: false,
-          className:'main-footer',
-        },
-       ]
-      },
 
-      {
-       items:[
-         {
-          title:(
-            <div>
-              Sign up
-            </div>
-          ),
-          url: '/signup',
-          //description:'register for an account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <div>
-              Login 
-            </div>
-          ),
-          url: '/login',
-          //description:'Login to your account',
-          openExternal: true,
-          className:'main-footer',
-         },
-         {
-          title:(
-            <div onClick={contactScroll}>
-              Contact us
-            </div>
-          ),
-          //url: '',
-          //description:' +48732121453',
-          openExternal: true,
-          className:'main-footer',
-          LinkComponent:'a'
-         },
-        
-       ]
-      },
-
-
-
-      {
-        items:[
-          {
-           title:(
-             <div>
-               Services
-             </div>
-           ),
-           url: '/signup',
-           //description:'register for an account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div>
-               About us
-             </div>
-           ),
-           url: '/login',
-           //description:'Login to your account',
-           openExternal: true,
-           className:'main-footer',
-          },
-          {
-           title:(
-             <div onClick={contactScroll}>
-               Privacy policy
-             </div>
-           ),
-           //url: '',
-           //description:' +48732121453',
-           openExternal: true,
-           className:'main-footer',
-           LinkComponent:'a'
-          },
-         
-        ]
-       }
-    ]}
-    bottom="Winster trade investment"
-    backgroundColor='#ffab0000'
-  />
         </Grid>
+        <MyFooter />
+</div>
     )
 }
 
