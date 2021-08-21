@@ -938,7 +938,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
     </Grid>
   </div>
   {/* Footer */}
-  <footer id="site-footer" className="footer ">
+  <div id="site-footer" className="footer ">
 
   <MyFooter />
     {/* <canvas id="can" />
@@ -1015,7 +1015,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
         <Image layout='intrinsic' width={50} height={50} src={logo2} />
     
     </a> */}
-  </footer>
+  </div>
 </div>
 </div>
     )
