@@ -55,7 +55,7 @@ import HeaderLinks from '../../components/HeaderLinks'
 import bg from '../../img/bg-2.png'
 import Affiliate from '../../components/Affiliate'
 //import Footer from 'rc-footer';
-import 'rc-footer/assets/index.css';
+//import 'rc-footer/assets/index.css';
 
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'

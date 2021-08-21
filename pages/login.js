@@ -31,7 +31,7 @@ import Alert from '@material-ui/lab/Alert';
 import {HashLoader} from 'react-spinners'
 import Paper from '@material-ui/core/Paper'
 import Footer from 'rc-footer';
-import './home/node_modules/rc-footer/assets/index.css';
+import 'rc-footer/assets/index.css';
 import PhoneIcon from '@material-ui/icons/Phone'
 //import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationCity'
