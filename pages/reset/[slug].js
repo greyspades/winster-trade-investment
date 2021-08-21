@@ -6,10 +6,11 @@ import EmailIcon from '@material-ui/icons/EmailOutlined'
 import {HashLoader} from 'react-spinners'
 import Header from '../../components/Header'
 import HeaderLinks from '../../components/HeaderLinks'
-import Footer from '../../components/footer'
+import MyFooter from '../../components/myFooter'
 import {useRouter} from 'next/router'
 import VisibilityOn from '@material-ui/icons/VisibilityOutlined'
 import VisibilityOff from '@material-ui/icons/VisibilityOffOutlined'
+
 
 
 const Retrieval = () => {
@@ -186,6 +187,7 @@ const Retrieval = () => {
                </Grid>
             </Paper>
             </Grid>
+            <MyFooter />
             
         </div>
     )
