@@ -6,7 +6,7 @@ import EmailIcon from '@material-ui/icons/EmailOutlined'
 import {HashLoader} from 'react-spinners'
 import Header from '../components/Header'
 import HeaderLinks from '../components/HeaderLinks'
-import Footer from '../components/footer'
+import MyFooter from '../components/myFooter'
 //import {useRouter} from 'next/router'
 
 const Password = () => {
@@ -123,7 +123,7 @@ const Password = () => {
                </Grid>
             </Paper>
             </Grid>
-            <Footer />
+            <MyFooter />
         </div>
     )
 }

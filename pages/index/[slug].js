@@ -54,7 +54,7 @@ import Header from '../../components/Header'
 import HeaderLinks from '../../components/HeaderLinks'
 import bg from '../../img/bg-2.png'
 import Affiliate from '../../components/Affiliate'
-import Footer from 'rc-footer';
+//import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
 
 import PhoneIcon from '@material-ui/icons/Phone'
@@ -938,7 +938,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
     </Grid>
   </div>
   {/* Footer */}
-  <div id="site-footer" className="footer ">
+  <div  className="footer ">
 
   <MyFooter />
     {/* <canvas id="can" />
