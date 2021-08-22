@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+//import '../styles/globals.css'
+import '../styles/styles.css'
 import '../styles/blocks.min.css'
 import '../styles/plugins.min.css'
 import '../styles/theme-styles.min.css'

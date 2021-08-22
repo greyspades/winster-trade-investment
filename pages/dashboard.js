@@ -73,7 +73,7 @@ import ToolTip from '@material-ui/core/Tooltip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBtc, faEthereum } from '@fortawesome/free-brands-svg-icons'
 import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
-import Router from 'next/dist/next-server/lib/router/router';
+//import Router from 'next/dist/next-server/lib/router/router';
 import {Formik} from 'formik'
 import {Input,FormControl,InputAdornment} from '@material-ui/core'
 import CryptoCompare from 'react-crypto-compare'

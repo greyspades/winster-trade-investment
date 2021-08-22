@@ -1,19 +1,4 @@
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-} */
 .heading-talk {
   color: #8c96a5;
   margin-left: 200px;
@@ -41,11 +26,7 @@ a {
 .carousel-card {
   background-color: #131519;
 }
-.crypto-market {
-  /* border: 1px solid #ffba00; */
-  
-  
-}
+
 .faqs-accordion {
   background-color: rgba(0, 0, 0, 0);
   
@@ -76,9 +57,7 @@ a {
   padding: 20px;
   height: 100%;
 }
-.signup-card {
- 
-}
+
 .card-content {
   background-color: rgba(0, 0, 0, 0);
 }
@@ -103,10 +82,7 @@ a {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.first-input {
-  /* margin-bottom: 40px;
-  margin-top: 10px; */
-}
+
 ::placeholder {
   color: white;
   border:none;
@@ -129,7 +105,7 @@ a {
 }
 .profile-paper {
   margin-top: 25px;
-  /* width: 95%; */
+ 
   background-image: linear-gradient(black 90%,black);
   
   height: auto;
@@ -172,27 +148,16 @@ a {
 
   
 }
-/* input {
-  outline:none;
-background-color: rgba(0, 0, 0, 0);
- } */
- /* input:-webkit-autofill,
- input:-webkit-autofill:hover,
- input:-webkit-autofill:focus,
- input:-webkit-autofill:active  {
-   -webkit-box-shadow: 0 0 0 30px rgba(0,0,0,0) inset;
- } */
+
 
  input:-webkit-autofill
 {
  -webkit-text-fill-color: white;
  background-clip: text;
 
- /* background-color: rgba(0, 0, 0, 0); */
+
 }
-.second-sign {
-  
-}
+
 .username-input {
   margin-top: 40px;
 }
@@ -201,10 +166,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-left: 32px;
   margin-top: 10px;
 }
-/* .country-grid {
-  display: grid;
-  place-items: flex-start;
-} */
+
 .dashboard-chart {
   width: 100%;
   height: 110px
@@ -213,9 +175,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-top:30px;
   margin-bottom: 70px;
 }
-/* .bottom-profile {
-  margin-bottom: -40px;
-} */
+
 
 .step-icon {
   width: 60px;
@@ -241,14 +201,7 @@ background-color: rgba(0, 0, 0, 0);
   width: 70px;
   height: 70px;
 }
-.coin-row {
-  
 
-}
-.coin-sel {
-  
-  
-}
 .drawer-container {
   display: flex;
   flex-direction: row;
@@ -320,9 +273,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-top: 40px;
   background-size: cover;
 }
-.reset-header {
-  
-}
+
 .reset-input {
   margin-bottom: 50px;
 }
@@ -334,27 +285,18 @@ background-color: rgba(0, 0, 0, 0);
   font-size: x-large;
   font-weight: 400;
 }
-.app-bar {
-  /* background-image: url(../img/event4.jpg);
-  background-size: cover;
-  background-repeat: no-repeat; */
-}
+
 .table-row {
   background-color: black;
 }
 
 .main-paper {
-  /* width: 30%; */
+
   background-color: #131519;
  color: white;
   height: auto;
   box-shadow: 5px 5px #ffba00;
-  /* margin-left: 15px; */
-}
-.top-container {
-  /* background-image: url(../img/city.jpg);
-  background-size: cover;
-  background-repeat: no-repeat; */
+  
 }
 
 .world {
@@ -375,9 +317,7 @@ background-color: rgba(0, 0, 0, 0);
   height: 100px;
   width: 100px;
 }
-.main-logo-container {
 
-}
 .contact {
   width: 90%;
   height: 100%;
@@ -389,12 +329,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-top: 40px;
   background-size: cover;
 }
-.contact-input {
-  
-}
-.talk {
 
-}
 .count-paper {
   width: 90%;
   height: 400px;
@@ -407,13 +342,7 @@ background-color: rgba(0, 0, 0, 0);
   background-size: cover;
 }
 
-/* #particle-canvas {
-  position:fixed !important;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-} */
+
 .particles {
   
   position:fixed;
@@ -477,9 +406,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-left: 12vh;
 }
 
-.deposit-paper {
-  
-}
+
 .market-grid {
   margin-left: 20px;
 }
@@ -512,10 +439,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-top: -98px;
   margin-bottom: 0px;
 }
-.bottom-profile {
 
-  
-}
 .balance-paper {
  margin-left: 23px;
 }
@@ -565,9 +489,7 @@ background-color: rgba(0, 0, 0, 0);
   place-items: center;
   background-color: rgba(0, 0, 0, 0);
 }
-.balance-value {
-  
-}
+
 .alpha-heading {
   margin-top: 150px;
   background-image: url(../img/bg-2.png);
@@ -600,7 +522,7 @@ background-color: rgba(0, 0, 0, 0);
   margin-bottom: 60px;
 }
 .crypto-market {
-  /* border: 1px solid #ffba00; */
+  
   width: 80%;
   
   
@@ -689,4 +611,4 @@ background-color: rgba(0, 0, 0, 0);
 }
 
 
-}
+} 

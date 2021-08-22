@@ -179,10 +179,10 @@ s0.parentNode.insertBefore(s1,s0);
           fixed
           color="transparent"
           //routes={dashboardRoutes}
-          changeColorOnScroll={{
-            color:'transparent',
-            height:50,
-          }}
+          // changeColorOnScroll={{
+          //   color:'transparent',
+          //   height:50,
+          // }}
           
           // rightLinks={(
           //       <div>
@@ -718,10 +718,12 @@ canvasClassName='particle-canvas'
     <section style={{}}  data-settings="particles-1" className="main-sectio alpha-heading crumina-flying-balls particles-js bg-  responsive-align-center">
       <div style={{}} className="container top-container">
         <div className="row winster-top">
-          <div style={{marginTop:10,display:'grid',placeItems:'center'}} className="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-            <img className="responsive-width-50 winster-logo" src={logo1} alt="image" />
+          <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6 logo-grid">
+            <div className='winster-main-logo' style={{}}>
+            <Image  src={logo1} layout='fill' />
+            </div>
           </div>
-          <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6">
             <header style={{}} className="heading-talk crumina-module crumina-heading heading--h1  heading--with-decoration winster-header">
               <h1 className=" heading-title f-size-90 weight-normal no-margin">Winster<br/>
                 <span className="weight-bold">Trade</span></h1>
@@ -735,11 +737,11 @@ canvasClassName='particle-canvas'
       </div>
       
     </section>
-    <Grid style={{marginTop:50,marginBottom:80}} container justify='center'>
+    <Grid style={{marginTop:30,marginBottom:50}} container justify='center'>
           <a data-scroll href="/signup" className="btn btn--large btn--transparent btn--secondary">Get started</a>
           </Grid>
           <TickerTape colorTheme="dark"></TickerTape>
-            <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:60}}>
+            <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:20}}>
             
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
@@ -755,7 +757,7 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
 
             </Grid>
            
-            <div ref={serviceRef} style={{marginTop:100,marginBottom:60}}>
+            <div ref={serviceRef} style={{marginTop:10,marginBottom:30}}>
             {
               mobile ? 
               <Products />

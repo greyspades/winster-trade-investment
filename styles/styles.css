@@ -1,0 +1,642 @@
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: white;
+ background-clip: text;
+
+
+}
+
+.heading-talk {
+    color: #8c96a5;
+    margin-left: 200px;
+  }
+  .heading-card {
+    width: 80%;
+    text-align: center;
+  
+  }
+  .product-card {
+    border:  #ffba00 solid 3px;
+    border-bottom:  #ffba00 solid 0px;
+    margin:10px;
+    color: #131519;
+    
+    
+  }
+  .product-grid{
+    background: linear-gradient(#131519 70%,#131519, #ffba00 );
+    width: 80%;
+    height: auto;
+    margin-top: 50px;
+  
+  }
+  .carousel-card {
+    background-color: #131519;
+  }
+  
+  .faqs-accordion {
+    background-color: rgba(0, 0, 0, 0);
+    
+    border-left: 2px solid #ffba00;
+    border-top: 2px solid #ffba00;
+    border-bottom: 2px solid #ffba00;
+    margin-bottom: 30px;
+    width: 90%;
+   
+    
+  }
+  .steps {
+    background-color:rgba(0, 0, 0, 0) ;
+    width: 95%;
+  
+    
+  }
+  .plans-icon {
+    color: linear-gradient(#ffba00 29%,#ffba00 50%,rgb(138,35,135) );
+  }
+  .charts-image {
+    background-image: url(../img/charts.jpg);
+    height: 100%;
+    background-size: cover;
+  }
+  .crypto-backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .card-content {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .signup {
+    background-image: url(../img/event4.jpg);
+    height:auto;
+    background-repeat: no-repeat;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: contain;
+  }
+  .app-input {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-bottom: 1px #ffab00 solid;
+    width: 100%;
+    
+   
+  }
+  .second-input {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  ::placeholder {
+    color: white;
+    border:none;
+    text-align: center;
+   
+    
+  }
+  .button {
+    border: 3px #ffab00 solid;
+    height: 40px;
+    width: 110px;
+    border-radius: 7px;
+    
+  }
+  .dashboard-options{
+    border: #ffab00 3px solid;
+    border-left: 0px;
+    background-color: black;
+    margin-top: 30px;
+  }
+  .profile-paper {
+    margin-top: 25px;
+   
+    background-image: linear-gradient(black 90%,black);
+    
+    height: auto;
+    padding: 10px;
+  
+    
+  }
+  .profile-image {
+    border-radius: 100px;
+  }
+  .container-p {
+    margin-top: 100px;
+  }
+  .deposit-paper {
+   
+    padding: 30px;
+  }
+  .react-crypto-compare-currency {
+    color:#ffab00;
+  }
+  ::-webkit-textfield-decoration-container {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .dollar-sign {
+    margin-left: 30;
+    margin-right: 10px;
+  }
+  .balance-value {
+    font-size: 35px;
+    margin-left: 10px;
+  }
+  .success-paper {
+    margin-top: 100px;
+    width: 90%;
+    background-image: linear-gradient(black 90%,black);
+    background-color: black;
+    height: auto;
+    padding: 10px;
+  
+    
+  }
+
+
+  .username-input {
+    margin-top: 40px;
+  }
+  .country-input {
+    margin-bottom: 30px;
+    margin-left: 32px;
+    margin-top: 10px;
+  }
+  
+  .dashboard-chart {
+    width: 100%;
+    height: 110px
+  }
+  .crypto-dashboard {
+    margin-top:30px;
+    margin-bottom: 70px;
+  }
+  
+  
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    color:#ffab00;
+  }
+  .market-overview {
+    width: 95%;
+  }
+  .index-head {
+    padding: 30px;
+    text-align: center;
+    
+  }
+  .drawer {
+    height: 400px;
+  }
+  .deposit-selector {
+    border: 3px solid #ffab00;
+    display: grid;
+    place-items: center;
+    border-radius: 40px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .drawer-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+   
+  .drawer-app-content {
+    flex: auto;
+    overflow: auto;
+  }
+  .coin-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .top-row {
+    display: grid;
+    place-items: center;
+    background-color: black;
+  }
+  .top-balance {
+    margin-left: 30px;
+  }
+  .alpha-heading {
+    margin-top: 70px;
+    background-image: url(../img/bg-help.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .choose-icon {
+    width: 100px;
+    height: 100px;
+    color: #ffab00;
+  }
+  .choose-heading {
+    margin-bottom: 20px;
+  }
+  .security {
+    margin-top: 60px;
+  }
+  .getting-started-header {
+    margin-bottom: 40px;
+  }
+  .access-para {
+    padding: 40px;
+  }
+  .crypto-heading {
+    margin-bottom: 20px;
+  }
+  .charts-image-container {
+    margin-top: 20px;
+    height: 400px;
+  }
+  .affili {
+    padding:20px;
+    background-color: #131519;
+    padding-bottom: 40px;
+    height: 600px;
+  }
+  .reset-paper {
+    width: 90%;
+    height: 450px;
+    background-image: url(../img/event4.jpg);
+    
+    background-repeat: no-repeat;
+    
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  
+  .reset-input {
+    margin-bottom: 50px;
+  }
+  .security-paper {
+    margin: 30px;
+  }
+  .price-valu {
+    color: #ffab00;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  
+  .table-row {
+    background-color: black;
+  }
+  
+  .main-paper {
+  
+    background-color: #131519;
+   color: white;
+    height: auto;
+    box-shadow: 5px 5px #ffba00;
+    
+  }
+  
+  .world {
+    background-image: url(../img/world.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 550px;
+    width: 100%
+  }
+
+
+  .main-footer {
+    font-size: 15px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+  }
+  .main-logo {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .contact {
+    width: 90%;
+    height: 100%;
+    background-image: url(../img/event4.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    display: grid;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  
+  .count-paper {
+    width: 90%;
+    height: 400px;
+    background-image: url(../img/event4.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    display: grid;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  
+  
+  .particles {
+    
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    
+  }
+  .bonus-talk {
+    margin-top: 100px;
+  }
+  .logo-grid {
+      display: grid;
+      place-items: center;
+  }
+  .winster-main-logo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+
+
+
+
+
+  
+
+
+
+  @media all and (min-width:800px){
+    .product-grid{
+      background: linear-gradient(#131519 70%,#131519,  #ffba00 );
+      width: 80%;
+      height: 350px;
+      border: 3px solid  #ffba00
+      
+    
+  }
+  .app-input {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-bottom: 1px #ffab00 solid;
+    width: 400px;
+    
+   
+  }
+  .signup {
+    background-image: url(../img/event4.jpg);
+    height:auto;
+    background-repeat: no-repeat;
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 60px;
+    background-size: cover;
+    
+  }
+  .profile-paper {
+    margin-top: 25px;
+    background-color: #131519;
+   color: white;
+    height: auto;
+   
+    
+  }
+  .paper-2 {
+    margin-left: 12vh;
+  }
+  
+  
+  .market-grid {
+    margin-left: 20px;
+  }
+  .container-p {
+    margin-left: 150px;
+  }
+  .success-paper {
+    margin-top: 120px;
+    width: 60%;
+    background-image: linear-gradient(black 90%,black);
+    background-color: black;
+    height: auto;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+  
+    
+  }
+  .second-sign {
+    margin-top: 50px;
+  }
+  .username-input {
+    margin-top: 0px;
+  }
+  .country-input {
+    margin-bottom: -10px;
+    margin-left: 58px;
+  }
+  .crypto-dashboard {
+    margin-top: -98px;
+    margin-bottom: 0px;
+  }
+  
+  .balance-paper {
+   margin-left: 23px;
+  }
+  .faqs-accordion {
+    background-color: rgba(0, 0, 0, 0);
+    
+    border-left: 2px solid #ffba00;
+    border-top: 2px solid #ffba00;
+    border-bottom: 2px solid #ffba00;
+    margin-bottom: 30px;
+    width: 50%;
+   
+    
+  }
+  .market-overview {
+    width: 80%;
+  }
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    color:#ffab00;
+  }
+  .index-head {
+    padding: 50px;
+    margin-top: -60px;
+  }
+  .drawer {
+    margin-top: 0px
+  }
+  .coin-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .deposit-selector {
+    border: 3px solid #ffab00;
+    display: grid;
+    place-items: center;
+    border-radius: 60px;
+    width: 100px;
+    height: 100px;
+  }
+  .withdraw-paper {
+    width: 65%;
+  }
+  .top-row {
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .alpha-heading {
+    margin-top: 150px;
+    background-image: url(../img/bg-2.png);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+  .choose-icon {
+    width: 150px;
+    height: 150px;
+    color: #ffab00;
+  
+  }
+  .choose-heading {
+    margin-bottom: 50px;
+  }
+  .security {
+    margin-top: 150px;
+  }
+  .getting-started-header {
+    margin-bottom: 80px;
+    margin-top: 30px;
+  }
+  .access-para {
+    padding: 60px;
+    margin-top: 10px;
+  }
+  .crypto-heading {
+    margin-bottom: 60px;
+  }
+  .crypto-market {
+    
+    width: 80%;
+    
+    
+    
+  }
+  
+  .charts-image-container {
+    height: 600px;
+    margin-top: 0px;
+    
+  }
+  .charts-image {
+    background-image: url(../img/charts.jpg);
+    height: 100%;
+    
+  }
+  .affiliate-icon {
+    margin-right: -80px;
+    
+    
+  }
+  .affili {
+    padding:20px;
+    background-color: #131519;
+    padding-bottom: 40px;
+  
+  }
+  .reset-paper {
+    width: 40%;
+    height: 450px;
+    background-image: url(../img/event4.jpg);
+    
+    background-repeat: no-repeat;
+    
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  .reset-header {
+    margin:20px
+  }
+  .contact {
+    width: 60%;
+    height: 450px;
+    background-image: url(../img/event4.jpg);
+    
+    background-repeat: no-repeat;
+    display: grid;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  .talk {
+    width: 80%;
+  }
+  .world {
+    background-image: url(../img/world.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+    width: 500px
+  }
+  .count-paper {
+    width: 60%;
+    height: 450px;
+    background-image: url(../img/event4.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    display: grid;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-size: cover;
+  }
+  .winster-header {
+    margin-left: -20px;
+  }
+  .winster-logo {
+    margin-top: -70px;
+    margin-right: -100px;
+  }
+  .winster-top {
+    margin-top: 80px;
+  }
+  .bonus-talk {
+    margin-top: 200px;
+  }
+  .logo-grid {
+    display: grid;
+    place-items: flex-end;
+}
+.winster-main-logo {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-top: -40px;
+}
+
+
+
+
+
+
+
+  }
+
+
+  
+  
+  
+  
