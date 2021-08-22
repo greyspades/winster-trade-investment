@@ -186,7 +186,7 @@ const Signup=()=> {
   
   
   return (
-   <div >
+   <div style={{padding:30}} >
      <Header
           
           fixed
@@ -826,7 +826,7 @@ canvasClassName='particle-canvas'
                           <FormControl style={{display:'grid',placeItems:'center',marginTop:50}} className={classes.margin}>
                              <Grid   justify='center' alignItems='center' container>
                          <Grid justify='center' alignItems='center' style={{}} container direction='row'>
-                        <Grid xs={12} md={6} style={{}} justify='center' alignItems='center' container>
+                        <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>
                         <Input
              className='app-input first-input '
              style={{color:'white'}}
@@ -845,7 +845,7 @@ canvasClassName='particle-canvas'
              />
                         </Grid>
             
-                   <Grid xs={12} md={6} style={{}} justify='center' alignItems='center' container >
+                   <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container >
                    <Input
              className='app-input username-input'
              style={{color:'white',}}
@@ -872,7 +872,7 @@ canvasClassName='particle-canvas'
              </div> */}
      
              <Grid className='second-sign' justify='center' alignItems='center' style={{}} container direction='row' >
-             <Grid xs={12} md={6} style={{}} justify='center' alignItems='center' container>
+             <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>
              <Input
              className='app-input second-input'
              style={{color:'white'}}
@@ -891,7 +891,7 @@ canvasClassName='particle-canvas'
              />
              </Grid>
      
-               <Grid style={{}} className='country-grid' xs={12} md={6} justify='flex-start' alignItems='flex-end' container>
+               <Grid style={{paddingRight:15}} className='country-grid' xs={12} md={6} justify='flex-start' alignItems='flex-end' container>
      
                <Input
                 startAdornment={
@@ -920,7 +920,7 @@ canvasClassName='particle-canvas'
              </Grid>
              
                <Grid justify='center' alignItems='center' style={{}} container direction='row'>
-                 <Grid xs={12} md={6} style={{}} justify='center' alignItems='center' container>
+                 <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>
                  <Input
              className='app-input'
              style={{color:'white'}}
@@ -943,7 +943,7 @@ canvasClassName='particle-canvas'
      
              />
                  </Grid>
-                 <Grid xs={12} md={6} style={{}} justify='center' alignItems='center' container>
+                 <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>
                  <Input
              className='app-input second-input'
              style={{color:'white'}}
@@ -989,7 +989,7 @@ canvasClassName='particle-canvas'
          sitekey="6LcmDMkbAAAAAKtryIcbLmQxAQl1Pr0LEBXcISEW"
          onChange={()=>{setCaptcha(true)}}
          theme='dark'
-         onErrored={()=>alert('cannot contact recaptcha')}
+         onErrored={()=>alert('cannot contact recaptcha please check your network connection and refresh the page')}
          
        />
                  

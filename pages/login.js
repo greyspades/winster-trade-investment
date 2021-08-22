@@ -131,7 +131,8 @@ const Login=()=> {
   }
   
   return (
-   <div style={{display:"grid",placeItems:"center"}}>
+   <div>
+     <div style={{display:"grid",placeItems:"center",padding:30}}>
 
 <Header
           
@@ -820,9 +821,9 @@ canvasClassName='particle-canvas'
         </CardContent>
     </Card>
    </Paper>
-<Grid>
-<MyFooter />
-</Grid>
+
+   </div>
+   <MyFooter />
    </div>
   );
 }
