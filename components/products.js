@@ -43,7 +43,7 @@ const Products = () => {
             
             >
                                 <div style={{display:'grid',placeItems:'center'}}>
-                                <Card elevation={20} className='product-grid countdown-bg1'>
+                                <Card  style={{zIndex:1000}} elevation={20} className='product-grid countdown-bg1'>
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
@@ -70,7 +70,7 @@ const Products = () => {
             xs={12}
             >
                                    <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid countdown-bg1'>
+                                <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
@@ -98,7 +98,7 @@ const Products = () => {
             xs={12}
             >       
              <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid countdown-bg1'>
+                                <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
 
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
@@ -125,7 +125,7 @@ const Products = () => {
             xs={12}
             >
                  <div style={{display:'grid',placeItems:'center'}}>
-                                <Card className='product-grid countdown-bg1'>
+                                <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
                                    
                                     <CardContent style={{}}>
                                         <div style={{display:'grid',placeItems:'center'}}>

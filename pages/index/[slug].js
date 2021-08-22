@@ -34,7 +34,7 @@ import logo3 from '../../img/logo3.png'
 import MyFooter from '../../components/myFooter'
 import Clock from 'react-digital-clock';
 import { TickerTape } from "react-ts-tradingview-widgets";
-
+import Script from 'next/script'
 
 
 //import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -156,7 +156,15 @@ const Home = () => {
 <script type="text/javascript" src='../../js/main.js'/>
 
 
-<script type="text/javascript" dangerouslySetInnerHTML={{__html:`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+
+
+
+
+   </Head>
+   
+<div>
+<Script strategy='afterInteractive' type="text/javascript" dangerouslySetInnerHTML={{__html:`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
@@ -165,13 +173,6 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();`}}/>
-
-
-
-
-   </Head>
-   
-<div>
   
 <Grid container >
 <Header

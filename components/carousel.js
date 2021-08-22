@@ -6,7 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid,Card,CardHeader,CardContent,Container,Paper,CircularProgress } from '@material-ui/core'
 import { CircularProgressbarWithChildren,buildStyles } from 'react-circular-progressbar';
-
+import LooksOne from '@material-ui/icons/LooksOneTwoTone'
+import LooksThree from '@material-ui/icons/Looks3TwoTone'
+import LooksTwo from '@material-ui/icons/LooksTwoTwoTone'
 import one from '../img/1.png'
 import two from '../img/2.png'
 import three from '../img/3.png'
@@ -20,7 +22,7 @@ const Carousel=()=>{
   const percentage=66
   return (
     <Grid container justify='center'>
-      <Paper style={{}} className='count-paper'>
+      <Paper style={{zIndex:1000}} className='count-paper'>
         <div style={{backgroundColor:'rgba(0,0,0,0.5)',padding:20}}>
           <Grid style={{}} spacing={5} justify='center' container direction='row'>
           <Grid xs={6} md={3} item style={{width:100,height:100}}>
@@ -52,7 +54,7 @@ const Carousel=()=>{
           value={25}>
   
   <div style={{marginTop:-12}}>
- <Image  width={90} height={90} src={one} layout='intrinsic' />
+  <LooksOne style={{width:70,height:70,color:'#ffab00'}} />
  </div>
  
 </CircularProgressbarWithChildren>;
@@ -90,7 +92,8 @@ const Carousel=()=>{
 
  
  <div style={{marginTop:-12}}>
- <Image  width={90} height={90} src={two} layout='intrinsic' />
+ {/* <Image  width={90} height={90} src={two} layout='intrinsic' /> */}
+ <LooksTwo style={{width:70,height:70,color:'#ffab00'}} />
  </div>
  
 
@@ -130,7 +133,7 @@ const Carousel=()=>{
           value={75}>
   
   <div style={{marginTop:-12}}>
- <Image  width={90} height={90} src={three} layout='intrinsic' />
+  <LooksThree style={{width:70,height:70,color:'#ffab00'}} />
  </div>
  
 </CircularProgressbarWithChildren>;

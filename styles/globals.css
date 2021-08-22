@@ -21,6 +21,7 @@
   width: 80%;
   height: auto;
   margin-top: 50px;
+  z-index: 1000;
 
 }
 .carousel-card {
@@ -370,8 +371,8 @@
     background: linear-gradient(#131519 70%,#131519,  #ffba00 );
     width: 80%;
     height: 350px;
-    border: 3px solid  #ffba00
-    
+    border: 3px solid  #ffba00;
+    z-index: 1000;
   
 }
 .app-input {
@@ -587,7 +588,7 @@
 }
 .count-paper {
   width: 60%;
-  height: 450px;
+  height: auto;
   background-image: url(../img/event4.jpg);
   background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;

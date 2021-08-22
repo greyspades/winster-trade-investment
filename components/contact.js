@@ -15,7 +15,7 @@ const Contact=()=>{
     })
     return (
      
-            <Grid  container justify='center'>
+            <Grid  style={{zIndex:1000}} container justify='center'>
               <Paper className='contact' elevation={10}>
               <div style={{backgroundColor:'rgba(0,0,0,0.6)',height:'100%',width:'100%'}}>
               <h3 style={{textAlign:'center',color:'#ffab00'}}>
@@ -63,7 +63,7 @@ const Contact=()=>{
                             <Input
              className='app-input contact-input '
              style={{color:'white',width:'80%',marginTop:80}}
-             placeholder='Full name'
+             placeholder='message'
                id="input-with-icon-adornment"
                color='primary'
                autoComplete={false}

@@ -16,8 +16,8 @@ const Overview = (props) => {
                 </p>
             <Grid container justify='center' direction='row' className='market-overview'>
            
-                <Grid justify='center' container xs={12} md={4}>
-                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='BTCUSD' colorTheme="dark"></MiniChart>
+                <Grid style={{}} justify='center' container xs={12} md={4}>
+                <MiniChart width='100%' underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='BTCUSD' colorTheme="dark"></MiniChart>
                 </Grid>
 
                 <Grid justify='center' container xs={12} md={4}>

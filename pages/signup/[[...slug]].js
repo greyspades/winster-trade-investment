@@ -721,7 +721,7 @@ canvasClassName='particle-canvas'
       }
 	    }
 	/>
-       <div style={{display:"grid",placeItems:"center"}}>
+       <div style={{display:"grid",placeItems:"center",zIndex:1000}}>
        <Paper elevation={20} style={{display:'grid',placeItems:'center',backgroundColor:'#171028',zIndex:1000,marginTop:100}} className='signup'>
          
       

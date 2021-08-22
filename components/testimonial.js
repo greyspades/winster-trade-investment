@@ -25,7 +25,7 @@ const Testimonials = () => {
               Top rated investors of <span style={{color:'#ffab00'}}>August</span>
             </h3>
             <Grid direction='row' container justify='center' alignItems>
-                <Grid container justify='center' alignItems xs={12} md={3} >
+                <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
                             <Image style={{margin:20}} height={200} width={170} src={aiden} layout='intrinsic' />
@@ -56,7 +56,7 @@ const Testimonials = () => {
 
 
 
-                <Grid container justify='center' alignItems xs={12} md={3} >
+                <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
                             <Image style={{margin:20}} height={200} width={170} src={per1} layout='intrinsic' />
@@ -87,7 +87,7 @@ const Testimonials = () => {
 
 
 
-                <Grid container justify='center' alignItems xs={12} md={3} >
+                <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
                             <Image style={{margin:20}} height={200} width={170} src={per2} layout='intrinsic' />
@@ -115,7 +115,7 @@ const Testimonials = () => {
                         </Grid>
                     </Paper>
                 </Grid>
-                <Grid container justify='center' alignItems xs={12} md={3} >
+                <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
                             <Image style={{margin:20}} height={200} width={170} src={per3} layout='intrinsic' />

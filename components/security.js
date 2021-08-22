@@ -27,8 +27,8 @@ const Security = () => {
                 By investing with winster trade investment you are assured of
             </p>
             <Grid container justify='center' direction='row'>
-                <Grid style={{padding:10}} justify='center' alignItems='center' xs={12} md={4} item>
-                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:350}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
+                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
                   <div style={{display:'grid',placeContent:'center'}}>
                    <SecurityIcon className='choose-icon' />
                    </div>
@@ -37,13 +37,13 @@ const Security = () => {
                    </h5>
                   
                    <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
-                   Your funds are protected by industry leading protocols,dedicated to efficiency and flexibility, while maintaining ease of use
+                   Your funds are protected by industry leading protocols,dedicated to efficiency and flexibility, while maintaining ease of use and flexibility
                     </p>
                    
                   </Paper>
                 </Grid>
-                <Grid style={{padding:10}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:350}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <PolicyIcon className='choose-icon' />
                    </div>
@@ -55,8 +55,8 @@ const Security = () => {
                     </p>
                     </Paper>
                 </Grid>
-                <Grid style={{padding:10}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:350}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <VerifiedUserIcon className='choose-icon' />
                    </div>
