@@ -721,7 +721,7 @@ canvasClassName='particle-canvas'
         <div className="row winster-top">
           <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6 logo-grid">
             <div className='winster-main-logo' style={{}}>
-            <Image  src={logo1} layout='fill' />
+            <Image priority={true}  src={logo1} layout='fill' />
             </div>
           </div>
           <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6">

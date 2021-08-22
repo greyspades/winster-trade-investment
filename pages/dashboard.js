@@ -872,7 +872,7 @@ const Dashboard=(props)=>{
                <Grid justify='center' container spacing={3} className='container-p'  style={{padding:5,marginTop:60,width:'100%'}} >
                    <Grid className='top-row' justify='center' style={{height:'auto',padding:10}} container direction='row' spacing={3}>
                    <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
-<Paper style={{width:'95%'}}  className='profile-paper balance-paper'>
+<Paper style={{width:'95%'}}  className='profile-paper balance-paper countdown-bg'>
   <Grid direction='row' style={{padding:5,}} container>
       <Grid md={3} xs={3} style={{}} item>
           <div>
