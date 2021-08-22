@@ -64,7 +64,7 @@ const Security = () => {
                         Reliability
                    </h5>
                     <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
-                    Using industry leading technologies and services, we ensure speedy and efficient transactions which make your invetments a priority
+                    We ensure speedy and efficient transactions which make your invetments a priority
                     </p>
                     </Paper>
                 </Grid>
@@ -107,7 +107,7 @@ const Security = () => {
                     
                 </h3>
                 <p className='heading-text' style={{textAlign:'center',fontSize:20}}>
-                Backed and Certified by Industry Standard Protocols dedicated to enforcing strict regulations and transparency 
+                Backed and Certified by Standard Protocols dedicated to enforcing strict regulations and transparency 
                 </p>
                 <Grid style={{display:'grid',placeItems:'center'}} xs={12} md={6}  item>
                    <Paper elevation={20} style={{}} className='security-paper'>

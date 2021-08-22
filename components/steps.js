@@ -284,8 +284,7 @@ const Steps=(props)=>{
         </Grid>
       </Grid>
       <p className='access-para' style={{textAlign:'center',fontSize:20}}>
-    To access the features and benefits being provided by winster trade investment kindly <Button style={{color:'#ffab00'}} onClick={()=>{Router.push(`../Register/${props.bomber}`)}} ><span style={{}}> Sign up </span></Button> with credentials and get started. It's quite easy and doesn't take 
-much time, of which you get an offer to become an investor and earn profit. For that reason you mandated to complete the registration process. In order to register yourself as a member of winstertradeinvestment.com, click on the Create Account button, fill in the registration form and press Register. Your account is ready to use! You are obliged to provide only complete and accurate information about yourself (the Registration Data) when registering as a Member.
+    To access the features and benefits provided by winster trade investment<Button style={{color:'#ffab00'}} onClick={()=>{Router.push(`../Register/${props.bomber}`)}} ><span style={{}}> Sign up </span></Button> with credentials and get started. 
     </p>
     </div>
   );

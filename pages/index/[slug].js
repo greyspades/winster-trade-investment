@@ -741,18 +741,15 @@ canvasClassName='particle-canvas'
     <Grid style={{marginTop:30,marginBottom:50}} container justify='center'>
           <a data-scroll href="/signup" className="btn btn--large btn--transparent btn--secondary">Get started</a>
           </Grid>
-          <TickerTape colorTheme="dark"></TickerTape>
+         <div style={{marginTop:20}}>
+
+         </div>
             <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:20}}>
             
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
             <p className={'talk'}  style={{fontSize:20,padding:10}}>
-            Welcome to winstertradeinvestment.com We are a leading company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. If you would like to enter the world of online Forex trading and Cryptocurrency trading with modern Cloud Mining platform then you are on your right way. Investments with hoardtradeinvestment.com are affordable and safe. Our team works tirelessly to ensure that each and every one of our clients receives the attention they deserve and reaches great success and growth throughout their investment career.
-
-winstertradeinvestment.com is an investment fund which has been in business since 2016 and
- achieved excellent results. The experience and skills of our traders and financial experts is the key to the success of the investment fund. Throughout our careers, each of us has practiced investment management at the highest levels and built a solid reputation for fantastic skills and substantial experience. Our highly motivated employees and experienced experts from the area of finance and related fields including trading, analytics, marketing, computer technology, law and management are ready to provide professional services. Profits gained through the work of
- our specialists are fairly shared between the fund and private investors, our clients.
-              
+            Welcome to winstertradeinvestment.com We are a leading company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. 
           </p>
        
 
@@ -839,12 +836,12 @@ winstertradeinvestment.com is an investment fund which has been in business sinc
         <div className="row bg-2">
           <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30">
             <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
-              <img className="primary-dots mb30" src={require('../../img/dots.png')} alt="dots" />
+              
               <h2 style={{textAlign:'center'}} className="heading-title weight-normal">Winster tokens
               </h2>
               <Grid container justify='center'>
                 <motion.div style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}}>
-                <Image src={logo3} height={200} width={200} layout='intrinsic' />
+                <Image priority={true} src={logo3} height={200} width={200} layout='intrinsic' />
                 </motion.div>
               </Grid>
               <div className="heading-text">Our very own decentralized currency which scales on every transaction and referal you make

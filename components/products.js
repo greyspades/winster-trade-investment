@@ -53,7 +53,7 @@ const Products = () => {
                                             Crypto Loans
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
-                                        We offer loans for businesses, students, and their likes to enable fast productivity, our interest rates are reasonable and without worry
+                                        We offer loans to organizations and individuals, our interest rates are reasonable and without worry.
                                         </div>
                                       
                                     </CardContent>
@@ -80,7 +80,7 @@ const Products = () => {
                                             Crypto Investments
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
-                                        Invest in our crypto trades and get live trade data and analysis with a 25% guarantee in all our investments
+                                        Invest in our crypto trades and get live trade data and analysis with a 25% guarantee in all our investments.
                                         </div>
                                        
                                     </CardContent>
@@ -108,7 +108,7 @@ const Products = () => {
                                             Crypto Transactions
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
-                                        Conduct live crypto and cash transactions which are completely transparent and encrypted by our team of data encryption experts
+                                        Conduct live crypto and cash transactions which are completely transparent and encrypted.
                                         </div>
                                     </CardContent>
                                 </Card>
