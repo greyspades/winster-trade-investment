@@ -48,7 +48,6 @@ import Particles from 'react-particles-js'
 
 
 
-
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -726,7 +725,7 @@ canvasClassName='particle-canvas'
          
       
     
-         <Card style={{
+         <div style={{
              // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',
              backgroundColor:"rgba(0,0,0,0.6)",
              width:'100%',
@@ -736,7 +735,7 @@ canvasClassName='particle-canvas'
              
          }}  >
      
-             <CardContent>
+           
              <h2  style={{marginTop:10,textAlign:'center',marginBottom:40}}>
                     Get in on the <span style={{color:'#ffab00',textAlign:'center'}}>Action</span>
              </h2>
@@ -823,7 +822,7 @@ canvasClassName='particle-canvas'
                      }}>
                        {({handleChange,handleSubmit,values,user})=>((
                         <div>
-                          <FormControl style={{display:'grid',placeItems:'center',marginTop:50}} className={classes.margin}>
+                          <FormControl style={{display:'grid',placeItems:'center',marginTop:50,padding:10}} className={classes.margin}>
                              <Grid   justify='center' alignItems='center' container>
                          <Grid justify='center' alignItems='center' style={{}} container direction='row'>
                         <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>
@@ -980,13 +979,13 @@ canvasClassName='particle-canvas'
                label="I have read and agreed to the terms of service and privacy policy"
                labelPlacement="right"
              /> */}
-             <p style={{marginTop:10}}>
+             <p style={{marginTop:10,textAlign:'center'}}>
              I have read and agreed to the terms of service and privacy policy
              </p>
                  </div>
                  <Grid container justify='center' alignItems='center' style={{}}>
                  <ReCAPTCHA
-         sitekey="6LcmDMkbAAAAAKtryIcbLmQxAQl1Pr0LEBXcISEW"
+         sitekey="6LcOQiEcAAAAAPPTvimnnC2RY0W6YgY5iuCrSlYp"
          onChange={()=>{setCaptcha(true)}}
          theme='dark'
          onErrored={()=>alert('cannot contact recaptcha please check your network connection and refresh the page')}
@@ -1023,8 +1022,8 @@ canvasClassName='particle-canvas'
                         
                         ))}
                            </Formik>
-             </CardContent>
-         </Card>
+             
+         </div>
      
        
         </Paper>

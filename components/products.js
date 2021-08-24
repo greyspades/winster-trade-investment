@@ -10,6 +10,10 @@ import crypto from '../img/crypto.svg'
 import currency from '../img/cryptocurrency.svg'
 import chart from '../img/chart.svg'
 import tax from '../img/tax.svg'
+import invest from '../img/invest.svg'
+
+
+
 
 // import {
 //     Container,
@@ -53,7 +57,7 @@ const Products = () => {
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <Image width={100} height={100} src={tax} layout='intrinsic' />
+                                        <Image width={100} height={100} src={crypto} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Loans
@@ -80,7 +84,7 @@ const Products = () => {
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <Image width={100} height={100} src={crypto} layout='intrinsic' />
+                                        <Image width={100} height={100} src={invest} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Investments

@@ -139,10 +139,10 @@ const Login=()=> {
           fixed
           color="transparent"
           //routes={dashboardRoutes}
-          // changeColorOnScroll={{
-          //   color:'transparent',
-          //   height:50,
-          // }}
+          changeColorOnScroll={{
+            color:'transparent',
+            height:50,
+          }}
           
           // rightLinks={(
           //       <div>
