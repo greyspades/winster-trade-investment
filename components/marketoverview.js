@@ -21,11 +21,11 @@ const Overview = (props) => {
                 </Grid>
 
                 <Grid justify='center' container xs={12} md={4}>
-                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='ETHUSD' colorTheme="dark"></MiniChart>
+                <MiniChart width='100%' underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='ETHUSD' colorTheme="dark"></MiniChart>
                 </Grid>
 
                 <Grid justify='center' container xs={12} md={4}>
-                <MiniChart underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='USDTUSD' colorTheme="dark"></MiniChart>
+                <MiniChart width='100%' underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='USDTUSD' colorTheme="dark"></MiniChart>
                 </Grid>
             </Grid >
             </div>

@@ -38,7 +38,7 @@ const Plans = () => {
                Plans suited for everyone
              </h3>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
-        <div className="crumina-module crumina-pricing-table pricing-table--style1">
+        <div style={{}} className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
           <Filter1Icon style={{width:70,height:70,color:'#ffab00'}} />
           </div>

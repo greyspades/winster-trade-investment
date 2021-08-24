@@ -21,14 +21,14 @@ const Security = () => {
     return (
         <div className='security' style={{}}>
             <h3 style={{textAlign:'center',color:''}} className='choose-heading'>
-                Why choose Winster trade investment ?
+                Secure your financial freedom
             </h3>
             <p style={{textAlign:'center',fontSize:20}}>
                 By investing with winster trade investment you are assured of
             </p>
             <Grid container justify='center' direction='row'>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
+                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
                   <div style={{display:'grid',placeContent:'center'}}>
                    <SecurityIcon className='choose-icon' />
                    </div>
@@ -37,13 +37,13 @@ const Security = () => {
                    </h5>
                   
                    <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
-                   Your funds are protected by industry leading protocols,dedicated to efficiency and flexibility, while maintaining ease of use and flexibility
+                   Your funds are protected by industry leading protocols,dedicated to efficiency and flexibility, while maintaining ease of use
                     </p>
                    
                   </Paper>
                 </Grid>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <PolicyIcon className='choose-icon' />
                    </div>
@@ -51,12 +51,12 @@ const Security = () => {
                         Transparency
                    </h5>
                     <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
-                        Your finances are always under your complete control and you decide how you trade and invest with no hidden charges or transactions
+                    Honesty and transparency are our top priorities. Winster trade investment is audited to ensure every asset is accounted for in our secure system.
                     </p>
                     </Paper>
                 </Grid>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:'auto'}} elevation={20}>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <VerifiedUserIcon className='choose-icon' />
                    </div>

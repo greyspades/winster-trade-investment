@@ -21,6 +21,7 @@ const headerStyle = {
     padding: "0.625rem 0",
     marginBottom: "20px",
     color: "#555",
+    height:'50px',
     width: "100%",
     backgroundColor: "#fff",
     boxShadow:
@@ -70,7 +71,7 @@ const headerStyle = {
     margin: "20px 10px"
   },
   primary: {
-    backgroundColor: primaryColor,
+    backgroundColor: '#ffab00',
     color: "#FFFFFF",
     boxShadow: `0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px ${hexToRGBAlpha(
       primaryColor,

@@ -5,6 +5,12 @@ import {faPiggyBank} from '@fortawesome/free-solid-svg-icons'
 import {faMoneyCheckAlt} from  '@fortawesome/free-solid-svg-icons'
 import {faCoins} from  '@fortawesome/free-solid-svg-icons'
 
+import Image from 'next/image'
+import crypto from '../img/crypto.svg'
+import currency from '../img/cryptocurrency.svg'
+import chart from '../img/chart.svg'
+import tax from '../img/tax.svg'
+
 // import {
 //     Container,
 //     Row,
@@ -47,7 +53,7 @@ const Products = () => {
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faHandHoldingUsd} style={{width:100,height:100,color:"#ffab00"}}  />
+                                        <Image width={100} height={100} src={tax} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Loans
@@ -69,12 +75,12 @@ const Products = () => {
             md={3}
             xs={12}
             >
-                                   <div style={{display:'grid',placeItems:'center'}}>
+                                   <div elevation={20} style={{display:'grid',placeItems:'center'}}>
                                 <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
                                     
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faPiggyBank} style={{width:100,height:100,color:"#ffab00"}}  />
+                                        <Image width={100} height={100} src={crypto} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
                                             Crypto Investments
@@ -98,11 +104,11 @@ const Products = () => {
             xs={12}
             >       
              <div style={{display:'grid',placeItems:'center'}}>
-                                <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
+                                <Card elevation={20} style={{zIndex:1000}} className='product-grid countdown-bg1'>
 
                                     <CardContent>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faMoneyCheckAlt} style={{width:100,height:100,color:"#ffab00"}}  />
+                                        <Image width={100} height={100} src={currency} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40 }}>
                                             Crypto Transactions
@@ -125,14 +131,14 @@ const Products = () => {
             xs={12}
             >
                  <div style={{display:'grid',placeItems:'center'}}>
-                                <Card style={{zIndex:1000}} className='product-grid countdown-bg1'>
+                                <Card elevation={20} style={{zIndex:1000}} className='product-grid countdown-bg1'>
                                    
                                     <CardContent style={{}}>
                                         <div style={{display:'grid',placeItems:'center'}}>
-                                        <FontAwesomeIcon className='product-logo' icon={faCoins} style={{width:100,height:100,color:"#ffab00"}}  />
+                                        <Image width={100} height={100} src={chart} layout='intrinsic' />
                                         </div>
                                         <h5 style={{textAlign:'center',color:'#ffab00',marginTop:40}}>
-                                            Crypto Mining
+                                            Crypto Trading
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
                                         Invest in our state of the art crypto mining services using the latest blockchain and cryptography technologies

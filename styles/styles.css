@@ -28,6 +28,7 @@ input:-webkit-autofill
     width: 80%;
     height: auto;
     margin-top: 50px;
+    border: 3px solid  #ffba00
   
   }
   .carousel-card {
@@ -332,9 +333,9 @@ input:-webkit-autofill
   
   .count-paper {
     width: 90%;
-    height: 400px;
-    background-image: url(../img/event4.jpg);
-    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    /* background-image: url(../img/event4.jpg); */
+    background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     display: grid;
     border-radius: 10px;
@@ -593,7 +594,7 @@ input:-webkit-autofill
     width: 500px
   }
   .count-paper {
-    width: 60%;
+    width: 90%;
     height: auto;
     background-image: url(../img/event4.jpg);
     background-color: rgba(0, 0, 0, 0.5);
@@ -626,7 +627,9 @@ input:-webkit-autofill
     position: relative;
     margin-top: -40px;
 }
-
+.bonus {
+  padding: 100px;
+}
 
 
 
