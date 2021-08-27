@@ -105,11 +105,17 @@ import white from '../img/white.png'
 import logo1 from '../img/logo1.png'
 import Head from 'next/head'
 import MyFooter from '../components/myFooter'
+import {MiniChart} from 'react-ts-tradingview-widgets'
+import connectDB from '../middleware/mongodb';
+import users from '../middleware/models';
+import mongoose from 'mongoose'
+import {parseCookies} from './api/cookies'
+import userInfo from './api/info' 
 
 
 
 
-const Dashboard=(props)=>{
+const Dashboard=({data})=>{
     const [mobile,setMobile]=useState()
     const [content,setContent]=useState('Balance')
     const [balanceElev,setBalanceElev]=useState(7)
@@ -150,7 +156,7 @@ const Dashboard=(props)=>{
     let width=window.innerWidth
     let user=Cookie.getJSON('user')
     setContent('Balance')
-    console.log(name)
+    //console.log(name)
     if(width<500){
       setMobile(false)
       console.log('mobile view')
@@ -161,7 +167,7 @@ const Dashboard=(props)=>{
         console.log('desktop view')
         setPhone(false)
     }
-    getInfo()
+    //getInfo()
    
 
     },[])
@@ -170,7 +176,9 @@ const Dashboard=(props)=>{
        
         
         //getInfo()
-       getBtc()
+      //  getBtc()
+      //console.log(JSON.parse(data))
+      console.log(data)
     
     },[])
 
@@ -550,39 +558,6 @@ const Dashboard=(props)=>{
     
     
    
-    const pieData=[
-        {
-          "id": "futures",
-          "label": "futures",
-          "value": 25,
-          "color": "hsl(220, 70%, 50%)"
-        },
-        {
-          "id": "comodities",
-          "label": "comodities",
-          "value": 105,
-          "color": "hsl(312, 70%, 50%)"
-        },
-        {
-          "id": "crypto",
-          "label": "crypto",
-          "value": 532,
-          "color": "hsl(280, 70%, 50%)"
-        },
-        {
-          "id": "indeces",
-          "label": "indeces",
-          "value": 367,
-          "color": "hsl(320, 70%, 50%)"
-        },
-        {
-          "id": "stocks",
-          "label": "stocks",
-          "value": 244,
-          "color": "hsl(112, 70%, 50%)"
-        }
-      ]
-    
     
 
 
@@ -590,118 +565,7 @@ const Dashboard=(props)=>{
 
 
 
-
-    const pieComponent= <ResponsivePie
-    data={pieData}
-    margin={{ top: 30, right: 40, bottom: 50, left: 40 }}
-    innerRadius={0.5}
-    padAngle={0.7}
-    cornerRadius={3}
-    activeOuterRadiusOffset={8}
-    borderWidth={1}
-    borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
-    arcLinkLabelsSkipAngle={10}
-    arcLinkLabelsTextColor="#333333"
-    arcLinkLabelsThickness={2}
-    arcLinkLabelsColor={{ from: 'color' }}
-    arcLabelsSkipAngle={10}
-    arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'darker', 2 ] ] }}
-    defs={[
-        {
-            id: 'dots',
-            type: 'patternDots',
-            background: 'inherit',
-            color: 'rgba(255, 255, 255, 0.3)',
-            size: 4,
-            padding: 1,
-            stagger: true
-        },
-        {
-            id: 'lines',
-            type: 'patternLines',
-            background: 'inherit',
-            color: 'rgba(255, 255, 255, 0.3)',
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10
-        }
-    ]}
-    fill={[
-        {
-            match: {
-                id: 'ruby'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'c'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'go'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'python'
-            },
-            id: 'dots'
-        },
-        {
-            match: {
-                id: 'scala'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'lisp'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'elixir'
-            },
-            id: 'lines'
-        },
-        {
-            match: {
-                id: 'javascript'
-            },
-            id: 'lines'
-        }
-    ]}
-    // legends={[
-    //     {
-    //         // anchor: 'bottom',
-    //         direction: 'row',
-    //         justify: false,
-    //         translateX: 0,
-    //         translateY: 56,
-    //         itemsSpacing: 0,
-    //         itemWidth: 100,
-    //         itemHeight: 18,
-    //         itemTextColor: '#999',
-    //         itemDirection: 'left-to-right',
-    //         itemOpacity: 1,
-    //         symbolSize: 18,
-    //         symbolShape: 'circle',
-    //         effects: [
-    //             {
-    //                 on: 'hover',
-    //                 style: {
-    //                     itemTextColor: '#000'
-    //                 }
-    //             }
-    //         ]
-    //     }
-    // ]}
-/>
+   
 
     const handleResize=()=>{
         let width=window.innerWidth
@@ -719,46 +583,7 @@ const Dashboard=(props)=>{
 
     }
 
-    const ballanceContent=()=>{
-        setContent('balance')
-        setBalanceElev(15)
-    }
-    const withdrawContent=()=>{
-        setContent('withdraw')
-        setWithdrawElev(15)
-    }
-    const depositContent=()=>{
-        setContent('deposit')
-        setDepositElev(15)
-    }
-    const analysisContent=()=>{
-        setContent('charts')
-        setChartsElev(15)
-    }
-
-    // const data = [
-    //     ["Task", "Hours per Day"],
-    //     ["Work", 11],
-    //     ["Eat", 2],
-    //     ["Commute", 2],
-    //     ["Watch TV", 2],
-    //     ["Sleep", 7] // CSS-style declaration
-    // ];
-
-    // const options = {
-    //     title: "My Daily Activities",
-    //     pieHole: 0.4,
-    //     is3D: true,
-    //     // chartArea:{
-    //     //     //backgroundColor:'#ffab00'
-           
-    //     // },
-    //     backgroundColor:{
-    //         stroke:'#ffab00'
-    //     }
-        
-    // };
-
+    
     const columns=[
     
         {
@@ -902,7 +727,8 @@ const Dashboard=(props)=>{
           <AttachMoney className='dollar-sign' style={{height:50,width:50,color:'#ffab00',marginLeft:40}} />
       </Grid>
       <Grid md={9} xs={9} item>
- {gotten ? <h3 className='balance-value'  >{info.balance}.00</h3> : <h5>0.00</h5> }
+ {/* {gotten ?  : <h5>0.00</h5> } */}
+ <h3 className='balance-value'  >{data.balance}.00</h3>
  
       </Grid>
 
@@ -969,27 +795,10 @@ const Dashboard=(props)=>{
           
           </Grid>
           <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
-             {gotten && !mobile
-             ?
-           
+            
               <a style={{color:'#ffab00',}}>
-                 www.winstertrade<br/>investment.com/{info.username}
+                 www.winstertrade<br/>investment.com/{data.username}
               </a>
-          
-             :
-              gotten && mobile
-             ?
-             <a style={{color:'#ffab00',}}>
-             www.winstertradeinvestment.com/{info.username}
-         </a>
-             :
-             <span>
-
-             </span>
-             
-
-          }
-
 
           </Grid>
   </Grid>
@@ -1002,73 +811,22 @@ const Dashboard=(props)=>{
 <Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
 <Grid justify='center'  style={{}} item>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container  alignItems='center' direction='row'>
+  <Grid style={{}} container  alignItems='center' direction='row'>
    
-  <Grid style={{}} xs={2} md={2} item>
-  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={btcIcon}/>
+ 
+  
+  <Grid style={{}} container justify='center'>
+  <MiniChart autosize={true} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='BTCUSD' colorTheme="dark"></MiniChart>
   </Grid>
 
-  <Grid style={{marginTop:-8}}  xs={8} md={8} item >
-     <h5>
-{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'BTC'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-     </h5>
-  </Grid>
-
-  <Grid xs={2} md={2} item >
-     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Bitcoin wallet ballance'>
-         <IconButton>
-             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-         </IconButton>
-     </ToolTip>
-  </Grid>
-  <Grid  style={{width:'100%'}} container>
- {btcData ? <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
-    <Line
-        style={{marginBottom:-30,height:170}}
-        data={chartExample1.data1}
-        options={chartOptions}
-      />
- </div>
-        :
-        null
-    }
-  </Grid>
   </Grid>
  
 </Paper>
 </Grid>
 <Grid  item>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container  alignItems='center' direction='row'>
-  <Grid style={{}} xs={2} md={2} item>
-  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={ethIcon}/>
-  </Grid>
-
-  <Grid style={{marginTop:-8}} xs={8} md={8} item>
-     <h5>
-{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'ETH'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-     </h5>
-  </Grid>
-
-  <Grid xs={2} md={2} item>
-     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Ethereum wallet ballance'>
-         <IconButton>
-             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-         </IconButton>
-     </ToolTip>
-  </Grid>
-  <Grid style={{width:'100%'}} container>
-     {ethData ?    <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
-    <Line
-        style={{marginBottom:-30,height:170}}
-        data={chartExample2.data2}
-        options={chartOptions}
-      />
- </div>
-        :
-        null
-        }
-        </Grid>
+  <Grid justify='center' container  alignItems='center' direction='row'>
+  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='ETHUSD' colorTheme="dark"></MiniChart>
   </Grid>
 
 </Paper>
@@ -1077,73 +835,16 @@ const Dashboard=(props)=>{
 <Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
 <Grid justify='center'  style={{}} item>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container  alignItems='center' direction='row'>
-   
-  <Grid style={{}} xs={2} md={2} item>
-  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={tetherIcon}/>
-  </Grid>
-
-  <Grid style={{marginTop:-8}}  xs={8} md={8} item >
-     <h5>
-{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'USDT'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-     </h5>
-  </Grid>
-
-  <Grid xs={2} md={2} item >
-     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Bitcoin wallet ballance'>
-         <IconButton>
-             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-         </IconButton>
-     </ToolTip>
-  </Grid>
-  <Grid  style={{width:'100%'}} container>
- {tetherData ? <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
-    <Line
-        style={{marginBottom:-30,height:170}}
-        data={chartExample1.data2}
-        options={chartOptions}
-      />
- </div>
-        :
-        null
-    }
-  </Grid>
+  <Grid container justify='center'  alignItems='center' direction='row'>
+  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='USDTUSD' colorTheme="dark"></MiniChart>
   </Grid>
  
 </Paper>
 </Grid>
 <Grid  item>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container  alignItems='center' direction='row'>
-  <Grid style={{}} xs={2} md={2} item>
-  <Image priority={true} responsive width={30} height={30} className='coin-icon' src={safemoon}/>
-  </Grid>
-
-  <Grid style={{marginTop:-8}} xs={8} md={8} item>
-     <h5>
-{gotten ?  <CryptoCompare style={{color:'blue'}} from='USD'  to={'SAFEMOON'} amount={info.balance || 0} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> : 0.00}
-     </h5>
-  </Grid>
-
-  <Grid xs={2} md={2} item>
-     <ToolTip style={{marginTop:-20,marginLeft:15}} title='Ethereum wallet ballance'>
-         <IconButton>
-             <HelpOutlineIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}} />
-         </IconButton>
-     </ToolTip>
-  </Grid>
-  <Grid style={{width:'100%'}} container>
-     {moonData ?    <div className='dashboard-chart'  style={{ position: "relative",margin:0}}>
-    <Line
-        style={{marginBottom:-30,height:170}}
-        data={chartExample1.data3}
-        options={chartOptions}
-      />
- </div>
-        :
-        null
-        }
-        </Grid>
+  <Grid container justify='center' alignItems='center' direction='row'>
+  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='SAFEMOONUSD' colorTheme="dark"></MiniChart>
   </Grid>
 
 </Paper>
@@ -1206,7 +907,7 @@ const Dashboard=(props)=>{
                                            pair:depoPair,
                                            //worth:value.worth,
                                            date:date,
-                                           username:info.username,
+                                           username:data.username,
                                            status:'pending'
                                            
                                        }
@@ -1398,7 +1099,7 @@ const Dashboard=(props)=>{
                                  <Grid container>
                                        
                                         <p onBlur={()=>setShowDepo(false)} style={{color:'white',textAlign:'center',fontSize:20}}>
-                                    You are about to make an deposit of <span style={{color:'#ffab00'}}>${values.amount}</span> You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
+                                    You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span> You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
                                     to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaayuw4lak3ez2cl05qdzg6d</a> : depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5fc7754aE63484F48AC79</a> : <span></span>} and upload proof of Payment
                                 </p>
                                  </Grid>
@@ -1450,7 +1151,7 @@ const Dashboard=(props)=>{
                                pair:depoPair,
                                //worth:value.worth,
                                date:date,
-                               username:info.username,
+                               username:data.username,
                                status:'pending',
                                address:value.address
                                
@@ -1688,7 +1389,7 @@ onChange={handleChange('address')}
                <Table emptyText={()=><p style={{fontSize:20,color:'white',padding:20}}>No pending deposits</p>} 
                title={()=><h3 style={{}}>Pending deposits</h3>} rowClassName='table-row' 
                style={{color:'white'}} transformColumns className='depo-table' 
-               tableLayout='auto' useFixedHeader={false} scroll={{y:false,x:false}} columns={columns}  data={gotten ? info.investment : null} />
+               tableLayout='auto' useFixedHeader={false} scroll={{y:false,x:false}} columns={columns}  data={data.investment} />
                </Paper>
             </Grid>
         )
@@ -1729,17 +1430,17 @@ onChange={handleChange('address')}
 
                  <Grid style={{}} justify='flex-end' spacing={2} container direction='row'>
               
-                   <Grid justify='flex-end' style={{}} container xs={3} md={2}>
+                   <Grid justify='flex-end' style={{}} container xs={3} md={1}>
                    <IconButton onClick={()=>{Router.push('/home')}}>
                     <ToolTip  >
-                    <NotificationsNone style={{width:40,height:40,color:'black'}} />
+                    <NotificationsNone style={{color:'black'}} />
                     </ToolTip>
                   </IconButton>
                    </Grid>
-                   <Grid justify='flex-end' container xs={3} md={2}>
+                   <Grid justify='flex-end' container xs={3} md={1}>
                    <IconButton onClick={()=>{Router.push('/home')}}>
                     <ToolTip  >
-                    <ExitToAppIcon style={{width:40,height:40,color:'black'}} />
+                    <ExitToAppIcon style={{color:'black'}} />
                     </ToolTip>
                   </IconButton>
                    </Grid>
@@ -1768,9 +1469,10 @@ onChange={handleChange('address')}
         <DrawerHeader style={{marginTop:100}}>
 
               <div style={{textAlign:'center',color:'#ffab00'}}>
-              {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
+              {/* {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
     
-    : <HashLoader color={'#ffab00'} loading={true}  size={50} /> }
+    : <HashLoader color={'#ffab00'} loading={true}  size={50} /> } */}
+                <h3>{data.username}</h3>
               </div>
             </DrawerHeader>
         </div>
@@ -1795,6 +1497,65 @@ onChange={handleChange('address')}
     )
 }
 
- export default Dashboard;
 
 
+
+
+ export async function getServerSideProps({req,res}) {
+  
+  let person=parseCookies(req)
+  let raw=JSON.parse(person.user)
+
+  const mail=raw.email
+
+  const uri="mongodb+srv://grey:Vermilion9%23@cluster0.tkbdb.mongodb.net/users?retryWrites=true&w=majority"
+  
+  //const info= await connectDB(Dashboard)
+
+  
+
+  // const info=()=>{
+  //   mongoose.connect(uri, {
+  //     useNewUrlParser: true,
+  //     useUnifiedTopology: true
+  //   })
+  //   .then(() => {
+  //     console.log('mongodb connected')
+  //     //return handler(req, res);
+  //     users.findOne({email:mail})
+  //     .then((data)=>{ 
+  //       console.log('found users')
+  //       //console.log(data)
+  //       //return { item:data}
+  //       return 'shmurda'
+  //     })
+  //     .catch((err)=>{
+  //       console.log(err)
+       
+        
+  //     })
+  
+  //   })
+  //   .catch((err)=>{
+  //     console.log(err)
+  //     console.log('mongo wahala')
+  //     //res.status(500).send('mongo wahala');
+  //     //res.send('mongo wahala')
+  //     //res.send(err)
+  //     //res.status(400).send('Current password does not match');
+  //   })
+  // }
+
+  const data= await axios.post('http://localhost:3000/api/info',{mail})
+  .then((res)=>{
+    return res.data
+
+  })
+
+  //console.log(data)
+  
+   return { props:{data}
+  }
+}
+
+export default Dashboard;

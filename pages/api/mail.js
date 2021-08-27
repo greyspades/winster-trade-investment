@@ -147,8 +147,8 @@ const Mail = async (req,res)=> {
   // send mail with defined transport object
   transporter.sendMail({
     from: 'winsterinvest@gmail.com', // sender address
-   // to: `${req.body.user.email}`, // list of receivers
-   to:`${req.body.user.email}`,
+    //to: 'greyspades99@gmail.com', // list of receivers
+    to:`${req.body.user.email}`,
     subject: "Account confirmation", // Subject line
     //text: "Please confirm your re", // plain text body
     html: `<html lang="en">

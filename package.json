@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/nextjs-material-kit/issues"
   },
-  "homepage": "/index",
+  "homepage": "/index.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",

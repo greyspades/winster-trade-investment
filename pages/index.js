@@ -905,13 +905,13 @@ canvasClassName='particle-canvas'
 
               <div className="crumina-module crumina-skills-item skills-item--bordered">
                 <div className="skills-item-info">
-                  <span className="skills-item-title">$6M<span className="skills-item-count c-primary"><span className="count-animate" data-speed={1000} data-refresh-interval={50} data-to={50} data-from={0} /><span className="units">m</span></span></span>
+                  <span className="skills-item-title">$6M<span className="skills-item-count c-primary"><span className="count-animate" data-speed={1000} data-refresh-interval={50} data-to={50} data-from={0} /><span className="units">$30m</span></span></span>
                 </div>
                 <div className="skills-item-meter">
                   <span className="skills-item-meter-active bg-primary-color" style={{width: '50%'}} />
                 </div>
                 <span className="add-info">
-                  <span><span className="c-link-color">Softcap</span> in 76 days</span>
+                  <span><span className="c-link-color">Softcap</span> in 92 days</span>
                   <span className="c-link-color">Hardcap</span>
                 </span>
               </div>

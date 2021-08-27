@@ -41,14 +41,24 @@ const Testimonials = () => {
                                 precision={0.5} readOnly max={5} />
 
                             </Grid>
+                            
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                Bonus: <span style={{color:'#ffab00'}}>$16560</span>
+                                Investment: 
+                                <span style={{color:'#ffab00'}}> $21400</span> 
 
                             </div>
+
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                <span style={{color:'#ffab00'}}>Av Investment:</span> $11400
+                                Bonus: <span style={{color:'#ffab00'}}>$7655</span>
 
                             </div>
+
+                            <div style={{fontSize:18,color:'white',margin:10}}>
+                                Maturity: 
+                                <span style={{color:'#ffab00'}}> 5 days</span>
+
+                            </div>
+                          
                          
                         </Grid>
                     </Paper>
@@ -72,12 +82,21 @@ const Testimonials = () => {
                                 precision={0.5} readOnly max={5} />
 
                             </Grid>
+                            
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                Bonus: <span style={{color:'#ffab00'}}>$16560</span>
+                                Investment: 
+                                <span style={{color:'#ffab00'}}> $7400</span> 
 
                             </div>
+
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                <span style={{color:'#ffab00'}}>Av Investment:</span> $14047
+                                Bonus: <span style={{color:'#ffab00'}}>$1656</span>
+
+                            </div>
+
+                            <div style={{fontSize:18,color:'white',margin:10}}>
+                                Maturity: 
+                                <span style={{color:'#ffab00'}}> 11 days</span>
 
                             </div>
                          
@@ -103,12 +122,21 @@ const Testimonials = () => {
                                 precision={0.5} readOnly max={5} />
 
                             </Grid>
+                            
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                Bonus: <span style={{color:'#ffab00'}}>$16560</span>
+                                Investment: 
+                                <span style={{color:'#ffab00'}}> $15000</span> 
 
                             </div>
+
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                <span style={{color:'#ffab00'}}>Av Investment:</span> $14770
+                                Bonus: <span style={{color:'#ffab00'}}>$6406</span>
+
+                            </div>
+
+                            <div style={{fontSize:18,color:'white',margin:10}}>
+                                Maturity: 
+                                <span style={{color:'#ffab00'}}> 7 days</span>
 
                             </div>
                          
@@ -131,12 +159,21 @@ const Testimonials = () => {
                                 precision={0.5} readOnly max={5} />
 
                             </Grid>
+                           
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                Bonus: <span style={{color:'#ffab00'}}>$16560</span>
+                                Investment: 
+                                <span style={{color:'#ffab00'}}> $11400</span> 
 
                             </div>
+
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                <span style={{color:'#ffab00'}}>Av Investment:</span> $11400
+                                Bonus: <span style={{color:'#ffab00'}}>$3400</span>
+
+                            </div>
+
+                            <div style={{fontSize:18,color:'white',margin:10}}>
+                                Maturity: 
+                                <span style={{color:'#ffab00'}}> 5 days</span>
 
                             </div>
                          

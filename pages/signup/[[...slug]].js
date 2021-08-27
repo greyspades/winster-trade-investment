@@ -45,7 +45,7 @@ import AddressIcon from '@material-ui/icons/LocationCity'
 import Header from '../../components/Header'
 import HeaderLinks from '../../components/HeaderLinks'
 import Particles from 'react-particles-js'
-
+import MyAppbar from '../../components/appbar'
 
 
 const useStyles = makeStyles({
@@ -185,8 +185,8 @@ const Signup=()=> {
   
   
   return (
-   <div style={{padding:30}} >
-     <Header
+   <div>
+      <Header
           
           fixed
           color="transparent"
@@ -209,6 +209,11 @@ const Signup=()=> {
           
         rightLinks={<HeaderLinks />}   
 />
+     <div style={{padding:30}} >
+     
+
+
+
 <Particles
 className='particles'
 canvasClassName='particle-canvas'
@@ -1029,6 +1034,7 @@ canvasClassName='particle-canvas'
         </Paper>
        </div>
    <MyFooter />
+   </div>
    </div>
   );
 }

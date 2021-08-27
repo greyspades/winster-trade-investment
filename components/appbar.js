@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,8 +19,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppBar=()=> {
+const MyAppBar=()=> {
   const classes = useStyles();
+  const [mobile,setMobile]=useState(true)
+
+  useEffect(()=>{
+    let width=window.innerWidth
+    //let user=Cookie.getJSON('user')
+   
+    //console.log(name)
+    if(width<500){
+      setMobile(true)
+      console.log('mobile view')
+     
+    }
+    else if(width>500){
+        setMobile(false)
+        console.log('desktop view')
+
+    }
+    // if(slug=='services'){
+    //     serviceScroll
+    // }
+  },[])
 
   return (
     <div className={classes.root}>
@@ -38,4 +59,4 @@ const AppBar=()=> {
     </div>
   );
 }
-export default AppBar
+export default MyAppBar

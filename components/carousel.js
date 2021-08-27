@@ -79,10 +79,10 @@ Opening an account is quick and easy. Learn more about how you can start earning
                 </Grid>
             </Grid>
           </Grid>
-          <h4 style={{textAlign:'center'}}>
+          <h4 style={{textAlign:'center',marginTop:30}}>
               And more
             </h4>
-          <Grid style={{marginTop:60,marginBottom:60}} container justify='center'>
+          <Grid style={{marginTop:40,marginBottom:40}} container justify='center'>
            
             <Divider variant='middle' style={{backgroundColor:'#ffab00',height:3,opacity:0.7,width:'80%'}} />
           </Grid>

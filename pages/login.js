@@ -132,17 +132,15 @@ const Login=()=> {
   
   return (
    <div>
-     <div style={{display:"grid",placeItems:"center",padding:30}}>
-
-<Header
+     <Header
           
           fixed
           color="transparent"
           //routes={dashboardRoutes}
-          changeColorOnScroll={{
-            color:'transparent',
-            height:50,
-          }}
+          // changeColorOnScroll={{
+          //   color:'transparent',
+          //   height:50,
+          // }}
           
           // rightLinks={(
           //       <div>
@@ -157,6 +155,9 @@ const Login=()=> {
           
         rightLinks={<HeaderLinks />}   
 />
+     <div style={{display:"grid",placeItems:"center",padding:30}}>
+
+
 
      <Particles
 className='particles'
