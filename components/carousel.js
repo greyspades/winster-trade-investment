@@ -44,7 +44,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
 
       <Grid style={{}} justify='center' container xs={12} md={6}>
       <Paper style={{zIndex:1000,borderRadius:5}} className='count-paper'>
-        <div style={{backgroundColor:'rgba(0,0,0,0.6)',padding:20}}>
+        <div style={{backgroundColor:'rgba(0,0,0,0.5)',padding:20}}>
           <Grid style={{padding:30}} spacing={5} container direction='row' justify='center'>
             <Grid style={{}} container justify='center' alignItems='center' xs={6} md={3}>
               <h5 style={{textAlign:'center'}}>

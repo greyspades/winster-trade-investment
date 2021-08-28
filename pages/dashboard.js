@@ -111,11 +111,23 @@ import users from '../middleware/models';
 import mongoose from 'mongoose'
 import {parseCookies} from './api/cookies'
 import userInfo from './api/info' 
+import {getData} from './api/info'
+import useSWR from 'swr'
 
+const fetcher=(url)=>{
 
-
+  //let person=parseCookies(req)
+  let person=username=Cookie.get('user')
+  let raw=JSON.parse(person)  
+  const mail=raw.email
+  axios.post('/api/info',{mail})
+  .then((res)=>{
+    console.log(res)
+  })
+}
 
 const Dashboard=({data})=>{
+  
     const [mobile,setMobile]=useState()
     const [content,setContent]=useState('Balance')
     const [balanceElev,setBalanceElev]=useState(7)
@@ -123,6 +135,7 @@ const Dashboard=({data})=>{
     const [depositElev,setDepositElev]=useState(7)
     const [chartsElev,setChartsElev]=useState(7)
     const [messagesElev,setMessagesElev]=useState(7)
+    //const {info,error}=useSWR('/api/info',fetcher)
     const [info,setInfo]=useState()
     const username=Cookie.get('user')
     const [gotten,setGotten]=useState(false)
@@ -167,7 +180,7 @@ const Dashboard=({data})=>{
         console.log('desktop view')
         setPhone(false)
     }
-    //getInfo()
+    getInfo()
    
 
     },[])
@@ -728,7 +741,12 @@ const Dashboard=({data})=>{
       </Grid>
       <Grid md={9} xs={9} item>
  {/* {gotten ?  : <h5>0.00</h5> } */}
- <h3 className='balance-value'  >{data.balance}.00</h3>
+ {/* <h3 className='balance-value'  >{data.balance}.00</h3> */}
+ {
+   gotten ? <h3 className='balance-value'  >{info.balance}.00</h3>
+   :
+   null
+ }
  
       </Grid>
 
@@ -796,9 +814,17 @@ const Dashboard=({data})=>{
           </Grid>
           <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
             
-              <a style={{color:'#ffab00',}}>
+              {/* <a style={{color:'#ffab00',}}>
                  www.winstertrade<br/>investment.com/{data.username}
+              </a> */}
+              {
+                gotten ?
+                <a style={{color:'#ffab00',}}>
+                 www.winstertrade<br/>investment.com/{info.username}
               </a>
+              :
+              null
+              }
 
           </Grid>
   </Grid>
@@ -1469,10 +1495,10 @@ onChange={handleChange('address')}
         <DrawerHeader style={{marginTop:100}}>
 
               <div style={{textAlign:'center',color:'#ffab00'}}>
-              {/* {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
+              {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
     
-    : <HashLoader color={'#ffab00'} loading={true}  size={50} /> } */}
-                <h3>{data.username}</h3>
+    : <HashLoader color={'#ffab00'} loading={true}  size={50} /> }
+                {/* <h3>{info.username}</h3> */}
               </div>
             </DrawerHeader>
         </div>
@@ -1501,61 +1527,26 @@ onChange={handleChange('address')}
 
 
 
- export async function getServerSideProps({req,res}) {
+//  export async function getServerSideProps({req,res}) {
   
-  let person=parseCookies(req)
-  let raw=JSON.parse(person.user)
+//   let person=parseCookies(req)
+//   let raw=JSON.parse(person.user)
 
-  const mail=raw.email
+//   const mail=raw.email
 
-  const uri="mongodb+srv://grey:Vermilion9%23@cluster0.tkbdb.mongodb.net/users?retryWrites=true&w=majority"
-  
-  //const info= await connectDB(Dashboard)
+//   const uri="mongodb+srv://grey:Vermilion9%23@cluster0.tkbdb.mongodb.net/users?retryWrites=true&w=majority"
 
-  
+//   const data = await getData(mail)
+//   console.log(data)
 
-  // const info=()=>{
-  //   mongoose.connect(uri, {
-  //     useNewUrlParser: true,
-  //     useUnifiedTopology: true
-  //   })
-  //   .then(() => {
-  //     console.log('mongodb connected')
-  //     //return handler(req, res);
-  //     users.findOne({email:mail})
-  //     .then((data)=>{ 
-  //       console.log('found users')
-  //       //console.log(data)
-  //       //return { item:data}
-  //       return 'shmurda'
-  //     })
-  //     .catch((err)=>{
-  //       console.log(err)
-       
-        
-  //     })
-  
-  //   })
-  //   .catch((err)=>{
-  //     console.log(err)
-  //     console.log('mongo wahala')
-  //     //res.status(500).send('mongo wahala');
-  //     //res.send('mongo wahala')
-  //     //res.send(err)
-  //     //res.status(400).send('Current password does not match');
-  //   })
-  // }
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     }
+//   }
 
-  const data= await axios.post('http://localhost:3000/api/info',{mail})
-  .then((res)=>{
-    return res.data
-
-  })
-
-  //console.log(data)
-  
-   return { props:{data}
-  }
-}
+//    return { props:{data}
+//   }
+// }
 
 export default Dashboard;

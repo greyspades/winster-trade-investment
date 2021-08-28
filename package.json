@@ -89,6 +89,7 @@
     "react-tsparticles": "^1.33.3",
     "react-waypoint": "^10.1.0",
     "reactstrap": "^8.9.0",
+    "swr": "^1.0.0",
     "webpack": "^5.51.1"
   }
 }

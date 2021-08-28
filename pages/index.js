@@ -176,12 +176,12 @@ s0.parentNode.insertBefore(s1,s0);
 <Header
           
           fixed
-          color="primary"
+          color="transparent"
           //routes={dashboardRoutes}
-          changeColorOnScroll={{
-            color:'transparent',
-            height:40,
-          }}
+          // changeColorOnScroll={{
+          //   color:'transparent',
+          //   height:40,
+          // }}
           
           // rightLinks={(
           //       <div>

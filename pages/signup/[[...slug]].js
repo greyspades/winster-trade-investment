@@ -139,14 +139,14 @@ const Signup=()=> {
     if(visible){
       return (
         <Button onClick={toggleVissible} style={{display:'grid',placeItems:'center'}}>
-          <VisibilityIcon style={{color:'#ffab00'}} />
+          <VisibilityIcon style={{color:'#ffab00',width:40,height:40}} />
         </Button>
       )
     }
     else {
       return (
         <Button style={{}} onClick={toggleVissible} style={{display:'grid',placeItems:'center'}}>
-        <VisibilityOffIcon style={{color:'#ffab00'}}  />
+        <VisibilityOffIcon style={{color:'#ffab00',width:40,height:40}}  />
       </Button>
       )
     }
@@ -741,12 +741,10 @@ canvasClassName='particle-canvas'
          }}  >
      
            
-             <h2  style={{marginTop:10,textAlign:'center',marginBottom:40}}>
-                    Get in on the <span style={{color:'#ffab00',textAlign:'center'}}>Action</span>
-             </h2>
-             <h5  style={{margin:10,textAlign:'center'}}>
-                    Resister for an account
-             </h5>
+             <h3  style={{marginTop:10,textAlign:'center',marginBottom:60}}>
+              <span style={{color:'#ffab00',textAlign:'center'}}>Register</span> for an account
+             </h3>
+           
              <Formik initialValues={{name:'',email:'',password:'',nextPassword:'',username:'',country:''}} onSubmit={(values)=>{
                        let user={
                          name:values.name,
@@ -860,11 +858,11 @@ canvasClassName='particle-canvas'
                type='text'
                value={values.username}
                onChange={handleChange('username')}
-               // startAdornment={
-               //   <InputAdornment position="start">
-               //    <LensOutlined style={{color:"#ffab00"}} />
-               //   </InputAdornment>
-               // }
+               startAdornment={
+                <InputAdornment position="start">
+                 <PersonOutlined style={{color:"#ffab00"}} />
+                </InputAdornment>
+              }
              />
                    </Grid>
      
@@ -895,7 +893,7 @@ canvasClassName='particle-canvas'
              />
              </Grid>
      
-               <Grid style={{paddingRight:15}} className='country-grid' xs={12} md={6} justify='flex-start' alignItems='flex-end' container>
+               <Grid style={{paddingRight:15}} className='country-grid' xs={12} md={6} justify='flex-start' alignItems='center' container>
      
                <Input
                 startAdornment={
@@ -961,19 +959,18 @@ canvasClassName='particle-canvas'
                onChange={handleChange('nextPassword')}
                value={values.nextPassword}
                
-               // startAdornment={
-               //   <InputAdornment position="start">
-               //   <HttpsOutlined style={{color:"#ffab00"}} />
-               //   </InputAdornment>
-               // }
-               endAdornment={
-                 <InputAdornment style={{marginRight:-30}}>
-                     {showEye()}
+               startAdornment={
+                 <InputAdornment position="start">
+                 <HttpsOutlined style={{color:"#ffab00"}} />
                  </InputAdornment>
                }
+              
      
              />
                  </Grid>
+               </Grid>
+               <Grid container justify='center'>
+                 {showEye()}
                </Grid>
                  <div style={{color:'white'}}>
                  {/* <FormControlLabel
@@ -1033,8 +1030,9 @@ canvasClassName='particle-canvas'
        
         </Paper>
        </div>
-   <MyFooter />
+ 
    </div>
+   <MyFooter />
    </div>
   );
 }
