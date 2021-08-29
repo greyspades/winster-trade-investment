@@ -126,7 +126,7 @@ function MyFooter(props) {
                Services
              </div>
            ),
-           url: '/signup',
+           url: '/index/services',
            //description:'register for an account',
            openExternal: true,
            className:'main-footer',
@@ -134,10 +134,10 @@ function MyFooter(props) {
           {
            title:(
              <div>
-               About us
+               Plans
              </div>
            ),
-           url: '/login',
+           url: '/index/plans',
            //description:'Login to your account',
            openExternal: true,
            className:'main-footer',

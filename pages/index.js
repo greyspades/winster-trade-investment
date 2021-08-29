@@ -51,7 +51,7 @@ import {
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/Header'
-import HeaderLinks from '../components/HeaderLinks'
+import IndexLinks from '../components/indexlinks'
 import bg from '../img/bg-2.png'
 import Affiliate from '../components/Affiliate'
 
@@ -194,7 +194,7 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           // )}
           
-        rightLinks={<HeaderLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
+        rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
 <Particles

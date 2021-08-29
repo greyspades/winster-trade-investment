@@ -51,7 +51,7 @@ import {
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
 import Header from '../../components/Header'
-import HeaderLinks from '../../components/HeaderLinks'
+import IndexLinks from '../../components/indexlinks'
 import bg from '../../img/bg-2.png'
 import Affiliate from '../../components/Affiliate'
 //import Footer from 'rc-footer';
@@ -71,7 +71,7 @@ const Home = () => {
   //const { t } = useTranslation('footer');
 
   const Router=useRouter()
-  const {slug}=Router.query || ''
+  const {slug}=Router.query
   
   const [mobile,setMobile]=useState(false)
 
@@ -96,9 +96,11 @@ const Home = () => {
 
   useEffect(()=>{
     let width=window.innerWidth
+    
+    
     //let user=Cookie.getJSON('user')
-    console.log(JSON.stringify(slug))
-    //console.log(name)
+    //console.log(JSON.stringify(slug))
+    
     if(width<500){
       setMobile(true)
       console.log('mobile view')
@@ -109,10 +111,27 @@ const Home = () => {
         console.log('desktop view')
 
     }
-    // if(slug=='services'){
-    //     serviceScroll
-    // }
+   
   },[])
+
+  useEffect(()=>{
+      console.log(slug)
+      if(slug=='services'){
+        serviceScroll()
+    }
+    else if(slug=='faqs'){
+      faqsScroll()
+    }
+    else if(slug=='plans'){
+      packageScroll()
+    }
+    else if(slug=='testimonials'){
+      testimonialScroll()
+    }
+    else if(slug=='contact'){
+      contactScroll()
+    }
+  })
 
 
     return (
@@ -196,7 +215,7 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           // )}
           
-        rightLinks={<HeaderLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
+        rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
 <Particles
@@ -728,7 +747,7 @@ canvasClassName='particle-canvas'
             <header style={{}} className="heading-talk crumina-module crumina-heading heading--h1  heading--with-decoration winster-header">
               <h1 className=" heading-title f-size-90 weight-normal no-margin">Winster<br/>
                 <span className="weight-bold">Trade</span></h1>
-              <h2 className="c-primary">Investment solutions</h2>
+              <h2 className="c-primary">Investment</h2>
             </header>
           
           </div>

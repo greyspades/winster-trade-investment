@@ -29,7 +29,7 @@ import styles from "../js/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function IndexLinks(props) {
   const classes = useStyles();
   return (
 
@@ -206,9 +206,9 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/services"
+          target="_blank"
           className={classes.navLink}
-          //onClick={props.service}
+          onClick={props.service}
         >
             Services
         </Button>
@@ -225,9 +225,9 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/about"
+          target="_blank"
           className={classes.navLink}
-          //onClick={props.about}
+          onClick={props.about}
         >
             About Us
         </Button>
@@ -243,9 +243,9 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/plans"
+          target="_blank"
           className={classes.navLink}
-          //onClick={props.package}
+          onClick={props.package}
         >
             Plans
         </Button>
@@ -261,9 +261,9 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/testimonials"
+          target="_blank"
           className={classes.navLink}
-          //onClick={props.testimonial}
+          onClick={props.testimonial}
         >
             Testimonials
         </Button>
@@ -280,9 +280,9 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/contact"
+          target="_blank"
           className={classes.navLink}
-          //onClick={props.contact}
+          onClick={props.contact}
         >
             Contact Us
         </Button>
