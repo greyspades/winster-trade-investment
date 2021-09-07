@@ -13,7 +13,8 @@ const Confirm=async(req,res)=>{
     .then((data)=>{
         console.log('found user')
         let update=data.balance+amount
-        users.updateOne({username:person},{$set:{balance:update},$pull:{investment:{key:key}}})
+        let lev=data.level+2
+        users.updateOne({username:person},{$set:{balance:update,level:lev},$pull:{investment:{key:key}}})
         .then((item)=>{
            res.send('SUCCESS')
             console.log('updated balance')

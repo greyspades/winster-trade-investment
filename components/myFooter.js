@@ -15,7 +15,7 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
-
+import white from '../img/white.png'
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
 
@@ -159,6 +159,7 @@ function MyFooter(props) {
        }
     ]}
     bottom="Winster trade investment"
+    
     backgroundColor='#ffab0000'
   />
    </Grid>

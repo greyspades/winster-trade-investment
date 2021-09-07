@@ -44,6 +44,10 @@ var user = new Schema({
   country:{
     trype:String,
     required:false
+  },
+  level:{
+    trype:Number,
+    required:false
   }
  
 });

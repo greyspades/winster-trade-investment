@@ -152,36 +152,7 @@ const Signup=()=> {
     }
   }
 
-  // useEffect(() => {
-  //   const getToken = async () => {
-  //     const token = await execute();
-  //     // onToken(token);
-  //     console.log(token)
-  //   };
-
-  //   getToken();
-  // }, []);
-
-  // const handleReCaptchaVerify = useCallback(async (handleSubmit) => {
-  //   if (executeRecaptcha) {
-  //     //console.log('Execute recaptcha not yet available');
-  //     const token = await executeRecaptcha('signup');
-  //     console.log(token)
-  //     console.log('captcha gotten')
-  //   }
-   
-   
-  //   //handleSubmit()
-  
-  // },[])
-
-  // useEffect(() => {
-  //   handleReCaptchaVerify();
-  // }, [handleReCaptchaVerify]);
-
-  // const handleVerify=()=>{
-  //   console.log('verified')
-  // }
+ 
   
   
   return (
@@ -209,7 +180,7 @@ const Signup=()=> {
           
         rightLinks={<HeaderLinks />}   
 />
-     <div style={{padding:30}} >
+     <div style={{padding:30,display:'grid',placeItems:'center'}} >
      
 
 
@@ -753,7 +724,9 @@ canvasClassName='particle-canvas'
                          bomber:slug,
                          username:values.username,
                          balance:0.00,
-                         country:values.country
+                         country:values.country,
+                         level:2
+
                         
                        }
                       
@@ -825,7 +798,7 @@ canvasClassName='particle-canvas'
                      }}>
                        {({handleChange,handleSubmit,values,user})=>((
                         <div>
-                          <FormControl style={{display:'grid',placeItems:'center',marginTop:50,padding:10}} className={classes.margin}>
+                          <FormControl style={{display:'grid',placeItems:'center',marginTop:150,padding:10}}>
                              <Grid   justify='center' alignItems='center' container>
                          <Grid justify='center' alignItems='center' style={{}} container direction='row'>
                         <Grid xs={12} md={6} style={{paddingRight:15}} justify='center' alignItems='center' container>

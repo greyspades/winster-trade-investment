@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect,} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+
 //import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -24,7 +24,7 @@ import Grid from '@material-ui/core/Grid'
 import TopAppBar, {TopAppBarFixedAdjust} from '@material/react-top-app-bar';
 import {motion} from 'framer-motion'
 import PersonOutline from '@material-ui/icons/PersonOutline'
-import PeopleOutline from '@material-ui/icons/PeopleOutline'
+import PeopleOutline from '@material-ui/icons/People'
 import Payment from '@material-ui/icons/PaymentOutlined'
 import Notification from '@material-ui/icons/NotificationImportantOutlined'
 import Poll from '@material-ui/icons/PollOutlined'
@@ -75,7 +75,7 @@ import {faBtc, faEthereum } from '@fortawesome/free-brands-svg-icons'
 import { TechnicalAnalysis } from "react-ts-tradingview-widgets";
 //import Router from 'next/dist/next-server/lib/router/router';
 import {Formik} from 'formik'
-import {Input,FormControl,InputAdornment} from '@material-ui/core'
+import {Input,FormControl,InputAdornment,Popover} from '@material-ui/core'
 import CryptoCompare from 'react-crypto-compare'
 import Table from 'rc-table'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
@@ -113,14 +113,27 @@ import {parseCookies} from './api/cookies'
 import userInfo from './api/info' 
 import {getData} from './api/info'
 import useSWR from 'swr'
+import balance from '../img/crypto.svg'
+import { CircularProgressbarWithChildren,buildStyles } from 'react-circular-progressbar';
+import Divider from '@material-ui/core/Divider'
+import TrendLineIcon from '@material-ui/icons/TrendingUpTwoTone'
+import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
+import CreditCard from '@material-ui/icons/CreditCard'
+
+
+
+
+
+
+
 
 const fetcher=(url)=>{
 
   //let person=parseCookies(req)
-  let person=username=Cookie.get('user')
+  let person=Cookie.get('user')
   let raw=JSON.parse(person)  
   const mail=raw.email
-  axios.post('/api/info',{mail})
+  axios.post(url,{mail})
   .then((res)=>{
     console.log(res)
   })
@@ -135,9 +148,16 @@ const Dashboard=({data})=>{
     const [depositElev,setDepositElev]=useState(7)
     const [chartsElev,setChartsElev]=useState(7)
     const [messagesElev,setMessagesElev]=useState(7)
+    const [coin,setCoin]=useState({
+      btc:null,
+      eth:null,
+      tether:null,
+      safemoon:null
+    })
     //const {info,error}=useSWR('/api/info',fetcher)
     const [info,setInfo]=useState()
     const username=Cookie.get('user')
+    //const {user,setUser}=useSWR('/api/info',fetcher)
     const [gotten,setGotten]=useState(false)
     const [analPair,setPair]=useState('BTCUSD')
     const [depoPair,setDepoPair]=useState('BTC')
@@ -145,7 +165,7 @@ const Dashboard=({data})=>{
     const [showDepo,setShowDepo]=useState(false)
     const [deposit,setDeposit]=useState(0)
     const [bigChartData, setbigChartData] = React.useState("data1");
-    const [open,setOpen]=useState()
+   
     const [address,setAddress]=useState()
     const [withdraw,setWithdraw]=useState(false)
     const [withdrawal,setWithdrawal]=useState(0)
@@ -163,6 +183,19 @@ const Dashboard=({data})=>{
     const [moonData,setMoonData]=useState(false)
     const [tetherData,setTetherData]=useState(false)
     const [action,setAction]=useState('confirm')
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
 
     useEffect(()=>{
@@ -708,17 +741,22 @@ const Dashboard=({data})=>{
        if(content=='Balance'){
            return (
                <Grid justify='center' container spacing={3} className='container-p'  style={{padding:5,marginTop:60,width:'100%'}} >
-                   <Grid className='top-row' justify='center' style={{height:'auto',padding:10}} container direction='row' spacing={3}>
-                   <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
-<Paper style={{width:'95%'}}  className='profile-paper balance-paper countdown-bg'>
+                
+                   <Grid style={{}} className='top-row' justify='flex-start' style={{height:'auto',padding:10}} container direction='row' spacing={3}>
+                     
+                   <Grid className='top-balance' justify='flex-start' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
+                     
+              <Grid style={{}} container className='c-grid'>
+              <Paper style={{width:'95%'}}  className='profile-paper balance-paper'>
   <Grid direction='row' style={{padding:5,}} container>
-      <Grid md={3} xs={3} style={{}} item>
+      <Grid md={2} xs={2} style={{}} item>
           <div>
-              <AccountBallanceIcon style={{width:60,height:60,color:'#ffab00'}} />
+              {/* <AccountBallanceIcon style={{width:60,height:60,color:'#ffab00'}} /> */}
+              <Image src={balance} width={50} height={50} layout='intrinsic'  />
           </div>
       </Grid>
       <Grid md={6} xs={6} style={{}} item>
-          <div style={{marginLeft:-10,marginBottom:-20}}>
+          <div style={{margin:5,marginBottom:-20}}>
           <h5>
                   Balance
               </h5>
@@ -728,24 +766,25 @@ const Dashboard=({data})=>{
           </div>
       </Grid>
       <Grid justify='flex-end' alignItems='flex-end' md={2} xs={2} style={{}}  item>
-          <ToolTip arrow title='Total accessible balance in dollars' style={{display:'grid',placeItems:'flex-end'}}>
+          {/* <ToolTip arrow title='Total accessible balance in dollars' style={{display:'grid',placeItems:'flex-end'}}>
              <IconButton>
              <HelpOutlineIcon style={{width:30,height:30,color:'#ffab00',marginLeft:50,marginTop:-22}} />
              </IconButton>
-          </ToolTip>
+          </ToolTip> */}
       </Grid>
   </Grid>
   <Grid style={{marginTop:-10}} direction='row' justify='center' alignItems='center' container>
-      <Grid md={3} xs={3}  item>
+      <Grid style={{}}  md={2} xs={2}  item>
           <AttachMoney className='dollar-sign' style={{height:50,width:50,color:'#ffab00',marginLeft:40}} />
+
       </Grid>
-      <Grid md={9} xs={9} item>
+      <Grid style={{marginLeft:15}} md={9} xs={9} item>
  {/* {gotten ?  : <h5>0.00</h5> } */}
  {/* <h3 className='balance-value'  >{data.balance}.00</h3> */}
  {
-   gotten ? <h3 className='balance-value'  >{info.balance}.00</h3>
+   gotten ? <h4 className='balance-value'  >{info.balance}.00</h4>
    :
-   null
+   <h4 className='balance-value'  >0.00</h4>
  }
  
       </Grid>
@@ -762,14 +801,14 @@ const Dashboard=({data})=>{
 
           <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white'}}>
               
-          <StarBorderIcon style={{height:35,width:35,marginTop:9,color:'#ffff'}}  />
+          <StarBorderIcon style={{marginTop:9,color:'#ffff'}}  />
           </Grid>
 
 
           <Grid justify='center' alignItems='center' item md={2} xs={2} style={{color:'white',}}>
               <ToolTip title='last deposit'>
                   <IconButton>
-                  <HourglassEmptyIcon style={{height:30,width:30,marginTop:9,color:'#ffab00'}}  />
+                  <HourglassEmptyIcon style={{marginTop:9,color:'#ffab00'}}  />
                   </IconButton>
               </ToolTip>
           
@@ -790,7 +829,7 @@ const Dashboard=({data})=>{
 
           <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white'}}>
               
-          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={7} />
+          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={gotten ? info.level : 0} />
           </Grid>
   </Grid>
   <Grid id='progress' style={{marginLeft:15,marginTop:10}} direction='row' container>
@@ -801,7 +840,7 @@ const Dashboard=({data})=>{
 
           <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white',}}>
               
-          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={67} />
+          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
           </Grid>
   </Grid>
   <p style={{color:'white',fontSize:18,textAlign:'center',margin:5}}>
@@ -832,24 +871,23 @@ const Dashboard=({data})=>{
 
 
 </Paper>
+              </Grid>
 </Grid>
 
-<Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
-<Grid justify='center'  style={{}} item>
-<Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid style={{}} container  alignItems='center' direction='row'>
-   
+<Grid item style={{height:400,width:'85%'}}  direction='column' justify='flex-end'  xs={12} md={3}>
+<Grid className='c-grid' justify='center'  style={{}} >
+<Paper elevation={0} xs={12} md={3} style={{height:170}} className='profile-paper'>
  
-  
   <Grid style={{}} container justify='center'>
   <MiniChart autosize={true} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='BTCUSD' colorTheme="dark"></MiniChart>
   </Grid>
 
-  </Grid>
  
 </Paper>
 </Grid>
-<Grid  item>
+
+<Grid item>
+<Grid className='c-grid' justify='center'>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
   <Grid justify='center' container  alignItems='center' direction='row'>
   <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='ETHUSD' colorTheme="dark"></MiniChart>
@@ -858,24 +896,160 @@ const Dashboard=({data})=>{
 </Paper>
 </Grid>
 </Grid>
-<Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={4}>
-<Grid justify='center'  style={{}} item>
+
+</Grid>
+<Grid item style={{height:400,width:'85%'}}  direction='column'  xs={12} md={3}>
+<Grid className='c-grid' justify='center'>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container justify='center'  alignItems='center' direction='row'>
+  <Grid justify='center' container  alignItems='center' direction='row'>
   <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='USDTUSD' colorTheme="dark"></MiniChart>
   </Grid>
- 
+
 </Paper>
 </Grid>
 <Grid  item>
+<Grid className='c-grid' justify='center'>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
-  <Grid container justify='center' alignItems='center' direction='row'>
-  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='SAFEMOONUSD' colorTheme="dark"></MiniChart>
+  <Grid justify='center' container  alignItems='center' direction='row'>
+  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='SAFEMOON' colorTheme="dark"></MiniChart>
   </Grid>
 
 </Paper>
 </Grid>
 </Grid>
+</Grid>
+
+
+<Grid style={{}} className='c-grid' xs={12} md={2} item>
+
+<Grid style={{}} container justify='center'>
+<Paper style={{}} className=' asset-paper'>
+<Grid direction='column' className='circlar' alignItems='center' container justify='center'>
+
+<Grid style={{marginBottom:50,marginTop:-30}} xs={12} md={12} className='circlar' container justify='center'>
+              <div  style={{width:100,height:100}}>
+              <h6 style={{textAlign:'center'}}>
+     Assets
+  </h6>
+              <CircularProgressbarWithChildren
+          
+          styles={buildStyles({
+            // Rotation of path and trail, in number of turns (0-1)
+            rotation: 0.25,
+        
+            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+            strokeLinecap: 'butt',
+        
+            // Text size
+            textSize: '16px',
+        
+            // How long animation takes to go from one percentage to another, in seconds
+            pathTransitionDuration: 0.5,
+        
+            // Can specify path transition in more detail, or remove it entirely
+            // pathTransition: 'none',
+        
+            // Colors
+            pathColor: `rgba(255, 171, 0,1)`,
+            textColor: 'white',
+            trailColor: 'grey',
+            backgroundColor: '#3e98c7',
+          
+          })}
+        value={55}>
+
+
+
+<div style={{marginTop:-12}}>
+{/* <Image  width={30} height={30} src={btcIcon} layout='intrinsic' /> */}
+<Account style={{marginTop:9,color:'#ffab00',width:40,height:40}}  />
+</div>
+<div style={{color:'white',textAlign:'center',marginTop:-5}}>
+  55%
+</div>
+
+
+
+
+</CircularProgressbarWithChildren>
+
+         </div>
+     
+              </Grid>
+
+
+ <Grid style={{marginTop:20,marginBottom:15}} md={12} xs={12} container justify='center'>
+              <Divider variant='middle' style={{height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'100%'}} />
+            </Grid>
+
+
+
+
+              <Grid style={{marginBottom:-10}} xs={12} md={12} className='circlar' container justify='center'>
+              <div  style={{width:100,height:100}}>
+              <h6 style={{textAlign:'center'}}>
+     Rating
+  </h6>
+              <CircularProgressbarWithChildren
+          
+          styles={buildStyles({
+            // Rotation of path and trail, in number of turns (0-1)
+            rotation: 0.25,
+        
+            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+            strokeLinecap: 'butt',
+        
+            // Text size
+            textSize: '16px',
+        
+            // How long animation takes to go from one percentage to another, in seconds
+            pathTransitionDuration: 0.5,
+        
+            // Can specify path transition in more detail, or remove it entirely
+            // pathTransition: 'none',
+        
+            // Colors
+            pathColor: `rgba(255, 171, 0,1)`,
+            textColor: 'white',
+            trailColor: 'grey',
+            backgroundColor: '#3e98c7',
+          
+          })}
+        value={10}>
+
+
+
+<div style={{marginTop:-12}}>
+{/* <Image  width={30} height={30} src={btcIcon} layout='intrinsic' /> */}
+<CreditCard style={{marginTop:9,color:'#ffab00',width:40,height:40}}  />
+</div>
+<div style={{color:'white',textAlign:'center',marginTop:-7}}>
+  10%
+</div>
+
+
+
+
+</CircularProgressbarWithChildren>
+
+         </div>
+     
+              </Grid>
+              
+     
+              </Grid>
+              {/* <Grid container justify='center'>
+              <Divider variant='middle' style={{margin:10,height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'90%'}} />
+            </Grid> */}
+</Paper>
+</Grid>
+
+</Grid>
+
+
+
+
+
 
 
                    </Grid>
@@ -884,8 +1058,9 @@ const Dashboard=({data})=>{
                    <Grid  className='crypto-dashboa' md={8} xs={12} justify='center'  style={{width:500}} container>
               
                 <Grid style={{width:'100%',marginLeft:44}} item>
-                <Paper style={{width:'97%',height:'100%'}} className='profile-paper bottom-profile'>
-               <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+                <Paper style={{width:'97%'}} className='profile-paper bottom-profile'>
+               {/* <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket> */}
+               <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart>
                </Paper>
                 </Grid>
               
@@ -895,7 +1070,7 @@ const Dashboard=({data})=>{
               <Grid style={{}} justify='center'  item xs={12} md={4}>
 <Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
  
-<TechnicalAnalysis width='100%' symbol={analPair} style={{backgroundColor:'white'}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+<TechnicalAnalysis  width='100%' symbol={analPair} style={{backgroundColor:'white'}} isTransparent colorTheme="dark"></TechnicalAnalysis>
   
 </Paper>
 </Grid>
@@ -1433,17 +1608,17 @@ onChange={handleChange('address')}
             <AppBar
                 title='Inbox'
                 color='primary'
-                style={{backgroundCololor:"black",height:60,}}
+                style={{height:60,}}
                 className='app-bar'
             >
                      <Toolbar>
                        { phone ?
-                          <IconButton onClick={toggleDrawer}>
-                          <MenuIcon style={{height:50,width:50,color:"black"}} />
+                          <IconButton style={{marginLeft:-20,marginRight:20}} onClick={toggleDrawer}>
+                          <MenuIcon style={{height:30,width:30,color:"black"}} />
                           </IconButton>
                           : !phone ?
                           <IconButton>
-                          <Image layout='intrinsic' width={50} height={50} color='ffab00' src={black} />
+                          <Image  className='dashboard-icon' layout='intrinsic' width={50} height={50} color='ffab00' src={black} />
                           </IconButton>
                           :
                           null
@@ -1456,6 +1631,45 @@ onChange={handleChange('address')}
 
                  <Grid style={{}} justify='flex-end' spacing={2} container direction='row'>
               
+                 <Grid justify='flex-end' container xs={3} md={1}>
+                 <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        style={{}}
+      >
+          <div style={{backgroundColor:"#131521",width:450,height:150,padding:30,}}>
+            <h6 style={{textAlign:'center'}}>
+              Your referal link is
+            </h6>
+          {
+                gotten ?
+                <a style={{color:'#ffab00',fontSize:20}}>
+                 www.winstertrade<br/>investment.com/index/{info.username}
+              </a>
+              :
+              <a style={{color:'#ffab00',fontSize:18}}>
+              www.winstertradeinvestment.com/loading....
+           </a>
+              }
+          </div>
+      </Popover>
+
+      <IconButton aria-describedby={id} variant="contained" onClick={handleClick}>
+       <PeopleOutline style={{color:'black'}} />
+      </IconButton>
+                  
+                   </Grid>
+
                    <Grid justify='flex-end' style={{}} container xs={3} md={1}>
                    <IconButton onClick={()=>{Router.push('/home')}}>
                     <ToolTip  >
@@ -1463,6 +1677,9 @@ onChange={handleChange('address')}
                     </ToolTip>
                   </IconButton>
                    </Grid>
+
+                   
+
                    <Grid justify='flex-end' container xs={3} md={1}>
                    <IconButton onClick={()=>{Router.push('/home')}}>
                     <ToolTip  >
@@ -1470,7 +1687,9 @@ onChange={handleChange('address')}
                     </ToolTip>
                   </IconButton>
                    </Grid>
-              
+
+                   
+                   
 
                  </Grid>
               </Toolbar>
@@ -1483,7 +1702,7 @@ onChange={handleChange('address')}
           className='drawer-container'
           dismissible
           open={mobile}
-          style={{backgroundColor:'black',}}
+          style={{backgroundColor:'black',height:1012}}
           //onOpen={()=>{phone ? setContent('') : setOpen(true)}}
           //className='drawer'
         >
@@ -1510,7 +1729,7 @@ onChange={handleChange('address')}
             </DrawerContent>
         </Drawer>
         <DrawerAppContent className='drawer-app-content'>
-            <div >
+            <div style={{}} >
             {appContent()}
          
             </div>

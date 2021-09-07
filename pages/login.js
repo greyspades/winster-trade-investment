@@ -132,6 +132,8 @@ const Login=()=> {
   
   return (
    <div>
+     
+     <div style={{display:"grid",placeItems:"center",padding:30}}>
      <Header
           
           fixed
@@ -155,8 +157,6 @@ const Login=()=> {
           
         rightLinks={<HeaderLinks />}   
 />
-     <div style={{display:"grid",placeItems:"center",padding:30}}>
-
 
 
      <Particles

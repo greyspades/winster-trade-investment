@@ -22,7 +22,7 @@ import btc from '../img/btc.png'
 import Divider from '@material-ui/core/Divider'
 import { AccountBalance,AccountBalanceWalletOutlined } from '@material-ui/icons';
 import litecoin from '../img/litecoin.png'
-
+import CreditCardIcon from '@material-ui/icons/CreditCard';
 
 const Carousel=()=>{
 
@@ -32,9 +32,9 @@ const Carousel=()=>{
         <Grid  justify='flex-end' container xs={12} md={6}>
         <header style={{padding:30}} className="crumina-module crumina-heading heading--h2 heading--with-decoration">
               <div className="heading-sup-title">An earners market</div>
-              <h2 className="heading-title weight-normal">Crypto Interest Account
+              <h2 className="heading-title interest-header weight-normal">Crypto Interest Account
                 </h2>
-              <div className="heading-text">
+              <div className="heading-text bonus-p">
               The Winster Interest Account (WIA) lets you put your crypto to work and earn monthly interest payments in the asset-type that you transfer to Winster.
 Winster clients using the WIA earn compound interest in crypto, significantly increasing their Bitcoin, Ether, Litecoin, PAX Gold, USD Coin (USDC), Gemini Dollar (GUSD), and Tether (USDT)** balances over time.
 Opening an account is quick and easy. Learn more about how you can start earning interest or refer your friends by exploring our Resource Center.
@@ -50,7 +50,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
               <h5 style={{textAlign:'center'}}>
                 Bitcoin
               </h5>
-                <Grid   style={{border:'7px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
+                <Grid   style={{border:'3px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
                 <Image src={btc} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
@@ -58,7 +58,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
             <h5 style={{textAlign:'center'}}>
                 Ethereum
               </h5>
-                <Grid   style={{border:'7px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
+                <Grid   style={{border:'3px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
                 <Image src={eth} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
@@ -66,7 +66,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
             <h5 style={{textAlign:'center'}}>
                 Litecoin
               </h5>
-                <Grid   style={{border:'7px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
+                <Grid   style={{border:'3px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
                   <Image src={litecoin} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
@@ -74,7 +74,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
             <h5 style={{textAlign:'center'}}>
                 Safemoon
               </h5>
-                <Grid   style={{border:'7px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
+                <Grid   style={{border:'3px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
                 <Image src={safe} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
@@ -197,7 +197,7 @@ Opening an account is quick and easy. Learn more about how you can start earning
 
 <div style={{marginTop:-12}}>
 {/* <Image  width={90} height={90} src={two} layout='intrinsic' /> */}
-<AccountBalance style={{color:'#ffab00'}} />
+<CreditCardIcon style={{color:'#ffab00'}} />
 </div>
 
 

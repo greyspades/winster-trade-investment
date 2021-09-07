@@ -742,6 +742,9 @@ canvasClassName='particle-canvas'
        <div style={{margin:20}}>
 
        </div>
+       <Grid>
+         <TickerTape colorTheme='dark' />
+       </Grid>
             <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:20}}>
             
             <h2 style={{}} className=''>Bringing the Revolution</h2>

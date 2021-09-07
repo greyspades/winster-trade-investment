@@ -24,11 +24,14 @@ input:-webkit-autofill
     
   }
   .product-grid{
-    background: linear-gradient(#131519 70%,#131519, #ffba00 );
+    /* background: linear-gradient(#131519 70%,#131519, #ffba00 ); */
+    background-image: url(../img/steps.svg);
     width: 80%;
     height: auto;
     margin-top: 50px;
-    border: 3px solid  #ffba00
+    border: 3px solid  #ffba00;
+    background-size: contain;
+    
   
   }
   .carousel-card {
@@ -112,8 +115,10 @@ input:-webkit-autofill
   }
   .profile-paper {
     margin-top: 25px;
-   
-    background-image: linear-gradient(black 90%,black);
+    border: 3px solid #ffab00;
+   background-color: black;
+    background-image: linear-gradient(black 80%,black);
+    /* background-image: url(../img/steps.svg); */
     
     height: auto;
     padding: 10px;
@@ -204,13 +209,15 @@ input:-webkit-autofill
   .drawer-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
   }
    
   .drawer-app-content {
     flex: auto;
     overflow: auto;
+    
+    
   }
   .coin-icon {
     width: 50px;
@@ -219,10 +226,11 @@ input:-webkit-autofill
   .top-row {
     display: grid;
     place-items: center;
-    background-color: black;
+    /* background-color: black; */
   }
   .top-balance {
     margin-left: 30px;
+    
   }
   .alpha-heading {
     margin-top: 70px;
@@ -334,7 +342,7 @@ input:-webkit-autofill
   .count-paper {
     width: 90%;
     height: auto;
-    /* background-image: url(../img/event4.jpg); */
+    background-image: url(../img/steps.png);
     background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     display: grid;
@@ -361,10 +369,51 @@ input:-webkit-autofill
       place-items: center;
   }
   .winster-main-logo {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     position: relative;
 }
+.bonus-p {
+  text-align: center;
+}
+
+.interest-header {
+  text-align: center;
+}
+.circlar {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.bal-grid {
+  margin-left: 20px;
+}
+.c-grid {
+  margin-left: 20px;
+}
+.dashboard-icon {
+  margin-top: -5px;
+}
+.asset-paper {
+  margin-top: 25px;
+  border: 3px solid #ffab00;
+ background-color: black;
+  background-image: linear-gradient(black 80%,black);
+  /* background-image: url(../img/steps.svg); */
+  
+  height: max-content;
+  padding: 90px;
+
+}
+.minichart {
+  /* width: 600px; */
+}
+
+.m-overview {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
 
 
 
@@ -377,7 +426,7 @@ input:-webkit-autofill
 
   @media all and (min-width:800px){
     .product-grid{
-      background: linear-gradient(#131519 70%,#131519,  #ffba00 );
+      /* background: linear-gradient(#131519 70%,#131519,  #ffba00 ); */
       width: 80%;
       height: 350px;
       border: 3px solid  #ffba00
@@ -404,7 +453,7 @@ input:-webkit-autofill
   }
   .profile-paper {
     margin-top: 25px;
-    background-color: #131519;
+    /* background-color: #131519; */
    color: white;
     height: auto;
    
@@ -630,13 +679,44 @@ input:-webkit-autofill
 .bonus {
   padding: 100px;
 }
+.bonus-p {
+  text-align: start
+}
+
+.interest-header {
+  text-align: start;
+}
+.bal-grid {
+  margin-left: 0px
+}
+.c-grid {
+  margin-left: 0px;
+  
+  /* width: 500px; */
+}
+.asset-paper {
+  margin-top: 35px;
+  border: 3px solid #ffab00;
+ background-color: black;
+  background-image: linear-gradient(black 80%,black);
+  /* background-image: url(../img/steps.svg); */
+  padding:50px;
+  height: max-content;
+  padding-top: 40px;
+  padding-bottom: 70px;
+
+
+}
+.m-overview {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
 
 
 
 
-
-  }
+}
 
 
   
