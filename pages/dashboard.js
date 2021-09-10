@@ -119,7 +119,7 @@ import Divider from '@material-ui/core/Divider'
 import TrendLineIcon from '@material-ui/icons/TrendingUpTwoTone'
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import CreditCard from '@material-ui/icons/CreditCard'
-
+import {useRouter} from 'next/router'
 
 
 
@@ -133,9 +133,9 @@ const fetcher=(url)=>{
   let person=Cookie.get('user')
   let raw=JSON.parse(person)  
   const mail=raw.email
-  axios.post(url,{mail})
+  axios.get(url)
   .then((res)=>{
-    console.log(res)
+    return res.data
   })
 }
 
@@ -183,6 +183,8 @@ const Dashboard=({data})=>{
     const [moonData,setMoonData]=useState(false)
     const [tetherData,setTetherData]=useState(false)
     const [action,setAction]=useState('confirm')
+
+    const Router=useRouter()
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -579,12 +581,12 @@ const Dashboard=({data})=>{
     }
 
     const getInfo=()=>{
-        let user=Cookie.getJSON('user')
-        //let user=JSON.parse(raw)
-        
-        axios.post('/api/info',{user})
+      let person=Cookie.get('user')
+      let raw=JSON.parse(person)  
+      const mail=raw.email
+        axios.post('/api/info',{mail})
         .then((res)=>{
-            //console.log(user)
+            //console.log(res.data)
             //let item=JSON.parse(res.data)
             setInfo(res.data)
             setGotten(true)
@@ -1059,8 +1061,8 @@ const Dashboard=({data})=>{
               
                 <Grid style={{width:'100%',marginLeft:44}} item>
                 <Paper style={{width:'97%'}} className='profile-paper bottom-profile'>
-               {/* <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket> */}
-               <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart>
+               <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+               {/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
                </Paper>
                 </Grid>
               
@@ -1068,11 +1070,13 @@ const Dashboard=({data})=>{
 
 
               <Grid style={{}} justify='center'  item xs={12} md={4}>
-<Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
+              <Grid className='anal-grid' container justify='center'>
+              <Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
  
-<TechnicalAnalysis  width='100%' symbol={analPair} style={{backgroundColor:'white'}} isTransparent colorTheme="dark"></TechnicalAnalysis>
-  
-</Paper>
+ <TechnicalAnalysis  width='100%' symbol={analPair} style={{}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+   
+ </Paper>
+              </Grid>
 </Grid>
                    </Grid>
 
@@ -1108,7 +1112,7 @@ const Dashboard=({data})=>{
                                            pair:depoPair,
                                            //worth:value.worth,
                                            date:date,
-                                           username:data.username,
+                                           username:info.username,
                                            status:'pending'
                                            
                                        }
@@ -1590,7 +1594,7 @@ onChange={handleChange('address')}
                <Table emptyText={()=><p style={{fontSize:20,color:'white',padding:20}}>No pending deposits</p>} 
                title={()=><h3 style={{}}>Pending deposits</h3>} rowClassName='table-row' 
                style={{color:'white'}} transformColumns className='depo-table' 
-               tableLayout='auto' useFixedHeader={false} scroll={{y:false,x:false}} columns={columns}  data={data.investment} />
+               tableLayout='auto' useFixedHeader={false} scroll={{y:false,x:false}} columns={columns}  data={info.investment} />
                </Paper>
             </Grid>
         )
@@ -1608,7 +1612,7 @@ onChange={handleChange('address')}
             <AppBar
                 title='Inbox'
                 color='primary'
-                style={{height:60,}}
+                //style={{height:50}}
                 className='app-bar'
             >
                      <Toolbar>
@@ -1670,10 +1674,10 @@ onChange={handleChange('address')}
                   
                    </Grid>
 
-                   <Grid justify='flex-end' style={{}} container xs={3} md={1}>
-                   <IconButton onClick={()=>{Router.push('/home')}}>
+                   <Grid jusstify='flex-end' style={{}} container xs={3} md={1}>
+                   <IconButton onClick={()=>{console.log(info)}}>
                     <ToolTip  >
-                    <NotificationsNone style={{color:'black'}} />
+                    <NotificationsNone  style={{color:'black'}} />
                     </ToolTip>
                   </IconButton>
                    </Grid>

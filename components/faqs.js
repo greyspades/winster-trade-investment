@@ -26,7 +26,7 @@ const Faqs=()=> {
   const classes = useStyles();
 
   return (
-    <div style={{display:'grid',placeItems:'center',padding:10}} elevation={20} className={classes.root}>
+    <div style={{display:'grid',placeItems:'center',padding:10}} elevation={20} className='countdown-bg1'>
         <h3 style={{color:'#ffba00'}}>
             Faqs
         </h3>

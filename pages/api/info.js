@@ -7,11 +7,12 @@ const uri="mongodb+srv://grey:Vermilion9%23@cluster0.tkbdb.mongodb.net/users?ret
 
 const userInfo = async(req, res) => {
        
-  const mail=req.body.user.email 
+  const mail=req.body.mail
   console.log(mail)
   users.findOne({email:mail})
     .then((item)=>{
       console.log('found')
+      //console.log(item)
       res.send(item)
     })
 

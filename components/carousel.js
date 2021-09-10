@@ -24,6 +24,9 @@ import { AccountBalance,AccountBalanceWalletOutlined } from '@material-ui/icons'
 import litecoin from '../img/litecoin.png'
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 
+
+
+
 const Carousel=()=>{
 
   const percentage=66
@@ -47,35 +50,45 @@ Opening an account is quick and easy. Learn more about how you can start earning
         <div style={{backgroundColor:'rgba(0,0,0,0.5)',padding:20}}>
           <Grid style={{padding:30}} spacing={5} container direction='row' justify='center'>
             <Grid style={{}} container justify='center' alignItems='center' xs={6} md={3}>
-              <h5 style={{textAlign:'center'}}>
+             <Grid justify='center' container>
+             <h5 style={{textAlign:'center'}}>
                 Bitcoin
               </h5>
+             </Grid>
                 <Grid   style={{border:'3px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
                 <Image src={btc} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
             <Grid container justify='center' alignItems='center' xs={6} md={3}>
-            <h5 style={{textAlign:'center'}}>
+           <Grid justify='center' container>
+          <Grid container justify='center'> 
+          <h5 style={{textAlign:'center'}}>
                 Ethereum
               </h5>
+          </Grid>
+           </Grid>
                 <Grid   style={{border:'3px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
                 <Image src={eth} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
             <Grid container justify='center' alignItems='center' xs={6} md={3}>
-            <h5 style={{textAlign:'center'}}>
+              <Grid container justify='center'>
+              <h5 style={{textAlign:'center'}}>
                 Litecoin
               </h5>
+              </Grid>
                 <Grid   style={{border:'3px solid #ffab00',borderRadius:60,padding:10,display:'grid',placeItems:'center',margin:5}}>
                   <Image src={litecoin} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
             <Grid container justify='center' alignItems='center' xs={6} md={3}>
-            <h5 style={{textAlign:'center'}}>
-                Safemoon
+              <Grid container justify='center'>
+              <h5 style={{textAlign:'center'}}>
+                Tether
               </h5>
+              </Grid>
                 <Grid   style={{border:'3px solid #ffab00',borderRadius:80,padding:10,display:'grid',placeItems:'center',margin:5}}>
-                <Image src={safe} height={40} width={40} layout='intrinsic' />
+                <Image src={tether} height={40} width={40} layout='intrinsic' />
                 </Grid>
             </Grid>
           </Grid>

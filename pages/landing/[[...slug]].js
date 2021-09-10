@@ -71,7 +71,7 @@ const Home = () => {
   //const { t } = useTranslation('footer');
 
   const Router=useRouter()
-  const {slug}=Router.query
+  const {slug}=Router.query || ''
   
   const [mobile,setMobile]=useState(false)
 
@@ -96,11 +96,9 @@ const Home = () => {
 
   useEffect(()=>{
     let width=window.innerWidth
-    
-    
     //let user=Cookie.getJSON('user')
-    //console.log(JSON.stringify(slug))
-    
+    console.log(JSON.stringify(slug))
+    //console.log(name)
     if(width<500){
       setMobile(true)
       console.log('mobile view')
@@ -111,27 +109,30 @@ const Home = () => {
         console.log('desktop view')
 
     }
-   
+    // if(slug=='services'){
+    //     serviceScroll
+    // }
   },[])
 
+
   useEffect(()=>{
-      console.log(slug)
-      if(slug=='services'){
-        serviceScroll()
-    }
-    else if(slug=='faqs'){
-      faqsScroll()
-    }
-    else if(slug=='plans'){
-      packageScroll()
-    }
-    else if(slug=='testimonials'){
-      testimonialScroll()
-    }
-    else if(slug=='contact'){
-      contactScroll()
-    }
-  },[])
+    console.log(slug)
+    if(slug=='services'){
+      serviceScroll()
+  }
+  else if(slug=='faqs'){
+    faqsScroll()
+  }
+  else if(slug=='plans'){
+    packageScroll()
+  }
+  else if(slug=='testimonials'){
+    testimonialScroll()
+  }
+  else if(slug=='contact'){
+    contactScroll()
+  }
+},[])
 
 
     return (
@@ -175,15 +176,7 @@ const Home = () => {
 <script type="text/javascript" src='../../js/main.js'/>
 
 
-
-
-
-
-
-   </Head>
-   
-<div>
-<Script strategy='afterInteractive' type="text/javascript" dangerouslySetInnerHTML={{__html:`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+<script type="text/javascript" dangerouslySetInnerHTML={{__html:`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
@@ -192,6 +185,13 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();`}}/>
+
+
+
+
+   </Head>
+   
+<div>
   
 <Grid container >
 <Header
@@ -201,7 +201,7 @@ s0.parentNode.insertBefore(s1,s0);
           //routes={dashboardRoutes}
           // changeColorOnScroll={{
           //   color:'transparent',
-          //   height:50,
+          //   height:40,
           // }}
           
           // rightLinks={(
@@ -735,7 +735,7 @@ canvasClassName='particle-canvas'
   
   {/* ... end Header */}
   <div className="main-content-wrappr">
-    <section style={{}}  data-settings="particles-1" className="main-sectio alpha-heading crumina-flying-balls particles-js bg-  responsive-align-center">
+  <section style={{}}  data-settings="particles-1" className="main-sectio alpha-heading crumina-flying-balls particles-js bg-  responsive-align-center">
       <div style={{}} className="container top-container">
         <div className="row winster-top">
           <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6 logo-grid">
@@ -747,7 +747,7 @@ canvasClassName='particle-canvas'
             <header style={{}} className="heading-talk crumina-module crumina-heading heading--h1  heading--with-decoration winster-header">
               <h1 className=" heading-title f-size-90 weight-normal no-margin">Winster<br/>
                 <span className="weight-bold">Trade</span></h1>
-              <h2 className="c-primary">Investment</h2>
+              <h2 className="c-primary">Investment solutions</h2>
             </header>
           
           </div>
@@ -757,24 +757,27 @@ canvasClassName='particle-canvas'
       </div>
       
     </section>
-    <Grid style={{marginTop:30,marginBottom:50}} container justify='center'>
+    <Grid style={{marginTop:30,marginBottom:10}} container justify='center'>
           <a data-scroll href="/signup" className="btn btn--large btn--transparent btn--secondary">Get started</a>
           </Grid>
-         <div style={{marginTop:20}}>
+       <div style={{margin:20}}>
 
-         </div>
+       </div>
+       <Grid>
+         <TickerTape colorTheme='dark' />
+       </Grid>
             <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:20}}>
             
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
             <p className={'talk'}  style={{fontSize:20,padding:10}}>
-            Welcome to winstertradeinvestment.com We are a leading company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. 
+            Welcome to winstertradeinvestment.com We are a company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest possible return from the foreign currency exchange (Forex) and Cryptocurrency exchange markets. 
           </p>
        
 
             </Grid>
            
-            <div ref={serviceRef} style={{marginTop:10,marginBottom:30}}>
+            <div ref={serviceRef} style={{marginTop:10,marginBottom:60}}>
             {
               mobile ? 
               <Products />
@@ -850,13 +853,13 @@ canvasClassName='particle-canvas'
 
 
     
-    <section className="medium-padding120 responsive-align-center">
+    <section style={{marginTop:100}} className="medium-padding120 responsive-align-center">
       <div className="container">
         <div className="row bg-2">
           <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30">
             <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
-              
-              <h2 style={{textAlign:'center'}} className="heading-title weight-normal">Winster tokens
+             
+              <h2 style={{textAlign:'center'}} className="heading-title weight-normal">Introducing Winster tokens
               </h2>
               <Grid container justify='center'>
                 <motion.div style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}}>
@@ -919,20 +922,20 @@ canvasClassName='particle-canvas'
               </div>
 
 
-              <a href="/signup" className="btn btn--large btn--pink-light">
+              <a href="006_events.html" className="btn btn--large btn--pink-light">
                 Get started
               </a>
 
 
               <div className="crumina-module crumina-skills-item skills-item--bordered">
                 <div className="skills-item-info">
-                  <span className="skills-item-title">$6M<span className="skills-item-count c-primary"><span className="count-animate" data-speed={1000} data-refresh-interval={50} data-to={50} data-from={0} /><span className="units">m</span></span></span>
+                  <span className="skills-item-title">$6M<span className="skills-item-count c-primary"><span className="count-animate" data-speed={1000} data-refresh-interval={50} data-to={50} data-from={0} /><span className="units">$30m</span></span></span>
                 </div>
                 <div className="skills-item-meter">
                   <span className="skills-item-meter-active bg-primary-color" style={{width: '50%'}} />
                 </div>
                 <span className="add-info">
-                  <span><span className="c-link-color">Softcap</span> in 76 days</span>
+                  <span><span className="c-link-color">Softcap</span> in 92 days</span>
                   <span className="c-link-color">Hardcap</span>
                 </span>
               </div>
@@ -952,12 +955,12 @@ canvasClassName='particle-canvas'
       </div>
     </section>
 
-    <Grid style={{}} container justify='center' ref={contactRef}>
+    <Grid container justify='center' ref={contactRef}>
       <Contact />
     </Grid>
   </div>
   {/* Footer */}
-  <div  className="footer ">
+  <div id="site-footer" className="footer ">
 
   <MyFooter />
     {/* <canvas id="can" />

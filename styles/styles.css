@@ -342,7 +342,7 @@ input:-webkit-autofill
   .count-paper {
     width: 90%;
     height: auto;
-    background-image: url(../img/steps.png);
+    background-image: url(../img/gold.jpg);
     background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     display: grid;
@@ -412,8 +412,13 @@ input:-webkit-autofill
   margin-top: 60px;
   margin-bottom: 60px;
 }
-
-
+.anal-grid {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.app-bar {
+  height:50px
+}
 
 
 
@@ -425,6 +430,9 @@ input:-webkit-autofill
 
 
   @media all and (min-width:800px){
+    .app-bar {
+      height:60px
+    }
     .product-grid{
       /* background: linear-gradient(#131519 70%,#131519,  #ffba00 ); */
       width: 80%;
@@ -645,7 +653,7 @@ input:-webkit-autofill
   .count-paper {
     width: 90%;
     height: auto;
-    background-image: url(../img/event4.jpg);
+    background-image: url(../img/gold.jpg);
     background-color: rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
     display: grid;

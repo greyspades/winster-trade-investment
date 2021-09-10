@@ -106,7 +106,7 @@ function MyFooter(props) {
               Contact us
             </div>
           ),
-          //url: '',
+          url: '/landing/contact',
           //description:' +48732121453',
           openExternal: true,
           className:'main-footer',
@@ -126,7 +126,7 @@ function MyFooter(props) {
                Services
              </div>
            ),
-           url: '/index/services',
+           url: '/landing/services',
            //description:'register for an account',
            openExternal: true,
            className:'main-footer',
@@ -137,7 +137,7 @@ function MyFooter(props) {
                Plans
              </div>
            ),
-           url: '/index/plans',
+           url: '/landing/plans',
            //description:'Login to your account',
            openExternal: true,
            className:'main-footer',
@@ -158,7 +158,7 @@ function MyFooter(props) {
         ]
        }
     ]}
-    bottom="Winster trade investment"
+    bottom="Winster trade inlandingent"
     
     backgroundColor='#ffab0000'
   />
