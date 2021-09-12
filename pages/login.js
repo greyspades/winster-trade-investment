@@ -137,7 +137,7 @@ const Login=()=> {
      <Header
           
           fixed
-          color="transparent"
+          color="primary"
           //routes={dashboardRoutes}
           // changeColorOnScroll={{
           //   color:'transparent',

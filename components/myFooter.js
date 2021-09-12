@@ -158,7 +158,7 @@ function MyFooter(props) {
         ]
        }
     ]}
-    bottom="Winster trade inlandingent"
+    bottom="Winster trade investment"
     
     backgroundColor='#ffab0000'
   />

@@ -1,10 +1,19 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import {Grid } from '@material-ui/core'
 import MyFooter from '../components/myFooter'
 import Header from '../components/Header'
 import HeaderLinks from '../components/HeaderLinks'
+import {useRouter} from 'next/router'
+
 
 const Policy = () => {
+const Router=useRouter()
+
+useEffect(()=>{
+    console.log(Router.locale)
+})
+
+
     return (
         <div>
             <Header

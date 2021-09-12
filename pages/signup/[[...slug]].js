@@ -156,11 +156,11 @@ const Signup=()=> {
   
   
   return (
-   <div>
+   <div style={{display:'grid',placeItems:'center'}}>
       <Header
           
           fixed
-          color="transparent"
+          color="primary"
           //routes={dashboardRoutes}
           // changeColorOnScroll={{
           //   color:'transparent',
