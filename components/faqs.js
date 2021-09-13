@@ -41,7 +41,7 @@ const Faqs=()=> {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant='p' style={{color:'white'}}>
-          The winstertradeinvestment.com is modern investment program where you are able to make deposit and get the profit. Our Corporate Headquarters is located here: 63 ul. Słowackiego Juliusza Street, Mikołów, Poland 43-19. hoardtradeinvestment.com LTD registration number is №12908756. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. Our company is constantly evolving, it improves its marketing components and creates new investment proposals. All this makes the hoardtradeinvestment.com an industry leader and to be able to adapt to the constantly changing market conditions.
+          The winstertradeinvestment.com is modern investment program where you are able to make deposit and get the profit. Our Corporate Headquarters is located here: 63 kenton Road, Yorkshire, England 43-19. winstertradeinvestment.com LTD registration number is №12908756. Our goal is to achieve the highest return from the activity on the foreign currency exchange (Forex) and Cryptocurrency exchange markets. Our company is constantly evolving, it improves its marketing components and creates new investment proposals. All this makes the winstertradeinvestment.com an industry leader and to be able to adapt to the constantly changing market conditions.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -55,7 +55,7 @@ const Faqs=()=> {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant='p' style={{color:'white'}}>
-          The investment portfolio is managed by a team of experienced financial specialists, of lawyers, professional trade analysts who have been working on the currency exchange market for more than 15 years on average. Our experience and contacts ensure access for us to a wide range of local and global resources and bring about benefit from the world's best and most effective technologies of trading on the Forex and Cryptocurrency market.
+          The investment portfolio is managed by a team of experienced financial specialists and professional trade analysts who have been working on the currency exchange market for more than 10 years on average. Our experience and contacts ensure access for us to a wide range of local and global resources and bring about benefit from the world's best and most effective technologies of trading on the Forex and Cryptocurrency market.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -83,7 +83,7 @@ const Faqs=()=> {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant='p' style={{color:'white'}}>
-          First of all, you need to register a new account, select an investment plan and make a deposit at least $100 through the available payment systems. For details check the link: Get Started
+          First of all, you need to register a new account, select an investment plan and make a deposit at least $200 through the available payment systems. For details check the link: Get Started
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -97,7 +97,7 @@ const Faqs=()=> {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant='p' style={{color:'white'}}>
-          Currently we have an introductory low deposit minimum amount of $100 and going up to $Unlimited which is the maximum allowed for a single deposit and depends on your investment plan. You are able to check min. and max. amount for each plan in our main page and your account menu "Make Deposit"
+          Currently we have an introductory low deposit minimum amount of $200 and going up to $Unlimited which is the maximum allowed for a single deposit and depends on your investment plan. You are able to check min. and max. amount for each plan in our main page and your account menu.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -111,7 +111,7 @@ const Faqs=()=> {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant='p' style={{color:'white'}}>
-          the minimum amount for withdrawal is $5
+          the minimum amount for withdrawal is $10
           </Typography>
         </AccordionDetails>
       </Accordion>

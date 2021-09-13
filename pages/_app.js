@@ -1,12 +1,12 @@
 //import '../styles/globals.css'
 import '../styles/styles.css'
 import '../styles/blocks.min.css'
-import '../styles/plugins.min.css'
+//import '../styles/plugins.min.css'
 import '../styles/theme-styles.min.css'
 import '../styles/widgets.min.css'
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import { appWithTranslation } from 'next-i18next';
+//import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+//import { appWithTranslation } from 'next-i18next';
 
 
 
@@ -35,4 +35,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default MyApp

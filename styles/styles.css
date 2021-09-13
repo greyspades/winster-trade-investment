@@ -147,7 +147,7 @@ input:-webkit-autofill
     margin-right: 10px;
   }
   .balance-value {
-    font-size: 35px;
+    font-size: 28px;
     margin-left: 10px;
   }
   .success-paper {
@@ -224,12 +224,12 @@ input:-webkit-autofill
     height: 50px;
   }
   .top-row {
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
     /* background-color: black; */
   }
   .top-balance {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     
   }
   .alpha-heading {
@@ -413,13 +413,16 @@ input:-webkit-autofill
   margin-bottom: 60px;
 }
 .anal-grid {
-  padding-right: 20px;
-  padding-left: 20px;
+  /* padding-right: 20px;
+  padding-left: 20px; */
+  padding-top: 10px;
 }
 .app-bar {
   height:50px
 }
-
+.bottom-profile {
+  margin-left: 24px;
+}
 
 
 

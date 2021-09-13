@@ -9,9 +9,7 @@ import {useRouter} from 'next/router'
 const Policy = () => {
 const Router=useRouter()
 
-useEffect(()=>{
-    console.log(Router.locale)
-})
+
 
 
     return (

@@ -120,7 +120,7 @@ import TrendLineIcon from '@material-ui/icons/TrendingUpTwoTone'
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import CreditCard from '@material-ui/icons/CreditCard'
 import {useRouter} from 'next/router'
-
+import Modal from '@material-ui/core/Modal'
 
 
 
@@ -140,7 +140,7 @@ const fetcher=(url)=>{
 }
 
 const Dashboard=({data})=>{
-  
+    
     const [mobile,setMobile]=useState()
     const [content,setContent]=useState('Balance')
     const [balanceElev,setBalanceElev]=useState(7)
@@ -744,9 +744,9 @@ const Dashboard=({data})=>{
            return (
                <Grid justify='center' container spacing={3} className='container-p'  style={{padding:5,marginTop:60,width:'100%'}} >
                 
-                   <Grid style={{}} className='top-row' justify='flex-start' style={{height:'auto',padding:10}} container direction='row' spacing={3}>
+                   <Grid  className='top-row' justify='flex-start' style={{height:'auto',padding:10,}} container direction='row' spacing={3}>
                      
-                   <Grid className='top-balance' justify='flex-start' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
+                   <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
                      
               <Grid style={{}} container className='c-grid'>
               <Paper style={{width:'95%'}}  className='profile-paper balance-paper'>
@@ -777,7 +777,7 @@ const Dashboard=({data})=>{
   </Grid>
   <Grid style={{marginTop:-10}} direction='row' justify='center' alignItems='center' container>
       <Grid style={{}}  md={2} xs={2}  item>
-          <AttachMoney className='dollar-sign' style={{height:50,width:50,color:'#ffab00',marginLeft:40}} />
+          <AttachMoney className='dollar-sign' style={{height:50,width:50,color:'#ffab00',marginLeft:30,marginRight:10}} />
 
       </Grid>
       <Grid style={{marginLeft:15}} md={9} xs={9} item>
@@ -922,7 +922,7 @@ const Dashboard=({data})=>{
 </Grid>
 
 
-<Grid style={{}} className='c-grid' xs={12} md={2} item>
+<Grid style={{}} className='c-grid' xs={12} md={2} container>
 
 <Grid style={{}} container justify='center'>
 <Paper style={{}} className=' asset-paper'>
@@ -1055,29 +1055,29 @@ const Dashboard=({data})=>{
 
 
                    </Grid>
-                   <Grid style={{marginTop:10}} container direction='row' spacing={3}>
+                   <Grid container justify='flex-end' style={{}}>
+                   <Grid className='bottom-profile' justify='flex-end' style={{marginTop:10,}} container direction='row'>
 
-                   <Grid  className='crypto-dashboa' md={8} xs={12} justify='center'  style={{width:500}} container>
-              
-                <Grid style={{width:'100%',marginLeft:44}} item>
-                <Paper style={{width:'97%'}} className='profile-paper bottom-profile'>
-               <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
-               {/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
-               </Paper>
-                </Grid>
-              
-              </Grid>
-
-
-              <Grid style={{}} justify='center'  item xs={12} md={4}>
-              <Grid className='anal-grid' container justify='center'>
-              <Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
- 
- <TechnicalAnalysis  width='100%' symbol={analPair} style={{}} isTransparent colorTheme="dark"></TechnicalAnalysis>
-   
- </Paper>
-              </Grid>
+<Grid style={{}} justify='center'  md={8} xs={12} container>
+<Paper style={{width:'93%'}} className='profile-paper '>
+<CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+{/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
+</Paper>
 </Grid>
+
+
+
+<Grid xs={12} md={4} className='anal-grid' container justify='center'>
+<Grid style={{width:'90%'}} item>
+<Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
+
+<TechnicalAnalysis  width='100%' symbol={analPair} style={{}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+
+</Paper>
+</Grid>
+</Grid>
+
+ </Grid>
                    </Grid>
 
      
@@ -1295,22 +1295,27 @@ const Dashboard=({data})=>{
                                         </Button>
                                     }
                                 </Grid>
-                                <Grid style={{marginTop:-20}} justify='center' alignItems='center' item>
+                                <Grid style={{marginTop:-20}} justify='center' alignItems='center' container>
                               
                                   <Grid container>
                                  
-                                  {showDepo
-                                    ?
-                                 <Grid container>
-                                       
-                                        <p onBlur={()=>setShowDepo(false)} style={{color:'white',textAlign:'center',fontSize:20}}>
-                                    You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span> You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
-                                    to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaayuw4lak3ez2cl05qdzg6d</a> : depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5fc7754aE63484F48AC79</a> : <span></span>} and upload proof of Payment
+                                  
+                                 <Modal onClose={()=>setShowDepo(false)} open={showDepo}>
+                                  
+                                   <Grid style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:80,border:'3px solid #ffab00',width:'90%'}} container justify='center' alignItems='center'>
+                                   <p  style={{color:'white',textAlign:'center',fontSize:17,width:'80%',padding:10}}>
+                                    You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span>, You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
+                                    to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a> : depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5<br/>fc7754aE63484F48AC79</a> : <div></div>} and upload proof of Payment
                                 </p>
-                                 </Grid>
-                                    :
-                                    <span></span>
-                                    }
+                                <Grid container justify='center'>
+                                     <Button style={{color:'#ffab00'}} onClick={()=>setShowDepo(false)} >
+                                        close
+                                     </Button>
+                                   </Grid>
+                                   </Grid>
+
+                                 </Modal>
+                                  
                                   </Grid>
                                  
                                 </Grid>
@@ -1733,10 +1738,10 @@ onChange={handleChange('address')}
             </DrawerContent>
         </Drawer>
         <DrawerAppContent className='drawer-app-content'>
-            <div style={{}} >
+            <Grid container style={{}} >
             {appContent()}
          
-            </div>
+            </Grid>
         </DrawerAppContent>
           
           <MyFooter />
