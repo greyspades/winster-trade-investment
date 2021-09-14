@@ -36,10 +36,10 @@ import PhoneIcon from '@material-ui/icons/Phone'
 import AddressIcon from '@material-ui/icons/LocationCity'
 import Particles from 'react-particles-js'
 import Header from '../components/Header'
-
+import white from '../img/black.png'
 import HeaderLinks from '../components/HeaderLinks'
-
-
+import Image from 'next/image'
+import Menu from "@material-ui/icons/Menu";
 
 
 
@@ -154,7 +154,9 @@ const Login=()=> {
           //       </div>
           //       </div>
           // )}
-          
+          header='Login'
+          menu={ <Menu style={{color:'black'}} />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<HeaderLinks />}   
 />
 
@@ -802,7 +804,7 @@ canvasClassName='particle-canvas'
           }
         />
         <div style={{marginTop:20}}>
-         <p style={{fontSize:20,textAlign:'center'}} className='heading-text'>
+         <p style={{fontSize:16,textAlign:'center'}} className='heading-text'>
          Cant remember password ? click <a href='/password_reset' style={{textDecoration:'none',color:'#ffab00'}}>here</a>
          </p>
         </div>

@@ -35,7 +35,7 @@ import MyFooter from '../components/myFooter'
 import Clock from 'react-digital-clock';
 import { TickerTape } from "react-ts-tradingview-widgets";
 import dots from '../img/dots.png'
-
+import Menu from "@material-ui/icons/Menu";
 
 //import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
@@ -54,8 +54,8 @@ import Header from '../components/Header'
 import IndexLinks from '../components/indexlinks'
 import bg from '../img/bg-2.png'
 import Affiliate from '../components/Affiliate'
-
-
+//import white from '../img/white.png'
+import moon from '../img/safemoon.svg'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationOnOutlined'
@@ -193,7 +193,9 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           //       </div>
           // )}
-          
+          //header='Winster trade investment'
+          menu={ <Menu />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
@@ -838,15 +840,15 @@ canvasClassName='particle-canvas'
           <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30">
             <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
              
-              <h2 style={{textAlign:'center'}} className="heading-title weight-normal">Introducing Winster tokens
+              <h2 style={{textAlign:'center',marginBottom:40}} className="heading-title weight-normal">Introducing Safemoon tokens
               </h2>
               <Grid container justify='center'>
                 <motion.div style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}}>
-                <Image priority={true} src={logo3} height={200} width={200} layout='intrinsic' />
+                <Image priority={true} src={moon} height={200} width={200} layout='intrinsic' />
                 </motion.div>
               </Grid>
-              <div className="heading-text">Our very own decentralized currency which scales on every transaction and referal you make
-              You can accumulate winster tokens by making deposits and making referals, and as your balance increases so do your tokens
+              <div className="heading-text">Flexible decentralized currency which scales on every transaction and referal you make
+              You can accumulate Safemoon tokens by making deposits and making referals, and as your balance increases so do your tokens
               </div>
               <Grid style={{marginTop:30,}} container justify='center' direction='row'>
                 <Grid container justify='center' xs={6} md={6}>

@@ -11,7 +11,7 @@ const Overview = (props) => {
                 <h3 style={{marginBottom:50}}>
                     Market Overview
                 </h3>
-                <p style={{fontSize:20,padding:10,textAlign:'center'}} >
+                <p style={{fontSize:16,padding:10,textAlign:'center'}} >
                     Gain insight through analytical data gathered accross numerous markets and pairs
                 </p>
             <Grid container justify='center' direction='row' className='market-overview'>

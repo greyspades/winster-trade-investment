@@ -46,6 +46,10 @@ import Header from '../../components/Header'
 import HeaderLinks from '../../components/HeaderLinks'
 import Particles from 'react-particles-js'
 import MyAppbar from '../../components/appbar'
+import white from '../../img/black.png'
+import Menu from "@material-ui/icons/Menu";
+import Image from 'next/image'
+
 
 
 const useStyles = makeStyles({
@@ -177,7 +181,9 @@ const Signup=()=> {
           //       </div>
           //       </div>
           // )}
-          
+          header='Signup'
+          menu={ <Menu style={{color:'black'}} />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<HeaderLinks />}   
 />
      <div style={{padding:30,display:'grid',placeItems:'center'}} >

@@ -10,9 +10,10 @@ import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import Header from '../components/Header'
 import HeaderLinks from '../components/HeaderLinks'
-
+import Menu from "@material-ui/icons/Menu";
+import white from '../img/black.png'
 import AddressIcon from '@material-ui/icons/LocationCity'
-
+import Image from 'next/image'
 
 const Success = () => {
     const [loading,setLoading]=useState({
@@ -49,7 +50,7 @@ const Success = () => {
           <Header
           
           fixed
-          color="transparent"
+          color="primary"
           //routes={dashboardRoutes}
           // changeColorOnScroll={{
           //   color:'transparent',
@@ -66,28 +67,29 @@ const Success = () => {
           //       </div>
           //       </div>
           // )}
-          
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+          menu={ <Menu style={{color:"black"}} />}
         rightLinks={<HeaderLinks />}   
 />
             <Card style={{}} className='success-paper'>
-                <Typography variant='h3' style={{color:'#ffab00',textAlign:'center'}}>
+                <h2 style={{color:'#ffab00',textAlign:'center'}}>
                     Success
-                </Typography>
+                </h2>
                 <CardContent >
-                   <Typography variant='h5' style={{textAlign:'center'}}>
+                   <h5 style={{textAlign:'center'}}>
                        Your Registration was successful 
-                   </Typography>
-                   <Typography style={{textAlign:'center',color:'white',marginTop:30}}>
+                   </h5>
+                   <p style={{textAlign:'center',color:'white',marginTop:30}}>
                        Please confirm your account by clicking the link sent to your email
-                   </Typography>
-                   <Typography style={{textAlign:'center',color:'white',marginTop:30}}>
+                   </p>
+                   <p style={{textAlign:'center',color:'white',marginTop:30}}>
                        Did not recieve mail? {!loading.pending && !loading.done ? <span>click<Button onClick={mail} style={{color:'#ffab00'}}>Here</Button></span> : loading.pending && !loading.done ?  <span style={{marginLeft:30}}>
                        <HashLoader  color='#ffab00' loading={true} size={28} />
                        </span> : !loading.pending && loading.done ? <Check style={{width:35,height:35,color:'#ffab00',marginBottom:-7}} /> : null }
-                   </Typography>
-                   <Typography style={{textAlign:'center',color:'white',marginTop:10}}>
+                   </p>
+                   <p style={{textAlign:'center',color:'white',marginTop:10}}>
                       Or go directly to your <Button onClick={()=>{Router.push('./dashboard')}} style={{color:'#ffab00'}}>Dashboard</Button>
-                   </Typography>
+                   </p>
                 </CardContent>
             </Card>
 

@@ -35,9 +35,8 @@ import MyFooter from '../../components/myFooter'
 import Clock from 'react-digital-clock';
 import { TickerTape } from "react-ts-tradingview-widgets";
 import Script from 'next/script'
+import Menu from "@material-ui/icons/Menu";
 
-
-//import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
   Container,
   Row,
@@ -56,7 +55,7 @@ import bg from '../../img/bg-2.png'
 import Affiliate from '../../components/Affiliate'
 //import Footer from 'rc-footer';
 //import 'rc-footer/assets/index.css';
-
+import moon from '../../img/safemoon.svg'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationOnOutlined'
@@ -71,7 +70,7 @@ const Home = () => {
   //const { t } = useTranslation('footer');
 
   const Router=useRouter()
-  const {slug}=Router.query || ''
+  const {slug}=Router.query
   
   const [mobile,setMobile]=useState(false)
 
@@ -116,7 +115,8 @@ const Home = () => {
 
 
   useEffect(()=>{
-    console.log(slug)
+    // console.log('landed')
+    // console.log(slug)
     if(slug=='services'){
       serviceScroll()
   }
@@ -214,7 +214,9 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           //       </div>
           // )}
-          
+          //header='Winster trade investment'
+          menu={ <Menu />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
@@ -770,7 +772,7 @@ canvasClassName='particle-canvas'
             
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
-            <p className={'talk'}  style={{fontSize:20,padding:10}}>
+            <p className={'talk'}  style={{fontSize:18,padding:10}}>
             Welcome to winstertradeinvestment.com We are a company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest possible return from the foreign currency exchange (Forex) and Cryptocurrency exchange markets. 
           </p>
        
@@ -859,15 +861,15 @@ canvasClassName='particle-canvas'
           <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb30">
             <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
              
-              <h2 style={{textAlign:'center'}} className="heading-title weight-normal">Introducing Winster tokens
+              <h2 style={{textAlign:'center',marginBottom:40}} className="heading-title weight-normal">safemoon tokens
               </h2>
               <Grid container justify='center'>
                 <motion.div style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}}>
-                <Image priority={true} src={logo3} height={200} width={200} layout='intrinsic' />
+                <Image priority={true} src={moon} height={200} width={200} layout='intrinsic' />
                 </motion.div>
               </Grid>
-              <div className="heading-text">Our very own decentralized currency which scales on every transaction and referal you make
-              You can accumulate winster tokens by making deposits and making referals, and as your balance increases so do your tokens
+              <div className="heading-text">Flexible decentralized currency which scales on every transaction and referal you make
+              You can accumulate safemoon tokens by making deposits and making referals, and as your balance increases so do your tokens
               </div>
               <Grid style={{marginTop:30,}} container justify='center' direction='row'>
                 <Grid container justify='center' xs={6} md={6}>

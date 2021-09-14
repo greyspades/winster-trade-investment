@@ -23,12 +23,12 @@ const Security = () => {
             <h3 style={{textAlign:'center',color:''}} className='choose-heading'>
                 Secure your financial freedom
             </h3>
-            <p style={{textAlign:'center',fontSize:20}}>
+            <p style={{textAlign:'center',fontSize:18,padding:20}}>
                 By investing with winster trade investment you are assured of
             </p>
             <Grid container justify='center' direction='row'>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
+                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
                   <div style={{display:'grid',placeContent:'center'}}>
                    <SecurityIcon className='choose-icon' />
                    </div>
@@ -36,34 +36,34 @@ const Security = () => {
                         Security
                    </h5>
                   
-                   <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
+                   <p style={{textAlign:'center',fontSize:16,color:'#8c96a5'}}>
                    Your funds are protected by industry leading protocols,dedicated to efficiency and flexibility, while maintaining ease of use
                     </p>
                    
                   </Paper>
                 </Grid>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <PolicyIcon className='choose-icon' />
                    </div>
                    <h5 style={{color:'#ffab00',textAlign:'center'}}>
                         Transparency
                    </h5>
-                    <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
+                    <p style={{textAlign:'center',fontSize:16,color:'#8c96a5'}}>
                     Honesty and transparency are our top priorities. Winster trade investment is audited to ensure every asset is accounted for in our secure system.
                     </p>
                     </Paper>
                 </Grid>
                 <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:380,border:"3px solid #ffab00"}} elevation={20}>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <VerifiedUserIcon className='choose-icon' />
                    </div>
                    <h5 style={{color:'#ffab00',textAlign:'center'}}>
                         Reliability
                    </h5>
-                    <p style={{textAlign:'center',fontSize:20,color:'#8c96a5'}}>
+                    <p style={{textAlign:'center',fontSize:16,color:'#8c96a5'}}>
                     We ensure speedy and efficient transactions which make your invetments a priority
                     </p>
                     </Paper>
@@ -75,7 +75,7 @@ const Security = () => {
             <h3 style={{textAlign:'center',marginTop:100}}>
                 Secure and how you want it
             </h3>
-            <p style={{textAlign:'center',fontSize:20}}>
+            <p style={{textAlign:'center',fontSize:16}}>
                 They help make your interests more secure in the palm of your hands and elsewhere
             </p>
             <Grid style={{marginTop:100}} container direction justify='center' alignItems='center'>
@@ -103,12 +103,12 @@ const Security = () => {
                 
             </Grid>
             <Grid style={{backgroundSize:'cover',backgroundRepeat:'no-repeat'}} className='' direction='row' container justify='center' alignItems='center'>
-                <h3 style={{textAlign:'center',color:'#ffab00',marginTop:60,marginBottom:20}}>
-                    
-                </h3>
-                <p className='heading-text' style={{textAlign:'center',fontSize:20}}>
+               
+                <Grid container justify='center' xs={12} md={12}>
+                <p className='heading-text' style={{textAlign:'center',fontSize:16,padding:20}}>
                 Backed and Certified by Standard Protocols dedicated to enforcing strict regulations and transparency 
                 </p>
+                </Grid>
                 <Grid style={{display:'grid',placeItems:'center'}} xs={12} md={6}  item>
                    <Paper elevation={20} style={{}} className='security-paper'>
                    <Image  src={cert} width={500} height={700} layout='intrinsic' />

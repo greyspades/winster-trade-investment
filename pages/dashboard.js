@@ -831,7 +831,7 @@ const Dashboard=({data})=>{
 
           <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white'}}>
               
-          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={gotten ? info.level : 0} />
+          <LinearProgress color='primary'  style={{height:10,width:'75%',marginTop:9,color:'#ffab00'}} variant="determinate" value={gotten ? info.level : 0} />
           </Grid>
   </Grid>
   <Grid id='progress' style={{marginLeft:15,marginTop:10}} direction='row' container>
@@ -842,15 +842,15 @@ const Dashboard=({data})=>{
 
           <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white',}}>
               
-          <LinearProgress color='primary'  style={{height:10,width:'80%',marginTop:9,marginLeft:-8,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
+          <LinearProgress color='primary'  style={{height:10,width:'75%',marginTop:9,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
           </Grid>
   </Grid>
-  <p style={{color:'white',fontSize:18,textAlign:'center',margin:5}}>
+  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5}}>
     Your referal link
   </p>
   <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
   <Grid item md={2} xs={2} style={{}}>
-  <PeopleOutline style={{color:'#ffab00'}} />
+  <PeopleOutline style={{color:'white'}} />
           
           </Grid>
           <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
@@ -1142,7 +1142,7 @@ const Dashboard=({data})=>{
                                    }} >{({handleChange,handleSubmit,values,handleReset,handleBlur})=>(
                                        <Grid item style={{display:'grid',placeItems:'center'}} >
 
-                                           <Grid item justify='center' alignItems='center'>
+                                           <Grid container justify='center' alignItems='center'>
                                                 <a style={{textAlign:'center',color:'white',fontSize:18}}>
                                                     You can easily make a deposit to your account it is simple and straightforward
                                                 </a>
@@ -1394,7 +1394,7 @@ const Dashboard=({data})=>{
                            <Grid item style={{display:'grid',placeItems:'center'}} >
 
                                <Grid style={{padding:20,textAlign:'center'}} item justify='center' alignItems='center'>
-                                    <a className=''  style={{textAlign:'center',color:'white',fontSize:20}}>
+                                    <a className=''  style={{textAlign:'center',color:'white',fontSize:18}}>
                                         You can easily make a Withdrawal to your designated crypto address within 3
                                          bussiness days, which can be tracked through your reference number
                                     </a>
@@ -1680,7 +1680,7 @@ onChange={handleChange('address')}
                    </Grid>
 
                    <Grid jusstify='flex-end' style={{}} container xs={3} md={1}>
-                   <IconButton onClick={()=>{console.log(info)}}>
+                   <IconButton >
                     <ToolTip  >
                     <NotificationsNone  style={{color:'black'}} />
                     </ToolTip>

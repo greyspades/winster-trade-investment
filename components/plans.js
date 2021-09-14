@@ -45,7 +45,7 @@ const Plans = () => {
           <h5 className="pricing-title">Starter <span></span></h5>
           <div className="price">
             <div className="price-sup-title">Amount spent:</div>
-            <div className="price-valu">$100-$999</div>
+            <div className="price-valu">$200-$999</div>
           </div>
           <ul className="pricing-tables-position">
             <li className="position-item">

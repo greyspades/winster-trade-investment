@@ -4,8 +4,9 @@ import MyFooter from '../components/myFooter'
 import Header from '../components/Header'
 import HeaderLinks from '../components/HeaderLinks'
 import {useRouter} from 'next/router'
-
-
+import Menu from "@material-ui/icons/Menu";
+import white from '../img/black.png'
+import Image from 'next/image'
 const Policy = () => {
 const Router=useRouter()
 
@@ -17,7 +18,7 @@ const Router=useRouter()
             <Header
           
           fixed
-          color="transparent"
+          color="primary"
           //routes={dashboardRoutes}
           // changeColorOnScroll={{
           //   color:'transparent',
@@ -34,14 +35,15 @@ const Router=useRouter()
           //       </div>
           //       </div>
           // )}
-          
-        //rightLinks={<HeaderLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
+          menu={ <Menu style={{color:'black'}} />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+        rightLinks={<HeaderLinks />}   
 />
 
             <Grid container justify='center'>
-                <h2 style={{textAlign:'center',marginTop:100}}>
+                <h3 style={{textAlign:'center',marginTop:100}}>
                     Privacy Policy
-                </h2>
+                </h3>
                 <p style={{textAlign:'center',fontSize:18,padding:30}}>
                 Please read the following terms regarding our privacy policy. An important part of the relationship we have with our Clients is the information you share with us. We want you to know how we treat your private information. hoardtradeinvestment.com protects our clients' privacy and does its best to provide their safety and convenience online. The hoardtradeinvestment.com website is subject to this "Privacy Policy". It regulates data accumulation
                  and usage at the website. Using the hoardtradeinvestment.com website infers your consent to the data practices given in this statement.

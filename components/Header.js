@@ -76,7 +76,7 @@ export default function Header(props) {
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid><Grid>
-            <Image src={white} width={50} height={40} layout='intrinsic' />
+            {props.image}
             </Grid>
            
             </Grid>}
@@ -86,7 +86,7 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-            brandComponent
+          <div style={{fontSize:20,color:'black',marginLeft:10,fontWeight:'bolder'}}>{props.header}</div>
           )}
         </div>
         <Hidden smDown implementation="css">
@@ -98,7 +98,7 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu />
+           {props.menu}
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -111,6 +111,7 @@ export default function Header(props) {
             paper: classes.drawerPaper
           }}
           onClose={handleDrawerToggle}
+         
         >
           <div className={classes.appResponsive}>
             {leftLinks}

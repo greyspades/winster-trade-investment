@@ -205,8 +205,8 @@ export default function HeaderLinks(props) {
       >
         <Button
           color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/services"
+          href="/landing/services"
+          //target="/landing/services"
           className={classes.navLink}
           //onClick={props.service}
         >
@@ -243,7 +243,7 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/plans"
+          href="/landing/plans"
           className={classes.navLink}
           //onClick={props.package}
         >
@@ -261,7 +261,7 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/testimonials"
+          href="/landing/testimonials"
           className={classes.navLink}
           //onClick={props.testimonial}
         >
@@ -280,7 +280,7 @@ export default function HeaderLinks(props) {
         <Button
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="/index/contact"
+          href="/landing/contact"
           className={classes.navLink}
           //onClick={props.contact}
         >
