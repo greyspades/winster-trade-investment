@@ -4,9 +4,14 @@ import Filter1Icon from '@material-ui/icons/Filter1'
 import Filter2Icon from '@material-ui/icons/Filter2'
 import Filter3Icon from '@material-ui/icons/Filter3'
 import Filter4Icon from '@material-ui/icons/Filter4'
+import Link from 'next/link'
+import {useRouter} from 'next/router'
+import Button from '@material-ui/core/Button'
 
 
-const Plans = () => {
+const Plans = (props) => {
+
+  const Router=useRouter()
     return (
         <div>
 
@@ -67,7 +72,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
+          <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -100,7 +105,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
+          <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -133,7 +138,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
+          <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
       <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
@@ -166,7 +171,7 @@ const Plans = () => {
               </div>
             </li>
           </ul>
-          <a href="/signup" className="btn btn--large btn--gree-light btn--transparent">Join now</a>
+          <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
     </div>

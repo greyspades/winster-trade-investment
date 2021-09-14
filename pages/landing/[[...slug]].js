@@ -804,7 +804,7 @@ canvasClassName='particle-canvas'
             <hr className="divider" />
             {/* <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30,width:'90%'}} variant="middle" /> */}
             <div ref={packageRef} style={{marginTop:10}}>
-              <Plans />
+              <Plans bomber={slug} />
             </div>
             <div>
               <Carousel />
@@ -849,7 +849,6 @@ canvasClassName='particle-canvas'
             </div>
             
             <div style={{display:'grid',placeItems:'center'}}>
-              <Affiliate />
             </div>
 
 

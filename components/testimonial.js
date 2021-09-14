@@ -9,6 +9,10 @@ import StarBorderIcon from '@material-ui/icons/StarBorderOutlined'
 import per1 from '../img/per1.jpg'
 import per2 from '../img/per2.jpg'
 import per3 from '../img/per3.jpg'
+import Avatar from '@material-ui/core/Avatar'
+import Person from '@material-ui/icons/PersonOutlineTwoTone'
+
+
 
 const Testimonials = () => {
 
@@ -28,7 +32,10 @@ const Testimonials = () => {
                 <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
-                            <Image style={{margin:20}} height={200} width={170} src={aiden} layout='intrinsic' />
+                            {/* <Image style={{margin:20}} height={200} width={170} src={aiden} layout='intrinsic' /> */}
+                            <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
+                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                            </Avatar>
                         </Grid>
                         <Grid>
                             <div style={{fontSize:20,color:'white',margin:10}}>
@@ -69,7 +76,10 @@ const Testimonials = () => {
                 <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
-                            <Image style={{margin:20}} height={200} width={170} src={per1} layout='intrinsic' />
+                            {/* <Image style={{margin:20}} height={200} width={170} src={per1} layout='intrinsic' /> */}
+                            <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
+                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                            </Avatar>
                         </Grid>
                         <Grid>
                             <div style={{fontSize:20,color:'white',margin:10}}>
@@ -109,7 +119,10 @@ const Testimonials = () => {
                 <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
-                            <Image style={{margin:20}} height={200} width={170} src={per2} layout='intrinsic' />
+                            {/* <Image style={{margin:20}} height={200} width={170} src={per2} layout='intrinsic' /> */}
+                            <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
+                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                            </Avatar>
                         </Grid>
                         <Grid>
                             <div style={{fontSize:20,color:'white',margin:10}}>
@@ -146,7 +159,10 @@ const Testimonials = () => {
                 <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
-                            <Image style={{margin:20}} height={200} width={170} src={per3} layout='intrinsic' />
+                            {/* <Image style={{margin:20}} height={200} width={170} src={per3} layout='intrinsic' /> */}
+                            <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
+                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                            </Avatar>
                         </Grid>
                         <Grid>
                             <div style={{fontSize:20,color:'white',margin:10}}>
