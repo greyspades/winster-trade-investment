@@ -34,8 +34,9 @@ const Carousel=()=>{
     <Grid className='bonus' style={{}} container justify='center'>
         <Grid  justify='flex-end' container xs={12} md={6}>
         <header style={{padding:30}} className="crumina-module crumina-heading heading--h2 heading--with-decoration">
-              <div className="heading-sup-title">An earners market</div>
-              <h2 className="heading-title interest-header weight-normal">Crypto Interest Account
+              <div className="heading-sup-title">Crypto Interest Account</div>
+              <h2 className="heading-title interest-header weight-normal">
+                An earners market
                 </h2>
               <div className="heading-text bonus-p">
               The Winster Interest Account (WIA) lets you put your crypto to work and earn monthly interest payments in the asset-type that you transfer to Winster.
