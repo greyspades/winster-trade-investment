@@ -7,7 +7,7 @@ import '../styles/widgets.min.css'
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 //import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 //import { appWithTranslation } from 'next-i18next';
-
+import {NextIntlProvider} from 'next-intl';
 
 
 const theme = createMuiTheme({
@@ -28,7 +28,9 @@ function MyApp({ Component, pageProps }) {
     <div>
     
      <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+     <NextIntlProvider messages={pageProps.messages}>
+     <Component {...pageProps} />
+     </NextIntlProvider>
       </ThemeProvider>
   
     </div>

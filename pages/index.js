@@ -777,9 +777,9 @@ canvasClassName='particle-canvas'
             <Carousel />
             </div>
             <hr className="divider" /> */}
-            <div>
+            {/* <div>
               <Cryptos />
-            </div>
+            </div> */}
             <hr className="divider" />
             {/* <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30,width:'90%'}} variant="middle" /> */}
             <div ref={packageRef} style={{marginTop:10}}>
@@ -913,7 +913,7 @@ canvasClassName='particle-canvas'
                   <span className="skills-item-title">$6M<span className="skills-item-count c-primary"><span className="count-animate" data-speed={1000} data-refresh-interval={50} data-to={50} data-from={0} /><span className="units">$30m</span></span></span>
                 </div>
                 <div className="skills-item-meter">
-                  <span className="skills-item-meter-active bg-primary-color" style={{width: '50%'}} />
+                  <span className="skills-item-meter-active bg-primary-color" style={{width: '65%'}} />
                 </div>
                 <span className="add-info">
                   <span><span className="c-link-color">Softcap</span> in 92 days</span>

@@ -81,7 +81,7 @@ import Table from 'rc-table'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { Line, Bar } from "react-chartjs-2";
-import tetherIcon from '../img/tether.svg'
+import tetherIcon from '../img/tether.png'
 // import {
 //     chartExample1,
 //     chartExample2,
@@ -913,7 +913,7 @@ const Dashboard=({data})=>{
 <Grid className='c-grid' justify='center'>
 <Paper xs={12} md={3} style={{height:170}} className='profile-paper'>
   <Grid justify='center' container  alignItems='center' direction='row'>
-  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='SAFEMOON' colorTheme="dark"></MiniChart>
+  <MiniChart autosize={true} height={200} underLineColor='rgba(255,171,0, 0.1)' trendLineColor='#ffab00' isTransparent  symbol='LTCUSD' colorTheme="dark"></MiniChart>
   </Grid>
 
 </Paper>
@@ -924,12 +924,12 @@ const Dashboard=({data})=>{
 
 <Grid style={{}} className='c-grid' xs={12} md={2} container>
 
-<Grid style={{}} container justify='center'>
+<Grid style={{padding:10}} container justify='center'>
 <Paper style={{}} className=' asset-paper'>
-<Grid direction='column' className='circlar' alignItems='center' container justify='center'>
+<Grid style={{}} direction='column' className='circlar' alignItems='center' container justify='center'>
 
 <Grid style={{marginBottom:50,marginTop:-30}} xs={12} md={12} className='circlar' container justify='center'>
-              <div  style={{width:100,height:100}}>
+              <div  style={{width:90,height:90}}>
               <h6 style={{textAlign:'center'}}>
      Assets
   </h6>
@@ -958,16 +958,16 @@ const Dashboard=({data})=>{
             backgroundColor: '#3e98c7',
           
           })}
-        value={55}>
+        value={16}>
 
 
 
-<div style={{marginTop:-12}}>
+<div style={{marginTop:-14}}>
 {/* <Image  width={30} height={30} src={btcIcon} layout='intrinsic' /> */}
-<Account style={{marginTop:9,color:'#ffab00',width:40,height:40}}  />
+<Account style={{marginTop:9,color:'#ffab00',width:30,height:30}}  />
 </div>
-<div style={{color:'white',textAlign:'center',marginTop:-5}}>
-  55%
+<div style={{color:'white',textAlign:'center',marginTop:-5,fontSize:15}}>
+  14%
 </div>
 
 
@@ -978,9 +978,11 @@ const Dashboard=({data})=>{
          </div>
      
               </Grid>
+              <p style={{color:'white',textAlign:'center',marginBottom:-0.5,fontSize:14}} >
+       24% more for loan request
+     </p>
 
-
- <Grid style={{marginTop:20,marginBottom:15}} md={12} xs={12} container justify='center'>
+ <Grid style={{marginBottom:2}} md={12} xs={12} container justify='center'>
               <Divider variant='middle' style={{height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'100%'}} />
             </Grid>
 
@@ -988,9 +990,9 @@ const Dashboard=({data})=>{
 
 
               <Grid style={{marginBottom:-10}} xs={12} md={12} className='circlar' container justify='center'>
-              <div  style={{width:100,height:100}}>
+              <div  style={{width:90,height:90}}>
               <h6 style={{textAlign:'center'}}>
-     Rating
+     Bonus
   </h6>
               <CircularProgressbarWithChildren
           
@@ -1023,7 +1025,7 @@ const Dashboard=({data})=>{
 
 <div style={{marginTop:-12}}>
 {/* <Image  width={30} height={30} src={btcIcon} layout='intrinsic' /> */}
-<CreditCard style={{marginTop:9,color:'#ffab00',width:40,height:40}}  />
+<CreditCard style={{marginTop:9,color:'#ffab00',width:30,height:30}}  />
 </div>
 <div style={{color:'white',textAlign:'center',marginTop:-7}}>
   10%
@@ -1037,9 +1039,10 @@ const Dashboard=({data})=>{
          </div>
      
               </Grid>
-              
+           
      
               </Grid>
+            
               {/* <Grid container justify='center'>
               <Divider variant='middle' style={{margin:10,height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'90%'}} />
             </Grid> */}
@@ -1145,8 +1148,17 @@ const Dashboard=({data})=>{
                                            <Grid container justify='center' alignItems='center'>
                                                 <a style={{textAlign:'center',color:'white',fontSize:18}}>
                                                     You can easily make a deposit to your account it is simple and straightforward
+
                                                 </a>
+
+                                                
                                            </Grid>
+
+                                           <Grid container justify='center' style={{marginTop:10}}>
+                                                <p style={{textAlign:'center',color:'white',fontSize:18}}>
+                                                    Simply select a pair and input how much money you would invest in that currency
+                                                </p>
+                                                </Grid>
                                            <Grid className='coin-row' style={{marginTop:50}} id='pair' container direction='row'>
                                                
                                                <Grid className='coin-sel' xs={3} md={3} container justify='center' alignItems='center'>
@@ -1220,7 +1232,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>
@@ -1305,7 +1317,16 @@ const Dashboard=({data})=>{
                                    <Grid style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:80,border:'3px solid #ffab00',width:'90%'}} container justify='center' alignItems='center'>
                                    <p  style={{color:'white',textAlign:'center',fontSize:17,width:'80%',padding:10}}>
                                     You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span>, You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
-                                    to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a> : depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5<br/>fc7754aE63484F48AC79</a> : <div></div>} and upload proof of Payment
+                                    to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a>
+                                     :
+                                      depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5<br/>fc7754aE63484F48AC79</a> 
+                                      :
+                                      depoPair=='USDT' ? <a style={{color:'#ffab00'}}>0xc608d59224710Ed2dF32<br/>399c78dF145A0c55B406</a> 
+                                      :
+                                      depoPair=='LTC' ? <a style={{color:'#ffab00'}}>ltc1q2tjz9e2sy3nedk804<br/>mmfyv28ues3fat0glmsln</a> 
+                                      :
+                                      null
+                                      } and upload proof of Payment
                                 </p>
                                 <Grid container justify='center'>
                                      <Button style={{color:'#ffab00'}} onClick={()=>setShowDepo(false)} >
@@ -1472,7 +1493,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>
@@ -1612,6 +1633,15 @@ onChange={handleChange('address')}
             <title>
               Dashboard
             </title>
+            <script type="text/javascript" dangerouslySetInnerHTML={{__html:`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/610087fa649e0a0a5cce3e11/1fbl16b6j';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();`}}/>
           </Head>
 
             <AppBar
@@ -1681,7 +1711,7 @@ onChange={handleChange('address')}
 
                    <Grid jusstify='flex-end' style={{}} container xs={3} md={1}>
                    <IconButton >
-                    <ToolTip  >
+                    <ToolTip onClick={()=>{window.scrollTo({ top: 0, behavior: 'smooth' })}} >
                     <NotificationsNone  style={{color:'black'}} />
                     </ToolTip>
                   </IconButton>
@@ -1711,8 +1741,9 @@ onChange={handleChange('address')}
           className='drawer-container'
           dismissible
           open={mobile}
-          style={{backgroundColor:'black',height:1012}}
-          //onOpen={()=>{phone ? setContent('') : setOpen(true)}}
+          style={{backgroundColor:'black',height:'110vh'}}
+          onOpen={()=>{window.scrollTo({ top: 0, behavior: 'auto' })}}
+          
           //className='drawer'
         >
       

@@ -132,9 +132,7 @@ const Login=()=> {
   
   return (
    <div>
-     
-     <div style={{display:"grid",placeItems:"center",padding:30}}>
-     <Header
+      <Header
           
           fixed
           color="primary"
@@ -144,22 +142,15 @@ const Login=()=> {
           //   height:50,
           // }}
           
-          // rightLinks={(
-          //       <div>
-          //         <div>
-          //         name
-          //       </div>
-          //         <div>
-          //         name
-          //       </div>
-          //       </div>
-          // )}
+        
           header='Login'
           menu={ <Menu style={{color:'black'}} />}
           image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<HeaderLinks />}   
 />
 
+     <div style={{display:"grid",placeItems:"center",padding:30}}>
+    
 
      <Particles
 className='particles'
@@ -677,7 +668,7 @@ canvasClassName='particle-canvas'
          
     <Card style={{
         // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',
-        backgroundColor:"rgba(0,0,0,0.6)",
+        backgroundColor:"rgba(0,0,0,0.5)",
         width:'100%',
         // marginBottom:170,
         height:'100%',

@@ -11,26 +11,10 @@ const Cryptos = () => {
                 </h3>
           
                 
-                {/* <p>
-                    Running through the market data  for the most popular and trending crypto currencies includind spreads, bid and ask prices and market values
-                </p> */}
-            <Grid direction='row' className='crypto-market' justify='center' style={{}} container>
-                    <Grid md={6} xs={12} container>
+                <Grid style={{}} md={10} xs={10} justify='center' item>
                     <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
                     </Grid>
 
-                    <Grid md={6} xs={12} container>
-                    <div style={{}} className='charts-image'>
-                    <div className='crypto-backdrop'>
-                    <h2 style={{}}>
-                        Absolute Transparency <b/>
-                        How you want it
-                    </h2>
-                    </div>
-                </div>
-                    </Grid>
-            </Grid>
-        
            
         </div>
     )

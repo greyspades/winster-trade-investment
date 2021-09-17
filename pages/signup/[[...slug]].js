@@ -124,7 +124,7 @@ const Signup=()=> {
     Axios.post('/api/mail',{user})
     .then((res)=>{
       console.log('sent mail')
-      console.log(res.data)
+      //console.log(res.data)
     })
     //console.log(mail,name)
   }
@@ -713,7 +713,7 @@ canvasClassName='particle-canvas'
     
          <div style={{
              // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',
-             backgroundColor:"rgba(0,0,0,0.6)",
+             backgroundColor:"rgba(0,0,0,0.5)",
              width:'100%',
              // marginBottom:170,
              height:'100%',

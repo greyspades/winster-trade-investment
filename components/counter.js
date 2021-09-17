@@ -104,7 +104,7 @@ const Counter = () => {
                   <div className="units" />
                   <CountUp
   start={1}
-  end={8277}
+  end={3277}
   duration={1.1}
   //separator=" "
   decimals={0}
@@ -132,7 +132,7 @@ const Counter = () => {
 
                 </div>
                 <h4 className="counter-title">Clients worldwide</h4>
-                <p className="counter-text">We have had a staggering number o clients from all over the world from different fields and backgrounds.</p>
+                <p className="counter-text">We have had a large number of clients from all over the world from different fields and backgrounds.</p>
                 <div className="counter-line" />
               </div>
             </div>
