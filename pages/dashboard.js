@@ -711,7 +711,7 @@ const Dashboard=({data})=>{
             <div>
                 {options.map((item)=>(
                    <div>
-                   <Paper onClick={()=>{setContent(item.name)}} elevation={balanceElev}  style={{backgroundColor:'black',marginBottom:40,width:'90%',borderBottomRightRadius:70,borderTopRightRadius:70}}  className='dashboard-options'>
+                   <Paper onClick={()=>{setContent(item.name)}} elevation={balanceElev}  style={{backgroundColor:'black',marginBottom:40,width:'90%',borderBottomRightRadius:5,borderTopRightRadius:5}}  className='dashboard-options'>
                            <motion.div whileHover={{scale:1.2}}>
    
                            <ListItem button>
@@ -1154,8 +1154,8 @@ const Dashboard=({data})=>{
                                                 
                                            </Grid>
 
-                                           <Grid container justify='center' style={{marginTop:10}}>
-                                                <p style={{textAlign:'center',color:'white',fontSize:18}}>
+                                           <Grid container justify='center' style={{marginTop:10,}}>
+                                                <p style={{textAlign:'center',color:'white',fontSize:18,}}>
                                                     Simply select a pair and input how much money you would invest in that currency
                                                 </p>
                                                 </Grid>

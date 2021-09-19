@@ -73,7 +73,7 @@ export default function Header(props) {
     </Link>
   );
   return (
-    <AppBar className={appBarClasses}>
+    <AppBar >
       <Toolbar className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid><Grid>
             {props.image}
@@ -82,7 +82,7 @@ export default function Header(props) {
             </Grid>}
         <div className={classes.flex}>
           {leftLinks !== undefined ? (
-            <Hidden smDown implementation="css">
+            <Hidden smDown>
               {leftLinks}
             </Hidden>
           ) : (

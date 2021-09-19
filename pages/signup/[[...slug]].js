@@ -52,28 +52,28 @@ import Image from 'next/image'
 
 
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     minWidth: 275,
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//     transform: 'scale(0.8)',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+// });
 
 
 
 const Signup=()=> {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  //const classes = useStyles();
+  const bull = <span>•</span>;
   const [loading,setLoading]=useState({
     pending:false,
     done:false,

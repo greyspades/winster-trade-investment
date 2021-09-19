@@ -45,26 +45,26 @@ import Menu from "@material-ui/icons/Menu";
 
 //import {Dot} from '@material-ui/icons/dot'
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     minWidth: 275,
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//     transform: 'scale(0.8)',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+// });
 
 const Login=()=> {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  //const classes = useStyles();
+  const bull = <span>•</span>;
   const [loading,setLoading]=useState({
     pending:false,
     done:false,
@@ -751,7 +751,7 @@ canvasClassName='particle-canvas'
                 }}>
                   {({handleChange,handleSubmit,values,user})=>((
                    <div>
-                     <FormControl style={{display:'grid',placeItems:'center',padding:10}} className={classes.margin}>
+                     <FormControl style={{display:'grid',placeItems:'center',padding:10}} >
                    
 <Input
         className='app-input second-input'
