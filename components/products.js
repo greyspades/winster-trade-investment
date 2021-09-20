@@ -145,7 +145,7 @@ const Products = () => {
                                             Crypto Trading
                                         </h5>
                                         <div style={{color:'white',textAlign:'center'}}>
-                                        Invest in our state of the art crypto mining services using the latest blockchain and cryptography technologies
+                                        Access our AI integrated crypto trading charts and trading signals, predicted by a state of the art Artificial inteligence model
                                         </div>
                                     </CardContent>
                                 </Card>

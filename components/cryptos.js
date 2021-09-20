@@ -9,10 +9,12 @@ const Cryptos = () => {
             <h3 style={{textAlign:'center'}} className='crypto-heading'>
                     Live Cryptocurrency Market Data
                 </h3>
-          
+                    <p style={{textAlign:'center'}}>
+                        Gain assess to historical data gathered accross various coins
+                    </p>
                 
-                <Grid style={{}} md={10} xs={10} justify='center' item>
-                    <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+                <Grid style={{}} md={12} xs={12} justify='center' item>
+                    <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={430}></CryptoCurrencyMarket>
                     </Grid>
 
            

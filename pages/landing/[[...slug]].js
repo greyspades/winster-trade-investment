@@ -773,7 +773,7 @@ canvasClassName='particle-canvas'
             <h2 style={{}} className=''>Bringing the Revolution</h2>
           
             <p className={'talk'}  style={{fontSize:18,padding:10}}>
-            Welcome to winstertradeinvestment.com We are a company that focus on Forex market and Cryptocurrency sectors. Our goal is to achieve the highest possible return from the foreign currency exchange (Forex) and Cryptocurrency exchange markets. 
+            Welcome to winstertradeinvestment.com We are a company that focuses on the Cryptocurrency sector. Our goal is to achieve the highest possible return from the Cryptocurrency exchange market. 
           </p>
        
 
@@ -946,7 +946,7 @@ canvasClassName='particle-canvas'
                   <div className="price-value">$0.0023</div>
                 </div>
                 <div className="token-total">
-                  winster tokens:
+                  safemoon tokens:
                   <div className="price-value">6803.0122</div>
                 </div>
               </div>
