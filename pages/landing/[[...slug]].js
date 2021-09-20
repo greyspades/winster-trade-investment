@@ -49,7 +49,7 @@ import {
   
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
-import Header from '../../components/Header'
+import Header from '../../components/appbar'
 import IndexLinks from '../../components/indexlinks'
 import bg from '../../img/bg-2.png'
 import Affiliate from '../../components/Affiliate'
@@ -798,9 +798,9 @@ canvasClassName='particle-canvas'
             <Carousel />
             </div>
             <hr className="divider" /> */}
-            {/* <div>
+            <div>
               <Cryptos />
-            </div> */}
+            </div>
             <hr className="divider" />
             {/* <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30,width:'90%'}} variant="middle" /> */}
             <div ref={packageRef} style={{marginTop:10}}>
