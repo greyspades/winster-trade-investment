@@ -838,6 +838,7 @@ const Dashboard=({data})=>{
   <Grid item md={3} xs={3} style={{color:'white',}}>
               Affiliate
           
+          
           </Grid>
 
           <Grid justify='center' alignItems='center' item md={9} xs={9} style={{color:'white',}}>
