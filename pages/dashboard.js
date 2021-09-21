@@ -845,7 +845,7 @@ const Dashboard=({data})=>{
           <LinearProgress color='primary'  style={{height:10,width:'75%',marginTop:9,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
           </Grid>
   </Grid>
-  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5}}>
+  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5,marginTop:29}}>
     Your referal link
   </p>
   <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
@@ -853,15 +853,15 @@ const Dashboard=({data})=>{
   <PeopleOutline style={{color:'white'}} />
           
           </Grid>
-          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white'}}>
+          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',marginTop:10}}>
             
               {/* <a style={{color:'#ffab00',}}>
                  www.winstertrade<br/>investment.com/{data.username}
               </a> */}
               {
                 gotten ?
-                <a style={{color:'#ffab00',}}>
-                 www.winstertrade<br/>investment.com/{info.username}
+                <a style={{color:'#ffab00',fontSize:16}}>
+                 www.winstertradeinvestment.com/{info.username}
               </a>
               :
               null
@@ -1063,7 +1063,7 @@ const Dashboard=({data})=>{
 
 <Grid style={{}} justify='center'  md={8} xs={12} container>
 <Paper style={{width:'93%'}} className='profile-paper '>
-<CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={460}></CryptoCurrencyMarket>
+<CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={480}></CryptoCurrencyMarket>
 {/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
 </Paper>
 </Grid>
@@ -1072,9 +1072,9 @@ const Dashboard=({data})=>{
 
 <Grid xs={12} md={4} className='anal-grid' container justify='center'>
 <Grid style={{width:'90%'}} item>
-<Paper style={{height:460,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
+<Paper style={{height:510,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
 
-<TechnicalAnalysis  width='100%' symbol={analPair} style={{}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+<TechnicalAnalysis  width='100%' symbol={analPair}   style={{marginTop:40}} isTransparent colorTheme="dark"></TechnicalAnalysis>
 
 </Paper>
 </Grid>
@@ -1741,7 +1741,7 @@ s0.parentNode.insertBefore(s1,s0);
           className='drawer-container'
           dismissible
           open={mobile}
-          style={{backgroundColor:'black',height:'110vh'}}
+          style={{backgroundColor:'black',height:'120vh'}}
           onOpen={()=>{window.scrollTo({ top: 0, behavior: 'auto' })}}
           
           //className='drawer'
@@ -1775,7 +1775,9 @@ s0.parentNode.insertBefore(s1,s0);
             </Grid>
         </DrawerAppContent>
           
-          <MyFooter />
+<div style={{backgroundColor:'black'}}>
+<MyFooter />
+</div>
 
         
         </div>

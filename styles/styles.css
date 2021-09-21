@@ -116,7 +116,7 @@ input:-webkit-autofill
   .profile-paper {
     margin-top: 25px;
     border: 3px solid #ffab00;
-   background-color: black;
+   background-color: #000022;
     background-image: linear-gradient(black 80%,black);
     /* background-image: url(../img/steps.svg); */
     

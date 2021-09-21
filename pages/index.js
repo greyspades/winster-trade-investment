@@ -83,7 +83,7 @@ const Home = () => {
   const faqsRef=useRef(null)
 
 
-
+  const [count,setCount]=useState()
 
   const aboutScroll = () => aboutRef.current.scrollIntoView()  
   const serviceScroll = () => serviceRef.current.scrollIntoView()  
@@ -112,6 +112,11 @@ const Home = () => {
     //     serviceScroll
     // }
   },[])
+
+  const stopCount=()=>{
+    setCount(true)
+    console.log('stopped count')
+  }
 
 
     return (
@@ -811,7 +816,7 @@ canvasClassName='particle-canvas'
 
    
             <div>
-              <Counter />
+              <Counter count={count} end={stopCount} />
             </div>
 
             <div ref={testimonialRef}>
@@ -917,7 +922,7 @@ canvasClassName='particle-canvas'
                   <div className="price-value">$0.0023</div>
                 </div>
                 <div className="token-total">
-                  safemoon tokens:
+                  Safemoon tokens:
                   <div className="price-value">6803.0122</div>
                 </div>
               </div>
