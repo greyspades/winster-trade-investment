@@ -37,7 +37,7 @@ const Plans = (props) => {
             </Head>
            <section className="pt-mobile-80">
 
-  <div style={{marginTop:60}} className="container">
+  <div style={{}} className="container">
     <div className="row medium-padding100">
     <h3 style={{textAlign:'center',marginBottom:60}}>
                Plans suited for everyone

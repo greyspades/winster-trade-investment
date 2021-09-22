@@ -61,6 +61,7 @@ import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationOnOutlined'
 import About from '../../components/about'
 import Particles from 'react-particles-js'
+import Mining from '../../components/mining'
 
 
 const dashboardRoutes=[]
@@ -801,8 +802,16 @@ canvasClassName='particle-canvas'
             <div>
               <Cryptos />
             </div>
+
+            <div>
+              <Mining />
+            </div>
+
+            <div style={{marginTop:110}}>
             <hr className="divider" />
-            {/* <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30,width:'90%'}} variant="middle" /> */}
+            </div>
+
+           
             <div ref={packageRef} style={{marginTop:10}}>
               <Plans bomber={slug} />
             </div>

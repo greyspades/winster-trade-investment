@@ -784,7 +784,11 @@ canvasClassName='particle-canvas'
               <div>
                 <Mining />
               </div>
-              <hr className="divider" />
+
+              <div style={{marginTop:110}}>
+              <hr style={{}} className="divider" />
+              </div>
+             
             <div ref={packageRef} style={{marginTop:10}}>
               <Plans />
             </div>

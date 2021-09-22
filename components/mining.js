@@ -27,11 +27,14 @@ const Mining=()=>{
                 <Paper style={{}} className='mining-main-pic' elevation={20}>
                   
                 </Paper>
+                <Grid container justify='flex-start'>
+                <div style={{margin:5}} className="heading-sup-title mining-talk hardware-talk">Well managed hardware</div>
+                </Grid>
                 {/* <Image src={pic1} layout='intrinsic' width={600} height={400} /> */}
             </Grid>
            </Grid>
 
-                    <h4 style={{textAlign:'center',marginTop:80,marginBottom:10}}>
+                    <h4 style={{textAlign:'center',marginTop:60,marginBottom:10}}>
                         Agile Infrastructure
                     </h4>
                     <p style={{textAlign:'center',fontSize:18,padding:30}}>
@@ -44,7 +47,7 @@ const Mining=()=>{
                         
                     </Paper>
                    <Grid container justify='flex-start'>
-                   <div style={{margin:5,paddingLeft:75}} className="heading-sup-title">Winster Equipment room</div>
+                   <div style={{margin:5}} className="heading-sup-title mining-talk">Winster Equipment room</div>
                    </Grid>
                 </Grid>
 
@@ -53,7 +56,7 @@ const Mining=()=>{
 
                     </Paper>
                     <Grid container justify='flex-start'>
-                   <div style={{margin:5,paddingLeft:75}} className="heading-sup-title">Winster data center</div>
+                   <div style={{margin:5}} className="heading-sup-title mining-talk">Winster data center</div>
                    </Grid>
                 </Grid>
            </Grid>
