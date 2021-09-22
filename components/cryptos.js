@@ -1,24 +1,32 @@
 import React from 'react'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import {Grid} from '@material-ui/core'
-
+import Image from 'next/image'
 
 const Cryptos = () => {
     return (
-        <div style={{padding:30,marginTop:60}} >
-            <h3 style={{textAlign:'center'}} className='crypto-heading'>
+        <Grid container justify='center' className='crypto-marke' style={{marginTop:60}} >
+           <Grid container justify='center'>
+           <h3 style={{textAlign:'center'}} className='crypto-heading'>
                     Live Cryptocurrency Market Data
                 </h3>
-                    <p style={{textAlign:'center'}}>
+           </Grid>
+                   <div>
+                   <p style={{textAlign:'center'}}>
                         Gain assess to historical data gathered accross various coins
                     </p>
+                   </div>
                 
-                <Grid style={{}} md={12} xs={12} justify='center' item>
-                    <CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={430}></CryptoCurrencyMarket>
+              
+              <Grid style={{padding:10}}  justify='center' container>
+                  <div style={{width:'90%',height:430}}>
+                  <CryptoCurrencyMarket colorTheme="dark" width='100%' height={430} isTransparent={true}></CryptoCurrencyMarket>
+                  </div>
                     </Grid>
+            
 
            
-        </div>
+        </Grid>
     )
 }
 

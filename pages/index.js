@@ -36,6 +36,9 @@ import Clock from 'react-digital-clock';
 import { TickerTape } from "react-ts-tradingview-widgets";
 import dots from '../img/dots.png'
 import Menu from "@material-ui/icons/Menu";
+import Mining from '../components/mining'
+
+
 
 //import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
@@ -777,7 +780,11 @@ canvasClassName='particle-canvas'
               <Cryptos />
             </div>
             <hr className="divider" />
-            {/* <Divider style={{height:0.2,backgroundColor:'grey',marginTop:30,width:'90%'}} variant="middle" /> */}
+            
+              <div>
+                <Mining />
+              </div>
+              <hr className="divider" />
             <div ref={packageRef} style={{marginTop:10}}>
               <Plans />
             </div>
@@ -840,7 +847,7 @@ canvasClassName='particle-canvas'
               </h2>
               <Grid container justify='center'>
                 <motion.div style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}}>
-                <Image priority={true} src={moon} height={200} width={200} layout='intrinsic' />
+                <Image priority={true} src={moon} height={150} width={150} layout='intrinsic' />
                 </motion.div>
               </Grid>
               <div className="heading-text">Flexible decentralized currency which scales on every transaction and referal you make
@@ -848,31 +855,31 @@ canvasClassName='particle-canvas'
               </div>
               <Grid style={{marginTop:30,}} container justify='center' direction='row'>
                 <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}>level 1</p>
+                    <p style={{fontSize:18}}>level 1</p>
                 </Grid>
 
                 <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>100</span> tokens</p>
+                    <p style={{fontSize:18}}><span style={{color:'#ffab00'}}>100</span> tokens</p>
                 </Grid>
               </Grid>
 
               <Grid container justify='center' direction='row'>
               <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}>level 1</p>
+                    <p style={{fontSize:18}}>level 2</p>
                 </Grid>
 
                 <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>150</span> tokens</p>
+                    <p style={{fontSize:18}}><span style={{color:'#ffab00'}}>150</span> tokens</p>
                 </Grid>
               </Grid>
 
               <Grid container justify='center' direction='row'>
               <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}>level 3</p>
+                    <p style={{fontSize:18}}>level 3</p>
                 </Grid>
 
                 <Grid container justify='center' xs={6} md={6}>
-                    <p style={{fontSize:22}}><span style={{color:'#ffab00'}}>300</span> tokens</p>
+                    <p style={{fontSize:18}}><span style={{color:'#ffab00'}}>300</span> tokens</p>
                 </Grid>
               </Grid>
             </header>

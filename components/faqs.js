@@ -26,8 +26,9 @@ const Faqs=()=> {
   const classes = useStyles();
 
   return (
-    <div style={{display:'grid',placeItems:'center',padding:10}} elevation={20} className='countdown-bg1'>
-        <h3 style={{color:'#ffba00'}}>
+    <Grid container justify='center' style={{}} >
+       <Paper style={{}} elevation={20} className='countdown-bg1 faqs-paper'>
+       <h3 style={{textAlign:'center',marginBottom:30,marginTop:10}}>
             Faqs
         </h3>
       <Accordion className='faqs-accordion'>
@@ -115,8 +116,9 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
+       </Paper>
 
-    </div>
+    </Grid>
   );
 }
 export default Faqs

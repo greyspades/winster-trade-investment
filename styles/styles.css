@@ -45,7 +45,7 @@ input:-webkit-autofill
     border-top: 2px solid #ffba00;
     border-bottom: 2px solid #ffba00;
     margin-bottom: 30px;
-    width: 90%;
+    width: 100%;
    
     
   }
@@ -321,6 +321,7 @@ input:-webkit-autofill
     background-color: rgba(0, 0, 0, 0);
     text-decoration: none;
     padding: 10px;
+    /* background-color: black; */
   }
   .main-logo {
     height: 100px;
@@ -427,10 +428,51 @@ input:-webkit-autofill
   margin-top: -100px;
   
   
+}.mining-main-pic {
+  background-image: url(../img/bg_3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  height: 200px;
+
+}
+.hardware-1 {
+  background-image: url(../img/as-5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 85%;
+  height: 100%;
+  
 }
 
-
-
+.hardware-2 {
+  background-image: url(../img/as-6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 85%;
+  height: 100%;
+}
+.hardware-group {
+  height: 200px;
+  padding: 5px;
+  margin-top: 40px;
+}
+.mining {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.crypto-market {
+  padding: 0px;
+}
+.faqs-paper {
+  width:90%;
+  padding: 20px;
+  
+}
+.mid-testimonial {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 
@@ -443,6 +485,51 @@ input:-webkit-autofill
 
 
   @media all and (min-width:800px){
+    .mid-testimonial {
+      /* margin-top: 20px;
+      margin-bottom: 20px; */
+    }
+    .faqs-paper {
+      width: 60%;
+      padding: 35px;
+    }
+    .crypto-market {
+      padding:70px
+    }
+    .mining {
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+    .mining-main-pic {
+      background-image: url(../img/bg_3.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 80%;
+      height: 100%;
+    
+    }
+
+    .hardware-1 {
+      background-image: url(../img/as-5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 80%;
+      height: 100%;
+    }
+    
+    .hardware-2 {
+      background-image: url(../img/as-6.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 80%;
+      height: 100%;
+    }
+
+    .hardware-group {
+      height: 400px;
+      padding: 30px;
+    }
+
     .app-bar {
       height:60px
     }
@@ -528,12 +615,12 @@ input:-webkit-autofill
     border-top: 2px solid #ffba00;
     border-bottom: 2px solid #ffba00;
     margin-bottom: 30px;
-    width: 50%;
+    width: 100%;
    
     
   }
   .market-overview {
-    width: 80%;
+    width: 92%;
   }
   .step-icon {
     width: 60px;

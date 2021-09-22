@@ -37,7 +37,7 @@ function MyFooter(props) {
 //     [classes.footerWhiteFont]: whiteFont
 //   });
   return (
-   <Grid>
+   <Grid style={{marginBottom:-180,backgroundColor:'black'}} className='countdown-bg'>
      <Footer
   className='main-footer'
     columns={[

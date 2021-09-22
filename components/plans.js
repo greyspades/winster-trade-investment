@@ -55,8 +55,8 @@ const Plans = (props) => {
           <ul className="pricing-tables-position">
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Bonus</h6>
-                <h6 className="value">15% return After 24 Hours</h6>
+                <h6 className="title">Referal bonus</h6>
+                <h6 className="value">5%</h6>
               </div>
             </li>
             <li className="position-item">
@@ -67,8 +67,8 @@ const Plans = (props) => {
             </li>
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Profit:</h6>
-                <h6 className="value">Calender Days</h6>
+                <h6 className="title">Duration:</h6>
+                <h6 className="value">7 days</h6>
               </div>
             </li>
           </ul>
@@ -88,20 +88,20 @@ const Plans = (props) => {
           <ul className="pricing-tables-position">
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Bonus:</h6>
-                <h6 className="value"> 20% Return After 3 Days</h6>
+                <h6 className="title">Referal bonus:</h6>
+                <h6 className="value"> 8%</h6>
               </div>
             </li>
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Principal:</h6>
+                <h6 className="title">Capital:</h6>
                 <h6 className="value">Back</h6>
               </div>
             </li>
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Profit:</h6>
-                <h6 className="value">Calender Days</h6>
+                <h6 className="title">Duration:</h6>
+                <h6 className="value">30 days</h6>
               </div>
             </li>
           </ul>
@@ -121,8 +121,8 @@ const Plans = (props) => {
           <ul className="pricing-tables-position">
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Bonus:</h6>
-                <h6 className="value"> 30% Return After 7 Days</h6>
+                <h6 className="title">Referal bonus:</h6>
+                <h6 className="value"> 10%</h6>
               </div>
             </li>
             <li className="position-item">
@@ -133,8 +133,8 @@ const Plans = (props) => {
             </li>
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Profit:</h6>
-                <h6 className="value">Calender Days</h6>
+                <h6 className="title">Duration:</h6>
+                <h6 className="value">20 days</h6>
               </div>
             </li>
           </ul>
@@ -154,8 +154,8 @@ const Plans = (props) => {
           <ul className="pricing-tables-position">
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Bonus:</h6>
-                <h6 className="value"> 40% Return After 20 Days</h6>
+                <h6 className="title">Referal bonus:</h6>
+                <h6 className="value"> 15%</h6>
               </div>
             </li>
             <li className="position-item">
@@ -166,8 +166,8 @@ const Plans = (props) => {
             </li>
             <li className="position-item">
               <div className="currency-details-item">
-                <h6 className="title">Profit:</h6>
-                <h6 className="value">Buisiness Days</h6>
+                <h6 className="title">Duration:</h6>
+                <h6 className="value">Life time partner</h6>
               </div>
             </li>
           </ul>
