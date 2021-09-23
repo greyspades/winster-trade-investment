@@ -21,12 +21,9 @@ import white from '../img/white.png'
 import Grid from '@material-ui/core/Grid'
 
 
-
 const useStyles = makeStyles(styles);
-
-export default function Appbar(props) {
+export default function Header(props) {
   const classes = useStyles();
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
@@ -73,20 +70,20 @@ export default function Appbar(props) {
     </Link>
   );
   return (
-    <AppBar className={appBarClasses} >
+    <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
-        {leftLinks !== undefined ? brandComponent : <Grid><Grid>
-            {props.image}
-            </Grid>
-           
-            </Grid>}
+        {leftLinks !== undefined ? brandComponent : <Grid>
+          <Image src={white} width={50} height={40} layout='intrinsic' />
+          </Grid>}
+
+
         <div className={classes.flex}>
           {leftLinks !== undefined ? (
-            <Hidden smDown>
+            <Hidden smDown implementation="css">
               {leftLinks}
             </Hidden>
           ) : (
-          <div style={{fontSize:20,color:'black',marginLeft:10,fontWeight:'bolder'}}>{props.header}</div>
+            brandComponent
           )}
         </div>
         <Hidden smDown implementation="css">
@@ -98,7 +95,7 @@ export default function Appbar(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-           {props.menu}
+            <Menu />
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -111,7 +108,6 @@ export default function Appbar(props) {
             paper: classes.drawerPaper
           }}
           onClose={handleDrawerToggle}
-         
         >
           <div className={classes.appResponsive}>
             {leftLinks}
@@ -123,11 +119,11 @@ export default function Appbar(props) {
   );
 }
 
-Appbar.defaultProp = {
-  color: "transparent"
+Header.defaultProp = {
+  color: "white"
 };
 
-Appbar.propTypes = {
+Header.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "info",

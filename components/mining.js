@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Grid,Paper} from '@material-ui/core'
 import Image from 'next/image'
 import pic1 from '../img/bg_3.jpg'
-
+import Fade from 'react-reveal/Fade'
 
 const Mining=()=>{
     

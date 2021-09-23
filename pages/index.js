@@ -37,7 +37,7 @@ import { TickerTape } from "react-ts-tradingview-widgets";
 import dots from '../img/dots.png'
 import Menu from "@material-ui/icons/Menu";
 import Mining from '../components/mining'
-
+import Fade from 'react-reveal/Fade'
 
 
 //import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -53,7 +53,7 @@ import {
   
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
-import Appbar from '../components/appbar'
+import Header from '../components/appbar'
 import IndexLinks from '../components/indexlinks'
 import bg from '../img/bg-2.png'
 import Affiliate from '../components/Affiliate'
@@ -64,6 +64,8 @@ import EmailIcon from '@material-ui/icons/Email'
 import AddressIcon from '@material-ui/icons/LocationOnOutlined'
 import About from '../components/about'
 import Particles from 'react-particles-js'
+
+
 
 
 const dashboardRoutes=[]
@@ -181,7 +183,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div>
   
 <Grid container >
-<Appbar
+<Header
           
           fixed
           color="transparent"
@@ -193,8 +195,7 @@ s0.parentNode.insertBefore(s1,s0);
           
          
           //header='Winster trade investment'
-          menu={ <Menu />}
-          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+        
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>
@@ -715,7 +716,8 @@ canvasClassName='particle-canvas'
   
   {/* ... end Header */}
   <div className="main-content-wrappr">
-  <section style={{}}  data-settings="particles-1" className="main-sectio alpha-heading crumina-flying-balls particles-js bg-  responsive-align-center">
+      <Fade>
+      <section style={{}}  data-settings="particles-1" className="main-sectio alpha-heading crumina-flying-balls particles-js bg-  responsive-align-center">
       <div style={{}} className="container top-container">
         <div className="row winster-top">
           <div style={{}} className="col-lg-6 col-md-12 col-sm-12 col-xs-6 logo-grid">
@@ -737,6 +739,7 @@ canvasClassName='particle-canvas'
       </div>
       
     </section>
+      </Fade>
     <Grid style={{marginTop:30,marginBottom:10}} container justify='center'>
           <a data-scroll href="/signup" className="btn btn--large btn--transparent btn--secondary">Get started</a>
           </Grid>
@@ -748,24 +751,20 @@ canvasClassName='particle-canvas'
        </Grid>
             <Grid className='index-head' container justify='center' alignItems='center' style={{marginTop:20}}>
             
-            <h2 style={{}} className=''>Bringing the Revolution</h2>
+            <h3 style={{}} className=''>Bringing the Revolution</h3>
           
-            <p className={'talk'}  style={{fontSize:18,padding:10}}>
+           <Fade bottom >
+           <p className={'talk'}  style={{fontSize:18,padding:10}}>
             Welcome to winstertradeinvestment.com We are a company that focuses on the cryptocurrency sector. Our goal is to achieve the highest possible return from the Cryptocurrency exchange market. 
           </p>
+           </Fade>
        
 
             </Grid>
            
             <div ref={serviceRef} style={{marginTop:10,marginBottom:60}}>
-            {
-              mobile ? 
-              <Products />
-              :
-              <div className='countdown-bg'>
-              <Products />
-            </div>
-            }
+           
+            <Products mobile={mobile} />
          
             </div>
             <hr className="divider" />
@@ -777,12 +776,16 @@ canvasClassName='particle-canvas'
             </div>
             <hr className="divider" /> */}
             <div>
-              <Cryptos />
+                <Fade bottom>
+                <Cryptos />
+                </Fade>
             </div>
             <hr className="divider" />
             
               <div>
-                <Mining />
+               <Fade bottom>
+               <Mining />
+               </Fade>
               </div>
 
               <div style={{marginTop:110}}>
@@ -790,10 +793,14 @@ canvasClassName='particle-canvas'
               </div>
              
             <div ref={packageRef} style={{marginTop:10}}>
-              <Plans />
+             <Fade bottom>
+             <Plans />
+             </Fade>
             </div>
             <div>
-              <Carousel />
+             <Fade bottom>
+             <Carousel />
+             </Fade>
             </div>
            
             {/* <div>
@@ -802,40 +809,47 @@ canvasClassName='particle-canvas'
             <hr className="divider" />
 
            <div className=''>
-             <Overview />
+            <Fade bottom>
+            <Overview />
+            </Fade>
            </div>
            <hr className="divider" />
 
             <div style={{marginTop:60}} ref={startRef}>
-            {
-              mobile ? 
-              <Steps bomber={slug} />
-              :
-              <div style={{padding:10}} className=''>
-              <Steps bomber={slug} />
-            </div>
-            }
+            <Fade bottom>
+            <Steps bomber={slug} />
+            </Fade>
             </div>
          
            <div ref={faqsRef}>
-              <Faqs />
+             <Fade bottom>
+             <Faqs />
+             </Fade>
            </div>
            <hr className="divider" />
            <div>
-             <Security />
+            <Fade bottom>
+            <Security />
+            </Fade>
            </div>
 
    
             <div>
-              <Counter count={count} end={stopCount} />
+             <Fade bottom>
+             <Counter count={count} end={stopCount} />
+             </Fade>
             </div>
 
             <div ref={testimonialRef}>
+              <Fade bottom>
               <Testimonials />
+              </Fade>
             </div>
             
             <div style={{display:'grid',placeItems:'center'}}>
-              <Affiliate />
+             <Fade bottom>
+             <Affiliate />
+             </Fade>
             </div>
 
 

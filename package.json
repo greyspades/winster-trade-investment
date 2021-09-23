@@ -86,6 +86,7 @@
     "react-modern-drawer": "^0.1.1",
     "react-particles-js": "^3.5.3",
     "react-recaptcha-hook": "^1.2.2",
+    "react-reveal": "^1.2.2",
     "react-spinners": "^0.11.0",
     "react-ts-tradingview-widgets": "^1.0.3",
     "react-tsparticles": "^1.33.3",
