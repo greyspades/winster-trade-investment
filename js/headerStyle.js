@@ -11,27 +11,26 @@ import {
   transition,
   boxShadow,
   drawerWidth
-} from "./nextjs-material-kit.js";
+} from "../js/nextjs-material-kit.js";
 
 const headerStyle = {
   appBar: {
     display: "flex",
     border: "0",
     borderRadius: "3px",
-    padding: "5px",
+    padding: "0.625rem 0",
     marginBottom: "20px",
-    //color: "#555",
-    height:'50px',
+    color: "#555",
     width: "100%",
     backgroundColor: "#fff",
-    // boxShadow:
-    //   "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)",
-    //transition: "all 150ms ease 0s",
+    boxShadow:
+      "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)",
+    transition: "all 150ms ease 0s",
     alignItems: "center",
     flexFlow: "row nowrap",
     justifyContent: "flex-start",
     position: "relative",
-    zIndex: "1200"
+    zIndex: "unset"
   },
   absolute: {
     position: "absolute",
@@ -46,9 +45,9 @@ const headerStyle = {
     minHeight: "50px",
     flex: "1",
     alignItems: "center",
-    //justifyContent: "space-between",
+    justifyContent: "space-between",
     display: "flex",
-    //flexWrap: "nowrap"
+    flexWrap: "nowrap"
   },
   flex: {
     flex: 1
@@ -71,7 +70,7 @@ const headerStyle = {
     margin: "20px 10px"
   },
   primary: {
-    backgroundColor: '#ffab00',
+    backgroundColor: primaryColor,
     color: "#FFFFFF",
     boxShadow: `0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px ${hexToRGBAlpha(
       primaryColor,

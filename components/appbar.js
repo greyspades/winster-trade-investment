@@ -24,7 +24,7 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+export default function Appbar(props) {
   const classes = useStyles();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -123,11 +123,11 @@ export default function Header(props) {
   );
 }
 
-Header.defaultProp = {
+Appbar.defaultProp = {
   color: "transparent"
 };
 
-Header.propTypes = {
+Appbar.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "info",

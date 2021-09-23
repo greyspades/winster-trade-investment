@@ -34,10 +34,10 @@ const Mining=()=>{
             </Grid>
            </Grid>
 
-                    <h4 style={{textAlign:'center',marginTop:60,marginBottom:10}}>
+                    <h4 style={{textAlign:'center',marginTop:80}}>
                         Agile Infrastructure
                     </h4>
-                    <p style={{textAlign:'center',fontSize:18,padding:30}}>
+                    <p style={{textAlign:'center',fontSize:18,padding:30,marginBottom:-35}}>
                         Our fascilities are managed and maintained by a team of proffesionals who work hard to ensure Efficiency
                     </p>
 
