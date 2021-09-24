@@ -72,7 +72,7 @@ export default function Header(props) {
     </Link>
   );
   return (
-    <AppBar style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none'}}>
+    <AppBar className={appBarClasses} style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none'}}>
       <Toolbar style={{color:'white'}} className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid>
           <Image src={white} width={50} height={40} layout='intrinsic' />
