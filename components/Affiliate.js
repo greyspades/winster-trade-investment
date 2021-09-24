@@ -1,11 +1,17 @@
 import React from 'react'
 import {Grid,Button,Paper} from '@material-ui/core'
+import Fade from 'react-reveal/Fade'
+
+
 
 
 const Affiliate = () => {
     return (
         <div style={{width:'80%',display:'grid',placeItems:'center',alignItems:'center',marginTop:120,marginBottom:80,zIndex:1000}} >
-           <Paper elevation={10} className='affili countdown-bg1' >
+          <Grid container justify='center'>
+            
+          <Fade bottom>
+          <Paper elevation={10} className='affili countdown-bg1' >
            <Grid spacing={5} container  justify='center' direction='row'>
             <Grid style={{display:'grid',placeItems:'center',}} item md={6} className="">
             <header className="crumina-module crumina-heading heading--h2 heading--with-decoration">
@@ -41,7 +47,10 @@ const Affiliate = () => {
                
             </Grid> */}
            </Paper>
+          </Fade>
 
+        
+          </Grid>
         </div>
     )
 }

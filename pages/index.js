@@ -847,9 +847,9 @@ canvasClassName='particle-canvas'
             </div>
             
             <div style={{display:'grid',placeItems:'center'}}>
-             <Fade bottom>
+             
              <Affiliate />
-             </Fade>
+          
             </div>
 
 
