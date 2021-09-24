@@ -216,8 +216,8 @@ s0.parentNode.insertBefore(s1,s0);
           //       </div>
           // )}
           //header='Winster trade investment'
-          menu={ <Menu />}
-          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+          // menu={ <Menu />}
+          // image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 </Grid>

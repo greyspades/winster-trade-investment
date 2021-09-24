@@ -33,6 +33,8 @@ import { Grid,Card,CardHeader,CardContent,Paper } from '@material-ui/core'
 const Products = (props) => {
     return (
         <div style={{paddingBottom:60,paddingTop:60,paddingLeft:30,paddingRight:30}}>
+            <Grid style={{borderRadius:8}}>
+                
             <h3 style={{textAlign:'center'}}>
                 Our Services
             </h3>
@@ -307,6 +309,8 @@ const Products = (props) => {
 
 
 
+        
+            </Grid>
         </div>
     )
 }

@@ -27,11 +27,11 @@ const Faqs=()=> {
 
   return (
     <Grid container justify='center' style={{}} >
-       <Paper style={{}} elevation={20} className='countdown-bg1 faqs-paper'>
+       <Paper style={{backgroundColor:'grey'}} elevation={20} className='countdown-bg faqs-paper'>
        <h3 style={{textAlign:'center',marginBottom:30,marginTop:10}}>
             Faqs
         </h3>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel1a-content"
@@ -46,7 +46,7 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel2a-content"
@@ -60,7 +60,7 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel2a-content"
@@ -74,7 +74,7 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel2a-content"
@@ -88,7 +88,7 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel2a-content"
@@ -102,7 +102,7 @@ const Faqs=()=> {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='faqs-accordion'>
+      <Accordion className='faqs-accordion countdown-bg1'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:'#ffba00'}} />}
           aria-controls="panel2a-content"

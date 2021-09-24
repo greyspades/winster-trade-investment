@@ -22,6 +22,8 @@ import Grid from '@material-ui/core/Grid'
 
 
 const useStyles = makeStyles(styles);
+
+
 export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -70,8 +72,8 @@ export default function Header(props) {
     </Link>
   );
   return (
-    <AppBar className={appBarClasses}>
-      <Toolbar className={classes.container}>
+    <AppBar style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none'}}>
+      <Toolbar style={{color:'white'}} className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid>
           <Image src={white} width={50} height={40} layout='intrinsic' />
           </Grid>}
@@ -95,7 +97,7 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu />
+            <Menu style={{color:'white'}} />
           </IconButton>
         </Hidden>
       </Toolbar>
