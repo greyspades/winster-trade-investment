@@ -97,7 +97,9 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu style={{color:'white'}} />
+           <Grid container justify='flex-end'>
+           <Menu style={{color:'white'}} />
+           </Grid>
           </IconButton>
         </Hidden>
       </Toolbar>

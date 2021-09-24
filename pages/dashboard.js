@@ -220,365 +220,38 @@ const Dashboard=({data})=>{
 
     },[])
 
-    useEffect(()=>{
-       
-        
-        //getInfo()
-      //  getBtc()
-      //console.log(JSON.parse(data))
-      console.log(data)
-    
-    },[])
-
-    useEffect(()=>{
-        
-        //getInfo()
-       getEth()
-    
-    },[])
-    useEffect(()=>{
-        
-        //getInfo()
-       getTether()
-    
-    },[])
-
-    useEffect(()=>{
-        
-        //getInfo()
-       getMoon()
-    
-    },[])
 
     //const container = window !== undefined ? () => window().document.body : undefined;
+    
 
-    let chartOptions = {
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-              display: false
-          },
-          title:{
-              display:false
-          },
-          tooltips:{
-              display:false,
-              callbacks: {
-                label: () => null,
-                title: () => null,
-                enabled:false
-            },
-          },
-          labels:{
-              display:false
-          }
-      },
+
+    // const getBtc=()=>{
+    //     axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=minutes')
+    //     .then((res)=>{
+    //         //console.log(res.data.prices)
+    //         // setBtcData(res.data.prices)
+    //         // console.log(btcData)
+    //         //setCoinData(res.data.prices)
+    //         let x=[]
+    //         let y=[]
+    //         res.data.prices.forEach((item)=>{
+    //             x.push(parseInt(item[0].toString().slice(0,2))),
+    //             y.push(parseInt(item[1].toString().slice(0,3)))
+    //         })
+    //         setBtc({
+    //             x:x.slice(0,25),
+    //             y:y.slice(0,25)
+    //         })
+    //         setBtcData(true)
+    //         // setCoinChart(true)
+    //         // console.log(btc)
+            
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err)
+    //     })
        
-        tooltips: {
-            display:false,
-          callbacks: {
-              label: () => null,
-              title: () => null,
-          },
-          enabled:false
-      },
-
-      title:{
-        display:false
-    },
-
-      labels:{
-          display:false
-      },
-
-      legend:{
-          display:false
-      },
-
-        responsive: true,
-        scales: {
-          yAxes: [
-            {
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: "rgba(29,140,248,0.0)",
-                zeroLineColor: "transparent",
-              },
-              ticks: {
-                suggestedMin: 60,
-                suggestedMax: 125,
-                padding: 10,
-                fontColor: "#9a9a9a",
-            
-                
-              },
-              stacked:false,
-
-            },
-          ],
-          xAxes: [
-            {
-            //   barPercentage: 1.6,
-            //   gridLines: {
-            //     drawBorder: false,
-            //     color: "rgba(29,140,248,0.1)",
-            //     zeroLineColor: "transparent",
-            //   },
-            display:false,
-            labels:{
-                display:false
-            },
-              ticks: {
-                //padding: 10,
-                fontColor: "blue",
-                display:false
-              },
-            },
-            
-          ],
-        },
-      };
-
-      let chartExample1 = {
-        data1: (canvas) => {
-          let ctx = canvas.getContext("2d");
-      
-          let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-      
-          gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
-          gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
-          gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
-      
-          return {
-            labels: btc.x,
-            datasets: [
-              {
-                
-                fill: true,
-                backgroundColor: gradientStroke,
-                borderColor: "#9a7801",
-                borderWidth: 1,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                pointBackgroundColor: "#9a7801",
-                pointBorderColor: "rgba(255,255,255,0)",
-                pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
-                pointBorderWidth: 0,
-                pointHoverRadius: 4,
-                pointHoverBorderWidth: 15,
-                pointRadius: 0,
-                
-                data:btc.y,
-              },
-            ],
-          };
-        },
-        data2: (canvas) => {
-            let ctx = canvas.getContext("2d");
-        
-            let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-        
-            gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
-            gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
-            gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
-        
-            return {
-              labels: tether.x,
-              
-              datasets: [
-                {
-                  
-                  fill: true,
-                  backgroundColor: gradientStroke,
-                  borderColor: "#9a7801",
-                  borderWidth: 1,
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  pointBackgroundColor: "#9a7801",
-                  pointBorderColor: "rgba(255,255,255,0)",
-                  pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
-                  pointBorderWidth: 5,
-                  pointHoverRadius: 4,
-                  pointHoverBorderWidth: 15,
-                  pointRadius: 0,
-                  
-                  data:tether.y,
-                },
-              ],
-            };
-          },
-          data3: (canvas) => {
-            let ctx = canvas.getContext("2d");
-        
-            let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-        
-            gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
-            gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
-            gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
-        
-            return {
-              labels: moon.x,
-              datasets: [
-                {
-                  
-                  fill: true,
-                  backgroundColor: gradientStroke,
-                  borderColor: "#9a7801",
-                  borderWidth: 1,
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  pointBackgroundColor: "#9a7801",
-                  pointBorderColor: "rgba(255,255,255,0)",
-                  pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
-                  pointBorderWidth: 5,
-                  pointHoverRadius: 4,
-                  pointHoverBorderWidth: 15,
-                  pointRadius: 0,
-                  
-                  data:moon.y,
-                },
-              ],
-            };
-          }
-    }
-
-        let chartExample2 = {
-            data2: (canvas) => {
-              let ctx = canvas.getContext("2d");
-          
-              let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-          
-              gradientStroke.addColorStop(1, "rgba(154, 120, 1, 0.2)");
-              gradientStroke.addColorStop(0.4, "rgba(154, 120, 1, 0.0)");
-              gradientStroke.addColorStop(0, "rgba(154, 120, 1, 0)"); //blue colors
-          
-              return {
-                labels: eth.x,
-                datasets: [
-                  {
-                    
-                    fill: true,
-                    backgroundColor: gradientStroke,
-                    borderColor: "#9a7801",
-                    borderWidth: 1,
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    pointBackgroundColor: "#9a7801",
-                    pointBorderColor: "rgba(255,255,255,0)",
-                    pointHoverBackgroundColor: "rgba(154, 120, 1, 0.2)",
-                    pointBorderWidth: 5,
-                    pointHoverRadius: 4,
-                    pointHoverBorderWidth: 15,
-                    pointRadius: 0,
-                    
-                    data:eth.y
-                  },
-                ],
-              };
-            },}
-
-            const getEth=()=>{
-                axios.get('https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=7&interval=minutes')
-                .then((res)=>{
-                   
-                    let x=[]
-                    let y=[]
-                    res.data.prices.forEach((item)=>{
-                        x.push(parseInt(item[0].toString().slice(0,2))),
-                        y.push(parseInt(item[1].toString().slice(0,3)))
-                    })
-                    setEth({
-                        x:x.slice(0,25),
-                        y:y.slice(0,25)
-                    })
-                    //setBtcData(res.data.prices)
-                    setEthData(true)
-                    console.log(eth)
-                })
-                .catch((err)=>{
-                    console.log(err)
-                })
-               
-            }
-
-            const getTether=()=>{
-                axios.get('https://api.coingecko.com/api/v3/coins/tether/market_chart?vs_currency=usd&days=7&interval=minutes')
-                .then((res)=>{
-                   
-                    let x=[]
-                    let y=[]
-                    res.data.prices.forEach((item)=>{
-                        x.push(parseInt(item[0].toString().slice(0,2))),
-                        y.push(parseInt(item[1].toString().slice(0,3)))
-                    })
-                    setTether({
-                        x:x.slice(0,25),
-                        y:y.slice(0,25)
-                    })
-                    //setBtcData(res.data.prices)
-                    setTetherData(true)
-                    console.log(eth)
-                })
-                .catch((err)=>{
-                    console.log(err)
-                })
-               
-            }
-
-
-            const getMoon=()=>{
-                axios.get('https://api.coingecko.com/api/v3/coins/safemoon/market_chart?vs_currency=usd&days=7&interval=minutes')
-                .then((res)=>{
-                   
-                    let x=[]
-                    let y=[]
-                    res.data.prices.forEach((item)=>{
-                        x.push(parseInt(item[0].toString().slice(0,2))),
-                        y.push(parseInt(item[1].toString().slice(0,3)))
-                    })
-                    setMoon({
-                        x:x.slice(0,25),
-                        y:y.slice(0,25)
-                    })
-                    //setBtcData(res.data.prices)
-                    setMoonData(true)
-                    console.log(eth)
-                })
-                .catch((err)=>{
-                    console.log(err)
-                })
-               
-            }
-
-
-    const getBtc=()=>{
-        axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=minutes')
-        .then((res)=>{
-            //console.log(res.data.prices)
-            // setBtcData(res.data.prices)
-            // console.log(btcData)
-            //setCoinData(res.data.prices)
-            let x=[]
-            let y=[]
-            res.data.prices.forEach((item)=>{
-                x.push(parseInt(item[0].toString().slice(0,2))),
-                y.push(parseInt(item[1].toString().slice(0,3)))
-            })
-            setBtc({
-                x:x.slice(0,25),
-                y:y.slice(0,25)
-            })
-            setBtcData(true)
-            // setCoinChart(true)
-            // console.log(btc)
-            
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-       
-    }
+    // }
 
     const getInfo=()=>{
       let person=Cookie.get('user')
@@ -670,10 +343,10 @@ const Dashboard=({data})=>{
             title:'Confirm',
             dataIndex:'',
             key:'key',
-            width:50,
+            width:30,
             render:()=> action=='confirm' ?
              <Grid container alignItems='center'>
-                 <Button style={{color:'#ffab00',fontSize:20}}>Confirm</Button>
+                 <Button style={{color:'#ffab00',fontSize:12}}>Confirm</Button>
              </Grid>
             //  : action=='load' ?
             //  <Grid container alignItems='center' justify='center'>
@@ -686,6 +359,13 @@ const Dashboard=({data})=>{
         
       ]
 
+      function Draw(con){
+        setContent(con)
+      }
+
+      function drawToggle(){
+        mobile ? setMobile(false) : setMobile(true)
+      }
     const drawer=()=>{
         let names=['tim','ed','sean']
         let options=[
@@ -711,7 +391,10 @@ const Dashboard=({data})=>{
             <div>
                 {options.map((item)=>(
                    <div>
-                   <Paper onClick={()=>{setContent(item.name)}} elevation={balanceElev}  style={{backgroundColor:'black',marginBottom:40,width:'90%',borderBottomRightRadius:5,borderTopRightRadius:5}}  className='dashboard-options'>
+                   <Paper onClick={()=>{
+                     Draw(item.name)
+                     drawToggle()
+                   }} elevation={balanceElev}  style={{backgroundColor:'black',marginBottom:40,width:'90%',borderBottomRightRadius:5,borderTopRightRadius:5}}  className='dashboard-options'>
                            <motion.div whileHover={{scale:1.2}}>
    
                            <ListItem button>
@@ -851,7 +534,7 @@ const Dashboard=({data})=>{
   </p>
   <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
   <Grid item md={2} xs={2} style={{}}>
-  <PeopleOutline style={{color:'white'}} />
+  <PeopleOutline style={{color:'#ffab00',marginBottom:-20}} />
           
           </Grid>
           <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',marginTop:10}}>
@@ -861,8 +544,8 @@ const Dashboard=({data})=>{
               </a> */}
               {
                 gotten ?
-                <a style={{color:'#ffab00',fontSize:16}}>
-                 www.winstertradeinvestment.com/{info.username}
+                <a href={`https://winstertradeinvestment.com/${info.username}`} style={{color:'#ffab00',fontSize:14}}>
+                 winstertradeinvestment.com/{info.username}
               </a>
               :
               null
@@ -1221,7 +904,7 @@ const Dashboard=({data})=>{
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
+                                                           <Im80e priority={true} responsive width={80} height={80} src={tetherIcon}/>
                                                             </motion.div> 
                                                            
                                                         </IconButton>
@@ -1233,7 +916,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={70} height={70} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>
