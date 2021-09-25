@@ -289,8 +289,8 @@ input:-webkit-autofill
   }
   .price-valu {
     color: #ffab00;
-    font-size: x-large;
-    font-weight: 400;
+    font-size: large;
+    font-weight: 200;
   }
   
   .table-row {
@@ -471,6 +471,7 @@ input:-webkit-autofill
 .faqs-paper {
   width:90%;
   padding: 20px;
+  background-color: #131519;
   
 }
 .mid-testimonial {
@@ -505,6 +506,7 @@ input:-webkit-autofill
     .faqs-paper {
       width: 60%;
       padding: 35px;
+      
     }
     .crypto-market {
       padding:70px

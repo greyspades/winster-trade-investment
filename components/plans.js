@@ -42,7 +42,7 @@ const Plans = (props) => {
     <h3 style={{textAlign:'center',marginBottom:60}}>
                Plans suited for everyone
              </h3>
-      <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
+      <div style={{padding:40}} className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
         <div style={{}} className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
           <Filter1Icon style={{width:70,height:70,color:'#ffab00'}} />
@@ -75,7 +75,7 @@ const Plans = (props) => {
           <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
-      <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
+      <div style={{padding:40}} className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
         <div className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
            <Filter2Icon style={{width:70,height:70,color:'#ffab00'}} />
@@ -108,7 +108,10 @@ const Plans = (props) => {
           <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
-      <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
+
+
+      
+      <div style={{padding:40}} className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
         <div className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
             <Filter3Icon style={{width:70,height:70,color:'#ffab00'}} />
@@ -141,7 +144,7 @@ const Plans = (props) => {
           <a onClick={()=>{Router.push(`/signup/${props.bomber}`)}} className="btn btn--large btn--gree-light btn--transparent">Join now</a>
         </div>
       </div>
-      <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
+      <div style={{padding:40}} className="col-lg-3 col-md-6 col-sm-6 col-xs-12 mb30" data-mh="pricing-item">
         <div className="crumina-module crumina-pricing-table pricing-table--style1">
           <div className="pricing-thumb">
            <Filter4Icon style={{width:70,height:70,color:'#ffab00'}} />

@@ -26,8 +26,8 @@ const Faqs=()=> {
   const classes = useStyles();
 
   return (
-    <Grid container justify='center' style={{}} >
-       <Paper style={{backgroundColor:'grey'}} elevation={20} className='countdown-bg faqs-paper'>
+    <Grid container justify='center' style={{marginBottom:80}} >
+       <Paper style={{}} elevation={20} className='countdown-bg faqs-paper'>
        <h3 style={{textAlign:'center',marginBottom:30,marginTop:10}}>
             Faqs
         </h3>

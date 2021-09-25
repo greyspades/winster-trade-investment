@@ -72,7 +72,7 @@ export default function Header(props) {
     </Link>
   );
   return (
-    <AppBar className={appBarClasses} style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none',}}>
+    <AppBar style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none',}}>
       <Toolbar style={{color:'white'}} className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid>
           <Image src={white} width={50} height={40} layout='intrinsic' />
@@ -98,7 +98,7 @@ export default function Header(props) {
             onClick={handleDrawerToggle}
           >
            <Grid container justify='flex-end'>
-           <Menu style={{color:'white',marginRight:'auto'}} />
+           <Menu style={{color:'white',marginLeft:'auto',marginRight:0}} />
            </Grid>
           </IconButton>
         </Hidden>

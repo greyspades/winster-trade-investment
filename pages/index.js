@@ -179,11 +179,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
    </Head>
-   
-<div>
-  
-<Grid container >
-<Header
+   <Header
           
           fixed
           color="transparent"
@@ -198,6 +194,10 @@ s0.parentNode.insertBefore(s1,s0);
         
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
+<div>
+  
+<Grid container >
+
 </Grid>
 <Particles
 className='particles'
