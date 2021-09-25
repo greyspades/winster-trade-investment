@@ -233,7 +233,7 @@ input:-webkit-autofill
     
   }
   .alpha-heading {
-    margin-top: 70px;
+    margin-top: 150px;
     background-image: url(../img/bg-help.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -484,7 +484,9 @@ input:-webkit-autofill
   margin-left: -20px;
 }
 
-
+.main-appbar {
+  margin-bottom: 100px;
+}
 
 
 
