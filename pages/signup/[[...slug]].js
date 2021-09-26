@@ -187,7 +187,7 @@ const Signup=()=> {
           // )}
           header='Signup'
           menu={ <Menu style={{color:'black'}} />}
-          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+          image={<Image style={{marginLeft:'auto',marginRight:0}} src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<HeaderLinks />}   
 />
      <div style={{padding:30,display:'grid',placeItems:'center'}} >

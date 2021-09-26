@@ -904,7 +904,7 @@ const Dashboard=({data})=>{
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Im80e priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                           <Image priority={true} responsive width={100} height={100} src={tetherIcon}/>
                                                             </motion.div> 
                                                            
                                                         </IconButton>
@@ -916,7 +916,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={80} height={80} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={100} height={100} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>

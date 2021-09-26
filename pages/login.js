@@ -145,7 +145,7 @@ const Login=()=> {
         
           header='Login'
           menu={ <Menu style={{color:'black'}} />}
-          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
+          image={<Image style={{marginLeft:'auto',marginRight:0}} src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<HeaderLinks />}   
 />
 
