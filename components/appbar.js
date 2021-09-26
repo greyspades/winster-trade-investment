@@ -91,13 +91,13 @@ export default function Header(props) {
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
-        <Hidden mdUp>
+        <Hidden mdUp >
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-           <Grid container justify='flex-end'>
+           <Grid style={{marginLeft:'auto',marginRight:0}} container justify='flex-end'>
            <Menu style={{color:'white',marginLeft:'auto',marginRight:0}} />
            </Grid>
           </IconButton>
