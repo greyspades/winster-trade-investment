@@ -72,7 +72,7 @@ export default function Header(props) {
     </Link>
   );
   return (
-    <AppBar style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none',}}>
+    <AppBar className={appBarClasses} style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none',}}>
       <Toolbar style={{color:'white'}} className={classes.container}>
         {leftLinks !== undefined ? brandComponent : <Grid>
           <Image src={white} width={50} height={40} layout='intrinsic' />
@@ -97,7 +97,7 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-           <Grid style={{marginLeft:'auto',marginRight:0}} container justify='flex-end'>
+           <Grid style={{}} container justify='flex-end'>
            <Menu style={{color:'white',marginLeft:'auto',marginRight:0}} />
            </Grid>
           </IconButton>
