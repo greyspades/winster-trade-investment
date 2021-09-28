@@ -53,7 +53,7 @@ import {
   
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
-import Appbar from '../components/appbar'
+import Header from '../components/appbar'
 import IndexLinks from '../components/indexlinks'
 import bg from '../img/bg-2.png'
 import Affiliate from '../components/Affiliate'
@@ -118,7 +118,7 @@ const Home = () => {
     // }
   },[])
 
-
+  
   const stopCount=()=>{
     setCount(true)
     console.log('stopped count')
@@ -180,7 +180,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
    </Head>
-   <Appbar
+   <Header
           
           fixed
           color="transparent"
@@ -192,7 +192,8 @@ s0.parentNode.insertBefore(s1,s0);
           
          
           //header='Winster trade investment'
-        
+         menu={ <Menu />}
+          image={<Image src={white} width={50} height={40} layout='intrinsic' />}
         rightLinks={<IndexLinks faqs={faqsScroll} start={startScroll} contact={contactScroll} testimonial={testimonialScroll} package={packageScroll} service={serviceScroll} about={aboutScroll} />}   
 />
 <div>

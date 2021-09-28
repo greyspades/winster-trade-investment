@@ -21,22 +21,23 @@ import white from '../img/white.png'
 import Grid from '@material-ui/core/Grid'
 
 
+
 const useStyles = makeStyles(styles);
 
-
-export default function Appbar(props) {
+export default function Header(props) {
   const classes = useStyles();
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // React.useEffect(() => {
-  //   if (props.changeColorOnScroll) {
-  //     window.addEventListener("scroll", headerColorChange);
-  //   }
-  //   return function cleanup() {
-  //     if (props.changeColorOnScroll) {
-  //       window.removeEventListener("scroll", headerColorChange);
-  //     }
-  //   };
-  // });
+  React.useEffect(() => {
+    if (props.changeColorOnScroll) {
+      window.addEventListener("scroll", headerColorChange);
+    }
+    return function cleanup() {
+      if (props.changeColorOnScroll) {
+        window.removeEventListener("scroll", headerColorChange);
+      }
+    };
+  });
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -72,34 +73,34 @@ export default function Appbar(props) {
     </Link>
   );
   return (
-    <AppBar className={appBarClasses} style={{backgroundColor:"rgba(0,0,0,0)",boxShadow:'none',}}>
+    <AppBar style={{backgroundColor:'rgba(0,0,0,0)',boxShadow:'none'}} >
       <Toolbar style={{color:'white'}} className={classes.container}>
-        {leftLinks !== undefined ? brandComponent : <Grid>
-          <Image src={white} width={50} height={40} layout='intrinsic' />
-          </Grid>}
-
-
+        {leftLinks !== undefined ? brandComponent : <Grid><Grid>
+            {props.image}
+            </Grid>
+           
+            </Grid>}
         <div className={classes.flex}>
           {leftLinks !== undefined ? (
-            <Hidden smDown implementation="css">
+            <Hidden smDown>
               {leftLinks}
             </Hidden>
           ) : (
-            brandComponent
+          <div style={{fontSize:20,color:'black',marginLeft:10,fontWeight:'bolder'}}>{props.header}</div>
           )}
         </div>
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
-        <Hidden style={{backgroundColor:'white'}} implementation="css" mdUp >
+
+
+        <Hidden mdUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-          
-           <Menu style={{color:'white',marginLeft:'auto',marginRight:0}} />
-          
+           {props.menu}
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -112,6 +113,7 @@ export default function Appbar(props) {
             paper: classes.drawerPaper
           }}
           onClose={handleDrawerToggle}
+         
         >
           <div className={classes.appResponsive}>
             {leftLinks}
@@ -123,11 +125,11 @@ export default function Appbar(props) {
   );
 }
 
-Appbar.defaultProp = {
-  color: "white"
+Header.defaultProp = {
+  color: "transparent"
 };
 
-Appbar.propTypes = {
+Header.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "info",

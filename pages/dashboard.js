@@ -545,7 +545,7 @@ const Dashboard=({data})=>{
               {
                 gotten ?
                 <a href={`https://winstertradeinvestment.com/${info.username}`} style={{color:'#ffab00',fontSize:14}}>
-                 winstertradeinvestment.com/{info.username}
+                 winstertradeinvestment.com/<br/>{info.username}
               </a>
               :
               null
@@ -853,7 +853,7 @@ const Dashboard=({data})=>{
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
                                                             {/* <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
-                                                            <Image priority={true} width={70} height={70}  src={btcIcon}/>
+                                                            <Image priority={true} width={50} height={50}  src={btcIcon}/>
                                                             </motion.div>
                                                            
                                                         </IconButton>
@@ -863,7 +863,7 @@ const Dashboard=({data})=>{
                                                         <IconButton  onClick={()=>{setDepoPair('BTC');setShowDepo(false)}}>
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         {/* <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
-                                                        <Image priority={true} width={70} height={70} responsive src={btcIcon}/>
+                                                        <Image priority={true} width={50} height={50} responsive src={btcIcon}/>
                                                         </motion.div>
                                                         </IconButton>
                                                      
@@ -880,7 +880,7 @@ const Dashboard=({data})=>{
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
                                                             {/* <FontAwesomeIcon  style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
-                                                            <Image priority={true} width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                            <Image priority={true} width={50} height={50} className='coin-icon' src={ethIcon}/>
                                                             </motion.div>
                                                            
                                                         </IconButton>
@@ -890,7 +890,7 @@ const Dashboard=({data})=>{
                                                         <IconButton onClick={()=>{setDepoPair('ETH');setShowDepo(false)}}>
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         {/* <FontAwesomeIcon style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
-                                                        <Image priority={true} responsive width={70} height={70} className='coin-icon' src={ethIcon}/>
+                                                        <Image priority={true} responsive width={50} height={50} className='coin-icon' src={ethIcon}/>
                                                         </motion.div>
                                                         </IconButton>
                                                      
@@ -904,7 +904,7 @@ const Dashboard=({data})=>{
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Image priority={true} responsive width={100} height={100} src={tetherIcon}/>
+                                                           <Image priority={true} responsive width={90} height={90} src={tetherIcon}/>
                                                             </motion.div> 
                                                            
                                                         </IconButton>
@@ -916,7 +916,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={100} height={100} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={90} height={90} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>
@@ -932,7 +932,7 @@ const Dashboard=({data})=>{
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                           <Image priority={true} responsive width={50} height={50} src={safemoon}/>
                                                             </motion.div>
                                                            
                                                         </IconButton>
@@ -942,7 +942,7 @@ const Dashboard=({data})=>{
                                                         <IconButton onClick={()=>{setDepoPair('SAFEMOON');setShowDepo(false)}}>
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
-                                                        <Image priority={true} responsive width={70} height={70} src={safemoon}/>
+                                                        <Image priority={true} responsive width={50} height={50} src={safemoon}/>
                                                             
                                                         
                                                         </motion.div>
