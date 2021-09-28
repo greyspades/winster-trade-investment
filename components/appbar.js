@@ -86,7 +86,7 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-          <div style={{fontSize:20,color:'black',marginLeft:10,fontWeight:'bolder'}}>{props.header}</div>
+          <div style={{fontSize:20,color:'black',opacity:0,marginLeft:10,fontWeight:'bolder'}}>Winster trade investment</div>
           )}
         </div>
         <Hidden smDown implementation="css">
