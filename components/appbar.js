@@ -24,19 +24,19 @@ import Grid from '@material-ui/core/Grid'
 const useStyles = makeStyles(styles);
 
 
-export default function Header(props) {
+export default function Appbar(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  React.useEffect(() => {
-    if (props.changeColorOnScroll) {
-      window.addEventListener("scroll", headerColorChange);
-    }
-    return function cleanup() {
-      if (props.changeColorOnScroll) {
-        window.removeEventListener("scroll", headerColorChange);
-      }
-    };
-  });
+  // React.useEffect(() => {
+  //   if (props.changeColorOnScroll) {
+  //     window.addEventListener("scroll", headerColorChange);
+  //   }
+  //   return function cleanup() {
+  //     if (props.changeColorOnScroll) {
+  //       window.removeEventListener("scroll", headerColorChange);
+  //     }
+  //   };
+  // });
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -91,15 +91,15 @@ export default function Header(props) {
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
-        <Hidden mdUp >
+        <Hidden style={{backgroundColor:'white'}} implementation="css" mdUp >
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-           <Grid style={{}} container justify='flex-end'>
+          
            <Menu style={{color:'white',marginLeft:'auto',marginRight:0}} />
-           </Grid>
+          
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -123,11 +123,11 @@ export default function Header(props) {
   );
 }
 
-Header.defaultProp = {
+Appbar.defaultProp = {
   color: "white"
 };
 
-Header.propTypes = {
+Appbar.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "info",

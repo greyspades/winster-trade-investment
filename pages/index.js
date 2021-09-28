@@ -53,7 +53,7 @@ import {
   
 } from 'reactstrap'
 import { faPiggyBank, faMoneyCheck, faMoneyCheckAlt, faCoins, } from '@fortawesome/free-solid-svg-icons';
-import Header from '../components/appbar'
+import Appbar from '../components/appbar'
 import IndexLinks from '../components/indexlinks'
 import bg from '../img/bg-2.png'
 import Affiliate from '../components/Affiliate'
@@ -118,6 +118,7 @@ const Home = () => {
     // }
   },[])
 
+
   const stopCount=()=>{
     setCount(true)
     console.log('stopped count')
@@ -179,7 +180,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
    </Head>
-   <Header
+   <Appbar
           
           fixed
           color="transparent"
