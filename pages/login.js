@@ -146,7 +146,7 @@ const Login=()=> {
           header='Login'
           menu={ <Menu style={{color:'black'}} />}
           image={<Image style={{marginLeft:'auto',marginRight:0}} src={white} width={50} height={40} layout='intrinsic' />}
-        rightLinks={<HeaderLinks />}   
+         rightLinks={<HeaderLinks />}   
 />
 
      <div style={{display:"grid",placeItems:"center",padding:30}}>
@@ -664,7 +664,7 @@ canvasClassName='particle-canvas'
 	    }
 	/>
 
-       <Paper elevation={20} style={{display:'grid',placeItems:'center',zIndex:1000,backgroundColor:'#171028',marginTop:100}} className='signup'>
+       <Paper elevation={20} style={{display:'grid',placeItems:'center',zIndex:1000,backgroundColor:'#131519',marginTop:100}} className='signup'>
          
     <Card style={{
         // background:'linear-gradient(#131519 0%,#131519 50%,ffab00 80%)',

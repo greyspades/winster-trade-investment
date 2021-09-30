@@ -81,7 +81,7 @@ import Table from 'rc-table'
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { Line, Bar } from "react-chartjs-2";
-import tetherIcon from '../img/tether.png'
+import tetherIcon from '../img/teth.svg'
 // import {
 //     chartExample1,
 //     chartExample2,
@@ -89,8 +89,8 @@ import tetherIcon from '../img/tether.png'
 //     chartExample4,
 // } from '../variables/charts'
 import safemoon from '../img/safemoon.svg'
-import btcIcon from '../img/btc.png'
-import ethIcon from '../img/eth.png'
+import btcIcon from '../img/bitcoin.svg'
+import ethIcon from '../img/eth.svg'
 import Close from '@material-ui/icons/CloseOutlined'
 import CheckCircle from '@material-ui/icons/CheckCircleOutline'
 import Footer from 'rc-footer';
@@ -121,7 +121,7 @@ import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import CreditCard from '@material-ui/icons/CreditCard'
 import {useRouter} from 'next/router'
 import Modal from '@material-ui/core/Modal'
-
+import litecoin from '../img/litecoin.svg'
 
 
 
@@ -393,7 +393,7 @@ const Dashboard=({data})=>{
                    <div>
                    <Paper onClick={()=>{
                      Draw(item.name)
-                     drawToggle()
+                    {phone ?  drawToggle():null}
                    }} elevation={balanceElev}  style={{backgroundColor:'black',marginBottom:40,width:'90%',borderBottomRightRadius:5,borderTopRightRadius:5}}  className='dashboard-options'>
                            <motion.div whileHover={{scale:1.2}}>
    
@@ -429,7 +429,7 @@ const Dashboard=({data})=>{
                 
                    <Grid  className='top-row' justify='flex-start' style={{height:'auto',padding:10,}} container direction='row' spacing={3}>
                      
-                   <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%'}} item xs={12} md={4}>
+                   <Grid className='top-balance' justify='center' spacing={3} style={{height:400,width:'100%',}} item xs={12} md={4}>
                      
               <Grid style={{}} container className='c-grid'>
               <Paper style={{width:'95%'}}  className='profile-paper balance-paper'>
@@ -529,7 +529,7 @@ const Dashboard=({data})=>{
           <LinearProgress color='primary'  style={{height:10,width:'75%',marginTop:9,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
           </Grid>
   </Grid>
-  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5,marginTop:29}}>
+  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5,marginTop:10}}>
     Your referal link
   </p>
   <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
@@ -537,7 +537,7 @@ const Dashboard=({data})=>{
   <PeopleOutline style={{color:'#ffab00',marginBottom:-20}} />
           
           </Grid>
-          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',marginTop:10}}>
+          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',marginTop:5}}>
             
               {/* <a style={{color:'#ffab00',}}>
                  www.winstertrade<br/>investment.com/{data.username}
@@ -606,13 +606,14 @@ const Dashboard=({data})=>{
 </Grid>
 
 
-<Grid style={{}} className='c-grid' xs={12} md={2} container>
+<Grid style={{}} className='c-gri' xs={12} md={2} item>
 
-<Grid style={{padding:10}} container justify='center'>
+{/* <Grid style={{padding:10}} container justify='center'></Grid> */}
+
 <Paper style={{}} className=' asset-paper'>
 <Grid style={{}} direction='column' className='circlar' alignItems='center' container justify='center'>
 
-<Grid style={{marginBottom:50,marginTop:-30}} xs={12} md={12} className='circlar' container justify='center'>
+<Grid style={{marginBottom:50,marginTop:-30}} xs={12} md={12} className='circlar' item justify='center'>
               <div  style={{width:90,height:90}}>
               <h6 style={{textAlign:'center'}}>
      Assets
@@ -731,7 +732,7 @@ const Dashboard=({data})=>{
               <Divider variant='middle' style={{margin:10,height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'90%'}} />
             </Grid> */}
 </Paper>
-</Grid>
+
 
 </Grid>
 
@@ -742,21 +743,24 @@ const Dashboard=({data})=>{
 
 
                    </Grid>
-                   <Grid container justify='flex-end' style={{}}>
-                   <Grid className='bottom-profile' justify='flex-end' style={{marginTop:10,}} container direction='row'>
+                   {/* <Grid container justify='flex-end' style={{backgroundColor:'blue'}}></Grid> */}
+                    
+                   <Grid className='bottom-profil' spacing={3} justify='flex-end' style={{marginTop:10}} container direction='row'>
 
-<Grid style={{}} justify='center'  md={8} xs={12} container>
-<Paper style={{width:'93%'}} className='profile-paper '>
-<CryptoCurrencyMarket colorTheme="dark" width="100%" isTransparent={true} height={480}></CryptoCurrencyMarket>
+<Grid className='' style={{}} justify='center'  md={8} xs={12} item>
+          <Grid style={{marginTop:-14}} alignItems='center' container justify='center'>
+          <Paper style={{width:'93%',height:450,}} className='profile-paper '>
+<CryptoCurrencyMarket colorTheme="dark" height='450' width="100%" isTransparent={true} ></CryptoCurrencyMarket>
 {/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
 </Paper>
+          </Grid>
 </Grid>
 
 
 
-<Grid xs={12} md={4} className='anal-grid' container justify='center'>
-<Grid style={{width:'90%'}} item>
-<Paper style={{height:510,padding:0,marginTop:10,width:'100%'}} className='profile-paper'>
+<Grid xs={12} md={4} className='anal-grid' item justify='center'>
+<Grid style={{width:'100%'}} justify='center' container>
+<Paper style={{padding:0,marginTop:10,width:'100%',height:450}} className='profile-paper'>
 
 <TechnicalAnalysis  width='100%' symbol={analPair}   style={{marginTop:40}} isTransparent colorTheme="dark"></TechnicalAnalysis>
 
@@ -765,8 +769,7 @@ const Dashboard=({data})=>{
 </Grid>
 
  </Grid>
-                   </Grid>
-
+                   
      
           
                </Grid>
@@ -904,7 +907,7 @@ const Dashboard=({data})=>{
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Image priority={true} responsive width={90} height={90} src={tetherIcon}/>
+                                                           <Image priority={true} responsive width={50} height={50} src={tetherIcon}/>
                                                             </motion.div> 
                                                            
                                                         </IconButton>
@@ -916,7 +919,7 @@ const Dashboard=({data})=>{
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
 
-                                                        <Image priority={true} responsive width={90} height={90} src={tetherIcon}/>
+                                                        <Image priority={true} responsive width={50} height={50} src={tetherIcon}/>
                                                         
                                                         
                                                         </motion.div>
@@ -926,23 +929,23 @@ const Dashboard=({data})=>{
                                                     }
                                                     </Grid>
                                                     <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
-                                                       {depoPair=='SAFEMOON' ?  
+                                                       {depoPair=='LTC' ?  
                                                         <Grid  style={{}} justify='center' alignItems='center' container>
                                                       <div className='deposit-selector' >
                                                       <IconButton  style={{}}>
                                                            
                                                            <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
-                                                           <Image priority={true} responsive width={50} height={50} src={safemoon}/>
+                                                           <Image priority={true} responsive width={50} height={50} src={litecoin}/>
                                                             </motion.div>
                                                            
                                                         </IconButton>
                                                       </div>
                                                         </Grid>
                                                                                                         :
-                                                        <IconButton onClick={()=>{setDepoPair('SAFEMOON');setShowDepo(false)}}>
+                                                        <IconButton onClick={()=>{setDepoPair('LTC');setShowDepo(false)}}>
                                                         <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
                                                         
-                                                        <Image priority={true} responsive width={50} height={50} src={safemoon}/>
+                                                        <Image priority={true} responsive width={50} height={50} src={litecoin}/>
                                                             
                                                         
                                                         </motion.div>
@@ -996,9 +999,9 @@ const Dashboard=({data})=>{
                                   <Grid container>
                                  
                                   
-                                 <Modal onClose={()=>setShowDepo(false)} open={showDepo}>
+                                 <Modal style={{}} onClose={()=>setShowDepo(false)} open={showDepo}>
                                   
-                                   <Grid style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:80,border:'3px solid #ffab00',width:'90%'}} container justify='center' alignItems='center'>
+                                   <Grid className='depo-modal' style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:80,border:'3px solid #ffab00',width:'70%'}} container justify='center' alignItems='center'>
                                    <p  style={{color:'white',textAlign:'center',fontSize:17,width:'80%',padding:10}}>
                                     You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span>, You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
                                     to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a>
@@ -1425,13 +1428,13 @@ s0.parentNode.insertBefore(s1,s0);
           className='drawer-container'
           dismissible
           open={mobile}
-          style={{backgroundColor:'black',height:'120vh'}}
+          style={{backgroundColor:'black',height:'140vh'}}
           onOpen={()=>{window.scrollTo({ top: 0, behavior: 'auto' })}}
           
           //className='drawer'
         >
       
-            <DrawerContent>
+            <DrawerContent style={{}}>
          
                 <List>
                 <div>
@@ -1459,7 +1462,7 @@ s0.parentNode.insertBefore(s1,s0);
             </Grid>
         </DrawerAppContent>
           
-<div style={{backgroundColor:'black'}}>
+<div style={{backgroundColor:'black',marginTop:60}}>
 <MyFooter />
 </div>
 

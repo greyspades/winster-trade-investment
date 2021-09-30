@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Link from "next/link";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -19,6 +19,9 @@ import styles from "../js/headerStyle.js";
 import Image from 'next/image'
 import white from '../img/white.png'
 import Grid from '@material-ui/core/Grid'
+import Tooltip from '@material-ui/core/Tooltip'
+import Close from '@material-ui/icons/CloseOutlined'
+import ButtonIcon from '@material-ui/core/IconButton'
 
 
 
@@ -28,38 +31,29 @@ export default function Header(props) {
   const classes = useStyles();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  React.useEffect(() => {
-    if (props.changeColorOnScroll) {
-      window.addEventListener("scroll", headerColorChange);
+  const [mobile,setMobile]=useState(false)
+  useEffect(()=>{
+    let width=window.innerWidth
+
+    if(width<500){
+      setMobile(true)
+      console.log('mobile view')
+     
     }
-    return function cleanup() {
-      if (props.changeColorOnScroll) {
-        window.removeEventListener("scroll", headerColorChange);
-      }
-    };
-  });
+    else if(width>500){
+        setMobile(false)
+        console.log('desktop view')
+
+    }
+    // if(slug=='services'){
+    //     serviceScroll
+    // }
+  },[])
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const headerColorChange = () => {
-    const { color, changeColorOnScroll } = props;
-    const windowsScrollTop = window.pageYOffset;
-    if (windowsScrollTop > changeColorOnScroll.height) {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[color]);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[changeColorOnScroll.color]);
-    } else {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[color]);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[changeColorOnScroll.color]);
-    }
-  };
+
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -72,53 +66,302 @@ export default function Header(props) {
       <Button className={classes.title}>{brand}</Button>
     </Link>
   );
+
+  
   return (
-    <AppBar >
-      <Toolbar className={classes.container}>
-        {leftLinks !== undefined ? brandComponent : <Grid><Grid>
-            {props.image}
-            </Grid>
-           
-            </Grid>}
-        <div className={classes.flex}>
+    <AppBar style={{backgroundColor:'#ffab00',boxShadow:'none',height:50}} >
+      <Toolbar style={{color:'white',marginTop:-2}} 
+      //className={classes.container}
+      className='appbar-container'
+      >
+       <Grid>
+       {props.image}
+       </Grid>
+      {/* <div className={classes.flex}>
           {leftLinks !== undefined ? (
             <Hidden smDown>
               {leftLinks}
             </Hidden>
           ) : (
-          <div style={{fontSize:20,color:'black',marginLeft:10,fontWeight:'bolder'}}>{props.header}</div>
+          <div style={{fontSize:20,color:'black',opacity:0,marginLeft:10,fontWeight:'bolder'}}>Winster trade investment</div>
           )}
-        </div>
-        <Hidden smDown implementation="css">
-          {rightLinks}
-        </Hidden>
+        </div> */}
+          {
+            !mobile
+            ?
+            <Grid>
+                <Button
+                style={{}}
+        href="/"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Home
+      </Button>
+      <Button
+      style={{}}
+        href="/login"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Login
+      </Button>
+      <Button
+      style={{}}
+        href="../signup"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Sign Up
+      </Button>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="products and services"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.service,handleDrawerToggle}
+        >
+            Services
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="about winster trade investment"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.about}
+        >
+            About Us
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="plans and packages "
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.package}
+        >
+            Plans
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="Testimonials from investors"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.testimonial}
+        >
+            Testimonials
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="contact us"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.contact}
+        >
+            Contact Us
+        </Button>
+      </Tooltip>
+            </Grid>
+            :
+            null
+          }
+
+
         <Hidden mdUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}
+            style={{marginLeft:'auto',marginRight:0}}
           >
            {props.menu}
           </IconButton>
         </Hidden>
       </Toolbar>
-      <Hidden mdUp implementation="js">
-        <Drawer
-          variant="temporary"
+      <Drawer
+          className='drawer-container'
+          variant='temporary'
           anchor={"right"}
           open={mobileOpen}
+          
+          //onOpen={()=>{window.scrollTo({ top: 0, behavior: 'auto' })}}
           classes={{
             paper: classes.drawerPaper
           }}
-          onClose={handleDrawerToggle}
-         
+          //className='drawer'
         >
-          <div className={classes.appResponsive}>
-            {leftLinks}
-            {rightLinks}
-          </div>
+
+          <Grid style={{backgroundColor:'#131519'}} container direction='column'>
+
+            <Grid  container justify='center' style={{backgroundColor:'#ffab00'}}>
+              <Grid style={{marginTop:6}}>
+                {props.image}  
+              </Grid>
+              <ButtonIcon style={{marginRight:0,marginLeft:'auto'}} onClick={handleDrawerToggle}>
+              <Close />
+              </ButtonIcon>
+            </Grid>
+                <Button
+                style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none',marginTop:60}}
+        href="/"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Home
+      </Button>
+      <Button
+      style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+        href="/login"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Login
+      </Button>
+      <Button
+      style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+        href="../signup"
+        color="transparent"
+        //target="_blank"
+        className='nav-link'
+      >
+        Sign Up
+      </Button>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="products and services"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.service}
+          onClickCapture={handleDrawerToggle}
+        >
+            Services
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="about winster trade investment"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.about}
+          onClickCapture={handleDrawerToggle}
+        >
+            About Us
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="plans and packages "
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.package}
+          onClickCapture={handleDrawerToggle}
+        >
+            Plans
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="Testimonials from investors"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.testimonial}
+          onClickCapture={handleDrawerToggle}
+        >
+            Testimonials
+        </Button>
+      </Tooltip>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="contact us"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+        style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          //target="_blank"
+          className='nav-link'
+          onClick={props.contact}
+          onClickCapture={handleDrawerToggle}
+        >
+            Contact Us
+        </Button>
+      </Tooltip>
+            </Grid>
+
         </Drawer>
-      </Hidden>
     </AppBar>
   );
 }

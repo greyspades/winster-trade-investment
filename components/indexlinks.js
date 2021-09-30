@@ -33,30 +33,11 @@ export default function IndexLinks(props) {
   const classes = useStyles();
   return (
 
-    <List className={classes.list}>
+    <List 
+    //className={classes.list}
+    >
     
-      {/*<CustomDropdown
-        noLiPadding
-        navDropdown
-        buttonText="Components"
-        buttonProps={{
-          className: classes.navLink,
-          color: "transparent"
-        }}
-        buttonIcon={Apps}
-        dropdownList={[
-          <Link href="/components">
-            <a className={classes.dropdownLink}>Home</a>
-          </Link>,
-          <a
-            href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
-            target="_blank"
-            className={classes.dropdownLink}
-        >
-            Investment Plans
-          </a>
-        ]}
-      />*/}
+     
       
       <ListItem className={classes.listItem}>
       <Button
@@ -93,7 +74,108 @@ export default function IndexLinks(props) {
     <ListItem className={classes.listItem}>
       
       
-      {/*<Tooltip
+     
+    </ListItem>
+    
+    <ListItem className={classes.listItem}>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="products and services"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          target="_blank"
+          className={classes.navLink}
+          onClick={props.service}
+        >
+            Services
+        </Button>
+      </Tooltip>
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="about winster trade investment"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          target="_blank"
+          className={classes.navLink}
+          onClick={props.about}
+        >
+            About Us
+        </Button>
+      </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="plans and packages "
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          target="_blank"
+          className={classes.navLink}
+          onClick={props.package}
+        >
+            Plans
+        </Button>
+      </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="Testimonials from investors"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          target="_blank"
+          className={classes.navLink}
+          onClick={props.testimonial}
+        >
+            Testimonials
+        </Button>
+      </Tooltip>
+      </ListItem>
+      
+      <ListItem className={classes.listItem}>
+      <Tooltip
+        id="Youtube-tooltip"
+        title="contact us"
+        placement={"top"}
+        classes={{ tooltip: classes.tooltip }}
+      >
+        <Button
+          color="transparent"
+          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
+          target="_blank"
+          className={classes.navLink}
+          onClick={props.contact}
+        >
+            Contact Us
+        </Button>
+      </Tooltip>
+      </ListItem>
+  </List>
+
+    
+  );
+}
+
+ {/*<Tooltip
         id="instagram-Pinterest"
         title="Follow us on Pinterest"
         placement={"top"}
@@ -194,239 +276,3 @@ export default function IndexLinks(props) {
             move
         </Button>
       </Tooltip>*/}
-    </ListItem>
-    
-    <ListItem className={classes.listItem}>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="products and services"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
-          color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="_blank"
-          className={classes.navLink}
-          onClick={props.service}
-        >
-            Services
-        </Button>
-      </Tooltip>
-      </ListItem>
-
-      <ListItem className={classes.listItem}>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="about winster trade investment"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
-          color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="_blank"
-          className={classes.navLink}
-          onClick={props.about}
-        >
-            About Us
-        </Button>
-      </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="plans and packages "
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
-          color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="_blank"
-          className={classes.navLink}
-          onClick={props.package}
-        >
-            Plans
-        </Button>
-      </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="Testimonials from investors"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
-          color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="_blank"
-          className={classes.navLink}
-          onClick={props.testimonial}
-        >
-            Testimonials
-        </Button>
-      </Tooltip>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="contact us"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
-          color="transparent"
-          //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-          target="_blank"
-          className={classes.navLink}
-          onClick={props.contact}
-        >
-            Contact Us
-        </Button>
-      </Tooltip>
-      </ListItem>
-  </List>
-//     <Grid>
-      
-
-
-//       <Grid >
-
-
-// <Button
-//   href="/landing"
-//   color="transparent"
-//   target="_blank"
-
-// >
-
-// </Button>
-
-
-// </Grid>
-// <Grid >
-// <Button
-//   href="/login"
-//   color="transparent"
-//   target="_blank"
-//   //className={classes.navLink}
-// >
-//   Login
-// </Button>
-// </Grid>
-// <Grid >
-// <Button
-//   href="../Register"
-//   color="transparent"
-//   target="_blank"
-//   //className={classes.navLink}
-// >
-//   Sign Up
-// </Button>
-// </Grid>
-// <Grid >
-// <Tooltip
-//   id="Youtube-tooltip"
-//   title="Follow us on Youtube"
-//   placement={"top"}
-//   //classes={{ tooltip: classes.tooltip }}
-// >
-//   <Button
-//     color="transparent"
-//     //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-//     target="_blank"
-//     //className={classes.navLink}
-//     onClick={props.service}
-//   >
-//       Services
-//   </Button>
-// </Tooltip>
-// </Grid>
-
-// <Grid >
-// <Tooltip
-//   id="Youtube-tooltip"
-//   title="Follow us on Youtube"
-//   placement={"top"}
-//   //classes={{ tooltip: classes.tooltip }}
-// >
-//   <Button
-//     color="transparent"
-//     //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-//     target="_blank"
-//     className={classes.navLink}
-//     onClick={props.faqs}
-//   >
-//       Faqs
-//   </Button>
-// </Tooltip>
-// </Grid>
-
-
-
-// <Grid >
-// <Tooltip
-//   id="Youtube-tooltip"
-//   title="Follow us on Youtube"
-//   placement={"top"}
-//   //classes={{ tooltip: classes.tooltip }}
-// >
-//   <Button
-//     color="transparent"
-//     //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-//     target="_blank"
-//     //className={classes.navLink}
-//     onClick={props.package}
-//   >
-//       Plans
-//   </Button>
-// </Tooltip>
-// </Grid>
-
-
-
-// <Grid className={classes.listItem}>
-// <Tooltip
-//   id="Youtube-tooltip"
-//   title="Follow us on Youtube"
-//   placement={"top"}
-//   classes={{ tooltip: classes.tooltip }}
-// >
-//   <Button
-//     color="transparent"
-//     //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-//     target="_blank"
-//     className={classes.navLink}
-//     onClick={props.testimonial}
-//   >
-//       Testimonials
-//   </Button>
-// </Tooltip>
-// </Grid>
-
-
-// <Grid >
-// <Tooltip
-//   id="Youtube-tooltip"
-//   title="Follow us on Youtube"
-//   placement={"top"}
-//   //classes={{ tooltip: classes.tooltip }}
-// >
-//   <Button
-//     color="transparent"
-//     //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
-//     target="_blank"
-//     className={classes.navLink}
-//     onClick={props.contact}
-//   >
-//       Contact Us
-//   </Button>
-// </Tooltip>
-// </Grid> 
-//     </Grid>
-    
-  );
-}

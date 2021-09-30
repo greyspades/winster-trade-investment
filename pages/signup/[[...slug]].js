@@ -188,7 +188,7 @@ const Signup=()=> {
           header='Signup'
           menu={ <Menu style={{color:'black'}} />}
           image={<Image style={{marginLeft:'auto',marginRight:0}} src={white} width={50} height={40} layout='intrinsic' />}
-        rightLinks={<HeaderLinks />}   
+        //rightLinks={<HeaderLinks />}   
 />
      <div style={{padding:30,display:'grid',placeItems:'center'}} >
      
@@ -707,7 +707,7 @@ canvasClassName='particle-canvas'
 	    }
 	/>
        <div style={{display:"grid",placeItems:"center",zIndex:1000}}>
-       <Paper elevation={20} style={{display:'grid',placeItems:'center',backgroundColor:'#171028',zIndex:1000,marginTop:100}} className='signup'>
+       <Paper elevation={20} style={{display:'grid',placeItems:'center',backgroundColor:'#131519',zIndex:1000,marginTop:100}} className='signup'>
          
       
     
@@ -717,12 +717,12 @@ canvasClassName='particle-canvas'
              width:'100%',
              // marginBottom:170,
              height:'100%',
-     
+            padding:20,
              
          }}  >
      
            
-             <h3  style={{marginTop:10,textAlign:'center',marginBottom:60}}>
+             <h3 className='reg-header'  style={{marginTop:10,textAlign:'center'}}>
               <span style={{color:'#ffab00',textAlign:'center'}}>Register</span> for an account
              </h3>
            
@@ -1012,10 +1012,13 @@ canvasClassName='particle-canvas'
      
        
         </Paper>
+        
        </div>
- 
+       
    </div>
-   <MyFooter />
+   <div style={{backgroundColor:'red',width:'100%'}}>
+          <MyFooter />
+          </div>
    </div>
   );
 }
