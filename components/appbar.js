@@ -78,9 +78,9 @@ export default function Header(props) {
         {leftLinks !== undefined ? brandComponent : <Grid><Grid>
             {props.image}
             </Grid>
-           
+              
             </Grid>}
-        <div className={classes.flex}>
+      <div className={classes.flex}>
           {leftLinks !== undefined ? (
             <Hidden smDown>
               {leftLinks}

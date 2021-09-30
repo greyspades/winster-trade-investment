@@ -53,7 +53,7 @@ const Counter = (props) => {
 
   start={1}
   end={6486}
-  duration={3}
+  duration={1.7}
   //separator=" "
   decimalsPlaces={0}
   //redraw={false}
@@ -99,7 +99,7 @@ const Counter = (props) => {
                   <CountUp
   start={1}
   end={3277}
-  duration={3}
+  duration={1.7}
   //separator=" "
   decimals={0}
   isCounting={count}
@@ -136,7 +136,7 @@ const Counter = (props) => {
                   <CountUp
   start={1}
   end={5000}
-  duration={3}
+  duration={1.7}
   //separator=" "
   decimals={0}
   isCounting={count}
