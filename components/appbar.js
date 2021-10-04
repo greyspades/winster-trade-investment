@@ -90,110 +90,98 @@ export default function Header(props) {
             !mobile
             ?
             <Grid>
-                <Button
+                <a
+                style={{}}
         href="/"
         color="transparent"
         //target="_blank"
         className='nav-link'
       >
         Home
-      </Button>
-      <Button
+      </a>
+      <a
+      style={{}}
         href="/login"
         color="transparent"
         //target="_blank"
         className='nav-link'
       >
         Login
-      </Button>
-      <Button
+      </a>
+      <a
+      style={{}}
         href="../signup"
         color="transparent"
         //target="_blank"
         className='nav-link'
       >
         Sign Up
-      </Button>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="products and services"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+      </a>
+     
+        <a
+        style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='/landing/services'
           onClick={props.service,handleDrawerToggle}
         >
             Services
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="about winster trade investment"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
+        style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='landing/about'
           onClick={props.about}
         >
             About Us
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="plans and packages "
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
+        style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
           onClick={props.package}
+          href='landing/plans'
         >
             Plans
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="Testimonials from investors"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
+        style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
           onClick={props.testimonial}
+          href='/landing/testimonials'
         >
             Testimonials
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="contact us"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
+        style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='landing/contact'
           onClick={props.contact}
         >
             Contact Us
-        </Button>
-      </Tooltip>
+        </a>
+      
             </Grid>
             :
             null

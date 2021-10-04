@@ -489,12 +489,13 @@ input:-webkit-autofill
   margin-bottom: 100px;
 }
 .nav-link {
-  color: aliceblue;
+  
     position: relative;
+    color: white;
     margin: 30px;
     /* margin-top: 30px; */
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     /* textTransform: uppe; */
     border-radius: 3px;
     line-height: 20px;
@@ -507,6 +508,7 @@ input:-webkit-autofill
 .nav-link:hover {
   color: white;
   background: rgba(200, 200, 200, 0.2);
+  font-size: 20px;
 }
 .appbar-container {
   min-height: 50px;
@@ -556,11 +558,11 @@ input:-webkit-autofill
       
     }
     .nav-link {
-      color: inherit;
+      
         position: relative;
         margin: 10px;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 14px;
         /* textTransform: uppe; */
         border-radius: 3px;
         line-height: 20px;
@@ -642,7 +644,7 @@ input:-webkit-autofill
     background-image: url(../img/event4.jpg);
     height:auto;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 70%;
     border-radius: 10px;
     /* margin-top: 60px; */
     background-size: cover;

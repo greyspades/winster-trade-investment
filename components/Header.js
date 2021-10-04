@@ -63,7 +63,7 @@ export default function Header(props) {
   });
   const brandComponent = (
     <Link href="/" as="/">
-      <Button className={classes.title}>{brand}</Button>
+      <a className={classes.title}>{brand}</a>
     </Link>
   );
 
@@ -90,7 +90,7 @@ export default function Header(props) {
             !mobile
             ?
             <Grid>
-                <Button
+                <a
                 style={{}}
         href="/"
         color="transparent"
@@ -98,8 +98,8 @@ export default function Header(props) {
         className='nav-link'
       >
         Home
-      </Button>
-      <Button
+      </a>
+      <a
       style={{}}
         href="/login"
         color="transparent"
@@ -107,8 +107,8 @@ export default function Header(props) {
         className='nav-link'
       >
         Login
-      </Button>
-      <Button
+      </a>
+      <a
       style={{}}
         href="../signup"
         color="transparent"
@@ -116,92 +116,72 @@ export default function Header(props) {
         className='nav-link'
       >
         Sign Up
-      </Button>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="products and services"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+      </a>
+     
+        <a
         style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='/landing/services'
           onClick={props.service,handleDrawerToggle}
         >
             Services
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="about winster trade investment"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
         style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='landing/about'
           onClick={props.about}
         >
             About Us
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="plans and packages "
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
         style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
           onClick={props.package}
+          href='landing/plans'
         >
             Plans
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="Testimonials from investors"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
         style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
           onClick={props.testimonial}
+          href='/landing/testimonials'
         >
             Testimonials
-        </Button>
-      </Tooltip>
-      <Tooltip
-        id="Youtube-tooltip"
-        title="contact us"
-        placement={"top"}
-        classes={{ tooltip: classes.tooltip }}
-      >
-        <Button
+        </a>
+      
+      
+        <a
         style={{}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
           //target="_blank"
           className='nav-link'
+          href='landing/contact'
           onClick={props.contact}
         >
             Contact Us
-        </Button>
-      </Tooltip>
+        </a>
+      
             </Grid>
             :
             null
@@ -242,7 +222,7 @@ export default function Header(props) {
               <Close />
               </ButtonIcon>
             </Grid>
-                <Button
+                <a
                 style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none',marginTop:60}}
         href="/"
         color="transparent"
@@ -250,8 +230,8 @@ export default function Header(props) {
         className='nav-link'
       >
         Home
-      </Button>
-      <Button
+      </a>
+      <a
       style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
         href="/login"
         color="transparent"
@@ -259,8 +239,8 @@ export default function Header(props) {
         className='nav-link'
       >
         Login
-      </Button>
-      <Button
+      </a>
+      <a
       style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
         href="../signup"
         color="transparent"
@@ -268,14 +248,14 @@ export default function Header(props) {
         className='nav-link'
       >
         Sign Up
-      </Button>
+      </a>
       <Tooltip
         id="Youtube-tooltip"
         title="products and services"
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
-        <Button
+        <a
         style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
@@ -285,7 +265,7 @@ export default function Header(props) {
           onClickCapture={handleDrawerToggle}
         >
             Services
-        </Button>
+        </a>
       </Tooltip>
       <Tooltip
         id="Youtube-tooltip"
@@ -293,7 +273,7 @@ export default function Header(props) {
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
-        <Button
+        <a
         style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
@@ -303,7 +283,7 @@ export default function Header(props) {
           onClickCapture={handleDrawerToggle}
         >
             About Us
-        </Button>
+        </a>
       </Tooltip>
       <Tooltip
         id="Youtube-tooltip"
@@ -311,7 +291,7 @@ export default function Header(props) {
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
-        <Button
+        <a
         style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
@@ -321,7 +301,7 @@ export default function Header(props) {
           onClickCapture={handleDrawerToggle}
         >
             Plans
-        </Button>
+        </a>
       </Tooltip>
       <Tooltip
         id="Youtube-tooltip"
@@ -329,7 +309,7 @@ export default function Header(props) {
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
-        <Button
+        <a
         style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
@@ -339,7 +319,7 @@ export default function Header(props) {
           onClickCapture={handleDrawerToggle}
         >
             Testimonials
-        </Button>
+        </a>
       </Tooltip>
       <Tooltip
         id="Youtube-tooltip"
@@ -347,7 +327,7 @@ export default function Header(props) {
         placement={"top"}
         classes={{ tooltip: classes.tooltip }}
       >
-        <Button
+        <a
         style={{margin:30,borderBottom:'1px solid #ffab00',color:'white',fontSize:12,textDecoration:'none'}}
           color="transparent"
           //href="https://youtube.com/channel/UCecLKqQRkiHT9kp5iKjSAmg"
@@ -357,7 +337,7 @@ export default function Header(props) {
           onClickCapture={handleDrawerToggle}
         >
             Contact Us
-        </Button>
+        </a>
       </Tooltip>
             </Grid>
 

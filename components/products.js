@@ -6,7 +6,7 @@ import {faMoneyCheckAlt} from  '@fortawesome/free-solid-svg-icons'
 import {faCoins} from  '@fortawesome/free-solid-svg-icons'
 import Fade from 'react-reveal/Fade'
 import Image from 'next/image'
-import crypto from '../img/crypto.svg'
+import crypto from '../img/mining.svg'
 import currency from '../img/cryptocurrency.svg'
 import chart from '../img/chart.svg'
 import tax from '../img/tax.svg'
@@ -66,10 +66,10 @@ const Products = (props) => {
                                              <Image width={100} height={100} src={crypto} layout='intrinsic' />
                                              </div>
                                              <h5 style={{textAlign:'center' ,color:'#ffab00',marginTop:40}}>
-                                                 Crypto Loans
+                                                 Crypto mining
                                              </h5>
                                              <div style={{color:'white',textAlign:'center'}}>
-                                             We offer loans to organizations and individuals, our interest rates are reasonable and without worry.
+                                                Fast and efficient mining solutions for your needs using the latest technologies and hardware with steady rates and no hidden charges
                                              </div>
                                            
                                          </CardContent>
