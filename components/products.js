@@ -60,7 +60,7 @@ const Products = (props) => {
                  >
                                      <div style={{display:'grid',placeItems:'center'}}>
                                      <Card  style={{zIndex:1000}} elevation={20} className='product-grid countdown-bg1'>
-                                         
+                                        
                                          <CardContent>
                                              <div style={{display:'grid',placeItems:'center'}}>
                                              <Image width={100} height={100} src={crypto} layout='intrinsic' />
@@ -69,7 +69,7 @@ const Products = (props) => {
                                                  Crypto mining
                                              </h5>
                                              <div style={{color:'white',textAlign:'center'}}>
-                                                Fast and efficient mining solutions for your needs using the latest technologies and hardware with steady rates and no hidden charges
+                                                Fast and efficient mining solutions using the latest technologies and hardware with steady rates and no hidden charges
                                              </div>
                                            
                                          </CardContent>

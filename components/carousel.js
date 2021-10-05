@@ -17,11 +17,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBtc, faEthereum } from '@fortawesome/free-brands-svg-icons'
 import safe from '../img/safemoon.svg'
 import tether from '../img/tether.svg'
-import eth from '../img/eth.png'
-import btc from '../img/btc.png'
+import eth from '../img/eth.svg'
+import btc from '../img/bitcoin.svg'
 import Divider from '@material-ui/core/Divider'
 import { AccountBalance,AccountBalanceWalletOutlined } from '@material-ui/icons';
-import litecoin from '../img/litecoin.png'
+import litecoin from '../img/litecoin.svg'
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 
 

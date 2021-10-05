@@ -38,7 +38,7 @@ const Mining=()=>{
                         Agile Infrastructure
                     </h4>
                     <p style={{textAlign:'center',fontSize:18,padding:30,marginBottom:-35}}>
-                        Our fascilities are managed and maintained by a team of proffesionals who work hard to ensure Efficiency
+                        Our fascilities are managed and maintained by a team of professionals who work hard to ensure Efficiency
                     </p>
 
            <Grid  style={{}} container justify='center' direction='row'>
