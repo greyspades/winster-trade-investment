@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect,} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import Check from '@material-ui/icons/CheckTwoTone'
 //import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -49,6 +49,7 @@ import Drawer, {
     DrawerTitle,
     DrawerContent,
   } from '@material/react-drawer';
+  import "@material/react-drawer/dist/drawer.css";
   import Guage from '../components/guage'
   import Avatar from '@material-ui/core/Avatar'
   import carl from '../img/carl.jpg'
@@ -141,6 +142,7 @@ const fetcher=(url)=>{
 
 const Dashboard=({data})=>{
     
+    const [tech,setTech]=useState('BTCUSD')
     const [mobile,setMobile]=useState()
     const [content,setContent]=useState('Balance')
     const [balanceElev,setBalanceElev]=useState(7)
@@ -156,6 +158,7 @@ const Dashboard=({data})=>{
     })
     //const {info,error}=useSWR('/api/info',fetcher)
     const [info,setInfo]=useState()
+    const [chart,setChart]=useState('BTCUSD')
     const username=Cookie.get('user')
     //const {user,setUser}=useSWR('/api/info',fetcher)
     const [gotten,setGotten]=useState(false)
@@ -221,6 +224,8 @@ const Dashboard=({data})=>{
     },[])
 
 
+    
+
     //const container = window !== undefined ? () => window().document.body : undefined;
     
 
@@ -282,12 +287,6 @@ const Dashboard=({data})=>{
     
 
 
-
-
-
-
-   
-
     const handleResize=()=>{
         let width=window.innerWidth
         if(width<400){
@@ -315,7 +314,7 @@ const Dashboard=({data})=>{
           fixed:false
         },
         {
-          title:'Pair',
+          title:'Currency',
           dataIndex:'pair',
           key:'pair',
           width:50,
@@ -330,7 +329,7 @@ const Dashboard=({data})=>{
           fixed:false
         },
         {
-            title:'Id',
+            title:'Reference no',
             dataIndex:'key',
             key:'key',
             width:50,
@@ -346,7 +345,7 @@ const Dashboard=({data})=>{
             width:30,
             render:()=> action=='confirm' ?
              <Grid container alignItems='center'>
-                 <Button style={{color:'#ffab00',fontSize:12}}>Confirm</Button>
+                 <Button style={{color:'#ffab00',fontSize:16}}>Confirm</Button>
              </Grid>
             //  : action=='load' ?
             //  <Grid container alignItems='center' justify='center'>
@@ -381,10 +380,15 @@ const Dashboard=({data})=>{
                 name:'Withdraw',
                 icon:<LocalAtmIcon style={{width:40,height:40,color:'#ffab00'}} />,
             },
+           
             {
-                name:'Confirm',
-                icon:<Poll style={{width:40,height:40,color:'#ffab00'}} />,
-            },
+              name:'Chart',
+              icon:<Poll style={{width:40,height:40,color:'#ffab00'}} />,
+          },
+          {
+            name:'Confirm',
+            icon:<Check style={{width:40,height:40,color:'#ffab00'}} />,
+        },
         ]
        
         return (
@@ -529,23 +533,23 @@ const Dashboard=({data})=>{
           <LinearProgress color='primary'  style={{height:10,width:'75%',marginTop:9,color:'#ffab00'}} variant="determinate" value={gotten ? info.level*2.7 : 0} />
           </Grid>
   </Grid>
-  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5,marginTop:10}}>
+  <p style={{color:'white',fontSize:16,textAlign:'center',margin:5,marginTop:30}}>
     Your referal link
   </p>
-  <Grid direction='row' id='progress' style={{marginLeft:10,marginTop:-5}} container>
-  <Grid item md={2} xs={2} style={{}}>
+  <Grid direction='row' id='progress' style={{marginTop:-5}} container>
+  {/* <Grid item md={2} xs={2} style={{}}>
   <PeopleOutline style={{color:'#ffab00',marginBottom:-20}} />
           
-          </Grid>
-          <Grid  justify='center' alignItems='center' item md={10} xs={10} style={{color:'white',marginTop:5}}>
+          </Grid> */}
+          <Grid  justify='center' alignItems='center' item md={12} xs={12} style={{color:'white',marginTop:5,textAlign:'center'}}>
             
               {/* <a style={{color:'#ffab00',}}>
                  www.winstertrade<br/>investment.com/{data.username}
               </a> */}
               {
                 gotten ?
-                <a href={`https://winstertradeinvestment.com/${info.username}`} style={{color:'#ffab00',fontSize:14}}>
-                 winstertradeinvestment.com/<br/>{info.username}
+                <a href={`https://winstertradeinvestment.com/${info.username}`} style={{color:'#ffab00',fontSize:16,textAlign:'center'}}>
+                 winstertradeinvestment.com/{info.username}
               </a>
               :
               null
@@ -606,11 +610,12 @@ const Dashboard=({data})=>{
 </Grid>
 
 
-<Grid style={{}} className='c-gri' xs={12} md={2} item>
+<Grid style={{}} className='c-gri' xs={12} md={2} item justify='center'>
 
 {/* <Grid style={{padding:10}} container justify='center'></Grid> */}
 
-<Paper style={{}} className=' asset-paper'>
+    <Grid className='asset-grid' style={{}} container justify='center'>
+    <Paper style={{}} className=' asset-paper'>
 <Grid style={{}} direction='column' className='circlar' alignItems='center' container justify='center'>
 
 <Grid style={{marginBottom:50,marginTop:-30}} xs={12} md={12} className='circlar' item justify='center'>
@@ -732,6 +737,7 @@ const Dashboard=({data})=>{
               <Divider variant='middle' style={{margin:10,height:2,backgroundColor:'rgba(255,255,255,0.3)',width:'90%'}} />
             </Grid> */}
 </Paper>
+    </Grid>
 
 
 </Grid>
@@ -745,12 +751,12 @@ const Dashboard=({data})=>{
                    </Grid>
                    {/* <Grid container justify='flex-end' style={{backgroundColor:'blue'}}></Grid> */}
                     
-                   <Grid className='bottom-profil' spacing={3} justify='flex-end' style={{marginTop:10}} container direction='row'>
+                   <Grid className='bottom-profi' spacing={3} justify='flex-end' style={{marginTop:10}} container direction='row'>
 
-<Grid className='' style={{}} justify='center'  md={8} xs={12} item>
-          <Grid style={{marginTop:-14}} alignItems='center' container justify='center'>
-          <Paper style={{width:'93%',height:450,}} className='profile-paper '>
-<CryptoCurrencyMarket colorTheme="dark" height='450' width="100%" isTransparent={true} ></CryptoCurrencyMarket>
+<Grid  style={{}} justify='center'  md={8} xs={12} item>
+          <Grid style={{marginTop:-14,}} alignItems='center' container justify='center'>
+          <Paper style={{width:'100%',height:500,}} className='profile-paper coin-grid'>
+<CryptoCurrencyMarket colorTheme="dark" height={480} width="100%" isTransparent={true} ></CryptoCurrencyMarket>
 {/* <AdvancedRealTimeChart style={{}}  isTransparent theme="dark" width="100%" autosize></AdvancedRealTimeChart> */}
 </Paper>
           </Grid>
@@ -759,11 +765,121 @@ const Dashboard=({data})=>{
 
 
 <Grid xs={12} md={4} className='anal-grid' item justify='center'>
-<Grid style={{width:'100%'}} justify='center' container>
-<Paper style={{padding:0,marginTop:10,width:'100%',height:450}} className='profile-paper'>
+<Grid style={{}} justify='center' container>
+<Paper style={{padding:0,marginTop:10,width:'90%',height:500}} className='profile-paper coin-grid'>
 
-<TechnicalAnalysis  width='100%' symbol={analPair}   style={{marginTop:40}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+<Grid style={{}} className='tech-grid' container justify='center'>
+<TechnicalAnalysis   width='100%' symbol={tech}   style={{marginTop:20}} isTransparent colorTheme="dark"></TechnicalAnalysis>
+</Grid>
+<Grid className='tech-row' style={{}} id='pair' container direction='row'>
+                                               
+                                               <Grid className='coin-sel' xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {tech=='BTCUSD' ?  
+                                                        <Grid  style={{display:'grid',placeItems:'center'}} justify='center' alignItems='center' container>
+                                                      <div className='tech-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                            <Image priority={true} width={40} height={40}  src={btcIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton  onClick={()=>{setTech('BTCUSD')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                        <Image priority={true} width={40} height={40} responsive src={btcIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                   
+                                                    
+                                               <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {tech=='ETHUSD' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='tech-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                            <Image priority={true} width={40} height={40} className='coin-icon' src={ethIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setTech('ETHUSD')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                        <Image priority={true} responsive width={40} height={40} className='coin-icon' src={ethIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    
+                                               <Grid className='coin-sel' style={{display:'grid',placeItems:'center'}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {tech=='USDTUSD' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='tech-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={40} height={40} src={tetherIcon}/>
+                                                            </motion.div> 
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                       
+                                                            <IconButton style={{}} onClick={()=>{setTech('USDTUSD')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
 
+                                                        <Image priority={true} responsive width={40} height={40} src={tetherIcon}/>
+                                                        
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                    
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {tech=='LTCUSD' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='tech-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={40} height={40} src={litecoin}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setTech('LTCUSD')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+                                                        <Image priority={true} responsive width={40} height={40} src={litecoin}/>
+                                                            
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                                    </Grid>
 </Paper>
 </Grid>
 </Grid>
@@ -780,7 +896,7 @@ const Dashboard=({data})=>{
            return (
                 
                     <Grid style={{marginTop:20,display:'grid',placeItems:'center'}} container justify='center' alignItems='center'>
-                        <Paper style={{}} className='profile-paper deposit-paper'>
+                        <Paper style={{}} className=' deposit-paper'>
                            <Grid item style={{marginBottom:30}} >
                                <h3 style={{textAlign:'center'}}>
                                    Make a <span style={{color:'#ffab00'}}>Deposit</span>
@@ -843,7 +959,7 @@ const Dashboard=({data})=>{
 
                                            <Grid container justify='center' style={{marginTop:10,}}>
                                                 <p style={{textAlign:'center',color:'white',fontSize:18,}}>
-                                                    Simply select a pair and input how much money you would invest in that currency
+                                                    Simply select a cryptocurrency and input how much money you would invest in that currency
                                                 </p>
                                                 </Grid>
                                            <Grid className='coin-row' style={{marginTop:50}} id='pair' container direction='row'>
@@ -999,12 +1115,14 @@ const Dashboard=({data})=>{
                                   <Grid container>
                                  
                                   
-                                 <Modal style={{}} onClose={()=>setShowDepo(false)} open={showDepo}>
+                                 <Modal  style={{display:'grid',placeItems:'center',}} ba onClose={()=>setShowDepo(false)} open={showDepo}>
                                   
-                                   <Grid className='depo-modal' style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:80,border:'3px solid #ffab00',width:'70%'}} container justify='center' alignItems='center'>
-                                   <p  style={{color:'white',textAlign:'center',fontSize:17,width:'80%',padding:10}}>
+                                   <Grid className='depo-modal' 
+                                   style={{backgroundColor:'black',margin:20,borderRadius:10,marginTop:0,border:'3px solid #ffab00',width:'50%'}}
+                                    container justify='center' alignItems='center'>
+                                   <p  style={{color:'white',textAlign:'center',fontSize:20,width:'80%',padding:10}}>
                                     You are about to make a deposit of <span style={{color:'#ffab00'}}>${values.amount}</span>, You are required to pay the sum of <CryptoCompare style={{color:'blue'}} from='USD'  to={depoPair} amount={deposit} apikey="9e17d4341c26890479617fab12138968c28eecdfd8ac77be8d0bd181fa919870" /> 
-                                    to the wallet address {depoPair=='BTC' ? <a style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a>
+                                    to the wallet address {depoPair=='BTC' ? <a href='#' style={{color:'#ffab00'}}>bc1q30ljt5azln7ygmtaa<br/>yuw4lak3ez2cl05qdzg6d</a>
                                      :
                                       depoPair=='ETH' ? <a style={{color:'#ffab00'}}>0x5B086aF3b099f23f4BC5<br/>fc7754aE63484F48AC79</a> 
                                       :
@@ -1016,7 +1134,7 @@ const Dashboard=({data})=>{
                                       } and upload proof of Payment
                                 </p>
                                 <Grid container justify='center'>
-                                     <Button style={{color:'#ffab00'}} onClick={()=>setShowDepo(false)} >
+                                     <Button  style={{color:'#ffab00'}} onClick={()=>setShowDepo(false)} >
                                         close
                                      </Button>
                                    </Grid>
@@ -1312,7 +1430,138 @@ onChange={handleChange('address')}
             </Grid>
         )
        }
+       else if(content=='Chart'){
+         return (
+           <Grid container justify='center' >
+             <Grid className='chart-row' style={{marginTop:80,}} id='pair' container direction='row'>
+                                               
+                                               <Grid className='coin-sel' xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {chart=='BTC' ?  
+                                                        <Grid  style={{display:'grid',placeItems:'center'}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                            <Image priority={true} width={50} height={50}  src={btcIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton  onClick={()=>{setChart('BTC')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'#ffab00'}} icon={faBtc} /> */}
+                                                        <Image priority={true} width={50} height={50} responsive src={btcIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                   
+                                                    
+                                               <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {chart=='ETH' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                            {/* <FontAwesomeIcon  style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                            <Image priority={true} width={50} height={50} className='coin-icon' src={ethIcon}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setChart('ETH')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        {/* <FontAwesomeIcon style={{width:70,height:70,color:'white'}} icon={faEthereum} /> */}
+                                                        <Image priority={true} responsive width={50} height={50} className='coin-icon' src={ethIcon}/>
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    
+                                               <Grid className='coin-sel' style={{display:'grid',placeItems:'center'}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {chart=='USDT' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={50} height={50} src={tetherIcon}/>
+                                                            </motion.div> 
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                       
+                                                            <IconButton style={{}} onClick={()=>{setChart('USDT')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+
+                                                        <Image priority={true} responsive width={50} height={50} src={tetherIcon}/>
+                                                        
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                    
+                                                     
+                                                    }
+                                                    </Grid>
+                                                    <Grid className='coin-sel' style={{}} xs={3} md={3} container justify='center' alignItems='center'>
+                                                       {chart=='LTC' ?  
+                                                        <Grid  style={{}} justify='center' alignItems='center' container>
+                                                      <div className='deposit-selector' >
+                                                      <IconButton  style={{}}>
+                                                           
+                                                           <motion.div  style={{display:'grid',placeItems:'center'}} transition={{duration:40}} animate={{rotateY:[360,0,360,0,360,360,0,360,0,360,360,0,360,0,360,360,0,360,0,360]}} an whileHover={{scale:1.2}}>
+                                                           <Image priority={true} responsive width={50} height={50} src={litecoin}/>
+                                                            </motion.div>
+                                                           
+                                                        </IconButton>
+                                                      </div>
+                                                        </Grid>
+                                                                                                        :
+                                                        <IconButton onClick={()=>{setChart('LTC')}}>
+                                                        <motion.div style={{display:'grid',placeItems:'center'}} whileHover={{scale:1.2}}>
+                                                        
+                                                        <Image priority={true} responsive width={50} height={50} src={litecoin}/>
+                                                            
+                                                        
+                                                        </motion.div>
+                                                        </IconButton>
+                                                     
+                                                    }
+                                                    </Grid>
+    
+                                                    </Grid>
+             <Grid style={{height:750,marginTop:10}} justify='center' container>
+             <Paper style={{}} elevation={20} className='chart-paper'>
+               <AdvancedRealTimeChart style={{}} allow_symbol_change={true} symbol={chart}  isTransparent={true} theme="dark" width="100%" autosize></AdvancedRealTimeChart>
+             </Paper>
+           </Grid>
+           </Grid>
+         )
+       }
     }
+
+
+
+
+
+
+
+
+
+
+    
 
     return (
         <div>
@@ -1407,7 +1656,7 @@ s0.parentNode.insertBefore(s1,s0);
                    
 
                    <Grid justify='flex-end' container xs={3} md={1}>
-                   <IconButton onClick={()=>{Router.push('/home')}}>
+                   <IconButton onClick={()=>{Router.push('/')}}>
                     <ToolTip  >
                     <ExitToAppIcon style={{color:'black'}} />
                     </ToolTip>
@@ -1438,7 +1687,7 @@ s0.parentNode.insertBefore(s1,s0);
          
                 <List>
                 <div>
-        <DrawerHeader style={{marginTop:100}}>
+        <DrawerHeader style={{marginTop:150}}>
 
               <div style={{textAlign:'center',color:'#ffab00'}}>
               {!loading && gotten ? <h3 style={{color:'#ffab00'}}>{info.username}</h3>  
@@ -1455,6 +1704,9 @@ s0.parentNode.insertBefore(s1,s0);
 
             </DrawerContent>
         </Drawer>
+              {/* <Grid style={} container justify='center'>
+                {appContent()}
+              </Grid> */}
         <DrawerAppContent className='drawer-app-content'>
             <Grid container style={{}} >
             {appContent()}

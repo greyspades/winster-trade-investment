@@ -27,8 +27,8 @@ const Security = () => {
                 By investing with winster trade investment you are assured of
             </p>
             <Grid container justify='center' direction='row'>
-                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} container>
+                  <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:340,width:'70%',border:"3px solid #ffab00"}} elevation={20}>
                   <div style={{display:'grid',placeContent:'center'}}>
                    <SecurityIcon className='choose-icon' />
                    </div>
@@ -42,8 +42,8 @@ const Security = () => {
                    
                   </Paper>
                 </Grid>
-                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} container>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:340,width:'70%',border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <PolicyIcon className='choose-icon' />
                    </div>
@@ -55,8 +55,8 @@ const Security = () => {
                     </p>
                     </Paper>
                 </Grid>
-                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} item>
-                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:320,border:"3px solid #ffab00"}} elevation={20}>
+                <Grid style={{padding:10,zIndex:1000}} justify='center' alignItems='center' xs={12} md={4} container>
+                    <Paper className='countdown-bg1' style={{backgroundColor:'#131519',margin:30,padding:15,height:340,width:'70%',border:"3px solid #ffab00"}} elevation={20}>
                     <div style={{display:'grid',placeContent:'center'}}>
                    <VerifiedUserIcon className='choose-icon' />
                    </div>

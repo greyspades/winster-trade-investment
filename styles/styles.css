@@ -132,7 +132,14 @@ input:-webkit-autofill
     margin-top: 100px;
   }
   .deposit-paper {
-   
+    margin-top: 25px;
+    /* border: 3px solid #ffab00; */
+   background-color: #000022;
+    background-image: linear-gradient(black 80%,black);
+    /* background-image: url(../img/steps.svg); */
+    
+    height: auto;
+    
     padding: 30px;
   }
   .react-crypto-compare-currency {
@@ -523,6 +530,47 @@ input:-webkit-autofill
 .depo-modal {
   width: 90%;
 }
+.chart-row {
+  width: 90%;
+}
+.dash-container {
+  
+}
+.asset-grid {
+  margin-left: 12px;
+}
+
+.coin-grid {
+  margin-left: 21px;
+}
+.chart-paper {
+  margin-top: 25px;
+    height: 450px;
+   background-color: #000022;
+    background-image: linear-gradient(black 80%,black);
+    /* background-image: url(../img/steps.svg); */
+    width: 100%;
+    height: auto;
+    /* padding: 10px; */
+  
+}
+.tech-grid {
+  height: 350px;
+}
+.tech-row {
+  margin-bottom:20px;
+}
+.tech-selector {
+  border: 3px solid #ffab00;
+  display: grid;
+  place-items: center;
+  border-radius: 40px;
+  width: 70px;
+  height: 70px;
+}
+
+
+
 
 
 
@@ -534,8 +582,48 @@ input:-webkit-autofill
 
 
   @media all and (min-width:800px){
+    .tech-grid {
+      height: 410px;
+    }
+    .deposit-paper {
+      margin-top: 70px;
+      border: 3px solid #ffab00;
+     background-color: #000022;
+      background-image: linear-gradient(black 80%,black);
+      /* background-image: url(../img/steps.svg); */
+      
+      height: auto;
+      
+      padding: 30px;
+    }
+    .chart-paper {
+      margin-top: 25px;
+        height: 700px;
+       background-color: #000022;
+        background-image: linear-gradient(black 80%,black);
+        /* background-image: url(../img/steps.svg); */
+        width: 100%;
+        height: auto;
+        /* padding: 10px; */
+        margin: 20px;
+      
+    }
+    .coin-grid {
+      margin-left: 33px;
+    }
+    .asset-grid {
+      margin-left: 0px
+    }
+    
+    .content-container {
+      margin-left: 120px;
+    }
+    .chart-row {
+      width: 70%;
+    }
     .depo-modal {
       width: 60%;
+      
     }
     .appbar-login {
       min-height: 50px;

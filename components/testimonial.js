@@ -34,7 +34,7 @@ const Testimonials = () => {
                         <Grid container justify='center'>
                             {/* <Image style={{margin:20}} height={200} width={170} src={aiden} layout='intrinsic' /> */}
                             <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
-                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                                <Person style={{width:80,height:80,color:"#ffab00"}} />
                             </Avatar>
                         </Grid>
                         <Grid>
@@ -73,45 +73,47 @@ const Testimonials = () => {
 
 
 
-                <Grid style={{zIndex:1000}} className='mid-testimonial' container justify='center' alignItems xs={12} md={3} >
+
+                <Grid style={{zIndex:1000}} container justify='center' alignItems xs={12} md={3} >
                     <Paper className='countdown-bg1' style={{backgroundColor:'#131519',padding:20}} elevation={20} >
                         <Grid container justify='center'>
-                            {/* <Image style={{margin:20}} height={200} width={170} src={per1} layout='intrinsic' /> */}
+                            {/* <Image style={{margin:20}} height={200} width={170} src={per3} layout='intrinsic' /> */}
                             <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
-                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                                <Person style={{width:80,height:80,color:"#ffab00"}} />
                             </Avatar>
                         </Grid>
                         <Grid>
                             <div style={{fontSize:20,color:'white',margin:10}}>
-                                <span style={{color:'#ffab00'}}>hitesh ararirma</span> 
+                                <span style={{color:'#ffab00'}}>hilda vought</span> 
                                 <Divider light style={{backgroundColor:'#ffab00',opacity:0.5,width:'80%'}} variant='' />
                             </div>
                             <Grid container alignItems='center' style={{fontSize:18,color:'white',margin:10}}>
                                 <span style={{}}>Level:</span> <Rating style={{}} size='medium' emptyIcon={<StarBorderIcon style={{color:'#ffab00'}} 
-                                fontSize="inherit" />} defaultValue={3} 
+                                fontSize="inherit" />} defaultValue={3.5} 
                                 precision={0.5} readOnly max={5} />
 
                             </Grid>
-                            
+                           
                             <div style={{fontSize:18,color:'white',margin:10}}>
                                 Investment: 
-                                <span style={{color:'#ffab00'}}> $7400</span> 
+                                <span style={{color:'#ffab00'}}> $10000</span> 
 
                             </div>
 
                             <div style={{fontSize:18,color:'white',margin:10}}>
-                                Bonus: <span style={{color:'#ffab00'}}>$1656</span>
+                                Bonus: <span style={{color:'#ffab00'}}>$4470</span>
 
                             </div>
 
                             <div style={{fontSize:18,color:'white',margin:10}}>
                                 Maturity: 
-                                <span style={{color:'#ffab00'}}> 11 days</span>
+                                <span style={{color:'#ffab00'}}> 4 days</span>
 
                             </div>
                          
                         </Grid>
                     </Paper>
+                
                 </Grid>
 
 
@@ -121,7 +123,7 @@ const Testimonials = () => {
                         <Grid container justify='center'>
                             {/* <Image style={{margin:20}} height={200} width={170} src={per2} layout='intrinsic' /> */}
                             <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
-                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                                <Person style={{width:80,height:80,color:"#ffab00"}} />
                             </Avatar>
                         </Grid>
                         <Grid>
@@ -161,7 +163,7 @@ const Testimonials = () => {
                         <Grid container justify='center'>
                             {/* <Image style={{margin:20}} height={200} width={170} src={per3} layout='intrinsic' /> */}
                             <Avatar style={{width:170,height:170,backgroundColor:"black"}}>
-                                <Person style={{width:120,height:120,color:"#ffab00"}} />
+                                <Person style={{width:80,height:80,color:"#ffab00"}} />
                             </Avatar>
                         </Grid>
                         <Grid>
